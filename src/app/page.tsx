@@ -8,7 +8,7 @@ export default function Home() {
         <div className='flex h-full justify-center items-center'>
           <div className='bg-white w-1/3 h-4/5 rounded-s-[80px]  rounded-t-[80px]  flex flex-col   items-center '>
             <div>
-              <div className='text-2xl'>Signup up for Figma</div>
+              <div className='text-3xl'>Signup up for Figma</div>
               <button>
                 <div>
                   continue with Google
@@ -17,8 +17,8 @@ export default function Home() {
               <span>or</span>
             </div>
             <div></div>
-            <input type="text" />
-            <input type="text" />
+            <input type="text" placeholder="Email" />
+      <input type="text" placeholder="Password" />
             <div></div>
             <div>
               <input type="text" />
