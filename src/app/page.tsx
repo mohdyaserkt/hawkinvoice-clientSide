@@ -9,7 +9,7 @@ export default function Home() {
           <div className='bg-white w-1/3 h-4/5 rounded-s-[80px]  rounded-t-[80px]  flex flex-col   items-center justify-center '>
             <div className='flex flex-col  items-center justify-center'>
               <div className='text-2xl font-semibold'>Signup up for Figma</div><br />
-              <button className='mt-8 border-2 border-black rounded w-[22.375rem] h-[3rem] '>
+              <button className='mt-8 border-2 border-black rounded-lg w-[22.375rem] h-[3rem] '>
                 <div>
                   continue with Google
                 </div>
