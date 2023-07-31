@@ -6,11 +6,11 @@ export default function Home() {
       <div className='w-screen h-screen '>
         <nav></nav>
         <div className='flex h-full justify-center items-center'>
-          <div className='bg-white lg:w-1/3 lg:h-4/5 rounded-s-[80px]  rounded-t-[80px]  flex flex-col   items-center justify-center '>
+          <div className='bg-white lg:w-1/3 lg:h-4/5 rounded-s-[5rem]  rounded-t-[5rem]  flex flex-col   items-center justify-center '>
             <div className='flex flex-col  items-center justify-center'>
               <div className='text-2xl font-semibold'>Signup up for Figma</div><br />
               <button className='mt-8 border-2 border-black rounded-lg w-[22.375rem] h-[3rem] '>
-                <div>
+                <div className='text-base'>
                   continue with Google
                 </div>
               </button><br />
