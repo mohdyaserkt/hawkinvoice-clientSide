@@ -7,9 +7,9 @@ export default function Home() {
         <nav></nav>
         <div className='flex h-full justify-center items-center'>
           <div className='bg-white w-1/3 h-4/5 rounded-s-[80px]  rounded-t-[80px]  flex flex-col   items-center justify-center '>
-            <div>
-              <div className='text-3xl font-semibold'>Signup up for Figma</div>
-              <button className='mt-8 border'>
+            <div className='flex flex-col  items-center justify-center'>
+              <div className='text-2xl font-semibold'>Signup up for Figma</div><br />
+              <button className='mt-8 border-2 border-black rounded'>
                 <div>
                   continue with Google
                 </div>
