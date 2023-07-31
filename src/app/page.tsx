@@ -14,7 +14,7 @@ export default function Home() {
                   continue with Google
                 </div>
               </button><br />
-              <span>or</span>
+              <span className='text-gray-600'>or</span>
             </div>
             <div></div>
             <input type="text" placeholder="Email" />
