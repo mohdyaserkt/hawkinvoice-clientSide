@@ -6,8 +6,8 @@ export default function Home() {
     <>
       <div className='w-screen h-screen '>
         <nav></nav>
-        <div className='flex h-full justify-center items-center'>
-          <div className='bg-white lg:w-1/3 lg:h-4/5 rounded-s-[5rem]  rounded-t-[5rem]  flex flex-col   items-center justify-center '>
+        <div className='flex h-full justify-center items-center '>
+          <div className='bg-white lg:w-1/3 lg:h-4/5 sm:w-full rounded sm:p-10  md:rounded-s-[5rem]  md:rounded-t-[5rem]  flex flex-col   items-center justify-center '>
             <div className='flex flex-col  items-center justify-center'>
               <div className='text-2xl font-ligthbold'>Signup up for Figma</div><br />
               <button className='mt-8 border-2 border-black rounded-lg w-[22.375rem] h-[3rem] flex justify-center items-center'>
@@ -70,7 +70,7 @@ export default function Home() {
                 </div>
               </label>
               <label
-                className="mt-px cursor-pointer select-none font-light text-gray-950"
+                className="mt-px sm:text-sm cursor-pointer select-none font-light text-gray-950"
 
               >
                 I agree to join swift invoice's mailing list
