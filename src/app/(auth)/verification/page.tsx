@@ -10,7 +10,7 @@ const verification = () => {
                 <div className="flex h-full justify-center items-center ">
                     <div className="bg-white md:w-2/3 lg:w-1/3 lg:h-4/5 sm:w-full rounded sm:p-10  md:rounded-s-[5rem]  md:rounded-t-[5rem]  flex flex-col   items-center justify-center ">
                         <div className="flex flex-col  items-center justify-center">
-                            <div className="">
+                            <div className="mb-3">
                                 <Image
                                     src="/checkYourInbox.svg"
                                     alt="Logo"
