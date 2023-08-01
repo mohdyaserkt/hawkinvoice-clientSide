@@ -29,7 +29,7 @@ const verification = () => {
               </div>
 
               <button className="mt-8 border-2 border-black rounded-lg w-[22.375rem] h-[3rem] flex justify-center items-center">
-                <div className="text-base font-semibold text-sm inline-flex items-center gap-3">
+                <div className=" font-semibold text-sm inline-flex items-center gap-3">
                   <FcGoogle size={20} />
                   Open Gmail
                 </div>
@@ -38,7 +38,7 @@ const verification = () => {
 
             <div></div>
 
-            <div className="text-xs text-center text-gray-600 my-5">
+            <div className="text-sm text-center text-gray-800 my-5">
               <span>
                 No email in your inbox or spam folder?{" "}
                 <span className="text-blue-600  cursor-pointer">
