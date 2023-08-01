@@ -21,7 +21,7 @@ module.exports = {
         'xl': '1280px',
       },
       fontWeight:{
-        "ligthbold":"800"
+        "ligthbold":"400"
       }
       
     },
