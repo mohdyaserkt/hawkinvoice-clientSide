@@ -19,13 +19,13 @@ const verification = () => {
                                 />
                             </div>
 
-                            <div className="text-2xl font-semibold ">Check your inbox</div>
-                            <div className="text-sm text-center text-gray-900">Click on the link we sent to helo@123.ca to<br /> finish your account setup.</div>
+                            <div className="text-2xl font-semibold  mb-6">Check your inbox</div>
+                            <div className="text-sm text-center text-gray-900">Click on the link we sent to <span className="font-semibold">helo@123.ca</span> tofinish <br /> your account setup.</div>
                             
                             <button className="mt-8 border-2 border-black rounded-lg w-[22.375rem] h-[3rem] flex justify-center items-center">
-                                <div className="text-base inline-flex items-center gap-3">
-                                    <FcGoogle size={25} />
-                                    continue with Google
+                                <div className="text-base font-semibold text-sm inline-flex items-center gap-3">
+                                    <FcGoogle size={20} />
+                                Open Gmail
                                 </div>
                             </button>
                         </div>
