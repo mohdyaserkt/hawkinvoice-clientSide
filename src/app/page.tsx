@@ -7,7 +7,7 @@ export default function Home() {
       <div className='w-screen h-screen '>
         <nav></nav>
         <div className='flex h-full justify-center items-center '>
-          <div className='bg-white lg:w-1/3 lg:h-4/5 sm:w-full rounded sm:p-10  md:rounded-s-[5rem]  md:rounded-t-[5rem]  flex flex-col   items-center justify-center '>
+          <div className='bg-white md:w-2/3 lg:w-1/3 lg:h-4/5 sm:w-full rounded sm:p-10  md:rounded-s-[5rem]  md:rounded-t-[5rem]  flex flex-col   items-center justify-center '>
             <div className='flex flex-col  items-center justify-center'>
               <div className='text-2xl font-ligthbold'>Signup up for Figma</div><br />
               <button className='mt-8 border-2 border-black rounded-lg w-[22.375rem] h-[3rem] flex justify-center items-center'>
@@ -50,7 +50,7 @@ export default function Home() {
                 <input
                   id="login"
                   type="checkbox"
-                  className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border-2 border-black transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:bg-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
+                  className="before:content[''] peer relative sm:w-3 sm:h-3 md:h-5 md:w-5 cursor-pointer appearance-none rounded border-2 border-black transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-black  checked:bg-black checked:before:bg-black hover:before:opacity-10"
                 />
                 <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
                   <svg
@@ -70,7 +70,7 @@ export default function Home() {
                 </div>
               </label>
               <label
-                className="mt-px sm:text-sm cursor-pointer select-none font-light text-gray-950"
+                className="mt-px sm:text-xs md:text-sm cursor-pointer select-none font-light text-gray-950"
 
               >
                 I agree to join swift invoice's mailing list
