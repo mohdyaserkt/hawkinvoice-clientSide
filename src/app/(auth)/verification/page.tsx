@@ -38,17 +38,17 @@ const verification = () => {
 
             <div></div>
 
-            <div className="text-sm text-center text-gray-800 my-5">
+            <div className=" md:text-sm text-center text-gray-800 my-5">
               <span>
                 No email in your inbox or spam folder?{" "}
                 <span className="text-blue-600  cursor-pointer">
-                  Let’s resend it.
-                </span>
+                  Let’s resend it
+                </span>.
               </span>
             </div>
 
             <div className="text-gray-700 text-sm text-center">
-            Wrong address? <a className="text-blue-600  cursor-pointer">Log out</a> to sign in with a different<br /> email.{" "}
+            Wrong address? <a className="text-blue-600  cursor-pointer">Log out</a> to sign in with a different<br className="sm:hidden" /> email.{" "}
               
             </div>
           </div>
