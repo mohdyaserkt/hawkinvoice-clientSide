@@ -1,7 +1,10 @@
+"use client"
 import Image from 'next/image'
 import { FcGoogle } from 'react-icons/fc';
+import { useRouter } from "next/navigation";
 
 export default function login() {
+    const router=useRouter()
   return (
     <>
       <div className='w-screen h-screen '>
@@ -85,7 +88,7 @@ export default function login() {
             
               
               <div className='text-gray-700'> 
-                already have an account? <a href="" className='text-blue-600  cursor-pointer'>Log in</a>
+              No account? <a onClick={()=>router?.push('/signup')} className='text-blue-600  cursor-pointer'>Create one</a>
               </div>
             
           </div>
