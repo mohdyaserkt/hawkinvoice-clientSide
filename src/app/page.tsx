@@ -74,7 +74,7 @@ export default function Home() {
               </label>
             </div>
 
-            <button className='border-2 border-black rounded-lg w-[22.375rem] h-[3rem] bg'>Create account</button>
+            <button className='border-2 border-black rounded-lg w-[22.375rem] h-[3rem] bg-black text-white font-semibold'>Create account</button>
             <div>
               <span>By clicking "Create account" or "Continue with Google", you agree to the </span>
             </div>
