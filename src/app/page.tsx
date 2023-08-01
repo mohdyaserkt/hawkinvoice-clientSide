@@ -13,8 +13,8 @@ export default function Home() {
                 <div className='text-base'>
                   continue with Google
                 </div>
-              </button><br />
-              <span className='text-gray-600'>or</span>
+              </button>
+              <span className='text-gray-600 my-5'>or</span>
             </div>
             <div></div>
 
@@ -27,7 +27,7 @@ export default function Home() {
                 Email
               </label>
             </div>
-            <div className="relative h-10  min-w-[200px] mt-5">
+            <div className="relative h-10  min-w-[200px] mt-7">
               <input
                 className="rounded-lg w-[22.375rem] h-[3rem]  peer   border  border-black border-t-transparent bg-transparent px-3 py-2.5  text-sm  text-black outline outline-1 transition-all placeholder-shown:border placeholder-shown:border-black placeholder-shown:border-t-black focus:border-2 focus:border-black focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                 placeholder=" "
