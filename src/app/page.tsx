@@ -76,13 +76,13 @@ export default function Home() {
 
             <button className='border-2 border-black rounded-lg w-[22.375rem] h-[3rem] bg-black text-white font-semibold'>Create account</button>
             <div className='text-xs text-center text-gray-600 my-5'>
-              <span>By clicking "Create account" or "Continue with Google",<br />  you agree to the <span>Privacy Policy</span></span>
+              <span>By clicking "Create account" or "Continue with Google",<br />  you agree to the <span className='text-blue-600  cursor-pointer'  >Privacy Policy</span></span>
             </div>
 
             
               
               <div className='text-gray-700'> 
-                already have an account? <a href="" className='text-blue-600'>Log in</a>
+                already have an account? <a href="" className='text-blue-600  cursor-pointer'>Log in</a>
               </div>
             
           </div>
