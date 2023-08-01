@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { FcGoogle } from 'react-icons/fc';
 
 export default function Home() {
   return (
@@ -9,8 +10,10 @@ export default function Home() {
           <div className='bg-white lg:w-1/3 lg:h-4/5 rounded-s-[5rem]  rounded-t-[5rem]  flex flex-col   items-center justify-center '>
             <div className='flex flex-col  items-center justify-center'>
               <div className='text-2xl font-ligthbold'>Signup up for Figma</div><br />
-              <button className='mt-8 border-2 border-black rounded-lg w-[22.375rem] h-[3rem] '>
-                <div className='text-base'>
+              <button className='mt-8 border-2 border-black rounded-lg w-[22.375rem] h-[3rem] flex justify-center items-center'>
+              
+                <div className='text-base inline-flex items-center gap-3'>
+                  <FcGoogle size={25} />
                   continue with Google
                 </div>
               </button>
