@@ -70,23 +70,21 @@ export default function Home() {
                 className="mt-px cursor-pointer select-none font-light text-gray-950"
 
               >
-                I agree to join swift pay's mailing list
+                I agree to join swift invoice's mailing list
               </label>
             </div>
 
             <button className='border-2 border-black rounded-lg w-[22.375rem] h-[3rem] bg-black text-white font-semibold'>Create account</button>
-            <div>
-              <span>By clicking "Create account" or "Continue with Google", you agree to the </span>
+            <div className='text-xs text-center text-gray-600 my-5'>
+              <span>By clicking "Create account" or "Continue with Google",<br />  you agree to the <span>Privacy Policy</span></span>
             </div>
 
-            <div>
-              <div>
-                <a href="">Use sigle sign-on</a>
+            
+              
+              <div className='text-gray-700'> 
+                already have an account? <a href="" className='text-blue-600'>Log in</a>
               </div>
-              <div>
-                already have an account?<a href="">Log in</a>
-              </div>
-            </div>
+            
           </div>
 
         </div>
