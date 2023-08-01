@@ -48,8 +48,8 @@ const verification = () => {
             </div>
 
             <div className="text-gray-700">
-              already have an account?{" "}
-              <a className="text-blue-600  cursor-pointer">Log in</a>
+            Wrong address? <a className="text-blue-600  cursor-pointer">Log out</a> to sign in with a different<br /> email.{" "}
+              
             </div>
           </div>
         </div>
