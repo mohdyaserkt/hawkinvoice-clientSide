@@ -146,7 +146,7 @@ const verification = () => {
                   mask="url(#path-14-outside-2_1311_15626)"
                 ></path>
               </svg>
-              <div className="text-2xl font-ligthbold">Signup up for Figma</div>
+              <div className="text-2xl font-semibold">Check your inbox</div>
               <br />
               <button className="mt-8 border-2 border-black rounded-lg w-[22.375rem] h-[3rem] flex justify-center items-center">
                 <div className="text-base inline-flex items-center gap-3">
