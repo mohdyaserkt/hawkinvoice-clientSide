@@ -47,7 +47,7 @@ const verification = () => {
               </span>
             </div>
 
-            <div className="text-gray-700">
+            <div className="text-gray-700 text-sm text-center">
             Wrong address? <a className="text-blue-600  cursor-pointer">Log out</a> to sign in with a different<br /> email.{" "}
               
             </div>
