@@ -21,17 +21,18 @@ const getStarted = () => {
               </p>
             </div>
 
-            <div className="relative h-16 w-full  min-w-[200px]">
-              <select className="peer h-full w-full rounded border  px-3 py-2.5 text-sm font-normal text-blue-gray-700 outline outline-0 transition-all border-black bg-secondary">
-                <option className="" value=""  hidden selected>
-                What kind of business are you?
-                </option>
-                <option  value="brazil">Brazil</option>
-                <option value="bucharest">Bucharest</option>
-                <option value="london">London</option>
-                <option value="washington">Washington</option>
-              </select>
-            </div>
+            <div className="relative h-16 w-full min-w-[200px]">
+  <select className="peer h-full w-full rounded border px-3 py-2.5 text-sm font-normal text-blue-gray-700 outline outline-0 transition-all border-black bg-primary text-white" style={{ borderRadius: '7px' }}>
+    <option className="" value="" hidden selected>
+      What kind of business are you?
+    </option>
+    <option value="brazil" className="rounded bg-white text-black">Brazil</option>
+    <option value="bucharest" className="rounded bg-white text-black">Bucharest</option>
+    <option value="london" className="rounded bg-white text-black">London</option>
+    <option value="washington" className="rounded bg-white text-black">Washington</option>
+  </select>
+</div>
+
 
             
           </div>
