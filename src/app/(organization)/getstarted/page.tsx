@@ -22,8 +22,8 @@ const getStarted = () => {
             </div>
 
             <div className="relative h-16 w-full  min-w-[200px]">
-              <select className="peer h-full w-full rounded-[7px] border  px-3 py-2.5  text-sm font-normal text-blue-gray-700 outline outline-0 transition-all border-black bg-secondary">
-                <option value="" disabled selected>
+              <select className="peer h-full w-full rounded border  px-3 py-2.5  text-sm font-normal text-blue-gray-700 outline outline-0 transition-all border-black bg-secondary">
+                <option className="" value="" disabled selected>
                 What kind of business are you?
                 </option>
                 <option value="brazil">Brazil</option>
