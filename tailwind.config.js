@@ -9,10 +9,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "#143230",
-        secondary: {
-          100: "#E2E2D5",
-          200: "#888883",
-        },    
+        secondary: "#1FE290",    
       },
       screens: {
         'sm': '350px', // Change the default width from 640px to 480px
