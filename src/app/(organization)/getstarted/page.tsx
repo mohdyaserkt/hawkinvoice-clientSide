@@ -16,6 +16,7 @@ const getStarted = () => {
             Every business is unique. We want to hear about yours. If you registered your business with IRS, make sure the information you submit matches what is on your IRS documents.
             </p>
           </div>
+          
 
         </div>
 
