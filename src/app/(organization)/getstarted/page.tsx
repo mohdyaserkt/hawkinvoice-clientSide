@@ -3,7 +3,7 @@ import React from "react";
 const getStarted = () => {
   return (
     <>
-      <div className="h-screen w-screen ">
+      <div className="h-screen  ">
         <nav></nav>
         <div className="flex h-full justify-center my-24 ">
           <div className=" w-2/5 h-auto">
