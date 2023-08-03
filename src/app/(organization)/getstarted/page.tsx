@@ -59,7 +59,7 @@ const getStarted = () => {
                   className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
                   placeholder="What is your business name?"
                 />
-                <h3 className="text-white text-opacity-55">Your business name is how we’ll identify you on emails, receipts, and messages to customers.</h3>
+                <h3 className="text-white text-sm mt-1 text-opacity-55">Your business name is how we’ll identify you on emails, receipts, and messages to customers.</h3>
               </div>
             </div>
           </div>
