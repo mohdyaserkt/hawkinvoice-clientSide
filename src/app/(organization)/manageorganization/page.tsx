@@ -6,13 +6,13 @@ const manageOrganisation = () => {
     <div className="h-screen">
       <nav></nav>
       <div className="flex h-full justify-center items-center ">
-        <div>
+        <div className="bg-slate-600">
           <div>
-            <h1>Hi, User Name!</h1>
-            <div>
+            <h1 className="text-white text-lg">Hi, User Name!</h1>
+            <div className="flex justify-between">
               <div>
-                <p>
-                  You are a part of the following organizations. Go to the
+                <p className="text-gray-400 text-sm">
+                  You are a part of the following organizations. Go to the <br />
                   organization which you wish to access now.
                 </p>
               </div>

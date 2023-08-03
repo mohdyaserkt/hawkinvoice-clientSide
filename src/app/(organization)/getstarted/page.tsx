@@ -78,7 +78,7 @@ const getStarted = () => {
                     className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
                     placeholder="What is your business name?"
                   />
-                  <h3 className="text-white text-sm sm:text-xs mt-1 text-opacity-55">
+                  <h3 className="text-gray-400 text-sm sm:text-xs mt-1 ">
                     Your business name is how we’ll identify you on emails,
                     receipts, and messages to customers.
                   </h3>
@@ -89,7 +89,7 @@ const getStarted = () => {
                     className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
                     placeholder="Preferred phone number"
                   />
-                  <h3 className="text-white sm:text-xs text-sm mt-1 text-opacity-55">
+                  <h3 className="text-gray-400 sm:text-xs text-sm mt-1">
                     We’ll use this number to call you if needed. We don’t sell
                     your information to third parties.
                   </h3>
