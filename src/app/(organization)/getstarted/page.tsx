@@ -73,34 +73,82 @@ const getStarted = () => {
               <div className="relative h-16 w-full min-w-[200px]">
                 <select className="peer h-full w-full rounded border px-3 py-2.5 text-sm font-normal text-blue-gray-700 outline outline-0 transition-all border-black bg-secondary">
                   <option className="" value="" hidden selected>
-                    What kind of business are you?
+                  How many employees
                   </option>
                   <option
                     value="brazil"
                     className="rounded bg-white text-black"
                   >
-                    Brazil
+                    Just me
                   </option>
                   <option
                     value="bucharest"
                     className="rounded bg-white text-black"
                   >
-                    Bucharest
+                    1-10 employees
                   </option>
                   <option
                     value="london"
                     className="rounded bg-white text-black"
                   >
-                    London
+                    11-50 employees
                   </option>
                   <option
                     value="washington"
                     className="rounded bg-white text-black"
                   >
-                    Washington
+                     51-100 employees
+                  </option>
+                  <option
+                    value="washington"
+                    className="rounded bg-white text-black"
+                  >
+                    More than 100 employees
                   </option>
                 </select>
               </div>
+
+
+              <div className="relative h-16 w-full min-w-[200px]">
+                <select className="peer h-full w-full rounded border px-3 py-2.5 text-sm font-normal text-blue-gray-700 outline outline-0 transition-all border-black bg-secondary">
+                  <option className="" value="" hidden selected>
+                  How many employees
+                  </option>
+                  <option
+                    value="brazil"
+                    className="rounded bg-white text-black"
+                  >
+                    Just me
+                  </option>
+                  <option
+                    value="bucharest"
+                    className="rounded bg-white text-black"
+                  >
+                    1-10 employees
+                  </option>
+                  <option
+                    value="london"
+                    className="rounded bg-white text-black"
+                  >
+                    11-50 employees
+                  </option>
+                  <option
+                    value="washington"
+                    className="rounded bg-white text-black"
+                  >
+                     51-100 employees
+                  </option>
+                  <option
+                    value="washington"
+                    className="rounded bg-white text-black"
+                  >
+                    More than 100 employees
+                  </option>
+                </select>
+              </div>
+
+
+              
 
               
               
