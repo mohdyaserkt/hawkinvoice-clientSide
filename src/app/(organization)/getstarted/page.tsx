@@ -117,7 +117,7 @@ const getStarted = () => {
               <div className="relative h-16 w-full min-w-[200px]">
                 <select className="peer h-full w-full rounded border px-3 py-2.5 text-sm font-normal text-blue-gray-700 outline outline-0 transition-all border-black bg-white">
                   <option className="" value="" hidden selected>
-                  Estimated annual revenue
+                    Estimated annual revenue
                   </option>
                   <option
                     value="brazil"
@@ -182,41 +182,76 @@ const getStarted = () => {
                 </select>
               </div>
               <div className="inline-flex items-center my-5">
-              <label
-                className="relative flex cursor-pointer items-center rounded-full p-3"
+                <label
+                  className="relative flex cursor-pointer items-center rounded-full p-3"
+                  data-ripple-dark="true"
+                >
+                  <input
+                    id="login"
+                    type="checkbox"
+                    className="before:content[''] peer relative sm:w-3 sm:h-3 md:h-5 md:w-5 cursor-pointer appearance-none rounded border-2 border-white transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-black  checked:bg-black checked:before:bg-black hover:before:opacity-10"
+                  />
+                  <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-3.5 w-3.5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </div>
+                </label>
+                <label className="mt-px sm:text-base md:text-sm cursor-pointer select-none font-light text-white">
+                  I have a mobile business without a permanent physical location
+                </label>
+              </div>
 
-                data-ripple-dark="true"
-              >
-                <input
-                  id="login"
-                  type="checkbox"
-                  className="before:content[''] peer relative sm:w-3 sm:h-3 md:h-5 md:w-5 cursor-pointer appearance-none rounded border-2 border-black transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-black  checked:bg-black checked:before:bg-black hover:before:opacity-10"
-                />
-                <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-3.5 w-3.5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    stroke="currentColor"
-                    stroke-width="1"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
+              <div className="flex flex-col gap-4">
+                <div>
+                  <input
+                    type="text"
+                    className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
+                    placeholder="Address"
+                  />
                 </div>
-              </label>
-              <label
-                className="mt-px sm:text-xs md:text-sm cursor-pointer select-none font-light text-white"
-
-              >
-                I have a mobile business without a permanent physical location
-              </label>
-            </div>
-
+                <div>
+                  <input
+                    type="text"
+                    className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none "
+                    placeholder="Apt, suite, etc. (Optional)"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
+                    placeholder="City"
+                  />
+                </div>
+                <div className="w-full flex justify-between gap-4">
+                  <div className="w-6/12 h-16">
+                    <input
+                      type="text"
+                      className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
+                      placeholder="State"
+                    />
+                  </div>
+                  <div className="w-6/12 h-16">
+                    <input
+                      type="text"
+                      className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
+                      placeholder="Zip code"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
