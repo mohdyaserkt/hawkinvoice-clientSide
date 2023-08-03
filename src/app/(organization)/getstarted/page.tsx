@@ -55,10 +55,9 @@ const getStarted = () => {
               </div>
 
               <input
-      type="text"
-      className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none focus:border-blue-500"
-    />
-              
+                type="text"
+                className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none focus:border-blue-500"
+              />
             </div>
           </div>
         </div>
