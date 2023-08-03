@@ -61,6 +61,48 @@ const getStarted = () => {
                 />
                 <h3 className="text-white text-sm mt-1 text-opacity-55">Your business name is how we’ll identify you on emails, receipts, and messages to customers.</h3>
               </div>
+              <div>
+                <input
+                  type="text"
+                  className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
+                  placeholder="Preferred phone number"
+                />
+                <h3 className="text-white text-sm mt-1 text-opacity-55">We’ll use this number to call you if needed. We don’t sell your information to third parties.</h3>
+              </div>
+
+              <div className="relative h-16 w-full min-w-[200px]">
+                <select className="peer h-full w-full rounded border px-3 py-2.5 text-sm font-normal text-blue-gray-700 outline outline-0 transition-all border-black bg-secondary">
+                  <option className="" value="" hidden selected>
+                    What kind of business are you?
+                  </option>
+                  <option
+                    value="brazil"
+                    className="rounded bg-white text-black"
+                  >
+                    Brazil
+                  </option>
+                  <option
+                    value="bucharest"
+                    className="rounded bg-white text-black"
+                  >
+                    Bucharest
+                  </option>
+                  <option
+                    value="london"
+                    className="rounded bg-white text-black"
+                  >
+                    London
+                  </option>
+                  <option
+                    value="washington"
+                    className="rounded bg-white text-black"
+                  >
+                    Washington
+                  </option>
+                </select>
+              </div>
+              
+              
             </div>
           </div>
         </div>
