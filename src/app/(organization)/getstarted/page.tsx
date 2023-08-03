@@ -6,7 +6,7 @@ const getStarted = () => {
       <div className="h-screen  ">
         <nav></nav>
         <div className="flex h-full justify-center my-24 ">
-          <div className=" w-2/5 h-auto">
+          <div className=" sm:w-11/12 md:w-2/5 h-auto">
             <div className="text-white text-base">Let’s get started</div>
             <div className="mt-2 mb-4">
               <h1 className="text-white text-3xl">
@@ -14,7 +14,7 @@ const getStarted = () => {
               </h1>
             </div>
             <div className="mb-9">
-              <p className="text-white text-base">
+              <p className="text-white sm:text-sm text-base">
                 Every business is unique. We want to hear about yours. If you
                 registered your business with IRS, make sure the information you
                 submit matches what is on your IRS documents.
@@ -78,7 +78,7 @@ const getStarted = () => {
                     className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
                     placeholder="What is your business name?"
                   />
-                  <h3 className="text-white text-sm mt-1 text-opacity-55">
+                  <h3 className="text-white text-sm sm:text-xs mt-1 text-opacity-55">
                     Your business name is how we’ll identify you on emails,
                     receipts, and messages to customers.
                   </h3>
@@ -89,7 +89,7 @@ const getStarted = () => {
                     className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
                     placeholder="Preferred phone number"
                   />
-                  <h3 className="text-white text-sm mt-1 text-opacity-55">
+                  <h3 className="text-white sm:text-xs text-sm mt-1 text-opacity-55">
                     We’ll use this number to call you if needed. We don’t sell
                     your information to third parties.
                   </h3>
@@ -203,7 +203,7 @@ const getStarted = () => {
               </div>
               <div className="inline-flex items-center my-5">
                 <label
-                  className="relative flex cursor-pointer items-center rounded-full py-3 pr-3"
+                  className="relative flex cursor-pointer  items-center rounded-full p-3"
                   data-ripple-dark="true"
                 >
                   <input
@@ -228,8 +228,11 @@ const getStarted = () => {
                     </svg>
                   </div>
                 </label>
-                <label className="mt-px sm:text-base md:text-sm cursor-pointer select-none font-light text-white">
+                <label className="mt-px sm:hidden md:text-sm cursor-pointer select-none font-light text-white ">
                   I have a mobile business without a permanent physical location
+                </label>
+                <label className="mt-px sm:text-xs md:text-sm cursor-pointer select-none font-light text-white ">
+                I run a mobile business without a permanent location.
                 </label>
               </div>
 
