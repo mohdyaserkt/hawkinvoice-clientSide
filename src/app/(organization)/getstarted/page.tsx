@@ -6,7 +6,7 @@ const getStarted = () => {
       <div className="h-screen  ">
         <nav></nav>
         <div className="flex h-full justify-center my-24 ">
-          <div className=" sm:w-11/12 md:w-2/5 h-auto">
+          <div className=" sm:w-11/12 md:w-9/12 lg:w-2/5 h-auto">
             <div className="text-white text-base">Let’s get started</div>
             <div className="mt-2 mb-4">
               <h1 className="text-white text-3xl">
