@@ -28,7 +28,7 @@ const manageOrganisation = () => {
 
           <div>
             <div>
-              <div className="flex w-full bg-green-600 p-6">
+              <div className="flex w-full bg-green-600 p">
                 <div className="w-2/12 h-32 mr-6 bg-black">
                   {/* <Image
                     src="/checkYourInbox.svg"
@@ -39,13 +39,13 @@ const manageOrganisation = () => {
                 </div>
                 <div className="w-full">
                   <div className="flex justify-between bg-green-300">
-                    <h1>FirstOrganisation</h1>
+                    <h1 className="text-base">FirstOrganisation</h1>
                     <div>
                       <button>Go to Organization</button>
                       <button>...</button>
                     </div>
                   </div>
-                  <div>
+                  <div className="text-xs">
                     <h3>Organization created on 24/07/2023</h3>
                     <h3>Organization ID: 60022809358</h3>
                     <h3>Edition: India</h3>
