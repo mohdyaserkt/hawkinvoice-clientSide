@@ -38,7 +38,7 @@ const manageOrganisation = () => {
                   />
                 </div>
                 <div>
-                  <div>
+                  <div className="flex justify-between bg-green-300">
                     <h1>FirstOrganisation</h1>
                     <div>
                       <button>Go to Organization</button>
