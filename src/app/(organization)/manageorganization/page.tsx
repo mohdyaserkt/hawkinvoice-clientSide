@@ -28,7 +28,7 @@ const manageOrganisation = () => {
 
           <div>
             <div>
-              <div className="flex">
+              <div className="flex w-full bg-green-600">
                 <div>
                   <Image
                     src="/checkYourInbox.svg"
@@ -37,7 +37,7 @@ const manageOrganisation = () => {
                     height={143}
                   />
                 </div>
-                <div>
+                <div className="w-full">
                   <div className="flex justify-between bg-green-300">
                     <h1>FirstOrganisation</h1>
                     <div>
