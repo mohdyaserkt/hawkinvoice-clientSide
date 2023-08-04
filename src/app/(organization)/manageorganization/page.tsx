@@ -28,14 +28,14 @@ const manageOrganisation = () => {
 
           <div>
             <div>
-              <div className="flex w-full bg-green-600">
-                <div>
-                  <Image
+              <div className="flex w-full bg-green-600 p-6">
+                <div className="w-32 h-32 bg-black">
+                  {/* <Image
                     src="/checkYourInbox.svg"
                     alt="Logo"
                     width={184}
                     height={143}
-                  />
+                  /> */}
                 </div>
                 <div className="w-full">
                   <div className="flex justify-between bg-green-300">
