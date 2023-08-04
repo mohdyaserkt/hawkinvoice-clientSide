@@ -5,8 +5,8 @@ const manageOrganisation = () => {
   return (
     <div className="h-screen">
       <nav></nav>
-      <div className="flex h-full justify-center items-center ">
-        <div className="bg-slate-600">
+      <div className="flex h-full   justify-center items-center ">
+        <div className="bg-slate-600 w-3/5">
           <div>
             <h1 className="text-white text-lg">Hi, User Name!</h1>
             <div className="flex justify-between">
