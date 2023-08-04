@@ -9,14 +9,18 @@ const manageOrganisation = () => {
         <div className="bg-slate-600 w-6/12">
           <div>
             <h1 className="text-white text-lg mb-3">Hi, User Name!</h1>
-            <div className="flex justify-between">
-              <div>
-                <p className="text-gray-400 text-sm">
-                  You are a part of the following organizations. Go to the 
-                  organization <br /> which you wish to access now.
-                </p>
+            <div className="relative">
+              <div className="flex justify-between">
+                <div>
+                  <p className="text-gray-400 text-sm">
+                    You are a part of the following organizations. Go to the
+                    organization <br /> which you wish to access now.
+                  </p>
+                </div>
+                <button className="absolute bottom-0 right-0 bg-secondary rounded w-36 h-8 px-3 text-xs">
+                  + New Organization
+                </button>
               </div>
-              <button className="bg-secondary rounded w-36 h-8 px-3 text-xs">+ New Organization</button>
             </div>
           </div>
 
@@ -24,7 +28,7 @@ const manageOrganisation = () => {
 
           <div>
             <div>
-              <div>
+              <div className="flex">
                 <div>
                   <Image
                     src="/checkYourInbox.svg"
