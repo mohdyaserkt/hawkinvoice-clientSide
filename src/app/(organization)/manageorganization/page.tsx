@@ -8,7 +8,7 @@ const manageOrganisation = () => {
       <div className="flex h-full   justify-center items-center ">
         <div className="bg-slate-600 w-6/12">
           <div>
-            <h1 className="text-white text-lg">Hi, User Name!</h1>
+            <h1 className="text-white text-lg mb-3">Hi, User Name!</h1>
             <div className="flex justify-between">
               <div>
                 <p className="text-gray-400 text-sm">
@@ -16,7 +16,7 @@ const manageOrganisation = () => {
                   organization which you wish to access now.
                 </p>
               </div>
-              <button>+ New Organisation</button>
+              <button className="bg-secondary rounded w-36 h-8  text-sm">+ New Organisation</button>
             </div>
           </div>
 
