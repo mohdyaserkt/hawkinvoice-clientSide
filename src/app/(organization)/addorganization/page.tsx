@@ -6,8 +6,8 @@ const getStarted = () => {
       <div className="h-screen">
         <nav></nav>
         <div className="flex h-full justify-center items-center ">
-          <div className="bg-blue-400 w-3/6 h-3/5 rounded-sm">
-            <div className="w-full h-1/6 bg-secondary flex items-center rounded">
+          <div className="bg-blue-400 w-3/6 h-3/5 rounded-3xl">
+            <div className="w-full h-1/6 bg-secondary flex items-center rounded-3xl">
               <div className="flex gap-1 ml-10 items-center">
                 <div>
                   <svg
