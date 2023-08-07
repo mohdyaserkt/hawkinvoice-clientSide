@@ -3,10 +3,10 @@ import React from "react";
 
 const manageOrganisation = () => {
   return (
-    <div className="h-screen">
+    <div className="h-auto">
       <nav></nav>
-      <div className="flex h-full   justify-center items-center ">
-        <div className="bg-slate-600 w-6/12">
+      <div className="flex h-full   justify-center mt-56 ">
+        <div className=" w-6/12">
           <div className="mb-6">
             <h1 className="text-white text-lg mb-3">Hi, User Name!</h1>
             <div className="relative">
@@ -28,24 +28,49 @@ const manageOrganisation = () => {
 
           <div>
             <div>
-              <div className="flex w-full bg-green-600 p-6">
-                <div className="w-2/12 h-32 mr-6 bg-black">
-                  {/* <Image
-                    src="/checkYourInbox.svg"
-                    alt="Logo"
-                    width={184}
-                    height={143}
-                  /> */}
+              <div className="flex w-full border-[1px] border-white rounded-lg p-6">
+                <div className="w-2/12 h-32 mr-6 bg-white rounded flex justify-center items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    className="w-3/5 h-3/5 text-slate-600"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"
+                    />
+                  </svg>
                 </div>
                 <div className="w-full">
-                  <div className="flex justify-between bg-green-300">
-                    <h1 className="text-base">FirstOrganisation</h1>
-                    <div>
-                      <button>Go to Organization</button>
-                      <button>...</button>
+                  <div className="flex justify-between">
+                    <h1 className="text-base text-white">FirstOrganisation</h1>
+                    <div className="flex justify-center">
+                      <button className=" border-[1px] border-blue-500 text-blue-500 text-xs p-2  rounded">
+                        Go to Organization
+                      </button>
+                      <button className="bg-white border-2 rounded text-base ml-2 px-1  ">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          className="w-6 h-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                          />
+                        </svg>
+                      </button>
                     </div>
                   </div>
-                  <div className="flex flex-col gap-1 text-xs">
+                  <div className="flex flex-col gap-1 text-gray-400 text-xs">
                     <h3>Organization created on 24/07/2023</h3>
                     <h3>Organization ID: 60022809358</h3>
                     <h3>Edition: India</h3>
