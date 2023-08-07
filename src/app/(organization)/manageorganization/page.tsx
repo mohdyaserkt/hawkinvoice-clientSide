@@ -7,12 +7,12 @@ const manageOrganisation = () => {
       <nav></nav>
       <div className="flex h-full   justify-center items-center ">
         <div className="bg-slate-600 w-6/12">
-          <div>
+          <div className="mb-6">
             <h1 className="text-white text-lg mb-3">Hi, User Name!</h1>
             <div className="relative">
               <div className="flex justify-between">
                 <div>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-gray-400 text-xs">
                     You are a part of the following organizations. Go to the
                     organization <br /> which you wish to access now.
                   </p>
@@ -45,7 +45,7 @@ const manageOrganisation = () => {
                       <button>...</button>
                     </div>
                   </div>
-                  <div className="text-xs">
+                  <div className="flex flex-col gap-1 text-xs">
                     <h3>Organization created on 24/07/2023</h3>
                     <h3>Organization ID: 60022809358</h3>
                     <h3>Edition: India</h3>
