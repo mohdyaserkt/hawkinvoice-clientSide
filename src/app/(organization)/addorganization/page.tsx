@@ -6,8 +6,8 @@ const getStarted = () => {
       <div className="h-screen">
         <nav></nav>
         <div className="flex h-full justify-center items-center ">
-          <div className="bg-blue-400 w-3/6 h-3/5 rounded-3xl">
-            <div className="w-full h-1/6 bg-secondary flex items-center rounded-3xl">
+          <div className="bg-green-950 w-3/6 h-3/5 rounded-3xl">
+            <div className="w-full h-1/6 bg-secondary flex items-center rounded-t-3xl">
               <div className="flex gap-1 ml-10 items-center">
                 <div>
                   <svg
@@ -34,30 +34,66 @@ const getStarted = () => {
               </div>
             </div>
 
-            <div>
-              <div>
-                <h1>Welcome aboard, User Name!</h1>
-                <p>
-                  Enter your organization details to get started with Zoho
+            <div className=" p-10">
+              <div className="flex flex-col gap-2">
+                <h1 className="font-semibold text-xl text-white">
+                  Welcome aboard, User Name!
+                </h1>
+                <p className="text-xs text-gray-400 ">
+                  Enter your organization details to get started with brand name{" "}
+                  <br />
                   Invoice.
                 </p>
               </div>
-
               <div>
-                <input type="text" />
-                <input type="text" />
+                <div className="flex flex-col gap-5 mb-4">
+                  <div className="flex flex-col gap-1">
+                    <p className="text-sm text-secondary">
+                      Organization Name<span className="text-red-600">*</span>
+                    </p>
+                    <input
+                      className="border border-[#D7D5E2]  h-9 rounded-md w-full outline-none focus:border-none focus:ring-0 pl-2"
+                      type="text"
+                    />
+                  </div>
+
+                  <div className="flex flex-col gap-1">
+                    <p className="text-sm text-white">industry</p>
+                    <input
+                      className="border border-[#D7D5E2]  h-9 rounded-md w-full outline-none focus:border-none focus:ring-0 pl-2"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div className="flex items-center gap-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#408DFB"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="#143230"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+
+                  <h3 className="text-white text-xs">Add Organization Address</h3>
+                </div>
               </div>
-              <div> + Add Organization Address</div>
 
-              <div>
-                <h3>Note:</h3>
-                <p>
-                  You can update some of these preferences from Settings
+              <div className="flex flex-col gap-2">
+                <h3 className="text-white font-semibold text-xs">Note:</h3>
+                <p className="text-gray-400 text-xs pl-5">
+                      You can update some of these preferences from Settings
                   anytime.
                 </p>
               </div>
               <div>
-                <button>Get Started</button>
+                <button className="text-xs text-black ">Get Started</button>
                 <button>Cancel</button>
               </div>
             </div>
