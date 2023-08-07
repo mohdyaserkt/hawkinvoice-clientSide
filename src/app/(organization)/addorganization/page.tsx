@@ -6,7 +6,7 @@ const getStarted = () => {
       <div className="h-screen">
         <nav></nav>
         <div className="flex h-full justify-center items-center ">
-          <div className="bg-green-950 w-3/6 h-3/5 rounded-3xl">
+          <div className=" border-white border-[1px] w-3/6 h-3/5 rounded-3xl">
             <div className="w-full h-1/6 bg-secondary flex items-center rounded-t-3xl">
               <div className="flex gap-1 ml-10 items-center">
                 <div>
@@ -34,7 +34,7 @@ const getStarted = () => {
               </div>
             </div>
 
-            <div className=" p-10">
+            <div className=" p-10 flex flex-col gap-10">
               <div className="flex flex-col gap-2">
                 <h1 className="font-semibold text-xl text-white">
                   Welcome aboard, User Name!
@@ -92,9 +92,9 @@ const getStarted = () => {
                   anytime.
                 </p>
               </div>
-              <div>
-                <button className="text-xs text-black ">Get Started</button>
-                <button>Cancel</button>
+              <div className="flex gap-2">
+                <button className="text-xs border  rounded-md border-secondary text-secondary w-36 p-2">Get Started</button>
+                <button className="text-xs border  rounded-md border-red-700 text-red-700 w-16 py-2 p-2">Cancel</button>
               </div>
             </div>
           </div>
