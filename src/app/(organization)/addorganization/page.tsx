@@ -6,9 +6,9 @@ const getStarted = () => {
       <div className="h-screen">
         <nav></nav>
         <div className="flex h-full justify-center items-center ">
-          <div className="bg-blue-400 w-3/6 h-3/5">
-            <div className="w-full h-1/6 bg-secondary ">
-              <div className="flex items-center">
+          <div className="bg-blue-400 w-3/6 h-3/5 rounded-sm">
+            <div className="w-full h-1/6 bg-secondary flex items-center rounded">
+              <div className="flex gap-1 ml-10 items-center">
                 <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -16,7 +16,7 @@ const getStarted = () => {
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
                     stroke="currentColor"
-                    className="w-6 h-6"
+                    className="w-10 h-10"
                   >
                     <path
                       stroke-linecap="round"
