@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { FcGoogle } from 'react-icons/fc';
 import { useRouter } from "next/navigation";
-
+    
 export default function signup() {
     const router = useRouter();
   return (
