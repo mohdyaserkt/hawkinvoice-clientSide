@@ -6,6 +6,8 @@ export const handleSignup= async ({
   email,
   password,setError
 }: IhandleSignup): Promise<string | boolean | AxiosError> => {
+    console.log("handle signup");
+    
   email = email.trim();
   password = password.trim();
 
@@ -16,6 +18,9 @@ export const handleSignup= async ({
   }
 
   if (!validatePassword(password)) {
+    
+    console.log();
+    
     setError("password", [
       "At least 8 characters",
       "One uppercase letter",
@@ -31,6 +36,8 @@ export const handleSignup= async ({
     return Promise.resolve(user as any);
   } catch (error) {
     const err = error as AxiosError;
+    console.log(err);
+    
     return Promise.reject(err.response?.data);
   }
 };
