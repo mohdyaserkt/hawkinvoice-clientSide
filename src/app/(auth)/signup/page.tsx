@@ -3,15 +3,15 @@ import Image from "next/image";
 import { FcGoogle } from "react-icons/fc";
 import { useRouter } from "next/navigation";
 import HandleForm from "@/utils/handleFormState";
-interface ISignup {
-  email: string;
-  password: string;
-}
+
 
 export default function signup() {
   const router = useRouter();
   const [signupState, setSignupState] = HandleForm({ email: "", password: "" });
   console.log(signupState);
+  const handleSignupForm=(event: React.FormEvent<HTMLFormElement>)=>{
+    event.preventDefault();
+  }
   
   return (
     <>
@@ -33,7 +33,7 @@ export default function signup() {
               <span className="text-gray-600 my-5">or</span>
             </div>
             <div></div>
-
+            <form onSubmit={handleSignupForm}>
             <div className="relative h-10  min-w-[200px]">
               <input
                 className="rounded-lg w-[22.375rem] h-[3rem]  peer   border  border-black border-t-transparent bg-transparent px-3 py-2.5  text-sm  text-black outline outline-1 transition-all placeholder-shown:border placeholder-shown:border-black placeholder-shown:border-t-black focus:border-2 focus:border-black focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
@@ -98,6 +98,7 @@ export default function signup() {
             <button type="submit" className="border-2 border-black rounded-lg w-[22.375rem] h-[3rem] bg-black text-white font-semibold">
               Create account
             </button>
+            </form>
             <div className="text-xs text-center text-gray-600 my-5">
               <span>
                 By clicking "Create account" or "Continue with Google",
