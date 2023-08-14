@@ -3,10 +3,14 @@ import Image from 'next/image'
 import { FcGoogle } from 'react-icons/fc';
 import { useRouter } from "next/navigation";
 import HandleForm from '@/utils/handleFormState';
+interface ISignup{
+  email:string,
+  password:string
+}
     
 export default function signup() {
     const router = useRouter();
-    const [signupState, setSignupState] = HandleForm({ username: "", email: "", password: ""},);
+    const [signupState, setSignupState] = HandleForm({ email: "", password: ""});
   return (
     <>
       <div className='w-screen h-screen '>
