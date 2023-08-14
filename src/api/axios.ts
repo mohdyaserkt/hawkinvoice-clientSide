@@ -1,7 +1,7 @@
 import axios,{AxiosInstance} from "axios"
-const  auth : AxiosInstance= axios.create({
+const  axiosInstance : AxiosInstance= axios.create({
     baseURL : "/"
   })
   
   
-  export default auth
+  export default axiosInstance
