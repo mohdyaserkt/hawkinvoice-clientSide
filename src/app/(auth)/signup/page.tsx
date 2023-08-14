@@ -4,6 +4,8 @@ import { FcGoogle } from "react-icons/fc";
 import { useRouter } from "next/navigation";
 import HandleForm from "@/utils/handleFormState";
 import { useState } from "react";
+import { handleSignup } from "@/utils/Authentication/handlesignup";
+import { ApiError } from "next/dist/server/api-utils";
 
 
 export default function signup() {
@@ -12,6 +14,24 @@ export default function signup() {
   console.log(signupState);
   const handleSignupForm=(event: React.FormEvent<HTMLFormElement>)=>{
     event.preventDefault();
+
+    handleSignup({
+      setError,
+      
+      email: signupState.email as string,
+      password: signupState.password as string,
+    })
+      .then((res) => {
+       
+        if (res) {
+          console.log(res);
+          
+        }
+      })
+      .catch((err: ApiError) => {
+        console.log(err.message);
+        
+      });
   }
   const [errors, setErrors] = useState<{ field: string; errors: string[] } | null>({ field: "", errors: [""] });
   const setError = (field: string, errorMessages: string[]) => setErrors({ field, errors: errorMessages });
