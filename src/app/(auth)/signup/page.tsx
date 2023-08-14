@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FcGoogle } from "react-icons/fc";
 import { useRouter } from "next/navigation";
 import HandleForm from "@/utils/handleFormState";
+import { useState } from "react";
 
 
 export default function signup() {
@@ -12,6 +13,8 @@ export default function signup() {
   const handleSignupForm=(event: React.FormEvent<HTMLFormElement>)=>{
     event.preventDefault();
   }
+  const [errors, setErrors] = useState<{ field: string; errors: string[] } | null>({ field: "", errors: [""] });
+  const setError = (field: string, errorMessages: string[]) => setErrors({ field, errors: errorMessages });
   
   return (
     <>

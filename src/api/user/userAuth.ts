@@ -1,6 +1,6 @@
 import axiosInstance from "../axios";
 
-const register = async ({ email,password }:IUserCredentials): Promise<IUser|Error> => {
+export const register = async ({ email,password }:IUserCredentials): Promise<IUser|Error> => {
     try {
       const response = await axiosInstance.post(`/api/user/signup/`, { email,password });
     //   const { user, accessToken, refreshToken } = response.data as ResponseData;

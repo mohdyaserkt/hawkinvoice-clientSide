@@ -12,3 +12,9 @@ interface IUser {
   verified?: boolean;
   profile?: string;
 }
+
+interface IhandleSignup {
+  email: string;
+  password: string;
+  setError: (field: string, errors: string[]) => void;
+}
