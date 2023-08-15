@@ -64,7 +64,7 @@ const manageOrganisation = () => {
                 </div>
                 <div className="w-full">
                   <div className="flex justify-between">
-                    <h1 className="text-base text-white">{item.createdDate}</h1>
+                    <h1 className="text-base text-white">{item.buisinessName}</h1>
                     <div className="flex justify-center">
                       <button className=" border-[1px] border-blue-500 text-blue-500 text-xs p-2  rounded">
                         Go to Organization
