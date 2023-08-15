@@ -6,6 +6,7 @@ import HandleForm from "@/utils/handleFormState";
 import { ApiError } from "next/dist/server/api-utils";
 import { handleLogin } from "@/utils/Authentication/handleLogin";
 import { useState } from "react";
+import { json } from "stream/consumers";
 
 export default function login() {
   const router = useRouter();
@@ -24,9 +25,9 @@ export default function login() {
     })
       .then(({ data }: any) => {
         if (data) {
-          console.log(data.user, "sdfds");
           const user = data.user;
-          localStorage.setItem("user", user);
+
+          localStorage.setItem("user", JSON.stringify({user}));
           router?.push("/getstarted");
         }
       })
