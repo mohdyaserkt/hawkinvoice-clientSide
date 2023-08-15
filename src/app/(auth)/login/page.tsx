@@ -22,10 +22,10 @@ export default function login() {
       email: loginState.email as string,
       password: loginState.password as string,
     })
-      .then((res) => {
-        if (res) {
-          console.log(res,"sdfds");
-          localStorage.setItem("user",res as any)
+      .then(({data}:any) => {
+        if (data) {
+          console.log(data.user,"sdfds");
+          localStorage.setItem("user",data.user as any)
           router?.push("/getstarted")
 
         }
