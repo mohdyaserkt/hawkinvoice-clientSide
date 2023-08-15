@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 const getStarted = () => {
+  const router = useRouter();
   
 
   const [organizationState, setorganizationState] = HandleForm({
@@ -35,7 +36,7 @@ const getStarted = () => {
       .then((res: any) => {
         if (res) {
           console.log(res);
-          
+          router?.push("/login")
           alert(res);
         }
       })
@@ -81,6 +82,7 @@ const getStarted = () => {
                       id="typeOfbusiness"
                       value={organizationState.typeOfbusiness}
                       onChange={setorganizationState}
+                      required
                     >
                       <option className="" value="" hidden >
                         What kind of business are you?
@@ -138,7 +140,7 @@ const getStarted = () => {
                       id="buisinessName"
                       value={organizationState.buisinessName}
                       onChange={setorganizationState}
-                      
+                      required
                     />
                     <h3 className="text-gray-400 text-sm sm:text-xs mt-1 ">
                       Your business name is how we’ll identify you on emails,
@@ -154,6 +156,7 @@ const getStarted = () => {
                       id="phoneNumber"
                       value={organizationState.phoneNumber}
                       onChange={setorganizationState}
+                      required
                      
                     />
                     <h3 className="text-gray-400 sm:text-xs text-sm mt-1">
@@ -169,6 +172,7 @@ const getStarted = () => {
                       id="NoOfemployes"
                       value={organizationState.NoOfemployes}
                       onChange={setorganizationState}
+                      required
                     >
                       <option className="" value="" hidden  >
                         How many employees
@@ -213,6 +217,7 @@ const getStarted = () => {
                       id="annualRevenue"
                       value={organizationState.annualRevenue}
                       onChange={setorganizationState}
+                      required
                       
                     >
                       <option className="" value="" hidden >
