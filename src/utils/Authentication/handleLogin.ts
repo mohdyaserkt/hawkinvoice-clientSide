@@ -38,7 +38,8 @@ export const handleLogin = async ({
     return Promise.resolve(user as any);
   } catch (error) {
     const err = error as AxiosError;
-    console.log(err, err.message, "error");
+    console.log(err, "error");
+    window.alert(err);
 
     return Promise.reject(err.response?.data);
   }
