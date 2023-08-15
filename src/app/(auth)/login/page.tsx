@@ -25,6 +25,8 @@ export default function login() {
       .then((res) => {
         if (res) {
           console.log(res);
+          router?.push("/signup")
+
         }
       })
       .catch((err: ApiError) => {
