@@ -1,43 +1,51 @@
 "use client"
+import { handleCreateNewOrganization } from "@/utils/Organization/createNewOrganization";
 import HandleForm from "@/utils/handleFormState";
 import { ApiError } from "next/dist/server/api-utils";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 const getStarted = () => {
+  const Router=useRouter()
  
   const [signupState, setSignupState] = HandleForm({
-    userId: "",
+    
     buisinessName: "",
-    email: "",
+   
     typeOfbusiness: "",
     phoneNumber: "",
     NoOfemployes: "",
     annualRevenue: "",
   });
   console.log(signupState);
-  // const handlegetStartedForm = (event: React.FormEvent<HTMLFormElement>) => {
-  //   event.preventDefault();
+  const handlegetStartedForm = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
    
 
-  //   handleSignup({
-  //     setError,    
+    handleCreateNewOrganization({
+      setError,    
 
-  //     email: signupState.email as string,
-  //     password: signupState.password as string,
-  //   })
-  //     .then((res: any) => {
-  //       if (res) {
-  //         console.log(res);
-  //         router?.push("/login");
-  //         alert(res);
-  //       }
-  //     })
-  //     .catch((err: ApiError) => {
-  //       console.log(err.message);
-  //       alert(err);
-  //     });
-  // };
+      email: signupState.email as string,
+      buisinessName:signupState.bubuisinessName as string,
+      typeOfbusiness:signupState.typeOfbusiness as string,
+      phoneNumber:signupState.phoneNumber as string,
+      NoOfemployes:signupState.NoOfemployes as string,
+      annualRevenue:signupState.annualRevenue as string
+
+      
+    })
+      .then((res: any) => {
+        if (res) {
+          console.log(res);
+          Router?.push("/manageorganization");
+          alert(res);
+        }
+      })
+      .catch((err: ApiError) => {
+        console.log(err.message);
+        alert(err);
+      });
+  };
   const [errors, setErrors] = useState<{
     field: string;
     errors: string[];
@@ -48,6 +56,7 @@ const getStarted = () => {
   return (
     <>
       <div className="h-screen">
+        <form onSubmit={handlegetStartedForm}>
         <nav></nav>
         <div className="flex h-full justify-center my-24 ">
           <div className=" sm:w-11/12 md:w-9/12 lg:w-2/5 h-auto">
@@ -250,6 +259,9 @@ const getStarted = () => {
                   className="relative flex cursor-pointer  items-center rounded-full p-3"
                   data-ripple-dark="true"
                 >
+                  <button className=" bg-secondary rounded w-36 h-8 px-3 text-xs">
+                  submit
+                </button>
                   {/* <input
                     id="login"
                     type="checkbox"
@@ -322,6 +334,7 @@ const getStarted = () => {
             </div>
           </div>
         </div>
+        </form>
       </div>
     </>
   );
