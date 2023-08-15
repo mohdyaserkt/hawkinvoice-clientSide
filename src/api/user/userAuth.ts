@@ -4,7 +4,7 @@ export const register = async ({ email,password }:IUserCredentials): Promise<IUs
     console.log("register");
     
     try {
-      const response = await axiosInstance.post(`/api/user/signup/`, { email,password });
+      const response = await axiosInstance.post(`/api/tenant/user/signup`, { email,password });
     //   const { user, accessToken, refreshToken } = response.data as ResponseData;
     //   localStorage.setItem("accessToken", accessToken as string);
     //   localStorage.setItem("refreshToken", refreshToken as string);
@@ -25,7 +25,7 @@ export const register = async ({ email,password }:IUserCredentials): Promise<IUs
     console.log("register");
     
     try {
-      const response = await axiosInstance.post(`/api/user/login/`, { email,password });
+      const response = await axiosInstance.post(`/api/tenant/user/login`, { email,password });
     //   const { user, accessToken, refreshToken } = response.data as ResponseData;
     //   localStorage.setItem("accessToken", accessToken as string);
     //   localStorage.setItem("refreshToken", refreshToken as string);
