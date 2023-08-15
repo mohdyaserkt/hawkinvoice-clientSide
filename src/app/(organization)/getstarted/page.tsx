@@ -136,6 +136,7 @@ const getStarted = () => {
                       placeholder="What is your business name?"
                       name="buisinessName"
                       id="buisinessName"
+                      value={organizationState.buisinessName}
                       onChange={setorganizationState}
                       
                     />
@@ -151,6 +152,7 @@ const getStarted = () => {
                       placeholder="Preferred phone number"
                       name="phoneNumber"
                       id="phoneNumber"
+                      value={organizationState.phoneNumber}
                       onChange={setorganizationState}
                      
                     />
@@ -165,6 +167,7 @@ const getStarted = () => {
                       className="peer h-full w-full rounded border px-3 py-2.5 text-sm font-normal text-blue-gray-700 outline outline-0 transition-all border-black bg-white"
                       name="NoOfemployes"
                       id="NoOfemployes"
+                      value={organizationState.NoOfemployes}
                       onChange={setorganizationState}
                     >
                       <option className="" value="" hidden selected >
@@ -208,6 +211,7 @@ const getStarted = () => {
                       className="peer h-full w-full rounded border px-3 py-2.5 text-sm font-normal text-blue-gray-700 outline outline-0 transition-all border-black bg-white"
                       name="annualRevenue"
                       id="annualRevenue"
+                      value={organizationState.annualRevenue}
                       onChange={setorganizationState}
                       
                     >
