@@ -7,8 +7,8 @@ const manageOrganisation = () => {
   const [myOrganizations, setmyOrganizations] = useState([]);
   useEffect(() => {
     handleGetMyOrganizations()
-      .then((res) => {
-        console.log(res);
+      .then(({data}:any) => {
+        setmyOrganizations(data.tenants)
       })
       .catch((err) => {
         console.log(err);
