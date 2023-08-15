@@ -21,7 +21,7 @@ const getStarted = () => {
    
 
   //   handleSignup({
-  //     setError,
+  //     setError,    
 
   //     email: signupState.email as string,
   //     password: signupState.password as string,
