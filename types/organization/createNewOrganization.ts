@@ -3,7 +3,7 @@ interface handleCreateNewOrganization {
   buisinessName: string;
   email?: string;
   typeOfbusiness: string;
-  phoneNumber: string;
+  phoneNumber: Number;
   NoOfemployes: string;
   annualRevenue: string;
 
@@ -16,7 +16,7 @@ interface IOrganizationData{
   buisinessName: string;
   email?: string;
   typeOfbusiness: string;
-  phoneNumber: string;
+  phoneNumber: Number;
   NoOfemployes: string;
   annualRevenue: string;
   }
