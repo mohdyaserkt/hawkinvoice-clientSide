@@ -12,13 +12,13 @@ export const handleCreateNewOrganization = async ({
 }: handleCreateNewOrganization): Promise<string | boolean | AxiosError> => {
   
   const user = JSON.parse(localStorage.getItem("user") as string);
-  buisinessName = buisinessName.trim();
-  typeOfbusiness = typeOfbusiness.trim();
+  buisinessName = buisinessName
+  typeOfbusiness = typeOfbusiness
   phoneNumber = phoneNumber;
-  NoOfemployes = NoOfemployes.trim();
-  annualRevenue = annualRevenue.trim();
-  const email = user.email.trim();
-  const userId = user.userId.trim();
+  NoOfemployes = NoOfemployes
+  annualRevenue = annualRevenue
+  const email = user.email
+  const userId = user.userId
 
   try {
     const tenant = await createNewOrganization({
