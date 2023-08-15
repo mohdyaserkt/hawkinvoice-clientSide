@@ -25,9 +25,8 @@ export default function login() {
     })
       .then(({ data }: any) => {
         if (data) {
-          const user = data.user;
-
-          localStorage.setItem("user", JSON.stringify({user}));
+          localStorage.setItem("user", JSON.stringify(data.user) );
+          
           router?.push("/getstarted");
         }
       })
