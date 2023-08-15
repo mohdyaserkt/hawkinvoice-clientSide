@@ -2,15 +2,14 @@
 import { handleCreateNewOrganization } from "@/utils/Organization/createNewOrganization";
 import HandleForm from "@/utils/handleFormState";
 import { ApiError } from "next/dist/server/api-utils";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const getStarted = () => {
   const router = useRouter();
-  
 
   const [organizationState, setorganizationState] = HandleForm({
-    buisinessName:"",
+    buisinessName: "",
     typeOfbusiness: "",
     phoneNumber: "",
     NoOfemployes: "",
@@ -18,8 +17,7 @@ const getStarted = () => {
   });
 
   console.log(organizationState);
-  
- 
+
   const handlegetStartedForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -36,7 +34,7 @@ const getStarted = () => {
       .then((res: any) => {
         if (res) {
           console.log(res);
-          router?.push("/login")
+          router?.push("/login");
           alert(res);
         }
       })
@@ -84,7 +82,7 @@ const getStarted = () => {
                       onChange={setorganizationState}
                       required
                     >
-                      <option className="" value="" hidden >
+                      <option className="" value="" hidden>
                         What kind of business are you?
                       </option>
                       <option
@@ -157,7 +155,8 @@ const getStarted = () => {
                       value={organizationState.phoneNumber}
                       onChange={setorganizationState}
                       required
-                     
+                      pattern="[0-9]{10}" // Specify your pattern here
+                      title="Please enter a 10-digit phone number"
                     />
                     <h3 className="text-gray-400 sm:text-xs text-sm mt-1">
                       We’ll use this number to call you if needed. We don’t sell
@@ -174,7 +173,7 @@ const getStarted = () => {
                       onChange={setorganizationState}
                       required
                     >
-                      <option className="" value="" hidden  >
+                      <option className="" value="" hidden>
                         How many employees
                       </option>
                       <option
@@ -218,9 +217,8 @@ const getStarted = () => {
                       value={organizationState.annualRevenue}
                       onChange={setorganizationState}
                       required
-                      
                     >
-                      <option className="" value="" hidden >
+                      <option className="" value="" hidden>
                         Estimated annual revenue
                       </option>
                       <option
