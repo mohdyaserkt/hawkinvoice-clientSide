@@ -19,7 +19,7 @@ export const handleSignup= async ({
 
   if (!validatePassword(password)) {
     
-    console.log();
+    console.log("At least 8 characters,One uppercase letterOne lowercase letterOne digit One special character");
     
     setError("password", [
       "At least 8 characters",
@@ -36,7 +36,7 @@ export const handleSignup= async ({
     return Promise.resolve(user as any);
   } catch (error) {
     const err = error as AxiosError;
-    console.log(err);
+    console.log(err,err.message,"error");
     
     return Promise.reject(err.response?.data);
   }
