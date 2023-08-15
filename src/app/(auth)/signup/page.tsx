@@ -27,11 +27,13 @@ export default function signup() {
        
         if (res) {
           console.log(res);
-          
+          router?.push("/login")
+          alert(res)
         }
       })
       .catch((err: ApiError) => {
         console.log(err.message);
+        alert(err)
         
       });
   }
@@ -78,7 +80,6 @@ export default function signup() {
               <input
                 className="  rounded-lg w-[22.375rem] h-[3rem]  peer   border  border-black border-t-transparent bg-transparent px-3 py-2.5  text-sm  text-black outline outline-1 transition-all placeholder-shown:border placeholder-shown:border-black placeholder-shown:border-t-black focus:border-2 focus:border-black focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                 placeholder=" "
-                type="password"
                 name="password"
                 id="password"
                 value={signupState.password}

@@ -29,7 +29,7 @@ export default function login() {
       })
       .catch((err: ApiError) => {
         console.log(err.message);
-        alert(err.message)
+        alert(err)
       });
   };
   const [errors, setErrors] = useState<{

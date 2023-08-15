@@ -38,6 +38,6 @@ export const handleSignup= async ({
     const err = error as AxiosError;
     console.log(err,err.message,"error");
     
-    return Promise.reject(err.response?.data);
+    return Promise.reject(err);
   }
 };

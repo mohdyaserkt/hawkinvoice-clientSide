@@ -40,10 +40,10 @@ export const handleLogin = async ({
     return Promise.resolve(user as any);
   } catch (error) {
     const err = error as AxiosError;
-    console.log(err, "errors");
-   console.log(err.response?.data,"sdfds");
+    console.log(err.message, "errors");
+   
    
 
-    return Promise.reject(err.response?.data);
+    return Promise.reject(err);
   }
 };
