@@ -9,6 +9,8 @@ export const createNewOrganization = async ({
   typeOfbusiness,
   userId,
 }: IOrganizationData): Promise<IUser | Error> => {
+  console.log("reached");
+  
   try {
     const response = await axiosInstance.post(`/api/tenant/create-tenant`, {
       email,
