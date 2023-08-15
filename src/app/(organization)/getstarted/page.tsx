@@ -1,6 +1,50 @@
-import React from "react";
+"use client"
+import HandleForm from "@/utils/handleFormState";
+import { ApiError } from "next/dist/server/api-utils";
+import { useRouter } from "next/router";
+import React, { useState } from "react";
 
 const getStarted = () => {
+ 
+  const [signupState, setSignupState] = HandleForm({
+    userId: "",
+    buisinessName: "",
+    email: "",
+    typeOfbusiness: "",
+    phoneNumber: "",
+    NoOfemployes: "",
+    annualRevenue: "",
+  });
+  console.log(signupState);
+  // const handlegetStartedForm = (event: React.FormEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
+   
+
+  //   handleSignup({
+  //     setError,
+
+  //     email: signupState.email as string,
+  //     password: signupState.password as string,
+  //   })
+  //     .then((res: any) => {
+  //       if (res) {
+  //         console.log(res);
+  //         router?.push("/login");
+  //         alert(res);
+  //       }
+  //     })
+  //     .catch((err: ApiError) => {
+  //       console.log(err.message);
+  //       alert(err);
+  //     });
+  // };
+  const [errors, setErrors] = useState<{
+    field: string;
+    errors: string[];
+  } | null>({ field: "", errors: [""] });
+  const setError = (field: string, errorMessages: string[]) =>
+    setErrors({ field, errors: errorMessages });
+
   return (
     <>
       <div className="h-screen">
@@ -232,7 +276,7 @@ const getStarted = () => {
                   I have a mobile business without a permanent physical location
                 </label>
                 <label className="mt-px sm:text-xs md:text-sm cursor-pointer select-none font-light text-white ">
-                I run a mobile business without a permanent location.
+                  I run a mobile business without a permanent location.
                 </label>
               </div>
 
