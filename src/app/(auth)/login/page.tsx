@@ -25,7 +25,7 @@ export default function login() {
       .then((res) => {
         if (res) {
           console.log(res);
-          router?.push("/signup")
+          router?.push("/getstarted")
 
         }
       })
