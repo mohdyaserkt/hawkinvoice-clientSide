@@ -157,6 +157,7 @@ const getStarted = () => {
                       required
                       pattern="[0-9]{10}" // Specify your pattern here
                       title="Please enter a 10-digit phone number"
+                      
                     />
                     <h3 className="text-gray-400 sm:text-xs text-sm mt-1">
                       We’ll use this number to call you if needed. We don’t sell
