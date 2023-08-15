@@ -1,11 +1,21 @@
+"use client"
+import { handleGetMyOrganizations } from "@/utils/Organization/getMyOrganization";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 const manageOrganisation = () => {
+  const [myOrganizations, setmyOrganizations] = useState([]);
   useEffect(() => {
-    
-  }, [])
-  
+    handleGetMyOrganizations()
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+  }, []);
+
   return (
     <div className="h-auto">
       <nav></nav>

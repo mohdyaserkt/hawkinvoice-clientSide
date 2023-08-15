@@ -1,3 +1,4 @@
+import { stringify } from "querystring";
 import axiosInstance from "../axios";
 
 export const getMyOrganizations = async (
@@ -6,7 +7,7 @@ export const getMyOrganizations = async (
   console.log("reached");
 
   try {
-    const response = await axiosInstance.get(`/api/tenant/create-tenant`, {});
+    const response = await axiosInstance.post(`/api/tenant/find-tenants`,{id});
 
     return Promise.resolve(response as any);
   } catch (error) {
