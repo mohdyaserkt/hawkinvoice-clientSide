@@ -1,7 +1,11 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 
 const manageOrganisation = () => {
+  useEffect(() => {
+    
+  }, [])
+  
   return (
     <div className="h-auto">
       <nav></nav>
