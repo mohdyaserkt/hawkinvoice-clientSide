@@ -24,7 +24,7 @@ export default function login() {
     })
       .then((res) => {
         if (res) {
-          console.log(res);
+          console.log(res,"sdfds");
           localStorage.setItem("user",res as any)
           router?.push("/getstarted")
 
