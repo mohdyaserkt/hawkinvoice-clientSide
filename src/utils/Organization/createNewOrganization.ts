@@ -18,7 +18,7 @@ export const handleCreateNewOrganization = async ({
   NoOfemployes = NoOfemployes
   annualRevenue = annualRevenue
   const email = user.email
-  const userId = user.userId
+  const userId = user.id
 
   try {
     const tenant = await createNewOrganization({
