@@ -1,15 +1,49 @@
+"use client";
+import { handleCreateNewOrganization } from "@/utils/Organization/createNewOrganization";
 import HandleForm from "@/utils/handleFormState";
-import React from "react";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import { ApiError } from "next/dist/server/api-utils";
 
 const getStarted = () => {
-
   const [organizationState, setorganizationState] = HandleForm({
     buisinessName: "",
     typeOfbusiness: "",
-    phoneNumber: "",
-    NoOfemployes: "",
-    annualRevenue: "",
   });
+
+  console.log(organizationState);
+  const router = useRouter();
+
+  const handleCreateNewOrganizationForm = (
+    event: React.FormEvent<HTMLFormElement>
+  ) => {
+    event.preventDefault();
+
+    handleCreateNewOrganization({
+      setError,
+
+      buisinessName: organizationState.buisinessName as string,
+      typeOfbusiness: organizationState.typeOfbusiness as string,
+    })
+      .then((res: any) => {
+        if (res) {
+          console.log(res);
+          router?.push("/manageorganization");
+          alert(res);
+        }
+      })
+      .catch((err: ApiError) => {
+        console.log(err.message);
+        alert(err);
+      });
+  };
+  const [errors, setErrors] = useState<{
+    field: string;
+    errors: string[];
+  } | null>({ field: "", errors: [""] });
+  const setError = (field: string, errorMessages: string[]) =>
+    setErrors({ field, errors: errorMessages });
+
   return (
     <>
       <div className="h-screen">
@@ -63,14 +97,22 @@ const getStarted = () => {
                     <input
                       className="border border-[#D7D5E2]  h-9 rounded-md w-full outline-none focus:border-none focus:ring-0 pl-2"
                       type="text"
+                      name="buisinessName"
+                      id="buisinessName"
+                      value={organizationState.buisinessName}
+                      onChange={setorganizationState}
                     />
                   </div>
 
                   <div className="flex flex-col gap-1">
-                    <p className="text-sm text-white">industry</p>
+                    <p className="text-sm text-white">typeOfbusiness</p>
                     <input
                       className="border border-[#D7D5E2]  h-9 rounded-md w-full outline-none focus:border-none focus:ring-0 pl-2"
                       type="text"
+                      name="typeOfbusiness"
+                      id="typeOfbusiness"
+                      value={organizationState.typeOfbusiness}
+                      onChange={setorganizationState}
                     />
                   </div>
                 </div>
@@ -90,20 +132,26 @@ const getStarted = () => {
                     />
                   </svg>
 
-                  <h3 className="text-white text-xs">Add Organization Address</h3>
+                  <h3 className="text-white text-xs">
+                    Add Organization Address
+                  </h3>
                 </div>
               </div>
 
               <div className="flex flex-col gap-2">
                 <h3 className="text-white font-semibold text-xs">Note:</h3>
                 <p className="text-gray-400 text-xs pl-5">
-                      You can update some of these preferences from Settings
+                  You can update some of these preferences from Settings
                   anytime.
                 </p>
               </div>
               <div className="flex gap-2">
-                <button className="text-xs border  rounded-md border-secondary text-secondary w-36 p-2">Get Started</button>
-                <button className="text-xs border  rounded-md border-red-700 text-red-700 w-16 py-2 p-2">Cancel</button>
+                <button className="text-xs border  rounded-md border-secondary text-secondary w-36 p-2">
+                  Get Started
+                </button>
+                <button className="text-xs border  rounded-md border-red-700 text-red-700 w-16 py-2 p-2">
+                  Cancel
+                </button>
               </div>
             </div>
           </div>
