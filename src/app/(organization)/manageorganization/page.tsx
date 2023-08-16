@@ -33,7 +33,7 @@ const manageOrganisation = () => {
                     organization <br /> which you wish to access now.
                   </p>
                 </div>
-                <button className="absolute bottom-0 right-0 bg-secondary rounded w-36 h-8 px-3 text-xs">
+                <button onClick={()=>router.push("/addorganization")} className="absolute bottom-0 right-0 bg-secondary rounded w-36 h-8 px-3 text-xs">
                   + New Organization
                 </button>
               </div>

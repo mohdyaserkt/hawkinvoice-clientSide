@@ -1,6 +1,15 @@
+import HandleForm from "@/utils/handleFormState";
 import React from "react";
 
 const getStarted = () => {
+
+  const [organizationState, setorganizationState] = HandleForm({
+    buisinessName: "",
+    typeOfbusiness: "",
+    phoneNumber: "",
+    NoOfemployes: "",
+    annualRevenue: "",
+  });
   return (
     <>
       <div className="h-screen">
