@@ -45,7 +45,7 @@ const getStarted = () => {
     setErrors({ field, errors: errorMessages });
 
   return (
-    <>
+    <><form onSubmit={handleCreateNewOrganizationForm}>
       <div className="h-screen">
         <nav></nav>
         <div className="flex h-full justify-center items-center ">
@@ -157,6 +157,7 @@ const getStarted = () => {
           </div>
         </div>
       </div>
+      </form>
     </>
   );
 };
