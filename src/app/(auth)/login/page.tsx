@@ -124,7 +124,7 @@ export default function login() {
               </div>
 
               <button className="border-2 border-black rounded-lg w-[22.375rem] h-[3rem] bg-black text-white font-semibold">
-                Create account
+                Login account
               </button>
               <div className="text-xs text-center text-gray-600 my-5">
                 <span>
