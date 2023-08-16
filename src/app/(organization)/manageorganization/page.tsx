@@ -2,8 +2,10 @@
 import { handleGetMyOrganizations } from "@/utils/Organization/getMyOrganization";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const manageOrganisation = () => {
+  const router = useRouter();
   const [myOrganizations, setmyOrganizations] = useState([]);
   useEffect(() => {
     handleGetMyOrganizations()
