@@ -7,7 +7,7 @@ import { ApiError } from "next/dist/server/api-utils";
 import { handleLogin } from "@/utils/Authentication/handleLogin";
 import { useState } from "react";
 import { json } from "stream/consumers";
-import { useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 
 export default function login() {
   const router = useRouter();
@@ -58,7 +58,7 @@ export default function login() {
                 </div>
                 <br />
                 <button className="mt-8 border-2 border-black rounded-lg w-[22.375rem] h-[3rem] flex justify-center items-center">
-                  <div className="text-base inline-flex items-center gap-3">
+                  <div className="text-base inline-flex items-center gap-3" onClick={()=>signIn('google')}>
                     <FcGoogle size={25} />
                     continue with Google
                   </div>
