@@ -5,14 +5,14 @@ import { createNewOrganization } from "@/app/api/organization/createNewOrganizat
 export const handleCreateNewOrganization = async ({
   NoOfemployes,
   annualRevenue,
-  buisinessName,
+  businessName,
   phoneNumber,
   typeOfbusiness,
   setError,
 }: handleCreateNewOrganization): Promise<string | boolean | AxiosError> => {
   
   const user = JSON.parse(localStorage.getItem("user") as string);
-  buisinessName = buisinessName
+  businessName = businessName
   typeOfbusiness = typeOfbusiness
   phoneNumber = phoneNumber;
   NoOfemployes = NoOfemployes
@@ -23,7 +23,7 @@ export const handleCreateNewOrganization = async ({
   try {
     const tenant = await createNewOrganization({
       annualRevenue,
-      buisinessName,
+      businessName,
       NoOfemployes,
       phoneNumber,
       typeOfbusiness,

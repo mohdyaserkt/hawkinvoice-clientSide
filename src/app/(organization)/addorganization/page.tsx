@@ -7,7 +7,7 @@ import { ApiError } from "next/dist/server/api-utils";
 
 const getStarted = () => {
   const [organizationState, setorganizationState] = HandleForm({
-    buisinessName: "",
+    businessName: "",
     typeOfbusiness: "",
   });
 
@@ -22,7 +22,7 @@ const getStarted = () => {
     handleCreateNewOrganization({
       setError,
 
-      buisinessName: organizationState.buisinessName as string,
+      businessName: organizationState.businessName as string,
       typeOfbusiness: organizationState.typeOfbusiness as string,
     })
       .then((res: any) => {
@@ -97,9 +97,9 @@ const getStarted = () => {
                     <input
                       className="border border-[#D7D5E2]  h-9 rounded-md w-full outline-none focus:border-none focus:ring-0 pl-2"
                       type="text"
-                      name="buisinessName"
-                      id="buisinessName"
-                      value={organizationState.buisinessName}
+                      name="businessName"
+                      id="businessName"
+                      value={organizationState.businessName}
                       onChange={setorganizationState}
                     />
                   </div>

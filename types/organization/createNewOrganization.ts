@@ -1,6 +1,6 @@
 interface handleCreateNewOrganization {
   userId?: string;
-  buisinessName: string;
+  businessName: string;
   email?: string;
   typeOfbusiness: string;
   phoneNumber?: Number;
@@ -13,7 +13,7 @@ interface handleCreateNewOrganization {
 
 interface IOrganizationData{
     userId?: string;
-  buisinessName: string;
+  businessName: string;
   email?: string;
   typeOfbusiness: string;
   phoneNumber?: Number;
