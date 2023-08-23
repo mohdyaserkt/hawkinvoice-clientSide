@@ -1,6 +1,6 @@
 import { AxiosError } from "axios";
 import { validateEmail, validatePassword } from "../formValidators";
-import { register } from "@/api/user/userAuth";
+import { register } from "@/app/api/user/userAuth";
 
 export const handleSignup= async ({
   email,

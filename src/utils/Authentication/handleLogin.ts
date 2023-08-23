@@ -1,7 +1,7 @@
 import { AxiosError } from "axios";
 import { validateEmail, validatePassword } from "../formValidators";
 import login from "@/app/(auth)/login/page";
-import { loginApi } from "@/api/user/userAuth";
+import { loginApi } from "@/app/api/user/userAuth";
 import { ToastContainer,toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 

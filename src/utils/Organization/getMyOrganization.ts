@@ -1,7 +1,7 @@
 import { AxiosError } from "axios";
 import "react-toastify/dist/ReactToastify.css";
-import { createNewOrganization } from "@/api/organization/createNewOrganization";
-import { getMyOrganizations } from "@/api/organization/getMyOrganizations";
+import { createNewOrganization } from "@/app/api/organization/createNewOrganization";
+import { getMyOrganizations } from "@/app/api/organization/getMyOrganizations";
 
 export const handleGetMyOrganizations = async (): Promise<
   string | boolean | AxiosError

@@ -1,6 +1,6 @@
 import { AxiosError } from "axios";
 import "react-toastify/dist/ReactToastify.css";
-import { createNewOrganization } from "@/api/organization/createNewOrganization";
+import { createNewOrganization } from "@/app/api/organization/createNewOrganization";
 
 export const handleCreateNewOrganization = async ({
   NoOfemployes,
