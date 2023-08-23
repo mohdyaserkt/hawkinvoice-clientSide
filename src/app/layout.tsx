@@ -1,3 +1,4 @@
+import AuthProvider from '@/components/AuthProvider/AuthProvider';
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Poppins } from 'next/font/google'
@@ -21,7 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+       <AuthProvider>
       <body className={`${poppins.className} bg-primary `}>{children}</body>
+      </AuthProvider>
     </html>
   )
 }
