@@ -22,9 +22,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-       <AuthProvider>
-      <body className={`${poppins.className} bg-primary `}>{children}</body>
-      </AuthProvider>
+       
+      <body className={`${poppins.className} bg-primary `}>
+      <AuthProvider>
+        <div>
+          {children}
+        </div>
+        </AuthProvider>
+        </body>
+      
     </html>
   )
 }

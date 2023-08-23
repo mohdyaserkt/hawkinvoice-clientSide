@@ -57,7 +57,7 @@ const getStarted = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke="currentColor"
                     className="w-10 h-10"
                   >
@@ -121,7 +121,7 @@ const getStarted = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="#408DFB"
                     viewBox="0 0 24 24"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke="#143230"
                     className="w-6 h-6"
                   >

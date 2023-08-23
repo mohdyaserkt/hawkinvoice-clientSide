@@ -12,26 +12,26 @@
                   height="68.1912"
                   fill="#0FA958"
                   stroke="black"
-                  stroke-width="1.33504"
+                  strokeWidth="1.33504"
                   stroke-linejoin="round"
                 ></rect>
                 <path
                   d="M37.4302 37.5863H146.536L92.3799 72.0716L37.4302 37.5863Z"
                   fill="#5551FF"
                   stroke="black"
-                  stroke-width="1.33504"
+                  strokeWidth="1.33504"
                   stroke-linejoin="round"
                 ></path>
                 <path
                   d="M89.7656 57.9216C90.438 56.5699 92.3638 56.5623 93.0472 57.9088L94.9671 61.6915C95.4372 62.6177 96.331 63.2551 97.3597 63.3978L101.546 63.9785C103.063 64.189 103.671 66.0552 102.569 67.1188L99.6111 69.973C98.8503 70.7071 98.5055 71.7722 98.6916 72.813L99.4168 76.8689C99.6841 78.3635 98.1252 79.5181 96.7733 78.8268L92.9382 76.8656C92.0235 76.3979 90.939 76.4021 90.0282 76.877L86.2091 78.8681C84.8629 79.5699 83.2947 78.4276 83.5498 76.9309L84.2421 72.8694C84.4198 71.8272 84.0664 70.7649 83.2997 70.0367L80.319 67.2058C79.2082 66.1508 79.8011 64.2799 81.3167 64.0575L85.4977 63.4441C86.5253 63.2934 87.4138 62.649 87.8764 61.7192L89.7656 57.9216Z"
                   fill="#FFC700"
                   stroke="black"
-                  stroke-width="1.33504"
+                  strokeWidth="1.33504"
                 ></path>
                 <path
                   d="M174.368 77.9369L118.522 133.783"
                   stroke="black"
-                  stroke-width="1.33504"
+                  strokeWidth="1.33504"
                 ></path>
                 <circle
                   cx="146.577"
@@ -40,24 +40,24 @@
                   transform="rotate(-180 146.577 105.624)"
                   fill="white"
                   stroke="black"
-                  stroke-width="1.33504"
+                  strokeWidth="1.33504"
                 ></circle>
                 <path
                   d="M110.24 142.06L110.24 132.048L120.253 132.048L120.253 142.06L110.24 142.06Z"
                   fill="white"
                   stroke="black"
-                  stroke-width="1.33504"
+                  strokeWidth="1.33504"
                 ></path>
                 <path
                   d="M172.823 79.4774L172.823 69.4646L182.836 69.4646L182.836 79.4774L172.823 79.4774Z"
                   fill="white"
                   stroke="black"
-                  stroke-width="1.33504"
+                  strokeWidth="1.33504"
                 ></path>
                 <path
                   d="M65.2287 9.84994L9.38235 65.6964"
                   stroke="black"
-                  stroke-width="1.33504"
+                  strokeWidth="1.33504"
                 ></path>
                 <circle
                   cx="37.437"
@@ -66,19 +66,19 @@
                   transform="rotate(-180 37.437 37.5366)"
                   fill="white"
                   stroke="black"
-                  stroke-width="1.33504"
+                  strokeWidth="1.33504"
                 ></circle>
                 <path
                   d="M1.10059 73.9734L1.10059 63.9606L11.1134 63.9606L11.1134 73.9734L1.10059 73.9734Z"
                   fill="white"
                   stroke="black"
-                  stroke-width="1.33504"
+                  strokeWidth="1.33504"
                 ></path>
                 <path
                   d="M63.6836 11.3905L63.6836 1.37767L73.6964 1.37767L73.6964 11.3905L63.6836 11.3905Z"
                   fill="white"
                   stroke="black"
-                  stroke-width="1.33504"
+                  strokeWidth="1.33504"
                 ></path>
                 <mask
                   id="path-12-outside-1_1311_15626"
