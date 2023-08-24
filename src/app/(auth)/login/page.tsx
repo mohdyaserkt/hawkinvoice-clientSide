@@ -39,16 +39,17 @@ export default function login() {
     //     console.log(err.message);
     //     alert(err);
     //   });
-    signIn("credentials", {
+
+    
+    
+    let res= signIn("credentials", {
       email,
       password,
     })
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((err) => {
-        alert(err);
-      });
+    
+    
+    console.log(res);
+     
   };
   const [errors, setErrors] = useState<{
     field: string;

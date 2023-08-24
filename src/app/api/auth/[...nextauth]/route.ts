@@ -27,11 +27,7 @@ const handler = NextAuth({
             }
           })
           .catch((err: ApiError) => {
-            console.log("jhe");
-            
-            console.log(err.message);
             error = err;
-            alert(err);
           });
         if (userdata) {
           return userdata;
