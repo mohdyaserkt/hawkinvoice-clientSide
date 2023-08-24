@@ -7,6 +7,7 @@ import { ApiError } from "next/dist/server/api-utils";
 const handler = NextAuth({
   providers: [
     CredentialsProvider({
+      id: "credentials",
       name: "Credentials",
 
       credentials: {

@@ -13,31 +13,37 @@ export default function login() {
   const router = useRouter();
   const session=useSession()
   console.log(session,"this is session");
-  
+ 
 
   const [loginState, setLoginState] = HandleForm({ email: "", password: "" });
+ let email= loginState.email as string
+ let password= loginState.password as string
   console.log(loginState);
   const handleLoginForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("dsfsd");
 
-    handleLogin({
-      setError,
+    // handleLogin({
+    //   setError,
 
-      email: loginState.email as string,
-      password: loginState.password as string,
-    })
-      .then(({ data }: any) => {
-        if (data) {
-          localStorage.setItem("user", JSON.stringify(data.user) );
+    //   email: loginState.email as string,
+    //   password: loginState.password as string,
+    // })
+    //   .then(({ data }: any) => {
+    //     if (data) {
+    //       localStorage.setItem("user", JSON.stringify(data.user) );
           
-          router?.push("/getstarted");
-        }
-      })
-      .catch((err: ApiError) => {
-        console.log(err.message);
-        alert(err);
-      });
+    //       router?.push("/getstarted");
+    //     }
+    //   })
+    //   .catch((err: ApiError) => {
+    //     console.log(err.message);
+    //     alert(err);
+    //   });
+    signIn("credentials", {
+      email,
+      password,
+    });
   };
   const [errors, setErrors] = useState<{
     field: string;
