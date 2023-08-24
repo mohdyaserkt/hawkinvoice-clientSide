@@ -11,13 +11,12 @@ import { signIn, useSession } from "next-auth/react";
 
 export default function login() {
   const router = useRouter();
-  const session=useSession()
-  console.log(session,"this is session");
- 
+  const session = useSession();
+  console.log(session, "this is session");
 
   const [loginState, setLoginState] = HandleForm({ email: "", password: "" });
- let email= loginState.email as string
- let password= loginState.password as string
+  let email = loginState.email as string;
+  let password = loginState.password as string;
   console.log(loginState);
   const handleLoginForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -32,7 +31,7 @@ export default function login() {
     //   .then(({ data }: any) => {
     //     if (data) {
     //       localStorage.setItem("user", JSON.stringify(data.user) );
-          
+
     //       router?.push("/getstarted");
     //     }
     //   })
@@ -43,7 +42,13 @@ export default function login() {
     signIn("credentials", {
       email,
       password,
-    });
+    })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        alert(err);
+      });
   };
   const [errors, setErrors] = useState<{
     field: string;
@@ -64,7 +69,10 @@ export default function login() {
                 </div>
                 <br />
                 <button className="mt-8 border-2 border-black rounded-lg w-[22.375rem] h-[3rem] flex justify-center items-center">
-                  <div className="text-base inline-flex items-center gap-3" onClick={()=>signIn('google')}>
+                  <div
+                    className="text-base inline-flex items-center gap-3"
+                    onClick={() => signIn("google")}
+                  >
                     <FcGoogle size={25} />
                     continue with Google
                   </div>
