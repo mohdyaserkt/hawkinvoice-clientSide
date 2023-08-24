@@ -27,6 +27,9 @@ const handler = NextAuth({
             }
           })
           .catch((err: ApiError) => {
+
+            throw new Error(err as unknown as string);
+            
             error = err;
           });
         if (userdata) {

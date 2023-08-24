@@ -18,7 +18,7 @@ export default function login() {
   let email = loginState.email as string;
   let password = loginState.password as string;
   console.log(loginState);
-  const handleLoginForm = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleLoginForm = async(event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("dsfsd");
 
@@ -42,17 +42,13 @@ export default function login() {
 
     
     
-    let res= signIn("credentials", {
+    let res= await signIn("credentials", {
       email,
       password,
-    }).then(({ ok, error }:any) => {
-        if (ok) {
-            alert("succrs")
-        } else {
-            console.log(error)
-            alert("Credentials do not match!");
-        }
-    })
+      redirect:false
+    }) 
+    console.log(res);
+    
 
     
     
