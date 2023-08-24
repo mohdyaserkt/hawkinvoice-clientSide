@@ -21,3 +21,10 @@ interface IhandleSignup {
 interface IThemeProviderProps {
   children: React.ReactNode;
 }
+
+
+interface IhandleSignup1 {
+  email: string;
+  password: string;
+  
+}

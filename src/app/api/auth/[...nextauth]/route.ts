@@ -1,6 +1,7 @@
 import NextAuth, { RequestInternal } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { loginApi } from "../../user/userAuth";
 
 const handler = NextAuth({
   providers: [
@@ -12,18 +13,14 @@ const handler = NextAuth({
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials, req) {
-      
-        const res = await fetch("/your/endpoint", {
-          method: 'POST',
-          body: JSON.stringify(credentials),
-          headers: { "Content-Type": "application/json" }
-        })
-        const user = await res.json()
+        let email:string=credentials?.email||""
+        let password:string=credentials?.password||""
+        let user = await loginApi({email,password});
   
         // If no error and we have user data, return it
-        if (res.ok && user) {
-          return user
-        }
+        // if ( user) {
+        //   return user
+        // }
         // Return null if user data could not be retrieved
         return null
       }
