@@ -48,7 +48,7 @@ export default function login() {
     })
     
     
-    console.log(res);
+    console.log(res,"rew");
      
   };
   const [errors, setErrors] = useState<{
