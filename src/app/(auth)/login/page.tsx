@@ -45,7 +45,15 @@ export default function login() {
     let res= signIn("credentials", {
       email,
       password,
+    }).then(({ ok, error }:any) => {
+        if (ok) {
+            alert("succrs")
+        } else {
+            console.log(error)
+            alert("Credentials do not match!");
+        }
     })
+
     
     
     console.log(res,"rew");
