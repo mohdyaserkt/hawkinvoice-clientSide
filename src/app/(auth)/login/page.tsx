@@ -45,7 +45,8 @@ export default function login() {
     let res= await signIn("credentials", {
       email,
       password,
-      redirect:false
+      redirect:false,
+      callbackUrl: `${window.location.origin}/manageorganization`,
     }) 
     if(res?.error){
       alert(res.error)
@@ -149,7 +150,7 @@ export default function login() {
                 </label>
               </div>
 
-              <button className="border-2 border-black rounded-lg w-[22.375rem] h-[3rem] bg-black text-white font-semibold">
+              <button type="submit" className="border-2 border-black rounded-lg w-[22.375rem] h-[3rem] bg-black text-white font-semibold">
                 Login account
               </button>
               <div className="text-xs text-center text-gray-600 my-5">
