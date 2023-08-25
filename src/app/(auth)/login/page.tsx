@@ -47,6 +47,9 @@ export default function login() {
       password,
       redirect:false
     }) 
+    if(res?.error){
+      alert(res.error)
+    }
     console.log(res);
     
 
