@@ -56,6 +56,15 @@ const getStarted = () => {
             </div>
           </div>
         </nav>
+        <div>
+          <div>
+            <div>
+              
+              <p>Home</p>
+            </div>
+          </div>
+          <div></div>
+        </div>
         
       </div>
     </>
