@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { LiaFileInvoiceDollarSolid,LiaFileInvoiceSolid } from "react-icons/lia";
 import { MdRefresh } from "react-icons/md";
 import { PiHandbag } from "react-icons/pi";
-import { BsPlusSquareFill } from "react-icons/bs";
+import { BsPlusSquareFill,BsFileEarmarkBarGraph } from "react-icons/bs";
 import { TbReceipt } from "react-icons/tb";
 import { AiOutlineSetting, AiOutlineHome,AiOutlineUser,AiOutlineSearch } from "react-icons/ai";
 import "./page.module.css";
@@ -80,7 +80,7 @@ const getStarted = () => {
               <p>Expenses</p>
             </div>
             <div>
-              <AiOutlineHome />
+              <BsFileEarmarkBarGraph />
               <p>Reports</p>
             </div>
           </div>
