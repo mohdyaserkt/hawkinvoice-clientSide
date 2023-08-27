@@ -9,7 +9,7 @@ import { MdRefresh } from "react-icons/md";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsPlusSquareFill } from "react-icons/bs";
 import { AiOutlineSetting } from "react-icons/ai";
-import styles from './page.module.css';
+import './page.module.css';
 
 const getStarted = () => {
   return (
@@ -41,11 +41,12 @@ const getStarted = () => {
               <span className=" text-lg text-white mx-2">|</span>
               <AiOutlineSetting className=" text-white" />
               <span className=" text-lg text-white mx-2">|</span>
-              <select >
-                <option >Option 1</option>
-                <option >Option 2</option>
-                <option >Option 3</option>
+              <select className="" >
+                <option >Organization</option>
+                <option >Organization 2</option>
+                <option >Organization 3</option>
               </select>
+              
             </div>
           </div>
         </nav>
