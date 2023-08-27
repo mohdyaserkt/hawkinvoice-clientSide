@@ -1,11 +1,20 @@
 "use client";
 import React, { useState } from "react";
-import { LiaFileInvoiceDollarSolid,LiaFileInvoiceSolid } from "react-icons/lia";
+import {
+  LiaFileInvoiceDollarSolid,
+  LiaFileInvoiceSolid,
+} from "react-icons/lia";
 import { MdRefresh } from "react-icons/md";
 import { PiHandbag } from "react-icons/pi";
-import { BsPlusSquareFill,BsFileEarmarkBarGraph } from "react-icons/bs";
+import { BsPlusSquareFill, BsFileEarmarkBarGraph } from "react-icons/bs";
 import { TbReceipt } from "react-icons/tb";
-import { AiOutlineSetting, AiOutlineHome,AiOutlineUser,AiOutlineSearch } from "react-icons/ai";
+import { SlOptions } from "react-icons/sl";
+import {
+  AiOutlineSetting,
+  AiOutlineHome,
+  AiOutlineUser,
+  AiOutlineSearch,
+} from "react-icons/ai";
 import "./page.module.css";
 
 const getStarted = () => {
@@ -54,7 +63,7 @@ const getStarted = () => {
           </div>
         </nav>
         <div>
-          <div>
+          <div className="w-52">
             <div>
               <AiOutlineHome />
               <p>Home</p>
@@ -84,7 +93,21 @@ const getStarted = () => {
               <p>Reports</p>
             </div>
           </div>
-          <div></div>
+          <div className="w-full">
+            <div>
+              <div>
+              <h2>
+                All Customers
+              </h2>
+              </div>
+
+              <div> 
+                <div><span>+</span> New</div>
+                <div><SlOptions/></div>
+               
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
