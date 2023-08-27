@@ -6,9 +6,9 @@ import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { LiaFileInvoiceDollarSolid } from "react-icons/lia";
 import { MdRefresh } from "react-icons/md";
-import { AiOutlineSearch } from "react-icons/ai";
+
 import { BsPlusSquareFill } from "react-icons/bs";
-import { AiOutlineSetting } from "react-icons/ai";
+import { AiOutlineSetting, AiOutlineHome,AiOutlineUser,AiOutlineSearch } from "react-icons/ai";
 import "./page.module.css";
 
 const getStarted = () => {
@@ -59,13 +59,36 @@ const getStarted = () => {
         <div>
           <div>
             <div>
-              
+              <AiOutlineHome />
               <p>Home</p>
+            </div>
+            <div>
+              <AiOutlineUser />
+              <p>Customers</p>
+            </div>
+            <div>
+              <AiOutlineHome />
+              <p>Items</p>
+            </div>
+            <div>
+              <AiOutlineHome />
+              <p>Invoices</p>
+            </div>
+            <div>
+              <AiOutlineHome />
+              <p>Payments Recieved</p>
+            </div>
+            <div>
+              <AiOutlineHome />
+              <p>Expenses</p>
+            </div>
+            <div>
+              <AiOutlineHome />
+              <p>Reports</p>
             </div>
           </div>
           <div></div>
         </div>
-        
       </div>
     </>
   );
