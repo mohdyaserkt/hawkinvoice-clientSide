@@ -9,14 +9,14 @@ import { MdRefresh } from "react-icons/md";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsPlusSquareFill } from "react-icons/bs";
 import { AiOutlineSetting } from "react-icons/ai";
-import './page.module.css';
+import "./page.module.css";
 
 const getStarted = () => {
   return (
     <>
       <div className="h-screen">
         <nav className="flex items-center space-x-3">
-          <div className="flex items-center space-x-2 w-52">
+          <div className="flex items-center space-x-2 w-52  ">
             <LiaFileInvoiceDollarSolid className="text-white w-8 h-8" />
             <h3 className="text-white text-lg">HawkInvoice</h3>
           </div>
@@ -36,23 +36,27 @@ const getStarted = () => {
               </div>
             </div>
 
-            <div className="flex items-center">
+            <div className="flex items-center space-x-2">
               <BsPlusSquareFill className="bg-black text-secondary" />
-              <span className=" text-lg text-white mx-2">|</span>
+              <span className=" text-lg text-white ">|</span>
               <AiOutlineSetting className=" text-white" />
-              <span className=" text-lg text-white mx-2">|</span>
-              <select className="" >
-                <option >Organization</option>
-                <option >Organization 2</option>
-                <option >Organization 3</option>
+              <span className=" text-lg text-white ">|</span>
+              <select className="">
+                <option>Organization</option>
+                <option>Organization 2</option>
+                <option>Organization 3</option>
               </select>
-              <img src="your-image-source" alt="Your Alt Text" className="rounded-full w-20 h-20" />
-
-              
+              <div className="pr-2">
+                <img
+                  src="https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=900&t=st=1693152334~exp=1693152934~hmac=da365a4885d210047abff64bf790f521687c842a32793b5c0416be75b321f977"
+                  alt="Your Alt Text"
+                  className="rounded-full w-8   h-8   "
+                />
+              </div>
             </div>
           </div>
         </nav>
-        <div className=""></div>
+        
       </div>
     </>
   );
