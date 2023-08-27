@@ -4,9 +4,9 @@ import HandleForm from "@/utils/handleFormState";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
-import { LiaFileInvoiceDollarSolid } from "react-icons/lia";
+import { LiaFileInvoiceDollarSolid,LiaFileInvoiceSolid } from "react-icons/lia";
 import { MdRefresh } from "react-icons/md";
-
+import { PiHandbag } from "react-icons/pi";
 import { BsPlusSquareFill } from "react-icons/bs";
 import { AiOutlineSetting, AiOutlineHome,AiOutlineUser,AiOutlineSearch } from "react-icons/ai";
 import "./page.module.css";
@@ -67,11 +67,11 @@ const getStarted = () => {
               <p>Customers</p>
             </div>
             <div>
-              <AiOutlineHome />
+              <PiHandbag />
               <p>Items</p>
             </div>
             <div>
-              <AiOutlineHome />
+              <LiaFileInvoiceSolid />
               <p>Invoices</p>
             </div>
             <div>
