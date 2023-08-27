@@ -46,6 +46,8 @@ const getStarted = () => {
                 <option >Organization 2</option>
                 <option >Organization 3</option>
               </select>
+              <img src="your-image-source" alt="Your Alt Text" className="rounded-full w-20 h-20" />
+
               
             </div>
           </div>
