@@ -4,14 +4,17 @@ import HandleForm from "@/utils/handleFormState";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
+import { LiaFileInvoiceDollarSolid } from 'react-icons/lia';
+
 
 const getStarted = () => {
   return (
     <>
       <div className="h-screen">
         <nav>
-          <div>
-            
+          <div className="flex items-center space-x-2">
+          <LiaFileInvoiceDollarSolid className="text-white w-8 h-8" />
+          <h3 className="text-white ">HawkInvoice</h3>
           </div>
           <div></div>
         </nav>
