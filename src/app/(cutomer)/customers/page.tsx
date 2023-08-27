@@ -1,13 +1,10 @@
 "use client";
-import { handleCreateNewOrganization } from "@/utils/Organization/createNewOrganization";
-import HandleForm from "@/utils/handleFormState";
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
-import { ApiError } from "next/dist/server/api-utils";
 import { LiaFileInvoiceDollarSolid,LiaFileInvoiceSolid } from "react-icons/lia";
 import { MdRefresh } from "react-icons/md";
 import { PiHandbag } from "react-icons/pi";
 import { BsPlusSquareFill } from "react-icons/bs";
+import { TbReceipt } from "react-icons/tb";
 import { AiOutlineSetting, AiOutlineHome,AiOutlineUser,AiOutlineSearch } from "react-icons/ai";
 import "./page.module.css";
 
@@ -75,11 +72,11 @@ const getStarted = () => {
               <p>Invoices</p>
             </div>
             <div>
-              <AiOutlineHome />
+              <img src="/recievedpayments.svg" alt="" />
               <p>Payments Recieved</p>
             </div>
             <div>
-              <AiOutlineHome />
+              <TbReceipt />
               <p>Expenses</p>
             </div>
             <div>
