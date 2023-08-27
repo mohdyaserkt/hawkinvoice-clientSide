@@ -63,34 +63,34 @@ const getStarted = () => {
           </div>
         </nav>
         <div className="flex">
-          <div className="bg-white w-56 flex flex-col gap-3">
-            <div className="flex items-center bg-secondary">
-              <AiOutlineHome className="w-4 h-4" />
-              <p  className="text-sm" >Home</p>
+          <div className=" w-56 flex flex-col gap-3 py-3 px-2 border ">
+            <div className="flex items-center  h-7 rounded-lg space-x-2">
+              <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
+              <p  className="text-sm text-white" >Home</p>
             </div>
-            <div className="flex">
-              <AiOutlineUser className="w-4 h-4" />
-              <p  className="text-sm">Customers</p>
+            <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
+              <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
+              <p  className="text-sm text-white">Customers</p>
             </div>
-            <div className="flex">
-              <PiHandbag className="w-4 h-4" />
-              <p  className="text-sm">Items</p>
+            <div className="flex items-center h-7 rounded-lg space-x-2">
+              <PiHandbag className="w-4 h-4 ml-2 text-white " />
+              <p  className="text-sm text-white">Items</p>
             </div>
-            <div className="flex">
-              <LiaFileInvoiceSolid className="w-4 h-4" />
-              <p  className="text-sm">Invoices</p>
+            <div className="flex items-center h-7 rounded-lg space-x-2">
+              <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
+              <p  className="text-sm text-white">Invoices</p>
             </div>
-            <div className="flex">
-              <img src="/recievedpayments.svg" alt="" className="w-4 h-4" />
-              <p  className="text-sm">Payments Recieved</p>
+            <div className="flex items-center h-7 rounded-lg space-x-2">
+              <img src="/recievedpayments.svg" alt="" className="w-4 h-4 ml-2 text-white" />
+              <p  className="text-sm text-white">Payments Recieved</p>
             </div>
-            <div className="flex">
-              <TbReceipt className="w-4 h-4" />
-              <p  className="text-sm">Expenses</p>
+            <div className="flex items-center h-7 rounded-lg space-x-2">
+              <TbReceipt className="w-4 h-4 ml-2 text-white" />
+              <p  className="text-sm text-white">Expenses</p>
             </div>
-            <div className="flex">
-              <BsFileEarmarkBarGraph className="w-4 h-4" />
-              <p  className="text-sm">Reports</p>
+            <div className="flex items-center h-7 rounded-lg space-x-2">
+              <BsFileEarmarkBarGraph className="w-4 h-4 ml-2 text-white" />
+              <p  className="text-sm text-white">Reports</p>
             </div>
           </div>
           <div className="w-full">
