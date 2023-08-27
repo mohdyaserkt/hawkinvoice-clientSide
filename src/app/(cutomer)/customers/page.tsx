@@ -13,13 +13,13 @@ const getStarted = () => {
     <>
       <div className="h-screen">
         <nav className="flex items-center space-x-3">
-          <div className="flex items-center space-x-2 w-">
+          <div className="flex items-center space-x-2 w-52">
             <LiaFileInvoiceDollarSolid className="text-white w-8 h-8" />
             <h3 className="text-white text-lg">HawkInvoice</h3>
           </div>
-          <div>
+          <div className="border border-white">
             <div className=" flex items-center">
-              <MdRefresh className="text-white w-5 h-5" />
+              <MdRefresh className="text-white w-5 h-5 m-4" />
               <div className="flex items-center  bg-secondary p-1 px-2 rounded-lg border-secondary border">
                 <AiOutlineSearch className="text-black w-5 h-5" />
                 <span className="text-gray-900 text-lg mx-2">|</span>
