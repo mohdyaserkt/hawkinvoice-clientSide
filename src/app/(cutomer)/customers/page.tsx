@@ -9,7 +9,7 @@ import { MdRefresh } from "react-icons/md";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsPlusSquareFill } from "react-icons/bs";
 import { AiOutlineSetting } from "react-icons/ai";
-import { Select, Option } from "@material-tailwind/react";
+
 
 const getStarted = () => {
   return (
@@ -41,28 +41,6 @@ const getStarted = () => {
               <span className=" text-lg text-white mx-2">|</span>
               <AiOutlineSetting className=" text-white" />
               <span className=" text-lg text-white mx-2">|</span>
-              <div className="border-none bg-primary">
-                <Select
-                  label="Select Version"
-                  className="border-none bg-primary text-white"
-                >
-                  <Option className="border-none bg-primary text-white">
-                    Material Tailwind HTML
-                  </Option>
-                  <Option className="border-none bg-primary text-white">
-                    Material Tailwind React
-                  </Option>
-                  <Option className="border-none bg-primary text-white">
-                    Material Tailwind Vue
-                  </Option>
-                  <Option className="border-none bg-primary text-white">
-                    Material Tailwind Angular
-                  </Option>
-                  <Option className="border-none bg-primary text-white">
-                    Material Tailwind Svelte
-                  </Option>
-                </Select>
-              </div>
             </div>
           </div>
         </nav>
