@@ -19,8 +19,8 @@ const getStarted = () => {
           </div>
           <div className="border border-white">
             <div className=" flex items-center">
-              <MdRefresh className="text-white w-5 h-5 m-4" />
-              <div className="flex items-center  bg-secondary p-1 px-2 rounded-lg border-secondary border">
+              <MdRefresh className="text-white w-5 h-5 m-3" />
+              <div className="flex items-center  bg-secondary p-1 px-2 m-1 rounded-lg border-secondary border">
                 <AiOutlineSearch className="text-black w-5 h-5" />
                 <span className="text-gray-900 text-lg mx-2">|</span>
                 <div className="mr-[10px]">
