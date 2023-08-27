@@ -64,49 +64,87 @@ const getStarted = () => {
         </nav>
         <div>
           <div className="w-52">
-            <div>
-              <AiOutlineHome />
-              <p>Home</p>
+            <div className="bg-secondary">
+              <AiOutlineHome className="w-4 h-4" />
+              <p  className="text-sm" >Home</p>
             </div>
             <div>
-              <AiOutlineUser />
-              <p>Customers</p>
+              <AiOutlineUser className="w-4 h-4" />
+              <p  className="text-sm">Customers</p>
             </div>
             <div>
-              <PiHandbag />
-              <p>Items</p>
+              <PiHandbag className="w-4 h-4" />
+              <p  className="text-sm">Items</p>
             </div>
             <div>
-              <LiaFileInvoiceSolid />
-              <p>Invoices</p>
+              <LiaFileInvoiceSolid className="w-4 h-4" />
+              <p  className="text-sm">Invoices</p>
             </div>
             <div>
-              <img src="/recievedpayments.svg" alt="" />
-              <p>Payments Recieved</p>
+              <img src="/recievedpayments.svg" alt="" className="w-4 h-4" />
+              <p  className="text-sm">Payments Recieved</p>
             </div>
             <div>
-              <TbReceipt />
-              <p>Expenses</p>
+              <TbReceipt className="w-4 h-4" />
+              <p  className="text-sm">Expenses</p>
             </div>
             <div>
-              <BsFileEarmarkBarGraph />
-              <p>Reports</p>
+              <BsFileEarmarkBarGraph className="w-4 h-4" />
+              <p  className="text-sm">Reports</p>
             </div>
           </div>
           <div className="w-full">
             <div>
               <div>
-              <h2>
-                All Customers
-              </h2>
+                <h2>All Customers</h2>
               </div>
 
-              <div> 
-                <div><span>+</span> New</div>
-                <div><SlOptions/></div>
-               
+              <div>
+                <div>
+                  <span>+</span> New
+                </div>
+                <div>
+                  <SlOptions className="w-4 h-4" />
+                </div>
               </div>
             </div>
+            <table className="w-full border-t border-white">
+              <thead className="bg-secondary">
+                <tr>
+                  <th className="border-b border-white p-2 text-center">
+                    Name
+                  </th>
+                  <th className="border-b border-white p-2 text-center">
+                    Company Name
+                  </th>
+                  <th className="border-b border-white p-2 text-center">
+                    Email
+                  </th>
+                  <th className="border-b border-white p-2 text-center">
+                    Work Phone
+                  </th>
+                  <th className="border-b border-white  p-2 text-center">
+                    Receivables (BCY)
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-white">
+                  <td className="p-2 text-center">checkbusciness</td>
+                  <td className="p-2 text-center">checkbusciness</td>
+                  <td className="p-2 text-center">hogkidrob@meruado.uk</td>
+                  <td className="p-2 text-center">₹0.00</td>
+                  <td className="p-2 text-center">₹0.00</td>
+                </tr>
+                <tr className="border-b border-white">
+                  <td className="p-2 text-center">jlo</td>
+                  <td className="p-2 text-center">helo@ha.ls</td>
+                  <td className="p-2 text-center">123456987</td>
+                  <td className="p-2 text-center">₹0.00</td>
+                  <td className="p-2 text-center">₹0.00</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
