@@ -7,6 +7,9 @@ import { ApiError } from "next/dist/server/api-utils";
 import { LiaFileInvoiceDollarSolid } from "react-icons/lia";
 import { MdRefresh } from "react-icons/md";
 import { AiOutlineSearch } from "react-icons/ai";
+import { BsPlusSquareFill } from "react-icons/bs";
+import { AiOutlineSetting } from "react-icons/ai";
+
 
 const getStarted = () => {
   return (
@@ -20,7 +23,7 @@ const getStarted = () => {
           <div className="border border-white">
             <div className=" flex items-center">
               <MdRefresh className="text-white w-5 h-5 m-3" />
-              <div className="flex items-center  bg-secondary p-1 px-2 m-1 rounded-lg border-secondary border">
+              <div className="flex items-center  bg-secondary p-1 px-2 m-1 rounded-lg border-secondary border lg:h-8">
                 <AiOutlineSearch className="text-black w-5 h-5" />
                 <span className="text-gray-900 text-lg mx-2">|</span>
                 <div className="mr-[10px]">
@@ -31,6 +34,14 @@ const getStarted = () => {
                   />
                 </div>
               </div>
+            </div>
+
+            <div>
+            <BsPlusSquareFill className="bg-secondary text-white"/>
+            <span className=" text-lg text-white mx-2">|</span>
+            <AiOutlineSetting className="bg-secondary text-white"/>
+            <span className=" text-lg text-white mx-2">|</span>
+
             </div>
           </div>
         </nav>
