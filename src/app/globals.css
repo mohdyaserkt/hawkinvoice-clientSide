@@ -39,4 +39,22 @@
     background-color: #7d7d7d;
   }
 
-  
+  select {
+    background-color: #143230;
+    
+    
+  }
+
+  select:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  option {
+    background-color:#143230 ; /* or none */
+    border: none;
+    
+   
+
+    /* Add more styles if needed */
+  }
