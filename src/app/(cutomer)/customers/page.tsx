@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { LiaFileInvoiceDollarSolid } from 'react-icons/lia';
+import {  } from "react-icons/bi";
 
 
 const getStarted = () => {
@@ -18,9 +19,12 @@ const getStarted = () => {
           </div>
           <div>
             
+
           </div>
         </nav>
-        <div className=""></div>
+        <div className="">
+          
+        </div>
       </div>
     </>
   );
