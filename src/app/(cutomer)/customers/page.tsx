@@ -63,8 +63,8 @@ const getStarted = () => {
           </div>
         </nav>
         <div className="flex">
-          <div className="bg-white w-56">
-            <div className="flex items-center bg-secondary gap-3">
+          <div className="bg-white w-56 flex flex-col gap-3">
+            <div className="flex items-center bg-secondary">
               <AiOutlineHome className="w-4 h-4" />
               <p  className="text-sm" >Home</p>
             </div>
