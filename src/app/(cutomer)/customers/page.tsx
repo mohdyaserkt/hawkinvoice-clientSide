@@ -6,17 +6,17 @@ import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 
 const getStarted = () => {
-  
-
   return (
     <>
       <div className="h-screen">
-        <nav></nav>
-        <div className="flex h-full justify-center items-center ">
-          
-        </div>
+        <nav>
+          <div>
+            
+          </div>
+          <div></div>
+        </nav>
+        <div className=""></div>
       </div>
-     
     </>
   );
 };
