@@ -14,9 +14,11 @@ const getStarted = () => {
         <nav>
           <div className="flex items-center space-x-2">
           <LiaFileInvoiceDollarSolid className="text-white w-8 h-8" />
-          <h3 className="text-white ">HawkInvoice</h3>
+          <h3 className="text-white text-lg">HawkInvoice</h3>
           </div>
-          <div></div>
+          <div>
+            
+          </div>
         </nav>
         <div className=""></div>
       </div>
