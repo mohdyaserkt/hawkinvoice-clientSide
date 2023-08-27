@@ -22,7 +22,7 @@ const getStarted = () => {
     <>
       <div className="h-screen">
         <nav className="flex items-center space-x-3">
-          <div className="flex items-center space-x-2 w-52  ">
+          <div className="flex items-center space-x-2 w-52  mr-1">
             <LiaFileInvoiceDollarSolid className="text-white w-8 h-8" />
             <h3 className="text-white text-lg">HawkInvoice</h3>
           </div>
@@ -62,33 +62,33 @@ const getStarted = () => {
             </div>
           </div>
         </nav>
-        <div>
-          <div className="w-52">
-            <div className="bg-secondary">
+        <div className="flex">
+          <div className="bg-white w-56">
+            <div className="flex items-center bg-secondary gap-3">
               <AiOutlineHome className="w-4 h-4" />
               <p  className="text-sm" >Home</p>
             </div>
-            <div>
+            <div className="flex">
               <AiOutlineUser className="w-4 h-4" />
               <p  className="text-sm">Customers</p>
             </div>
-            <div>
+            <div className="flex">
               <PiHandbag className="w-4 h-4" />
               <p  className="text-sm">Items</p>
             </div>
-            <div>
+            <div className="flex">
               <LiaFileInvoiceSolid className="w-4 h-4" />
               <p  className="text-sm">Invoices</p>
             </div>
-            <div>
+            <div className="flex">
               <img src="/recievedpayments.svg" alt="" className="w-4 h-4" />
               <p  className="text-sm">Payments Recieved</p>
             </div>
-            <div>
+            <div className="flex">
               <TbReceipt className="w-4 h-4" />
               <p  className="text-sm">Expenses</p>
             </div>
-            <div>
+            <div className="flex">
               <BsFileEarmarkBarGraph className="w-4 h-4" />
               <p  className="text-sm">Reports</p>
             </div>
