@@ -94,12 +94,12 @@ const getStarted = () => {
             </div>
           </div>
           <div className="w-full">
-            <div>
-              <div>
-                <h2>All Customers</h2>
+            <div className="p-5 flex justify-between w-full">
+              <div className="text-white">
+                <h2 className="text-xl">All Customers</h2>
               </div>
 
-              <div>
+              <div className="flex">
                 <div>
                   <span>+</span> New
                 </div>
@@ -109,7 +109,7 @@ const getStarted = () => {
               </div>
             </div>
             <table className="w-full border-t border-white">
-              <thead className="bg-secondary">
+              <thead className="bg-secondary text-xs font-normal">
                 <tr>
                   <th className="border-b border-white p-2 text-center">
                     Name
@@ -128,7 +128,7 @@ const getStarted = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="text-white text-sm">
                 <tr className="border-b border-white">
                   <td className="p-2 text-center">checkbusciness</td>
                   <td className="p-2 text-center">checkbusciness</td>
