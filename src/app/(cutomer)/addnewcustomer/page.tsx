@@ -196,35 +196,35 @@ const getStarted = () => {
                   <div className="flex">
                     <div>
                       <h3>Billing Address</h3>
-                      <div>
+                      <div className="flex items-center">
                         <p>Attention</p>
                         <div>
-                          <input className="rounded-md h-8 text-xs w-72 text-black p-2" placeholder="" type="text" />
+                          <input className="rounded-md h-8 text-xs w-64 text-black p-2" placeholder="" type="text" />
                         </div>
                       </div>
                       <div>
                         <p>Country / Region</p>
                         <div>
-                          <input placeholder="" type="text" />
+                          <input  className="rounded-md h-8 text-xs w-64 text-black p-2" placeholder="" type="text" />
                         </div>
                       </div>
                       <div>
                         <p>Address</p>
                         <div className="flex flex-col">
-                          <input placeholder="street 1" type="text" />
-                          <input placeholder="street 2" type="text" />
+                          <input className="rounded-md h-8 text-xs w-64 text-black p-2" placeholder="street 1" type="" />
+                          <input className="rounded-md h-8 text-xs w-64 text-black p-2" placeholder="street 2" type="text" />
                         </div>
                       </div>
                       <div>
                         <p>City</p>
                         <div>
-                          <input placeholder="" type="text" />
+                          <input  className="rounded-md h-8 text-xs w-64 text-black p-2" placeholder="" type="text" />
                         </div>
                       </div>
                       <div>
                         <p>State</p>
                         <div>
-                          <input placeholder="" type="text" />
+                          <input  className="rounded-md h-8 text-xs w-64 text-black p-2" placeholder="" type="text" />
                         </div>
                       </div>
                     </div>
