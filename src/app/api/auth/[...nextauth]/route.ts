@@ -3,6 +3,7 @@ import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { loginApi } from "../../user/userAuth";
 import { ApiError } from "next/dist/server/api-utils";
+import axiosInstance from "../../axios";
 
 const handler = NextAuth({
   providers: [
@@ -20,19 +21,8 @@ const handler = NextAuth({
         let userdata;
         let error;
         
-          let user = await loginApi({ email, password })
-            .then(({ data }: any) => {
-              if (data) {
-                localStorage.setItem("user", JSON.stringify(data.user));
-                userdata = data.user;
-              }
-            })
-            .catch((err: ApiError) => {
-              throw new Error(err as unknown as string);
-
-              error = err;
-            });
-        
+        const response = await axiosInstance.post(`/api/tenant/user/login`, { email,password });
+        userdata=response.data
 
         if (userdata) {
           return userdata;
