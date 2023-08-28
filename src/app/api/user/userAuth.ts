@@ -18,15 +18,19 @@ export const register = async ({ email,password }:IUserCredentials): Promise<IUs
     }
   }
 
-
+     
 
 
   export const loginApi = async ({ email,password }:IUserCredentials): Promise<IUser|Error> => {
     console.log("login");
     
     try {
+      console.log(email,password,"login api data");
+      
       const response = await axiosInstance.post(`/api/tenant/user/login`, { email,password });
-    //   const { user, accessToken, refreshToken } = response.data as ResponseData;
+      console.log(response,"login res");
+      
+    //   const { user, accessToken, refreshToken } = response.data as ResponseData;   
     //   localStorage.setItem("accessToken", accessToken as string);
     //   localStorage.setItem("refreshToken", refreshToken as string);
     //   localStorage.setItem("user", JSON.stringify(user));
