@@ -27,7 +27,7 @@ export const register = async ({ email,password }:IUserCredentials): Promise<IUs
     try {
       console.log(email,password,"login api data");
       
-      const response = await axiosInstance.post(`/api/tenant/user/login`, { email,password });
+      const response = await axiosInstance.post(`helo.hawkinvoice.com/api/tenant/user/login`, { email,password });
       console.log(response,"login res");
       
     //   const { user, accessToken, refreshToken } = response.data as ResponseData;   
