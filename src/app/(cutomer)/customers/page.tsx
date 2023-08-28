@@ -100,8 +100,8 @@ const getStarted = () => {
               </div>
 
               <div className="flex">
-                <div className="text-xs bg-secondary flex items-center text-white font-semibold p-1 rounded">
-                  <span>+</span> New
+                <div className="text-xs bg-secondary flex items-center text-white font-semibold p-2  rounded">
+                  <span className="mr-1">+</span> New
                 </div>
                 <div>
                   <SlOptions className="w-4 h-4" />
