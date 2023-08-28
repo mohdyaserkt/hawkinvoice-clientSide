@@ -111,11 +111,11 @@ const getStarted = () => {
                       <p>Customer Type</p>
                       <div className="flex space-x-2">
                         <div className="flex space-x-2">
-                          <input type="radio" />
+                          <input name="Customer Type" type="radio" />
                           <p>Business</p>
                         </div>
                         <div className="flex space-x-2">
-                          <input type="radio" />
+                          <input name="Customer Type" type="radio" />
                           <p>Individual</p>
                         </div>
                       </div>
