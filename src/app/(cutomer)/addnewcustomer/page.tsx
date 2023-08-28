@@ -16,7 +16,6 @@ import {
   AiOutlineSearch,
 } from "react-icons/ai";
 
-
 const getStarted = () => {
   return (
     <>
@@ -66,31 +65,35 @@ const getStarted = () => {
           <div className=" w-56 flex flex-col gap-3 py-3 px-2 border ">
             <div className="flex items-center  h-7 rounded-lg space-x-2">
               <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
-              <p  className="text-sm text-white" >Home</p>
+              <p className="text-sm text-white">Home</p>
             </div>
             <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
               <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
-              <p  className="text-sm text-white">Customers</p>
+              <p className="text-sm text-white">Customers</p>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <PiHandbag className="w-4 h-4 ml-2 text-white " />
-              <p  className="text-sm text-white">Items</p>
+              <p className="text-sm text-white">Items</p>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
-              <p  className="text-sm text-white">Invoices</p>
+              <p className="text-sm text-white">Invoices</p>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
-              <img src="/recievedpayments.svg" alt="" className="w-4 h-4 ml-2 text-white" />
-              <p  className="text-sm text-white">Payments Recieved</p>
+              <img
+                src="/recievedpayments.svg"
+                alt=""
+                className="w-4 h-4 ml-2 text-white"
+              />
+              <p className="text-sm text-white">Payments Recieved</p>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <TbReceipt className="w-4 h-4 ml-2 text-white" />
-              <p  className="text-sm text-white">Expenses</p>
+              <p className="text-sm text-white">Expenses</p>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <BsFileEarmarkBarGraph className="w-4 h-4 ml-2 text-white" />
-              <p  className="text-sm text-white">Reports</p>
+              <p className="text-sm text-white">Reports</p>
             </div>
           </div>
           <div className="w-full">
@@ -103,11 +106,63 @@ const getStarted = () => {
             <div>
               <div>
                 <form action="">
-                  
+                  <div>
+                    <p>Customer Type</p>
+                    <div>
+                      <div>
+                        <input type="radio" />
+                        <p>Business</p>
+                      </div>
+                      <div>
+                        <input type="radio" />
+                        <p>Individual</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <p>Primary Contact</p>
+                    <div>
+                      <input type="text" />
+                      <input type="text" />
+                      <input type="text" />
+                    </div>
+                  </div>
+                  <div>
+                    <p>Company Name</p>
+                    <div>
+                      <input type="text" />
+                    </div>
+                  </div>
+                  <div>
+                    <p>Customer Display Name*</p>
+                    <div>
+                      <input type="text" />
+                    </div>
+                  </div>
+                  {/* <div>
+                    <p>Currency</p>
+                    <div>
+                      <input type="text" />
+                    </div>
+                  </div> */}
+
+                  <div>
+                    <p>Customer Email</p>
+                    <div>
+                      <input type="email" />
+                    </div>
+                  </div>
+                  <div>
+                    <p>Customer Phone</p>
+                    <div>
+                      <input placeholder="Work Phone" type="number" />
+                      <input placeholder="Mobile" type="number" />
+                    </div>
+                  </div>
+
                 </form>
               </div>
             </div>
-            
           </div>
         </div>
       </div>
