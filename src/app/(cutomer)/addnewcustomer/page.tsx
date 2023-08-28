@@ -106,66 +106,100 @@ const getStarted = () => {
             <div className="pt-7 pl-16">
               <div>
                 <form action="" className="text-[13px] text-white">
-                  <div className="flex space-x-20">
-                    <p>Customer Type</p>
-                    <div className="flex space-x-2" >
+                  <div className="flex flex-col gap-4">
+                    <div className="flex space-x-20">
+                      <p>Customer Type</p>
                       <div className="flex space-x-2">
-                        <input type="radio" />
-                        <p>Business</p>
+                        <div className="flex space-x-2">
+                          <input type="radio" />
+                          <p>Business</p>
+                        </div>
+                        <div className="flex space-x-2">
+                          <input type="radio" />
+                          <p>Individual</p>
+                        </div>
                       </div>
-                      <div className="flex space-x-2">
-                        <input type="radio" />
-                        <p>Individual</p>
+                    </div>
+                    <div className="flex items-center ">
+                      <p className="mr-[73px]">Primary Contact</p>
+                      <div className="flex items-center gap-2">
+                        <input
+                          className="rounded-md w-32 h-8 text-xs p-2"
+                          placeholder="Salutation"
+                          type="text"
+                        />
+                        <input
+                          className="rounded-md w-32 h-8 text-xs p-2"
+                          placeholder="First Name"
+                          type="text"
+                        />
+                        <input
+                          className="rounded-md w-32 h-8 text-xs p-2"
+                          placeholder="Last Name"
+                          type="text"
+                        />
                       </div>
                     </div>
-                  </div>
-                  <div className="flex items-center ">
-                    <p className="mr-[73px]">Primary Contact</p>
-                    <div className="flex items-center gap-2">
-                      <input className="rounded-md w-32 h-8 text-xs p-2" placeholder="Salutation" type="text" />
-                      <input className="rounded-md w-32 h-8 text-xs p-2"  placeholder="First Name" type="text" />
-                      <input className="rounded-md w-32 h-8 text-xs p-2" placeholder="Last Name" type="text" />
+                    <div className="flex items-center gap-[72px]">
+                      <p>Company Name</p>
+                      <div className=" flex items-center">
+                        <input
+                          className="rounded-md w-80 h-8 text-xs text-black p-2"
+                          type="text"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-center gap-[72px]">
-                    <p>Company Name</p>
-                    <div className=" flex items-center">
-                      <input className="rounded-md w-80 h-8 text-xs text-black p-2" type="text" />
+                    <div className="flex gap-4">
+                      <p>
+                        Customer Display Name
+                        <span className="text-red-600">*</span>
+                      </p>
+                      <div>
+                        <input
+                          className="rounded-md w-80 h-8 text-xs text-black p-2"
+                          type="text"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <p>Customer Display Name<span className="text-red-600">*</span></p>
-                    <div>
-                      <input className="rounded-md w-80 h-8 text-xs text-black p-2" type="text" />
-                    </div>
-                  </div>
-                  {/* <div>
+                    {/* <div>
                     <p>Currency</p>
                     <div>
                       <input type="text" />
                     </div>
-                  </div> */}
+                   </div> */}
 
-                  <div className="flex items-center">
-                    <p>Customer Email</p>
-                    <div className="flex items-center">
-                      <input className="rounded-md w-80 h-8 text-xs text-black p-2" type="email" />
+                    <div className="flex items-center gap-[77px]">
+                      <p>Customer Email</p>
+                      <div className="flex items-center">
+                        <input
+                          className="rounded-md w-80 h-8 text-xs text-black p-2"
+                          type="email"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-[71px]">
+                      <p>Customer Phone</p>
+                      <div className=" flex justify-between w-80 h-8 gap-1">
+                        <input
+                          className="rounded-md h-8 text-xs w-36 text-black p-2"
+                          placeholder="Work Phone"
+                          type="number"
+                        />
+                        <input
+                          className="rounded-md h-8 text-xs w-36 text-black p-2"
+                          placeholder="Mobile"
+                          type="number"
+                        />
+                      </div>
                     </div>
                   </div>
                   <div className="flex">
-                    <p>Customer Phone</p>
-                    <div className=" flex flex-col">
-                      <input className="rounded-md w-80 h-8 text-xs text-black p-2" placeholder="Work Phone" type="number" />
-                      <input className="rounded-md w-80 h-8 text-xs text-black p-2" placeholder="Mobile" type="number" />
-                    </div>
-                  </div>
-                  <div>
                     <div>
                       <h3>Billing Address</h3>
                       <div>
                         <p>Attention</p>
                         <div>
-                          <input placeholder="" type="text" />
+                          <input className="rounded-md h-8 text-xs w-72 text-black p-2" placeholder="" type="text" />
                         </div>
                       </div>
                       <div>
@@ -176,7 +210,7 @@ const getStarted = () => {
                       </div>
                       <div>
                         <p>Address</p>
-                        <div>
+                        <div className="flex flex-col">
                           <input placeholder="street 1" type="text" />
                           <input placeholder="street 2" type="text" />
                         </div>
@@ -217,7 +251,7 @@ const getStarted = () => {
                       </div>
                       <div>
                         <p>Address</p>
-                        <div>
+                        <div className="flex flex-col">
                           <input placeholder="street 1" type="text" />
                           <input placeholder="street 2" type="text" />
                         </div>
