@@ -18,6 +18,12 @@ interface IhandleSignup {
   password: string;
   setError: (field: string, errors: string[]) => void;
 }
+
+interface IhandleSignup1 {
+  email: string;
+  password: string;
+ 
+}
 interface IThemeProviderProps {
   children: React.ReactNode;
 }

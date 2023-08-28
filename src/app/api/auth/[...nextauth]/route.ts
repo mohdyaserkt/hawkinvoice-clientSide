@@ -3,6 +3,7 @@ import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { loginApi } from "../../user/userAuth";
 import { ApiError } from "next/dist/server/api-utils";
+import { handleLogin1 } from "@/utils/Authentication/handleLogin";
 
 const handler = NextAuth({
   providers: [
@@ -19,19 +20,32 @@ const handler = NextAuth({
         let password: string = credentials?.password || "";
         let userdata;
         let error;
-        let user = await loginApi({ email, password })
-          .then(({ data }: any) => {
-            if (data) {
-              localStorage.setItem("user", JSON.stringify(data.user));
-              userdata = data.user;
-            }
-          })
-          .catch((err: ApiError) => {
+        
+          // let user = await loginApi({ email, password })
+          //   .then(({ data }: any) => {
+          //     if (data) {
+          //       localStorage.setItem("user", JSON.stringify(data.user));
+          //       userdata = data.user;
+          //     }
+          //   })
+          //   .catch((err: ApiError) => {
+          //     throw new Error(err as unknown as string);
 
-            throw new Error(err as unknown as string);
-            
-            error = err;
-          });
+          //     error = err;
+          //   });
+          handleLogin1({email,password}).then(({ data }: any) => {
+                if (data) {
+                  localStorage.setItem("user", JSON.stringify(data.user));
+                  userdata = data.user;
+                }
+              })
+              .catch((err: ApiError) => {
+                throw new Error(err as unknown as string);
+  
+                error = err;
+              });
+        
+
         if (userdata) {
           return userdata;
         }
@@ -48,9 +62,9 @@ const handler = NextAuth({
         : "",
     }),
   ],
-   session:{
-    strategy:"jwt"
-   },
+  session: {
+    strategy: "jwt",
+  },
   pages: {
     error: "/error",
     signIn: "/login",

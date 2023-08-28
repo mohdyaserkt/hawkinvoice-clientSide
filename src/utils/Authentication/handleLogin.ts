@@ -34,7 +34,32 @@ export const handleLogin = async ({
     ]);
     return false;
   }
+  
+  try {
+    const user = await loginApi({ email, password });
+    return Promise.resolve(user as any);
+  } catch (error) {
+    const err = error as AxiosError;
+    console.log(err.message, "errors");
 
+    return Promise.reject(err);
+  }
+};
+
+
+
+
+export const handleLogin1 = async ({
+  email,
+  password,
+}: IhandleSignup1): Promise<string | boolean | AxiosError> => {
+  console.log("handle signup");
+
+  email = email.trim();
+  password = password.trim();
+
+  
+  
   try {
     const user = await loginApi({ email, password });
     return Promise.resolve(user as any);

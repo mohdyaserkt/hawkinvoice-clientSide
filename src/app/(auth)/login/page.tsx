@@ -22,41 +22,41 @@ export default function login() {
     event.preventDefault();
     console.log("dsfsd");
 
-    handleLogin({
-      setError,
+    // handleLogin({
+    //   setError,
 
-      email: loginState.email as string,
-      password: loginState.password as string,
-    })
-      .then(({ data }: any) => {
-        if (data) {
-          localStorage.setItem("user", JSON.stringify(data.user) );
+    //   email: loginState.email as string,
+    //   password: loginState.password as string,
+    // })
+    //   .then(({ data }: any) => {
+    //     if (data) {
+    //       localStorage.setItem("user", JSON.stringify(data.user) );
 
-          router?.push("/getstarted");
-        }
-      })
-      .catch((err: ApiError) => {
-        console.log(err.message);
-        alert(err);
-      });
-
-    
-    
-    // let res= await signIn("credentials", {
-    //   email,
-    //   password,
-    //   redirect:false,
-    //   callbackUrl: `${window.location.origin}/manageorganization`,
-    // }) 
-    // if(res?.error){
-    //   alert(res.error)
-    // }
-    // console.log(res);
-    
+    //       router?.push("/getstarted");
+    //     }
+    //   })
+    //   .catch((err: ApiError) => {
+    //     console.log(err.message);
+    //     alert(err);
+    //   });
 
     
     
-    // console.log(res,"rew");
+    let res= await signIn("credentials", {
+      email,
+      password,
+      redirect:false,
+      callbackUrl: `${window.location.origin}/manageorganization`,
+    }) 
+    if(res?.error){
+      alert(res.error)
+    }
+    console.log(res);
+    
+
+    
+    
+    console.log(res,"rew");
      
   };
   const [errors, setErrors] = useState<{
