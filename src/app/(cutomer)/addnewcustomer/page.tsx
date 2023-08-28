@@ -103,17 +103,17 @@ const getStarted = () => {
               </div>
             </div>
 
-            <div>
+            <div className="pt-7 pl-16">
               <div>
-                <form action="">
-                  <div>
+                <form action="" className="text-[13px] text-white">
+                  <div className="flex space-x-20">
                     <p>Customer Type</p>
-                    <div>
-                      <div>
+                    <div className="flex space-x-2" >
+                      <div className="flex space-x-2">
                         <input type="radio" />
                         <p>Business</p>
                       </div>
-                      <div>
+                      <div className="flex space-x-2">
                         <input type="radio" />
                         <p>Individual</p>
                       </div>
