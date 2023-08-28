@@ -211,8 +211,10 @@ const getStarted = () => {
                       <div>
                         <p>Address</p>
                         <div className="flex flex-col">
-                          <input className="rounded-md h-8 text-xs w-64 text-black p-2" placeholder="street 1" type="" />
-                          <input className="rounded-md h-8 text-xs w-64 text-black p-2" placeholder="street 2" type="text" />
+                          
+                          <textarea placeholder="street 1" className="rounded-md  text-xs w-64 text-black p-2" ></textarea>
+                          <textarea placeholder="street 2" className="rounded-md  text-xs w-64 text-black p-2" ></textarea>
+                          
                         </div>
                       </div>
                       <div>
