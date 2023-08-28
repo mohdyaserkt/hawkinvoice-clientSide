@@ -5,7 +5,7 @@ import {
   LiaFileInvoiceSolid,
 } from "react-icons/lia";
 import { MdRefresh } from "react-icons/md";
-import { PiHandbag,PiCopySimple } from "react-icons/pi";
+import { PiHandbag, PiCopySimple } from "react-icons/pi";
 import { BsPlusSquareFill, BsFileEarmarkBarGraph } from "react-icons/bs";
 import { TbReceipt } from "react-icons/tb";
 import { SlOptions } from "react-icons/sl";
@@ -196,12 +196,13 @@ const getStarted = () => {
                     </div>
                     <div>
                       <div>
-                      <h3>Shipping Address</h3>
-                      <div>
-                      <PiCopySimple/>
+                        <h3>Shipping Address</h3>
+                        <div>
+                          <PiCopySimple />
+                          <p>Copy billing address</p>
+                        </div>
                       </div>
-                      </div>
-                     
+
                       <div>
                         <p>Attention</p>
                         <div>
@@ -235,6 +236,10 @@ const getStarted = () => {
                       </div>
                     </div>
                     <div></div>
+                  </div>
+                  <div>
+                    <button type="submit">Save</button>
+                    <button type="reset">Cancel</button>
                   </div>
                 </form>
               </div>
