@@ -22,7 +22,7 @@ export const register = async ({ email,password }:IUserCredentials): Promise<IUs
 
 
   export const loginApi = async ({ email,password }:IUserCredentials): Promise<IUser|Error> => {
-    console.log("register");
+    console.log("login");
     
     try {
       const response = await axiosInstance.post(`/api/tenant/user/login`, { email,password });
