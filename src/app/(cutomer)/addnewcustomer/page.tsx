@@ -5,7 +5,7 @@ import {
   LiaFileInvoiceSolid,
 } from "react-icons/lia";
 import { MdRefresh } from "react-icons/md";
-import { PiHandbag } from "react-icons/pi";
+import { PiHandbag,PiCopySimple } from "react-icons/pi";
 import { BsPlusSquareFill, BsFileEarmarkBarGraph } from "react-icons/bs";
 import { TbReceipt } from "react-icons/tb";
 import { SlOptions } from "react-icons/sl";
@@ -159,7 +159,83 @@ const getStarted = () => {
                       <input placeholder="Mobile" type="number" />
                     </div>
                   </div>
-
+                  <div>
+                    <div>
+                      <h3>Billing Address</h3>
+                      <div>
+                        <p>Attention</p>
+                        <div>
+                          <input placeholder="" type="text" />
+                        </div>
+                      </div>
+                      <div>
+                        <p>Country / Region</p>
+                        <div>
+                          <input placeholder="" type="text" />
+                        </div>
+                      </div>
+                      <div>
+                        <p>Address</p>
+                        <div>
+                          <input placeholder="street 1" type="text" />
+                          <input placeholder="street 2" type="text" />
+                        </div>
+                      </div>
+                      <div>
+                        <p>City</p>
+                        <div>
+                          <input placeholder="" type="text" />
+                        </div>
+                      </div>
+                      <div>
+                        <p>State</p>
+                        <div>
+                          <input placeholder="" type="text" />
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div>
+                      <h3>Shipping Address</h3>
+                      <div>
+                      <PiCopySimple/>
+                      </div>
+                      </div>
+                     
+                      <div>
+                        <p>Attention</p>
+                        <div>
+                          <input placeholder="" type="text" />
+                        </div>
+                      </div>
+                      <div>
+                        <p>Country / Region</p>
+                        <div>
+                          <input placeholder="" type="text" />
+                        </div>
+                      </div>
+                      <div>
+                        <p>Address</p>
+                        <div>
+                          <input placeholder="street 1" type="text" />
+                          <input placeholder="street 2" type="text" />
+                        </div>
+                      </div>
+                      <div>
+                        <p>City</p>
+                        <div>
+                          <input placeholder="" type="text" />
+                        </div>
+                      </div>
+                      <div>
+                        <p>State</p>
+                        <div>
+                          <input placeholder="" type="text" />
+                        </div>
+                      </div>
+                    </div>
+                    <div></div>
+                  </div>
                 </form>
               </div>
             </div>
