@@ -119,9 +119,9 @@ const getStarted = () => {
                       </div>
                     </div>
                   </div>
-                  <div>
-                    <p>Primary Contact</p>
-                    <div>
+                  <div className="flex ">
+                    <p className="ml-[73px]">Primary Contact</p>
+                    <div className="flex gap-2">
                       <input type="text" />
                       <input type="text" />
                       <input type="text" />
