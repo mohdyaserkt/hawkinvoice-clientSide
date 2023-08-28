@@ -199,38 +199,58 @@ const getStarted = () => {
                       <div className="flex items-center">
                         <p>Attention</p>
                         <div>
-                          <input className="rounded-md h-8 text-xs w-64 text-black p-2" placeholder="" type="text" />
+                          <input
+                            className="rounded-md h-8 text-xs w-64 text-black p-2"
+                            placeholder=""
+                            type="text"
+                          />
                         </div>
                       </div>
-                      <div>
+                      <div className="flex items-center">
                         <p>Country / Region</p>
                         <div>
-                          <input  className="rounded-md h-8 text-xs w-64 text-black p-2" placeholder="" type="text" />
+                          <input
+                            className="rounded-md h-8 text-xs w-64 text-black p-2"
+                            placeholder=""
+                            type="text"
+                          />
                         </div>
                       </div>
-                      <div>
+                      <div className="flex ">
                         <p>Address</p>
-                        <div className="flex flex-col">
-                          
-                          <textarea placeholder="street 1" className="rounded-md  text-xs w-64 text-black p-2" ></textarea>
-                          <textarea placeholder="street 2" className="rounded-md  text-xs w-64 text-black p-2" ></textarea>
-                          
+                        <div className="flex flex-col gap-4">
+                          <textarea
+                            placeholder="street 1"
+                            className="rounded-md  text-xs w-64 text-black p-2"
+                          ></textarea>
+                          <textarea
+                            placeholder="street 2"
+                            className="rounded-md  text-xs w-64 text-black p-2"
+                          ></textarea>
                         </div>
                       </div>
                       <div>
                         <p>City</p>
                         <div>
-                          <input  className="rounded-md h-8 text-xs w-64 text-black p-2" placeholder="" type="text" />
+                          <input
+                            className="rounded-md h-8 text-xs w-64 text-black p-2"
+                            placeholder=""
+                            type="text"
+                          />
                         </div>
                       </div>
                       <div>
                         <p>State</p>
                         <div>
-                          <input  className="rounded-md h-8 text-xs w-64 text-black p-2" placeholder="" type="text" />
+                          <input
+                            className="rounded-md h-8 text-xs w-64 text-black p-2"
+                            placeholder=""
+                            type="text"
+                          />
                         </div>
                       </div>
                     </div>
-                    <div>
+                    {/* <div>
                       <div>
                         <h3>Shipping Address</h3>
                         <div>
@@ -270,7 +290,7 @@ const getStarted = () => {
                           <input placeholder="" type="text" />
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                     <div></div>
                   </div>
                   <div>
