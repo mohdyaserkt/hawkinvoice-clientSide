@@ -119,18 +119,18 @@ const getStarted = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex ">
-                    <p className="ml-[73px]">Primary Contact</p>
-                    <div className="flex gap-2">
-                      <input type="text" />
-                      <input type="text" />
-                      <input type="text" />
+                  <div className="flex items-center ">
+                    <p className="mr-[73px]">Primary Contact</p>
+                    <div className="flex items-center gap-2">
+                      <input className="rounded-md w-32 h-8 text-xs p-2" placeholder="Salutation" type="text" />
+                      <input className="rounded-md w-32 h-8 text-xs p-2"  placeholder="First Name" type="text" />
+                      <input className="rounded-md w-32 h-8 text-xs p-2" placeholder="Last Name" type="text" />
                     </div>
                   </div>
-                  <div>
+                  <div className="flex items-center">
                     <p>Company Name</p>
-                    <div>
-                      <input type="text" />
+                    <div className=" flex items-center">
+                      <input className="rounded-md w-80 h-8 text-xs p-2" type="text" />
                     </div>
                   </div>
                   <div>
