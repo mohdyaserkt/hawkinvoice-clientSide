@@ -124,17 +124,17 @@ const getStarted = () => {
                       <p className="mr-[73px]">Primary Contact</p>
                       <div className="flex items-center gap-2">
                         <input
-                          className="rounded-md w-32 h-8 text-xs p-2"
+                          className="focus:outline-none text-black rounded-md w-32 h-8 text-xs p-2"
                           placeholder="Salutation"
                           type="text"
                         />
                         <input
-                          className="rounded-md w-32 h-8 text-xs p-2"
+                          className="focus:outline-none text-black rounded-md w-32 h-8 text-xs p-2"
                           placeholder="First Name"
                           type="text"
                         />
                         <input
-                          className="rounded-md w-32 h-8 text-xs p-2"
+                          className="focus:outline-none text-black rounded-md w-32 h-8 text-xs p-2"
                           placeholder="Last Name"
                           type="text"
                         />
@@ -144,7 +144,7 @@ const getStarted = () => {
                       <p>Company Name</p>
                       <div className=" flex items-center">
                         <input
-                          className="rounded-md w-80 h-8 text-xs text-black p-2"
+                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
                         />
                       </div>
@@ -156,7 +156,7 @@ const getStarted = () => {
                       </p>
                       <div>
                         <input
-                          className="rounded-md w-80 h-8 text-xs text-black p-2"
+                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
                         />
                       </div>
@@ -166,13 +166,13 @@ const getStarted = () => {
                     <div>
                       <input type="text" />
                     </div>
-                   </div> */}
+      focus:outline-none              </div> */}
 
                     <div className="flex items-center gap-[77px]">
                       <p>Customer Email</p>
                       <div className="flex items-center">
                         <input
-                          className="rounded-md w-80 h-8 text-xs text-black p-2"
+                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="email"
                         />
                       </div>
@@ -181,12 +181,12 @@ const getStarted = () => {
                       <p>Customer Phone</p>
                       <div className=" flex justify-between w-80 h-8 gap-1">
                         <input
-                          className="rounded-md h-8 text-xs w-36 text-black p-2"
+                          className="focus:outline-none rounded-md h-8 text-xs w-36 text-black p-2"
                           placeholder="Work Phone"
                           type="tel"
                         />
                         <input
-                          className="rounded-md h-8 text-xs w-36 text-black p-2"
+                          className="focus:outline-none rounded-md h-8 text-xs w-36 text-black p-2"
                           placeholder="Mobile"
                           type="tel"
                         />
@@ -202,7 +202,7 @@ const getStarted = () => {
                         <p>Attention</p>
                         <div>
                           <input
-                            className="rounded-md h-8 text-xs w-64 text-black p-2"
+                            className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
                             type="text"
                           />
@@ -212,7 +212,7 @@ const getStarted = () => {
                         <p>Country / Region</p>
                         <div>
                           <input
-                            className="rounded-md h-8 text-xs w-64 text-black p-2"
+                            className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
                             type="text"
                           />
@@ -235,7 +235,7 @@ const getStarted = () => {
                         <p>City</p>
                         <div>
                           <input
-                            className="rounded-md h-8 text-xs w-64 text-black p-2"
+                            className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
                             type="text"
                           />
@@ -245,7 +245,7 @@ const getStarted = () => {
                         <p>State</p>
                         <div>
                           <input
-                            className="rounded-md h-8 text-xs w-64 text-black p-2"
+                            className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
                             type="text"
                           />
@@ -268,7 +268,7 @@ const getStarted = () => {
                         <p>Attention</p>
                         <div>
                           <input
-                            className="rounded-md h-8 text-xs w-64 text-black p-2"
+                            className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
                             type="text"
                           />
@@ -278,7 +278,7 @@ const getStarted = () => {
                         <p>Country / Region</p>
                         <div>
                           <input
-                            className="rounded-md h-8 text-xs w-64 text-black p-2"
+                            className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
                             type="text"
                           />
@@ -301,7 +301,7 @@ const getStarted = () => {
                         <p>City</p>
                         <div>
                           <input
-                            className="rounded-md h-8 text-xs w-64 text-black p-2"
+                            className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
                             type="text"
                           />
@@ -311,7 +311,7 @@ const getStarted = () => {
                         <p>State</p>
                         <div>
                           <input
-                            className="rounded-md h-8 text-xs w-64 text-black p-2"
+                            className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
                             type="text"
                           />
@@ -322,8 +322,18 @@ const getStarted = () => {
                     <div></div>
                   </div>
                   <div className="flex gap-2 ml-3">
-                    <button className="bg-secondary py-2 px-3 rounded-md text-sm text-black" type="submit">Save</button>
-                    <button className=" rounded-md bg-white py-2 px-3 text-sm text-black" type="reset">Cancel</button>
+                    <button
+                      className="bg-secondary py-2 px-3 rounded-md text-sm text-black"
+                      type="submit"
+                    >
+                      Save
+                    </button>
+                    <button
+                      className=" rounded-md bg-white py-2 px-3 text-sm text-black"
+                      type="reset"
+                    >
+                      Cancel
+                    </button>
                   </div>
                 </form>
               </div>
