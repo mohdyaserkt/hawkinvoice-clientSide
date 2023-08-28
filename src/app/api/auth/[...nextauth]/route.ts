@@ -40,6 +40,8 @@ const handler = NextAuth({
                 }
               })
               .catch((err: ApiError) => {
+                console.log("eroo");
+                
                 throw new Error(err as unknown as string);
   
                 error = err;

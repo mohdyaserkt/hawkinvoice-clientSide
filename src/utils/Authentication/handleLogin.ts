@@ -64,6 +64,8 @@ export const handleLogin1 = async ({
     const user = await loginApi({ email, password });
     return Promise.resolve(user as any);
   } catch (error) {
+    console.log("1err"); 
+    
     const err = error as AxiosError;
     console.log(err.message, "errors");
 
