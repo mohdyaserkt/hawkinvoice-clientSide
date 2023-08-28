@@ -3,7 +3,6 @@ import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { loginApi } from "../../user/userAuth";
 import { ApiError } from "next/dist/server/api-utils";
-import { handleLogin1 } from "@/utils/Authentication/handleLogin";
 
 const handler = NextAuth({
   providers: [
@@ -21,31 +20,18 @@ const handler = NextAuth({
         let userdata;
         let error;
         
-          // let user = await loginApi({ email, password })
-          //   .then(({ data }: any) => {
-          //     if (data) {
-          //       localStorage.setItem("user", JSON.stringify(data.user));
-          //       userdata = data.user;
-          //     }
-          //   })
-          //   .catch((err: ApiError) => {
-          //     throw new Error(err as unknown as string);
+          let user = await loginApi({ email, password })
+            .then(({ data }: any) => {
+              if (data) {
+                localStorage.setItem("user", JSON.stringify(data.user));
+                userdata = data.user;
+              }
+            })
+            .catch((err: ApiError) => {
+              throw new Error(err as unknown as string);
 
-          //     error = err;
-          //   });
-          handleLogin1({email,password}).then(({ data }: any) => {
-                if (data) {
-                  localStorage.setItem("user", JSON.stringify(data.user));
-                  userdata = data.user;
-                }
-              })
-              .catch((err: ApiError) => {
-                console.log("eroo");
-                
-                throw new Error(err as unknown as string);
-  
-                error = err;
-              });
+              error = err;
+            });
         
 
         if (userdata) {
