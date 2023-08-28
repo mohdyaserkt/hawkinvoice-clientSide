@@ -183,19 +183,21 @@ const getStarted = () => {
                         <input
                           className="rounded-md h-8 text-xs w-36 text-black p-2"
                           placeholder="Work Phone"
-                          type="number"
+                          type="tel"
                         />
                         <input
                           className="rounded-md h-8 text-xs w-36 text-black p-2"
                           placeholder="Mobile"
-                          type="number"
+                          type="tel"
                         />
                       </div>
                     </div>
                   </div>
-                  <div className="flex">
-                    <div>
-                      <h3>Billing Address</h3>
+                  <div className="flex gap-20">
+                    <div className="flex flex-col gap-4 mb-8 mt-9">
+                      <h3 className="text-sm text-secondary">
+                        Billing Address
+                      </h3>
                       <div className="flex items-center gap-[120px]">
                         <p>Attention</p>
                         <div>
@@ -250,52 +252,78 @@ const getStarted = () => {
                         </div>
                       </div>
                     </div>
-                    {/* <div>
-                      <div>
-                        <h3>Shipping Address</h3>
-                        <div>
+
+                    <div className="flex flex-col gap-4 mb-8 mt-9">
+                      <div className="flex justify-between">
+                        <h3 className="text-sm text-secondary">
+                          Shipping Address
+                        </h3>
+                        <div className=" flex items-center text-secondary gap-2">
                           <PiCopySimple />
                           <p>Copy billing address</p>
                         </div>
                       </div>
 
-                      <div>
+                      <div className="flex items-center gap-[120px]">
                         <p>Attention</p>
                         <div>
-                          <input placeholder="" type="text" />
+                          <input
+                            className="rounded-md h-8 text-xs w-64 text-black p-2"
+                            placeholder=""
+                            type="text"
+                          />
                         </div>
                       </div>
-                      <div>
+                      <div className="flex items-center gap-[69px]">
                         <p>Country / Region</p>
                         <div>
-                          <input placeholder="" type="text" />
+                          <input
+                            className="rounded-md h-8 text-xs w-64 text-black p-2"
+                            placeholder=""
+                            type="text"
+                          />
                         </div>
                       </div>
-                      <div>
+                      <div className="flex gap-[126px] ">
                         <p>Address</p>
-                        <div className="flex flex-col">
-                          <input placeholder="street 1" type="text" />
-                          <input placeholder="street 2" type="text" />
+                        <div className="flex flex-col gap-4">
+                          <textarea
+                            placeholder="street 1"
+                            className="rounded-md  text-xs w-64 text-black p-2"
+                          ></textarea>
+                          <textarea
+                            placeholder="street 2"
+                            className="rounded-md  text-xs w-64 text-black p-2"
+                          ></textarea>
                         </div>
                       </div>
-                      <div>
+                      <div className="flex items-center gap-[152px]">
                         <p>City</p>
                         <div>
-                          <input placeholder="" type="text" />
+                          <input
+                            className="rounded-md h-8 text-xs w-64 text-black p-2"
+                            placeholder=""
+                            type="text"
+                          />
                         </div>
                       </div>
-                      <div>
+                      <div className="flex items-center gap-36">
                         <p>State</p>
                         <div>
-                          <input placeholder="" type="text" />
+                          <input
+                            className="rounded-md h-8 text-xs w-64 text-black p-2"
+                            placeholder=""
+                            type="text"
+                          />
                         </div>
                       </div>
-                    </div> */}
+                    </div>
+
                     <div></div>
                   </div>
-                  <div>
-                    <button type="submit">Save</button>
-                    <button type="reset">Cancel</button>
+                  <div className="flex gap-2 ml-3">
+                    <button className="bg-secondary py-2 px-3 rounded-md text-sm text-black" type="submit">Save</button>
+                    <button className=" rounded-md bg-white py-2 px-3 text-sm text-black" type="reset">Cancel</button>
                   </div>
                 </form>
               </div>
