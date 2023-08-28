@@ -196,7 +196,7 @@ const getStarted = () => {
                   <div className="flex">
                     <div>
                       <h3>Billing Address</h3>
-                      <div className="flex items-center">
+                      <div className="flex items-center gap-[120px]">
                         <p>Attention</p>
                         <div>
                           <input
@@ -206,7 +206,7 @@ const getStarted = () => {
                           />
                         </div>
                       </div>
-                      <div className="flex items-center">
+                      <div className="flex items-center gap-[69px]">
                         <p>Country / Region</p>
                         <div>
                           <input
@@ -216,7 +216,7 @@ const getStarted = () => {
                           />
                         </div>
                       </div>
-                      <div className="flex ">
+                      <div className="flex gap-[126px] ">
                         <p>Address</p>
                         <div className="flex flex-col gap-4">
                           <textarea
@@ -229,7 +229,7 @@ const getStarted = () => {
                           ></textarea>
                         </div>
                       </div>
-                      <div>
+                      <div className="flex items-center gap-[152px]">
                         <p>City</p>
                         <div>
                           <input
@@ -239,7 +239,7 @@ const getStarted = () => {
                           />
                         </div>
                       </div>
-                      <div>
+                      <div className="flex items-center gap-36">
                         <p>State</p>
                         <div>
                           <input
