@@ -127,16 +127,16 @@ const getStarted = () => {
                       <input className="rounded-md w-32 h-8 text-xs p-2" placeholder="Last Name" type="text" />
                     </div>
                   </div>
-                  <div className="flex items-center">
+                  <div className="flex items-center gap-[72px]">
                     <p>Company Name</p>
                     <div className=" flex items-center">
-                      <input className="rounded-md w-80 h-8 text-xs p-2" type="text" />
+                      <input className="rounded-md w-80 h-8 text-xs text-black p-2" type="text" />
                     </div>
                   </div>
-                  <div>
-                    <p>Customer Display Name*</p>
+                  <div className="flex gap-4">
+                    <p>Customer Display Name<span className="text-red-600">*</span></p>
                     <div>
-                      <input type="text" />
+                      <input className="rounded-md w-80 h-8 text-xs text-black p-2" type="text" />
                     </div>
                   </div>
                   {/* <div>
@@ -146,17 +146,17 @@ const getStarted = () => {
                     </div>
                   </div> */}
 
-                  <div>
+                  <div className="flex items-center">
                     <p>Customer Email</p>
-                    <div>
-                      <input type="email" />
+                    <div className="flex items-center">
+                      <input className="rounded-md w-80 h-8 text-xs text-black p-2" type="email" />
                     </div>
                   </div>
-                  <div>
+                  <div className="flex">
                     <p>Customer Phone</p>
-                    <div>
-                      <input placeholder="Work Phone" type="number" />
-                      <input placeholder="Mobile" type="number" />
+                    <div className=" flex flex-col">
+                      <input className="rounded-md w-80 h-8 text-xs text-black p-2" placeholder="Work Phone" type="number" />
+                      <input className="rounded-md w-80 h-8 text-xs text-black p-2" placeholder="Mobile" type="number" />
                     </div>
                   </div>
                   <div>
