@@ -44,6 +44,8 @@ const manageOrganisation = () => {
          
 
           
+          <div className="flex flex-col gap-3">
+
           
           {myOrganizations.map((item: any) => (
             <div key={item.id}>
@@ -103,7 +105,7 @@ const manageOrganisation = () => {
             
           
         ))}
-
+</div>
           <div>
             <div>
               <div className="flex w-full border-[1px] border-white rounded-lg p-6">
