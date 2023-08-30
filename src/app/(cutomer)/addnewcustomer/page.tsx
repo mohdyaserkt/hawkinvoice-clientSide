@@ -54,7 +54,7 @@ const getStarted = () => {
       companyName: companyNameInput.value,
       DisplayName: DisplayNameInput.value,
       email: EmailInput.value,
-      workPhoneI: WorkPhoneInput.value,
+      workPhone: WorkPhoneInput.value,
       mobile: MobileInput.value,
       billingAddress: {
         attention: billingAddressAttention.value,
