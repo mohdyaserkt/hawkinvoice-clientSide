@@ -17,6 +17,26 @@ import {
 } from "react-icons/ai";
 
 const getStarted = () => {
+
+  const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const form = e.target as HTMLFormElement;
+    const nameInput = form[0] as HTMLInputElement;
+    const emailInput = form[1] as HTMLInputElement;
+    const passwordInput = form[2] as HTMLInputElement;
+    const FirstNameInput = form[2] as HTMLInputElement;
+
+
+    const name: string = nameInput.value;
+    const email: string = emailInput.value;
+    const password: string = passwordInput.value;
+    const FirstName: string = passwordInput.value;
+    
+
+   
+
+  };
   return (
     <>
       <div className="h-screen">

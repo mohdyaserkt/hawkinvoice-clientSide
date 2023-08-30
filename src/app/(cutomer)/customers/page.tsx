@@ -19,6 +19,9 @@ import "./page.module.css";
 import Link from "next/link";
 
 const getStarted = () => {
+
+
+ 
   return (
     <>
       <div className="h-screen">
