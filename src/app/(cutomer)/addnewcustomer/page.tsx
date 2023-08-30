@@ -25,13 +25,16 @@ const getStarted = () => {
     const nameInput = form[0] as HTMLInputElement;
     const emailInput = form[1] as HTMLInputElement;
     const passwordInput = form[2] as HTMLInputElement;
-    const FirstNameInput = form[2] as HTMLInputElement;
+    const firstNameInput = form[3] as HTMLInputElement;
 
 
     const name: string = nameInput.value;
     const email: string = emailInput.value;
     const password: string = passwordInput.value;
-    const FirstName: string = passwordInput.value;
+    const firstName: string = firstNameInput.value;
+
+    console.log(firstName,"jkjk");
+    
     
 
    
@@ -125,7 +128,7 @@ const getStarted = () => {
 
             <div className="pt-7 pl-16">
               <div>
-                <form action="" className="text-[13px] text-white">
+                <form onSubmit={handleSubmit} className="text-[13px] text-white">
                   <div className="flex flex-col gap-4">
                     <div className="flex space-x-20">
                       <p>Customer Type</p>
