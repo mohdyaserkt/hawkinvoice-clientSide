@@ -3,6 +3,7 @@ import { handleGetMyOrganizations } from "@/utils/Organization/getMyOrganization
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const manageOrganisation = () => {
   const router = useRouter();
@@ -68,9 +69,9 @@ const manageOrganisation = () => {
                   <div className="flex justify-between">
                     <h1 className="text-base text-white">{item.businessName}</h1>
                     <div className="flex justify-center">
-                      <button className=" border-[1px] border-blue-500 text-blue-500 text-xs p-2  rounded">
+                    <Link href="http://hai.hawkinvoice.com/login"><button className=" border-[1px] border-blue-500 text-blue-500 text-xs p-2  rounded">
                         Go to Organization
-                      </button>
+                      </button></Link>
                       <button className="bg-white border-2 rounded text-base ml-2 px-1  ">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
