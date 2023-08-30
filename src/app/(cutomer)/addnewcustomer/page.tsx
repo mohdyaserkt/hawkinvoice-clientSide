@@ -21,7 +21,7 @@ const getStarted = () => {
   const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
-    const [nameInput, emailInput, passwordInput, firstNameInput] = Array.from(form.elements) as HTMLInputElement[];
+    const [nameInput, emailInput, passwordInput, firstNameInput,companyNameInput,customerDisplayNameInput,customerEmailInput,customerPhoneInput] = Array.from(form.elements) as HTMLInputElement[];
     
     const name = nameInput.value;
     const email = emailInput.value;
