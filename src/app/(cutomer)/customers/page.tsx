@@ -47,11 +47,12 @@ const getStarted = () => {
               <span className=" text-lg text-white ">|</span>
               <AiOutlineSetting className=" text-white" />
               <span className=" text-lg text-white ">|</span>
-              <select className="">
-                <option>Organization</option>
-                <option>Organization 2</option>
-                <option>Organization 3</option>
+              <select className="bg-blue-900 text-white focus:outline-none focus:ring focus:border-blue-300">
+                <option className="bg-blue-900">Organization</option>
+                <option className="bg-blue-900">Organization 2</option>
+                <option className="bg-blue-900">Organization 3</option>
               </select>
+
               <div className="pr-2">
                 <img
                   src="https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=900&t=st=1693152334~exp=1693152934~hmac=da365a4885d210047abff64bf790f521687c842a32793b5c0416be75b321f977"
@@ -66,31 +67,35 @@ const getStarted = () => {
           <div className=" w-56 flex flex-col gap-3 py-3 px-2 border ">
             <div className="flex items-center  h-7 rounded-lg space-x-2">
               <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
-              <p  className="text-sm text-white" >Home</p>
+              <p className="text-sm text-white">Home</p>
             </div>
             <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
               <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
-              <p  className="text-sm text-white">Customers</p>
+              <p className="text-sm text-white">Customers</p>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <PiHandbag className="w-4 h-4 ml-2 text-white " />
-              <p  className="text-sm text-white">Items</p>
+              <p className="text-sm text-white">Items</p>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
-              <p  className="text-sm text-white">Invoices</p>
+              <p className="text-sm text-white">Invoices</p>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
-              <img src="/recievedpayments.svg" alt="" className="w-4 h-4 ml-2 text-white" />
-              <p  className="text-sm text-white">Payments Recieved</p>
+              <img
+                src="/recievedpayments.svg"
+                alt=""
+                className="w-4 h-4 ml-2 text-white"
+              />
+              <p className="text-sm text-white">Payments Recieved</p>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <TbReceipt className="w-4 h-4 ml-2 text-white" />
-              <p  className="text-sm text-white">Expenses</p>
+              <p className="text-sm text-white">Expenses</p>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <BsFileEarmarkBarGraph className="w-4 h-4 ml-2 text-white" />
-              <p  className="text-sm text-white">Reports</p>
+              <p className="text-sm text-white">Reports</p>
             </div>
           </div>
           <div className="w-full">

@@ -42,18 +42,4 @@
   
  
 /* custom-select.css */
- select {
-  background-color: #143230;
-  color: white;
-}
-
- option {
-  background-color: #143230;
-  border: none;
-}
-
- select:focus {
-  outline: none;
-  box-shadow: none;
-}
 
