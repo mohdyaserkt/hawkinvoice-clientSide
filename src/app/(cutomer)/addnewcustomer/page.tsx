@@ -17,26 +17,64 @@ import {
 } from "react-icons/ai";
 
 const getStarted = () => {
-
-  const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
-    const [nameInput, emailInput, passwordInput, firstNameInput,companyNameInput,customerDisplayNameInput,customerEmailInput,customerPhoneInput] = Array.from(form.elements) as HTMLInputElement[];
-    
-    const name = nameInput.value;
-    const email = emailInput.value;
-    const password = passwordInput.value;
-    const firstName = firstNameInput.value;
-    
-    
-console.log(name,email,password,firstName);
+    const [
+      custumerTypeBusinessInput,
+      custumerTypeIndividualInput,
+      salutationInput,
+      firstNameInput,
+      lastNameInput,
+      companyNameInput,
+      DisplayNameInput,
+      EmailInput,
+      WorkPhoneInput,
+      MobileInput,
+      billingAddressAttention,
+      billingAddressRegion,
+      billingAddressStreet1,
+      billingAddressStreet2,
+      billingAddressCity,
+      billingAddressState,
+      shippingAddressAttention,
+      shippingAddressRegion,
+      shippingAddressStreet1,
+      shippingAddressStreet2,
+      shippingAddressCity,
+      shippingAddressState,
+    ] = Array.from(form.elements) as HTMLInputElement[];
 
-    console.log(firstName,"jkjk");
+    const customer = {
+      custumerType:
+        custumerTypeBusinessInput.value == "on" ? "business" : "individual",
+      salutation: salutationInput.value,
+      firstName: firstNameInput.value,
+      lastName: lastNameInput.value,
+      companyName: companyNameInput.value,
+      DisplayName: DisplayNameInput.value,
+      email: EmailInput.value,
+      workPhoneI: WorkPhoneInput.value,
+      mobile: MobileInput.value,
+      billingAddress: {
+        attention: billingAddressAttention.value,
+        region: billingAddressRegion.value,
+        street1: billingAddressStreet1.value,
+        street2: billingAddressStreet2.value,
+        city: billingAddressCity.value,
+        state: billingAddressState.value,
+      },
+      shippingAddress: {
+        attention: shippingAddressAttention.value,
+        region: shippingAddressRegion.value,
+        street1: shippingAddressStreet1.value,
+        street2: shippingAddressStreet2.value,
+        city: shippingAddressCity.value,
+        state: shippingAddressState.value,
+      },
+    };
+    console.log(customer);
     
-    
-
-   
-
   };
   return (
     <>
@@ -126,17 +164,28 @@ console.log(name,email,password,firstName);
 
             <div className="pt-7 pl-16">
               <div>
-                <form onSubmit={handleSubmit} className="text-[13px] text-white">
+                <form
+                  onSubmit={handleSubmit}
+                  className="text-[13px] text-white"
+                >
                   <div className="flex flex-col gap-4">
                     <div className="flex space-x-20">
                       <p>Customer Type</p>
                       <div className="flex space-x-2">
                         <div className="flex space-x-2">
-                          <input name="Customer Type" className="accent-secondary" type="radio" />
+                          <input
+                            name="Customer Type"
+                            className="accent-secondary"
+                            type="radio"
+                          />
                           <p>Business</p>
                         </div>
                         <div className="flex space-x-2">
-                          <input name="Customer Type" className="accent-secondary" type="radio" />
+                          <input
+                            name="Customer Type"
+                            className="accent-secondary"
+                            type="radio"
+                          />
                           <p>Individual</p>
                         </div>
                       </div>
