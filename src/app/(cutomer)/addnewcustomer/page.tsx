@@ -74,6 +74,8 @@ const getStarted = () => {
       },
     };
     console.log(customer);
+
+    
     
   };
   return (
