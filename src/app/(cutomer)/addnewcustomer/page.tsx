@@ -52,7 +52,7 @@ const getStarted = () => {
       firstName: firstNameInput.value,
       lastName: lastNameInput.value,
       companyName: companyNameInput.value,
-      DisplayName: DisplayNameInput.value,
+      displayName: DisplayNameInput.value,
       email: EmailInput.value,
       workPhone: WorkPhoneInput.value,
       mobile: MobileInput.value,
