@@ -15,8 +15,12 @@ import {
   AiOutlineUser,
   AiOutlineSearch,
 } from "react-icons/ai";
+import { handleCreateNewCustomer } from "@/utils/Customers/createNewCustomer";
+import { useRouter } from "next/navigation";
+import { ApiError } from "next/dist/server/api-utils";
 
 const getStarted = () => {
+  const router = useRouter();
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
@@ -46,16 +50,16 @@ const getStarted = () => {
     ] = Array.from(form.elements) as HTMLInputElement[];
 
     const customer = {
-      custumerType:
+      customerType:
         custumerTypeBusinessInput.value == "on" ? "business" : "individual",
       salutation: salutationInput.value,
       firstName: firstNameInput.value,
       lastName: lastNameInput.value,
-      companyName: companyNameInput.value,
+      customerCompanyName: companyNameInput.value,
       displayName: DisplayNameInput.value,
       email: EmailInput.value,
-      workPhone: WorkPhoneInput.value,
-      mobile: MobileInput.value,
+      workPhone: WorkPhoneInput.value as unknown as number,
+      mobile: MobileInput.value as unknown as number,
       billingAddress: {
         attention: billingAddressAttention.value,
         region: billingAddressRegion.value,
@@ -75,9 +79,38 @@ const getStarted = () => {
     };
     console.log(customer);
 
-    
-    
+
+
+    handleCreateNewCustomer({
+      customer,
+      setError
+
+      // businessName: organizationState.businessName as string,
+      // typeOfbusiness: organizationState.typeOfbusiness as string,
+    })
+      .then((res: any) => {
+        if (res) {
+          console.log(res);
+          router?.push("/customers");
+          alert(res);
+        }
+      })
+      .catch((err: ApiError) => {
+        console.log(err.message);
+        alert(err);
+      });
+
+
+
+
+
   };
+  const [errors, setErrors] = useState<{
+    field: string;
+    errors: string[];
+  } | null>({ field: "", errors: [""] });
+  const setError = (field: string, errorMessages: string[]) =>
+    setErrors({ field, errors: errorMessages });
   return (
     <>
       <div className="h-screen">

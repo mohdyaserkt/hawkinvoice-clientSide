@@ -1,4 +1,5 @@
 interface handleCreateNewCustomer {
+    customer:{
   customerType: string;
   firstName: string;
   lastName: string;
@@ -23,7 +24,7 @@ interface handleCreateNewCustomer {
     street2: String;
     city: String;
     state: String;
-  };
+  };}
 
   setError?: (field: string, errors: string[]) => void;
 }
