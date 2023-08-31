@@ -1,34 +1,40 @@
 import { AxiosError } from "axios";
 import "react-toastify/dist/ReactToastify.css";
-import { createNewOrganization } from "@/app/api/organization/createNewOrganization";
+import { createNewCutomer } from "@/app/api/customers/createNewCustomer";
 
 export const handleCreateNewCustomer = async ({
-  NoOfemployes,
-  annualRevenue,
-  businessName,
-  phoneNumber,
-  typeOfbusiness,
-  setError,
-}: handleCreateNewOrganization): Promise<string | boolean | AxiosError> => {
+  billingAddress,
+customerType,
+displayName,
+email,
+shippingAddress,
+workPhone,
+customerCompanyName,
+mobile,
+salutaion,
+firstName,
+lastName,
+setError,
+}: handleCreateNewCustomer): Promise<string | boolean | AxiosError> => {
   
-  const user = JSON.parse(localStorage.getItem("user") as string);
-  businessName = businessName
-  typeOfbusiness = typeOfbusiness
-  phoneNumber = phoneNumber;
-  NoOfemployes = NoOfemployes
-  annualRevenue = annualRevenue
-  const email = user.email
-  const userId = user.id
+//   const user = JSON.parse(localStorage.getItem("user") as string);
+//   const email = user.email
+//   const userId = user.id
+  
 
   try {
-    const tenant = await createNewOrganization({
-      annualRevenue,
-      businessName,
-      NoOfemployes,
-      phoneNumber,
-      typeOfbusiness,
-      email,
-      userId,
+    const tenant = await createNewCutomer({
+        billingAddress,
+        customerType,
+        displayName,
+        email,
+        shippingAddress,
+        workPhone,
+        customerCompanyName,
+        mobile,
+        salutaion,
+        firstName,
+        lastName,
     });
     return Promise.resolve(tenant as any);
   } catch (error) {
