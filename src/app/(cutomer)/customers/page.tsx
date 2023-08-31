@@ -151,10 +151,10 @@ const getStarted = () => {
               <tbody className="text-white text-sm">
               {myCustomers.map((item: any) => (
                 <tr className="border-b border-white" key={item.id}>
-                  <td className="p-2 text-center">checkbusciness</td>
-                  <td className="p-2 text-center">checkbusciness</td>
-                  <td className="p-2 text-center">hogkidrob@meruado.uk</td>
-                  <td className="p-2 text-center">₹0.00</td>
+                  <td className="p-2 text-center">{item.displayName}</td>
+                  <td className="p-2 text-center">{item.customerCompanyName}</td>
+                  <td className="p-2 text-center">{item.email}</td>
+                  <td className="p-2 text-center">{item.workPhone}</td>
                   <td className="p-2 text-center">₹0.00</td>
                 </tr>))}
                 <tr className="border-b border-white">
