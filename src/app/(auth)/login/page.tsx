@@ -28,7 +28,7 @@ export default function login() {
     })
       .then(({ data }: any) => {
         if (data) {
-          localStorage.setItem("user", JSON.stringify(data.user) );
+          localStorage.setItem("user", JSON.stringify(data.user,data.AccessToken) );
 
           router?.push("/getstarted");
         }
