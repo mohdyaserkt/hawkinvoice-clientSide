@@ -20,17 +20,17 @@ import Link from "next/link";
 import { handleGetCustomers } from "@/utils/Customers/getCustomers";
 
 const getStarted = () => {
-  // const [myCustomers, setmyCustomers] = useState([]);
-  // useEffect(() => {
-  //   handleGetCustomers()
-  //     .then(({data}:any) => { 
-  //       setmyCustomers(data.customers)
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       alert(err);
-  //     });
-  // }, []);
+  const [myCustomers, setmyCustomers] = useState([]);
+  useEffect(() => {
+    handleGetCustomers()
+      .then(({data}:any) => { 
+        setmyCustomers(data.customers)
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+  }, []);
 
  
   return (
@@ -149,14 +149,14 @@ const getStarted = () => {
                 </tr>
               </thead>
               <tbody className="text-white text-sm">
-              {/* {myCustomers.map((item: any) => (
+              {myCustomers.map((item: any) => (
                 <tr className="border-b border-white" key={item.id}>
                   <td className="p-2 text-center">{item.displayName}</td>
                   <td className="p-2 text-center">{item.customerCompanyName}</td>
                   <td className="p-2 text-center">{item.email}</td>
                   <td className="p-2 text-center">{item.workPhone}</td>
                   <td className="p-2 text-center">₹0.00</td>
-                </tr>))} */}
+                </tr>))} 
                 <tr className="border-b border-white">
                   <td className="p-2 text-center">jlo</td>
                   <td className="p-2 text-center">helo@ha.ls</td>
