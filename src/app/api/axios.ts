@@ -7,7 +7,7 @@ const  axiosInstance : AxiosInstance= axios.create({
     (config) => {
         const User =JSON.parse(localStorage.getItem("AccessToken") as string )
         if(User) {
-        const AccessToken =User.AccessToken
+        const AccessToken =User
         console.log(AccessToken);
         if(AccessToken){
             config.headers["Authorization"] = `Bearer ${AccessToken}`;
