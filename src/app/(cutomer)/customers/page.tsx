@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   LiaFileInvoiceDollarSolid,
   LiaFileInvoiceSolid,
@@ -17,9 +17,20 @@ import {
 } from "react-icons/ai";
 import "./page.module.css";
 import Link from "next/link";
+import { handleGetCustomers } from "@/utils/Customers/getCustomers";
 
 const getStarted = () => {
-
+  const [myCustomers, setmyCustomers] = useState([]);
+  useEffect(() => {
+    handleGetCustomers()
+      .then(({data}:any) => {
+        setmyCustomers(data.customers)
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+  }, []);
 
  
   return (
