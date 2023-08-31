@@ -1,6 +1,6 @@
 import axios,{AxiosInstance} from "axios"
 const  axiosInstance : AxiosInstance= axios.create({
-    baseURL : ""
+    baseURL : "https://hai.hawkinvoice.com"
   })
   
   
