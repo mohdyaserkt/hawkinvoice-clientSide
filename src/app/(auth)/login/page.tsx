@@ -28,7 +28,12 @@ export default function login() {
     })
       .then(({ data }: any) => {
         if (data) {
-          localStorage.setItem("user", JSON.stringify(data.user,data.AccessToken) );
+          console.log(data.AccessToken);
+
+        
+          
+          localStorage.setItem("user", JSON.stringify(data.user));
+          localStorage.setItem("AccessToken", JSON.stringify(data.AccessToken));
 
           router?.push("/getstarted");
         }

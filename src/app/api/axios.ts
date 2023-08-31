@@ -5,7 +5,7 @@ const  axiosInstance : AxiosInstance= axios.create({
 
   axiosInstance.interceptors.request.use(
     (config) => {
-        const User =JSON.parse(localStorage.getItem("user") as string )
+        const User =JSON.parse(localStorage.getItem("AccessToken") as string )
         if(User) {
         const AccessToken =User.AccessToken
         console.log(AccessToken);
