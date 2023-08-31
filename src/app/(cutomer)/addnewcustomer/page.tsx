@@ -94,7 +94,7 @@ const getStarted = () => {
           router?.push("/customers");
           alert(res);
         }
-      })
+      })  
       .catch((err: ApiError) => {
         console.log(err.message);
         alert(err);
