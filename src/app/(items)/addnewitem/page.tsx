@@ -193,7 +193,7 @@ const getStarted = () => {
           <div className="w-full">
             <div className="p-5 flex justify-between w-full border-r-[1px] border-b-[1px] ">
               <div className="text-white">
-                <h2 className="text-xl">New Customer</h2>
+                <h2 className="text-xl">New Item</h2>
               </div>
             </div>
 
@@ -204,8 +204,8 @@ const getStarted = () => {
                   className="text-[13px] text-white"
                 >
                   <div className="flex flex-col gap-4">
-                    <div className="flex space-x-20">
-                      <p>Customer Type</p>
+                    <div className="flex space-x-36">
+                      <p>Type</p>
                       <div className="flex space-x-2">
                         <div className="flex space-x-2">
                           <input
@@ -213,7 +213,7 @@ const getStarted = () => {
                             className="accent-secondary"
                             type="radio"
                           />
-                          <p>Business</p>
+                          <p>Goods</p>
                         </div>
                         <div className="flex space-x-2">
                           <input
@@ -221,32 +221,14 @@ const getStarted = () => {
                             className="accent-secondary"
                             type="radio"
                           />
-                          <p>Individual</p>
+                          <p>Services</p>
                         </div>
                       </div>
                     </div>
-                    <div className="flex items-center ">
-                      <p className="mr-[73px]">Primary Contact</p>
-                      <div className="flex items-center gap-2">
-                        <input
-                          className="focus:outline-none text-black rounded-md w-32 h-8 text-xs p-2"
-                          placeholder="Salutation"
-                          type="text"
-                        />
-                        <input
-                          className="focus:outline-none text-black rounded-md w-32 h-8 text-xs p-2"
-                          placeholder="First Name"
-                          type="text"
-                        />
-                        <input
-                          className="focus:outline-none text-black rounded-md w-32 h-8 text-xs p-2"
-                          placeholder="Last Name"
-                          type="text"
-                        />
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-[72px]">
-                      <p>Company Name</p>
+                    
+                    <div className="flex items-center gap-[128px]">
+                      <p>Name<span className="text-red-600">*</span></p>
+                      
                       <div className=" flex items-center">
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
@@ -256,8 +238,8 @@ const getStarted = () => {
                     </div>
                     <div className="flex gap-4">
                       <p>
-                        Customer Display Name
-                        <span className="text-red-600">*</span>
+                        Unit 
+                        
                       </p>
                       <div>
                         <input
@@ -273,159 +255,28 @@ const getStarted = () => {
                     </div>
       focus:outline-none              </div> */}
 
-                    <div className="flex items-center gap-[77px]">
-                      <p>Customer Email</p>
+                    <div className="flex items-center gap-[68px]">
+                      <p>Selling Price<span className="text-red-600">*</span></p>
                       <div className="flex items-center">
                         <input
-                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
-                          type="email"
+                          className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
+                          type="number"
+                          placeholder="INR"
                         />
                       </div>
                     </div>
-                    <div className="flex items-center gap-[71px]">
-                      <p>Customer Phone</p>
-                      <div className=" flex justify-between w-80 h-8 gap-1">
-                        <input
-                          className="focus:outline-none rounded-md h-8 text-xs w-36 text-black p-2"
-                          placeholder="Work Phone"
-                          type="tel"
-                        />
-                        <input
-                          className="focus:outline-none rounded-md h-8 text-xs w-36 text-black p-2"
-                          placeholder="Mobile"
-                          type="tel"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex gap-20">
-                    <div className="flex flex-col gap-4 mb-8 mt-9">
-                      <h3 className="text-sm text-secondary">
-                        Billing Address
-                      </h3>
-                      <div className="flex items-center gap-[120px]">
-                        <p>Attention</p>
-                        <div>
-                          <input
-                            className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
-                            placeholder=""
-                            type="text"
-                          />
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-[69px]">
-                        <p>Country / Region</p>
-                        <div>
-                          <input
-                            className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
-                            placeholder=""
-                            type="text"
-                          />
-                        </div>
-                      </div>
-                      <div className="flex gap-[126px] ">
-                        <p>Address</p>
-                        <div className="flex flex-col gap-4">
-                          <textarea
+                    <div className="flex items-start gap-[71px]">
+                      <p>Description</p>
+                      <div className=" flex  w-80 ">
+                        
+                      <textarea
                             placeholder="street 1"
                             className="rounded-md  text-xs w-64 text-black p-2"
                           ></textarea>
-                          <textarea
-                            placeholder="street 2"
-                            className="rounded-md  text-xs w-64 text-black p-2"
-                          ></textarea>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-[152px]">
-                        <p>City</p>
-                        <div>
-                          <input
-                            className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
-                            placeholder=""
-                            type="text"
-                          />
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-36">
-                        <p>State</p>
-                        <div>
-                          <input
-                            className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
-                            placeholder=""
-                            type="text"
-                          />
-                        </div>
                       </div>
                     </div>
-
-                    <div className="flex flex-col gap-4 mb-8 mt-9">
-                      <div className="flex justify-between">
-                        <h3 className="text-sm text-secondary">
-                          Shipping Address
-                        </h3>
-                        <div className=" flex items-center text-secondary gap-2">
-                          <PiCopySimple />
-                          <p>Copy billing address</p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center gap-[120px]">
-                        <p>Attention</p>
-                        <div>
-                          <input
-                            className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
-                            placeholder=""
-                            type="text"
-                          />
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-[69px]">
-                        <p>Country / Region</p>
-                        <div>
-                          <input
-                            className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
-                            placeholder=""
-                            type="text"
-                          />
-                        </div>
-                      </div>
-                      <div className="flex gap-[126px] ">
-                        <p>Address</p>
-                        <div className="flex flex-col gap-4">
-                          <textarea
-                            placeholder="street 1"
-                            className="rounded-md  text-xs w-64 text-black p-2"
-                          ></textarea>
-                          <textarea
-                            placeholder="street 2"
-                            className="rounded-md  text-xs w-64 text-black p-2"
-                          ></textarea>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-[152px]">
-                        <p>City</p>
-                        <div>
-                          <input
-                            className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
-                            placeholder=""
-                            type="text"
-                          />
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-36">
-                        <p>State</p>
-                        <div>
-                          <input
-                            className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
-                            placeholder=""
-                            type="text"
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div></div>
                   </div>
+                 
                   <div className="flex gap-2 ml-3">
                     <button
                       className="bg-secondary py-2 px-3 rounded-md text-sm text-black"

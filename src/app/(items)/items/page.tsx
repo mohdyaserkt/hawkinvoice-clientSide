@@ -84,11 +84,11 @@ const getStarted = () => {
               <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Home</p>
             </div>
-            <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
+            <div className="flex items-center  h-7 rounded-lg space-x-2">
               <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Customers</p>
             </div>
-            <div className="flex items-center h-7 rounded-lg space-x-2">
+            <div className="flex items-center h-7 bg-secondary rounded-lg space-x-2">
               <PiHandbag className="w-4 h-4 ml-2 text-white " />
               <p className="text-sm text-white">Items</p>
             </div>
@@ -116,12 +116,12 @@ const getStarted = () => {
           <div className="w-full">
             <div className="p-5 flex justify-between w-full">
               <div className="text-white">
-                <h2 className="text-xl">All Customers</h2>
+                <h2 className="text-xl">All Items</h2>
               </div>
 
               <div className="flex space-x-2">
                 <div className="text-xs bg-secondary flex items-center text-white font-semibold px-3 py-2  rounded">
-                  <Link href='/addnewcustomer'><span className="mr-1">+</span> New</Link>
+                  <Link href='/addnewitem'><span className="mr-1">+</span> New</Link>
                 </div>
                 <div className="p-2 bg-white rounded">
                   <SlOptions className="w-4 h-4 text-gray-800 " />
@@ -135,17 +135,15 @@ const getStarted = () => {
                     Name
                   </th>
                   <th className="border-b border-white p-2 text-center">
-                    Company Name
+                  Description
                   </th>
                   <th className="border-b border-white p-2 text-center">
-                    Email
+                  Rate
                   </th>
                   <th className="border-b border-white p-2 text-center">
-                    Work Phone
+                  Usage Unit
                   </th>
-                  <th className="border-b border-white  p-2 text-center">
-                    Receivables (BCY)
-                  </th>
+                 
                 </tr>
               </thead>
               <tbody className="text-white text-sm">
@@ -155,14 +153,12 @@ const getStarted = () => {
                   <td className="p-2 text-center">{item.customerCompanyName}</td>
                   <td className="p-2 text-center">{item.email}</td>
                   <td className="p-2 text-center">{item.workPhone}</td>
-                  <td className="p-2 text-center">₹0.00</td>
                 </tr>))} 
                 <tr className="border-b border-white">
-                  <td className="p-2 text-center">jlo</td>
-                  <td className="p-2 text-center">helo@ha.ls</td>
-                  <td className="p-2 text-center">123456987</td>
-                  <td className="p-2 text-center">₹0.00</td>
-                  <td className="p-2 text-center">₹0.00</td>
+                  <td className="p-2 text-center">sampleItem</td>
+                  <td className="p-2 text-center">sample Discription.ls</td>
+                  <td className="p-2 text-center">₹ 256</td>
+                  <td className="p-2 text-center">pcs</td>
                 </tr>
               </tbody>
             </table>
