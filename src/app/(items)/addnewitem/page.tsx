@@ -166,7 +166,7 @@ const getStarted = () => {
                           <input
                             name="Type"
                             className="accent-secondary"
-                            type="radio"
+                            type="radio" checked
                           />
                           <p>Goods</p>
                         </div>
