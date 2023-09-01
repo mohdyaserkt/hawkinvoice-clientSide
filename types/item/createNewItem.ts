@@ -1,6 +1,6 @@
 interface handleCreateNewItem {
    item:{
-  Type:String
+  type:String
   name: String,
   unit: String,
   sellingPrice: Number
@@ -10,7 +10,7 @@ interface handleCreateNewItem {
 }
 
 interface IItemData {
-  Type:String
+  type:String
   name: String,
   unit: String,
   sellingPrice: Number

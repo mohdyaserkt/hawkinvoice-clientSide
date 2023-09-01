@@ -34,7 +34,7 @@ const getStarted = () => {
     ] = Array.from(form.elements) as HTMLInputElement[];
 
     const item = {
-      Type:
+      type:
       TypeGoodsInput.value == "on" ? "goods" : "service",
       name: nameInput.value,
       unit: unitInput.value,
