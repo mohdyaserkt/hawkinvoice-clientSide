@@ -152,7 +152,7 @@ const getStarted = () => {
                 <tr className="border-b border-white" key={item.id}>
                   <td className="p-2 text-center">{item.name}</td>
                   <td className="p-2 text-center">{item.description}</td>
-                  <td className="p-2 text-center">{item.price}</td>
+                  <td className="p-2 text-center">{item.sellingPrice}</td>
                   <td className="p-2 text-center">{item.unit}</td>
                 </tr>))} 
                 <tr className="border-b border-white">
