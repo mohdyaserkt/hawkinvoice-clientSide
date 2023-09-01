@@ -15,9 +15,9 @@ import {
   AiOutlineUser,
   AiOutlineSearch,
 } from "react-icons/ai";
-import { handleCreateNewCustomer } from "@/utils/Customers/createNewCustomer";
 import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
+import { handleCreateNewItem } from "@/utils/items/createNewItem";
 
 const getStarted = () => {
   const router = useRouter();
@@ -25,85 +25,40 @@ const getStarted = () => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const [
-      custumerTypeBusinessInput,
-      custumerTypeIndividualInput,
-      salutationInput,
-      firstNameInput,
-      lastNameInput,
-      companyNameInput,
-      DisplayNameInput,
-      EmailInput,
-      WorkPhoneInput,
-      MobileInput,
-      billingAddressAttention,
-      billingAddressRegion,
-      billingAddressStreet1,
-      billingAddressStreet2,
-      billingAddressCity,
-      billingAddressState,
-      shippingAddressAttention,
-      shippingAddressRegion,
-      shippingAddressStreet1,
-      shippingAddressStreet2,
-      shippingAddressCity,
-      shippingAddressState,
+      TypeGoodsInput,
+      TypeServiceInput,
+      nameInput,
+      unitInput,
+      sellingPriceInput,
+      descriptionInput,
     ] = Array.from(form.elements) as HTMLInputElement[];
 
-    const customer = {
-      customerType:
-        custumerTypeBusinessInput.value == "on" ? "business" : "individual",
-      salutation: salutationInput.value,
-      firstName: firstNameInput.value,
-      lastName: lastNameInput.value,
-      customerCompanyName: companyNameInput.value,
-      displayName: DisplayNameInput.value,
-      email: EmailInput.value,
-      workPhone: WorkPhoneInput.value as unknown as number,
-      mobile: MobileInput.value as unknown as number,
-      billingAddress: {
-        attention: billingAddressAttention.value,
-        region: billingAddressRegion.value,
-        street1: billingAddressStreet1.value,
-        street2: billingAddressStreet2.value,
-        city: billingAddressCity.value,
-        state: billingAddressState.value,
-      },
-      shippingAddress: {
-        attention: shippingAddressAttention.value,
-        region: shippingAddressRegion.value,
-        street1: shippingAddressStreet1.value,
-        street2: shippingAddressStreet2.value,
-        city: shippingAddressCity.value,
-        state: shippingAddressState.value,
-      },
+    const item = {
+      Type:
+      TypeGoodsInput.value == "on" ? "goods" : "service",
+      name: nameInput.value,
+      unit: unitInput.value,
+      sellingPrice: parseInt(sellingPriceInput.value),
+      description: descriptionInput.value,
+      
     };
-    console.log(customer);
+    console.log(item);
 
-
-
-    handleCreateNewCustomer({
-      customer,
-      setError
-
-      // businessName: organizationState.businessName as string,
-      // typeOfbusiness: organizationState.typeOfbusiness as string,
+    handleCreateNewItem({
+      item,
+      setError,
     })
       .then((res: any) => {
         if (res) {
           console.log(res);
-          router?.push("/customers");
+          router?.push("/items");
           alert(res);
         }
-      })  
+      })
       .catch((err: ApiError) => {
         console.log(err.message);
         alert(err);
       });
-
-
-
-
-
   };
   const [errors, setErrors] = useState<{
     field: string;
@@ -203,13 +158,13 @@ const getStarted = () => {
                   onSubmit={handleSubmit}
                   className="text-[13px] text-white"
                 >
-                  <div className="flex flex-col gap-4">
-                    <div className="flex space-x-36">
+                  <div className="flex flex-col gap-7">
+                    <div className="flex space-x-28">
                       <p>Type</p>
                       <div className="flex space-x-2">
                         <div className="flex space-x-2">
                           <input
-                            name="Customer Type"
+                            name="Type"
                             className="accent-secondary"
                             type="radio"
                           />
@@ -217,7 +172,7 @@ const getStarted = () => {
                         </div>
                         <div className="flex space-x-2">
                           <input
-                            name="Customer Type"
+                            name="Type"
                             className="accent-secondary"
                             type="radio"
                           />
@@ -225,10 +180,12 @@ const getStarted = () => {
                         </div>
                       </div>
                     </div>
-                    
-                    <div className="flex items-center gap-[128px]">
-                      <p>Name<span className="text-red-600">*</span></p>
-                      
+
+                    <div className="flex items-center gap-[98px]">
+                      <p>
+                        Name<span className="text-red-600">*</span>
+                      </p>
+
                       <div className=" flex items-center">
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
@@ -236,11 +193,8 @@ const getStarted = () => {
                         />
                       </div>
                     </div>
-                    <div className="flex gap-4">
-                      <p>
-                        Unit 
-                        
-                      </p>
+                    <div className="flex gap-[119px]">
+                      <p>Unit</p>
                       <div>
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
@@ -253,10 +207,12 @@ const getStarted = () => {
                     <div>
                       <input type="text" />
                     </div>
-      focus:outline-none              </div> */}
+                     focus:outline-none              </div> */}
 
-                    <div className="flex items-center gap-[68px]">
-                      <p>Selling Price<span className="text-red-600">*</span></p>
+                    <div className="flex items-center gap-[60px]">
+                      <p>
+                        Selling Price<span className="text-red-600">*</span>
+                      </p>
                       <div className="flex items-center">
                         <input
                           className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
@@ -268,28 +224,27 @@ const getStarted = () => {
                     <div className="flex items-start gap-[71px]">
                       <p>Description</p>
                       <div className=" flex  w-80 ">
-                        
-                      <textarea
-                            placeholder="street 1"
-                            className="rounded-md  text-xs w-64 text-black p-2"
-                          ></textarea>
+                        <textarea
+                          placeholder="Description "
+                          className="focus:outline-none rounded-md  text-xs w-64 text-black p-2"
+                        ></textarea>
                       </div>
                     </div>
-                  </div>
-                 
-                  <div className="flex gap-2 ml-3">
-                    <button
-                      className="bg-secondary py-2 px-3 rounded-md text-sm text-black"
-                      type="submit"
-                    >
-                      Save
-                    </button>
-                    <button
-                      className=" rounded-md bg-white py-2 px-3 text-sm text-black"
-                      type="reset"
-                    >
-                      Cancel
-                    </button>
+
+                    <div className="flex gap-2 ml-3">
+                      <button
+                        className="bg-secondary py-2 px-3 rounded-md text-sm text-black"
+                        type="submit"
+                      >
+                        Save
+                      </button>
+                      <button
+                        className=" rounded-md bg-white py-2 px-3 text-sm text-black"
+                        type="reset"
+                      >
+                        Cancel
+                      </button>
+                    </div>
                   </div>
                 </form>
               </div>
