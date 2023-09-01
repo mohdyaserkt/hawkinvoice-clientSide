@@ -17,14 +17,15 @@ import {
 } from "react-icons/ai";
 
 import Link from "next/link";
-import { handleGetCustomers } from "@/utils/Customers/getCustomers";
+import { handleGetItems } from "@/utils/items/getItems";
+
 
 const getStarted = () => {
   const [myCustomers, setmyCustomers] = useState([]);
   useEffect(() => {
-    handleGetCustomers()
+    handleGetItems()
       .then(({data}:any) => { 
-        setmyCustomers(data.customers)
+        setmyCustomers(data.items)
       })
       .catch((err) => {
         console.log(err);
@@ -149,10 +150,10 @@ const getStarted = () => {
               <tbody className="text-white text-sm">
               {myCustomers.map((item: any) => (
                 <tr className="border-b border-white" key={item.id}>
-                  <td className="p-2 text-center">{item.displayName}</td>
-                  <td className="p-2 text-center">{item.customerCompanyName}</td>
-                  <td className="p-2 text-center">{item.email}</td>
-                  <td className="p-2 text-center">{item.workPhone}</td>
+                  <td className="p-2 text-center">{item.name}</td>
+                  <td className="p-2 text-center">{item.description}</td>
+                  <td className="p-2 text-center">{item.price}</td>
+                  <td className="p-2 text-center">{item.unit}</td>
                 </tr>))} 
                 <tr className="border-b border-white">
                   <td className="p-2 text-center">sampleItem</td>
