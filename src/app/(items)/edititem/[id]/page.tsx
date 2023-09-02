@@ -27,6 +27,7 @@ const getStarted = () => {
   const router = useRouter();
 
   const [currentitem, setcurrentitem] = useState<IItemData>()
+
   useEffect(() => {
     handleGetSingleItem(id as string)
       .then(({data}:any) => { 
@@ -214,7 +215,7 @@ const getStarted = () => {
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
-                          value={currentitem?.name}
+                          placeholder={currentitem?.name}
                         />
                       </div>
                     </div>
@@ -224,7 +225,7 @@ const getStarted = () => {
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
-                          value={currentitem?.unit}
+                          placeholder={currentitem?.unit}
                         />
                       </div>
                     </div>
@@ -243,8 +244,8 @@ const getStarted = () => {
                         <input
                           className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                           type="number"
-                          placeholder="INR"
-                          value={currentitem?.sellingPrice as unknown as string}
+                         
+                          placeholder={currentitem?.sellingPrice as unknown as string}
                         />
                       </div>
                     </div>
@@ -252,9 +253,9 @@ const getStarted = () => {
                       <p>Description</p>
                       <div className=" flex  w-80 ">
                         <textarea
-                          placeholder="Description "
+                         
                           className="focus:outline-none rounded-md  text-xs w-64 text-black p-2"
-                          value={currentitem?.description}
+                          placeholder={currentitem?.description}
                         ></textarea>
                       </div>
                     </div>

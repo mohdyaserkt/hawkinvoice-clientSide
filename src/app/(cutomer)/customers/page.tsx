@@ -88,10 +88,11 @@ const getStarted = () => {
               <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Customers</p>
             </div>
+            <Link href="/items">
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <PiHandbag className="w-4 h-4 ml-2 text-white " />
               <p className="text-sm text-white">Items</p>
-            </div>
+            </div></Link>
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Invoices</p>

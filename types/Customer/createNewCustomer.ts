@@ -1,5 +1,6 @@
 interface handleCreateNewCustomer {
     customer:{
+      id?:string
   customerType: string;
   firstName: string;
   lastName: string;
@@ -30,6 +31,7 @@ interface handleCreateNewCustomer {
 }
 
 interface ICustomerData {
+    id?:string
     customerType: string;
     firstName: string;
     lastName: string;
