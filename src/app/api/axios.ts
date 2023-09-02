@@ -1,28 +1,23 @@
-import axios,{AxiosError, AxiosInstance} from "axios"
-const  axiosInstance : AxiosInstance= axios.create({
-    baseURL : "https://hai.hawkinvoice.com"
-  })
+import axios, { AxiosError, AxiosInstance } from "axios";
+const axiosInstance: AxiosInstance = axios.create({
+  baseURL: "https://hai.hawkinvoice.com",
+});
 
-  axiosInstance.interceptors.request.use(
-    (config) => {
-        const User =JSON.parse(localStorage.getItem("AccessToken") as string )
-        if(User) {
-        const AccessToken =User
-        console.log(AccessToken);
-        if(AccessToken){
-            config.headers["Authorization"] = `Bearer ${AccessToken}`;
-        }
+axiosInstance.interceptors.request.use(
+  (config) => {
+    const User = JSON.parse(localStorage.getItem("AccessToken") as string);
+    if (User) {
+      const AccessToken = User;
+      if (AccessToken) {
+        config.headers["Authorization"] = `Bearer ${AccessToken}`;
+      }
     }
-    
-    
-     return config
-    },
-    (error:AxiosError)=>{
-        return Promise.reject(error)
-    }
+
+    return config;
+  },
+  (error: AxiosError) => {
+    return Promise.reject(error);
+  }
 );
 
-
-  
-  
-  export default axiosInstance
+export default axiosInstance;
