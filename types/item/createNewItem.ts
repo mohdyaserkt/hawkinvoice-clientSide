@@ -1,5 +1,6 @@
 interface handleCreateNewItem {
    item:{
+    id?:string
   type:String
   name: String,
   unit: String,
@@ -10,6 +11,7 @@ interface handleCreateNewItem {
 }
 
 interface IItemData {
+  id?:string
   type:String
   name: String,
   unit: String,

@@ -18,6 +18,7 @@ import {
 import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
+import { handleEditItem } from "@/utils/items/editItem";
 
 const getStarted = () => {
   const router = useRouter();
@@ -34,6 +35,7 @@ const getStarted = () => {
     ] = Array.from(form.elements) as HTMLInputElement[];
 
     const item = {
+      id:"dfd",
       type:
       TypeGoodsInput.value == "on" ? "goods" : "service",
       name: nameInput.value,
@@ -44,7 +46,7 @@ const getStarted = () => {
     };
     console.log(item);
 
-    handleCreateNewItem({
+    handleEditItem({
       item,
       setError,
     })
