@@ -26,11 +26,13 @@ const getStarted = () => {
   const id = params.id;
   const router = useRouter();
 
-  const [item, setitem] = useState([]);
+  const [item, setitem] = useState();
   useEffect(() => {
     handleGetSingleItem(id as string)
       .then(({data}:any) => { 
-        setitem(data.items)
+        console.log(data.item);
+        
+        setitem(data.item)
       })
       .catch((err) => {
         console.log(err);
@@ -56,7 +58,7 @@ const getStarted = () => {
     ] = Array.from(form.elements) as HTMLInputElement[];
 
     const item = {
-      id: "dfd",
+      id: id as string,
       type: TypeGoodsInput.value == "on" ? "goods" : "service",
       name: nameInput.value,
       unit: unitInput.value,
