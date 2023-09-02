@@ -26,13 +26,13 @@ const getStarted = () => {
   const id = params.id;
   const router = useRouter();
 
-  const [item, setitem] = useState();
+  const [currentitem, setcurrentitem] = useState<IItemData>()
   useEffect(() => {
     handleGetSingleItem(id as string)
       .then(({data}:any) => { 
         console.log(data.item);
         
-        setitem(data.item)
+        setcurrentitem(data.item as IItemData)
       })
       .catch((err) => {
         console.log(err);
@@ -214,6 +214,7 @@ const getStarted = () => {
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
+                          value={currentitem?.name}
                         />
                       </div>
                     </div>
@@ -223,6 +224,7 @@ const getStarted = () => {
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
+                          value={currentitem?.unit}
                         />
                       </div>
                     </div>
@@ -242,6 +244,7 @@ const getStarted = () => {
                           className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                           type="number"
                           placeholder="INR"
+                          value={currentitem?.sellingPrice as unknown as string}
                         />
                       </div>
                     </div>

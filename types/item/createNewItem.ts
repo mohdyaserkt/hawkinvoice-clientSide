@@ -1,20 +1,20 @@
 interface handleCreateNewItem {
    item:{
     id?:string
-  type:String
-  name: String,
-  unit: String,
+  type:string
+  name: string,
+  unit: string,
   sellingPrice: Number
-  description:String,}
+  description:string,}
 
   setError?: (field: string, errors: string[]) => void;
 }
 
 interface IItemData {
   id?:string
-  type:String
-  name: String,
-  unit: String,
+  type:string
+  name: string,
+  unit: string,
   sellingPrice: Number
-  description:String,
+  description:string,
 }
