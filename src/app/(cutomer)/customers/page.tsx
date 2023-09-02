@@ -157,6 +157,7 @@ const getStarted = () => {
                   <td className="p-2 text-center">{item.email}</td>
                   <td className="p-2 text-center">{item.workPhone}</td>
                   <td className="p-2 text-center">₹0.00</td>
+                  <Link href={`/editcustomer/${item.id}`}><td className="p-2 text-center">edit</td></Link>
                 </tr>))} 
                 <tr className="border-b border-white">
                   <td className="p-2 text-center">jlo</td>

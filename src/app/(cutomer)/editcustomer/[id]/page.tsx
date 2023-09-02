@@ -235,6 +235,7 @@ const getStarted = () => {
                             name="Customer Type"
                             className="accent-secondary"
                             type="radio"
+                            
                           />
                           <p>Business</p>
                         </div>
@@ -253,17 +254,18 @@ const getStarted = () => {
                       <div className="flex items-center gap-2">
                         <input
                           className="focus:outline-none text-black rounded-md w-32 h-8 text-xs p-2"
-                          placeholder="Salutation"
+                          placeholder={currentCustomer?.salutaion as string}
+                          type="text"
+                          
+                        />
+                        <input
+                          className="focus:outline-none text-black rounded-md w-32 h-8 text-xs p-2"
+                          placeholder={currentCustomer?.firstName as string}
                           type="text"
                         />
                         <input
                           className="focus:outline-none text-black rounded-md w-32 h-8 text-xs p-2"
-                          placeholder="First Name"
-                          type="text"
-                        />
-                        <input
-                          className="focus:outline-none text-black rounded-md w-32 h-8 text-xs p-2"
-                          placeholder="Last Name"
+                          placeholder={currentCustomer?.lastName as string}
                           type="text"
                         />
                       </div>
@@ -273,6 +275,7 @@ const getStarted = () => {
                       <div className=" flex items-center">
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
+                          placeholder={currentCustomer?.customerCompanyName as string}
                           type="text"
                         />
                       </div>
@@ -286,6 +289,7 @@ const getStarted = () => {
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
+                          placeholder={currentCustomer?.displayName as string}
                         />
                       </div>
                     </div>
@@ -294,7 +298,8 @@ const getStarted = () => {
                     <div>
                       <input type="text" />
                     </div>
-      focus:outline-none              </div> */}
+                          
+                  focus:outline-none  </div> */}
 
                     <div className="flex items-center gap-[77px]">
                       <p>Customer Email</p>
@@ -302,6 +307,7 @@ const getStarted = () => {
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="email"
+                          placeholder={currentCustomer?.email as string}
                         />
                       </div>
                     </div>
@@ -310,12 +316,12 @@ const getStarted = () => {
                       <div className=" flex justify-between w-80 h-8 gap-1">
                         <input
                           className="focus:outline-none rounded-md h-8 text-xs w-36 text-black p-2"
-                          placeholder="Work Phone"
+                          placeholder={currentCustomer?.workPhone as unknown as string}
                           type="tel"
                         />
                         <input
                           className="focus:outline-none rounded-md h-8 text-xs w-36 text-black p-2"
-                          placeholder="Mobile"
+                          placeholder={currentCustomer?.mobile as unknown as string}
                           type="tel"
                         />
                       </div>
