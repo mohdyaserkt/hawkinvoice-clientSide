@@ -20,22 +20,22 @@ import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 
 const getStarted = () => {
-
   const billingRef = useRef<HTMLDivElement | null>(null);
   const shippingRef = useRef<HTMLDivElement | null>(null);
   const router = useRouter();
 
   const copyBillingToShipping = () => {
     if (billingRef.current && shippingRef.current) {
-      // Get the values of billing address fields
-      const billingFields = Array.from(billingRef.current.querySelectorAll('input,textarea')) as HTMLInputElement[];
+      const billingFields = Array.from(
+        billingRef.current.querySelectorAll("input,textarea")
+      ) as HTMLInputElement[];
       const billingValues: Record<string, string> = {};
       billingFields.forEach((field) => {
         billingValues[field.name] = field.value;
       });
-
-      // Set the values of shipping address fields
-      const shippingFields = Array.from(shippingRef.current.querySelectorAll('input,textarea')) as HTMLInputElement[];
+      const shippingFields = Array.from(
+        shippingRef.current.querySelectorAll("input,textarea")
+      ) as HTMLInputElement[];
       shippingFields.forEach((field) => {
         if (billingValues.hasOwnProperty(field.name)) {
           field.value = billingValues[field.name];
@@ -101,11 +101,9 @@ const getStarted = () => {
     };
     console.log(customer);
 
-    
-  
     handleCreateNewCustomer({
       customer,
-      setError
+      setError,
     })
       .then((res: any) => {
         if (res) {
@@ -113,16 +111,11 @@ const getStarted = () => {
           router?.push("/customers");
           alert(res);
         }
-      })  
+      })
       .catch((err: ApiError) => {
         console.log(err.message);
         alert(err);
       });
-
-
-
-
-
   };
   const [errors, setErrors] = useState<{
     field: string;
@@ -318,7 +311,10 @@ const getStarted = () => {
                     </div>
                   </div>
                   <div className="flex gap-20">
-                    <div ref={billingRef} className="flex flex-col gap-4 mb-8 mt-9">
+                    <div
+                      ref={billingRef}
+                      className="flex flex-col gap-4 mb-8 mt-9"
+                    >
                       <h3 className="text-sm text-secondary">
                         Billing Address
                       </h3>
@@ -383,12 +379,18 @@ const getStarted = () => {
                       </div>
                     </div>
 
-                    <div ref={shippingRef} className="flex flex-col gap-4 mb-8 mt-9">
+                    <div
+                      ref={shippingRef}
+                      className="flex flex-col gap-4 mb-8 mt-9"
+                    >
                       <div className="flex justify-between">
                         <h3 className="text-sm text-secondary">
                           Shipping Address
                         </h3>
-                        <div onClick={copyBillingToShipping} className=" flex items-center text-secondary gap-2">
+                        <div
+                          onClick={copyBillingToShipping}
+                          className=" flex items-center text-secondary gap-2"
+                        >
                           <PiCopySimple />
                           <p>Copy billing address</p>
                         </div>
