@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   LiaFileInvoiceDollarSolid,
   LiaFileInvoiceSolid,
@@ -15,13 +15,34 @@ import {
   AiOutlineUser,
   AiOutlineSearch,
 } from "react-icons/ai";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import { handleEditItem } from "@/utils/items/editItem";
+import { handleGetSingleItem } from "@/utils/items/getSingleItem";
 
 const getStarted = () => {
+  const params = useParams();
+  const id = params.id;
   const router = useRouter();
+
+  const [item, setitem] = useState([]);
+  useEffect(() => {
+    handleGetSingleItem(id as string)
+      .then(({data}:any) => { 
+        setitem(data.items)
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+  }, []);
+
+
+
+
+
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
@@ -30,19 +51,17 @@ const getStarted = () => {
       TypeServiceInput,
       nameInput,
       unitInput,
-      sellingPriceInput,  
+      sellingPriceInput,
       descriptionInput,
     ] = Array.from(form.elements) as HTMLInputElement[];
 
     const item = {
-      id:"dfd",
-      type:
-      TypeGoodsInput.value == "on" ? "goods" : "service",
+      id: "dfd",
+      type: TypeGoodsInput.value == "on" ? "goods" : "service",
       name: nameInput.value,
       unit: unitInput.value,
       sellingPrice: parseInt(sellingPriceInput.value),
       description: descriptionInput.value,
-      
     };
     console.log(item);
 
@@ -168,7 +187,8 @@ const getStarted = () => {
                           <input
                             name="Type"
                             className="accent-secondary"
-                            type="radio" checked
+                            type="radio"
+                            checked
                           />
                           <p>Goods</p>
                         </div>
