@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   LiaFileInvoiceDollarSolid,
   LiaFileInvoiceSolid,
@@ -15,12 +15,34 @@ import {
   AiOutlineUser,
   AiOutlineSearch,
 } from "react-icons/ai";
-import { handleCreateNewCustomer } from "@/utils/Customers/createNewCustomer";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
+import { handleEditCustomer } from "@/utils/Customers/editCustomer";
+import { handleGetSingleCustomer } from "@/utils/Customers/getSingleCustomer";
 
 const getStarted = () => {
+  const params = useParams();
+  const id = params.id;
   const router = useRouter();
+
+
+
+
+
+  const [currentCustomer, setcurrentCustomer] = useState<ICustomerData>()
+
+  useEffect(() => {
+    handleGetSingleCustomer(id as string)
+      .then(({data}:any) => { 
+        console.log(data.item);
+        
+        setcurrentCustomer(data.item as ICustomerData)
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+  }, []);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
@@ -50,6 +72,7 @@ const getStarted = () => {
     ] = Array.from(form.elements) as HTMLInputElement[];
 
     const customer = {
+      id:id as string,
       customerType:
         custumerTypeBusinessInput.value == "on" ? "business" : "individual",
       salutation: salutationInput.value,
@@ -81,7 +104,7 @@ const getStarted = () => {
 
 
 
-    handleCreateNewCustomer({
+    handleEditCustomer({
       customer,
       setError
 
