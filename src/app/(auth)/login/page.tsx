@@ -31,7 +31,7 @@ export default function login() {
           console.log(data.AccessToken);
 
         
-          
+  
           localStorage.setItem("user", JSON.stringify(data.user));
           localStorage.setItem("AccessToken", JSON.stringify(data.AccessToken));
 
