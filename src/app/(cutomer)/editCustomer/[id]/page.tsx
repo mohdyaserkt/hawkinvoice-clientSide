@@ -34,9 +34,9 @@ const getStarted = () => {
   useEffect(() => {
     handleGetSingleCustomer(id as string)
       .then(({data}:any) => { 
-        console.log(data.item);
+        console.log(data.customer);
         
-        setcurrentCustomer(data.item as ICustomerData)
+        setcurrentCustomer(data.customer as ICustomerData)
       })
       .catch((err) => {
         console.log(err);
@@ -57,18 +57,18 @@ const getStarted = () => {
       EmailInput,
       WorkPhoneInput,
       MobileInput,
-      billingAddressAttention,
-      billingAddressRegion,
-      billingAddressStreet1,
-      billingAddressStreet2,
-      billingAddressCity,
-      billingAddressState,
-      shippingAddressAttention,
-      shippingAddressRegion,
-      shippingAddressStreet1,
-      shippingAddressStreet2,
-      shippingAddressCity,
-      shippingAddressState,
+      // billingAddressAttention,
+      // billingAddressRegion,
+      // billingAddressStreet1,
+      // billingAddressStreet2,
+      // billingAddressCity,
+      // billingAddressState,
+      // shippingAddressAttention,
+      // shippingAddressRegion,
+      // shippingAddressStreet1,
+      // shippingAddressStreet2,
+      // shippingAddressCity,
+      // shippingAddressState,
     ] = Array.from(form.elements) as HTMLInputElement[];
 
     const customer = {
@@ -83,22 +83,22 @@ const getStarted = () => {
       email: EmailInput.value,
       workPhone: WorkPhoneInput.value as unknown as number,
       mobile: MobileInput.value as unknown as number,
-      billingAddress: {
-        attention: billingAddressAttention.value,
-        region: billingAddressRegion.value,
-        street1: billingAddressStreet1.value,
-        street2: billingAddressStreet2.value,
-        city: billingAddressCity.value,
-        state: billingAddressState.value,
-      },
-      shippingAddress: {
-        attention: shippingAddressAttention.value,
-        region: shippingAddressRegion.value,
-        street1: shippingAddressStreet1.value,
-        street2: shippingAddressStreet2.value,
-        city: shippingAddressCity.value,
-        state: shippingAddressState.value,
-      },
+      // billingAddress: {
+      //   attention: billingAddressAttention.value,
+      //   region: billingAddressRegion.value,
+      //   street1: billingAddressStreet1.value,
+      //   street2: billingAddressStreet2.value,
+      //   city: billingAddressCity.value,
+      //   state: billingAddressState.value,
+      // },
+      // shippingAddress: {
+      //   attention: shippingAddressAttention.value,
+      //   region: shippingAddressRegion.value,
+      //   street1: shippingAddressStreet1.value,
+      //   street2: shippingAddressStreet2.value,
+      //   city: shippingAddressCity.value,
+      //   state: shippingAddressState.value,
+      // },
     };
     console.log(customer);
 
