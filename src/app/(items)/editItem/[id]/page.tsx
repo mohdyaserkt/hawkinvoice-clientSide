@@ -148,7 +148,7 @@ const getStarted = () => {
           <div className="w-full">
             <div className="p-5 flex justify-between w-full border-r-[1px] border-b-[1px] ">
               <div className="text-white">
-                <h2 className="text-xl">New Item</h2>
+                <h2 className="text-xl">Edit Item</h2>
               </div>
             </div>
 
