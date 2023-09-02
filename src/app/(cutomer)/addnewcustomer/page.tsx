@@ -24,6 +24,25 @@ const getStarted = () => {
   const billingRef = useRef<HTMLDivElement | null>(null);
   const shippingRef = useRef<HTMLDivElement | null>(null);
   const router = useRouter();
+
+  const copyBillingToShipping = () => {
+    if (billingRef.current && shippingRef.current) {
+      // Get the values of billing address fields
+      const billingFields = Array.from(billingRef.current.querySelectorAll('input,textarea')) as HTMLInputElement[];
+      const billingValues: Record<string, string> = {};
+      billingFields.forEach((field) => {
+        billingValues[field.name] = field.value;
+      });
+
+      // Set the values of shipping address fields
+      const shippingFields = Array.from(shippingRef.current.querySelectorAll('input,textarea')) as HTMLInputElement[];
+      shippingFields.forEach((field) => {
+        if (billingValues.hasOwnProperty(field.name)) {
+          field.value = billingValues[field.name];
+        }
+      });
+    }
+  };
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
@@ -82,25 +101,8 @@ const getStarted = () => {
     };
     console.log(customer);
 
-    const copyBillingToShipping = () => {
-      if (billingRef.current && shippingRef.current) {
-        // Get the values of billing address fields
-        const billingFields = Array.from(billingRef.current.querySelectorAll('input,')) as HTMLInputElement[];
-        const billingValues: Record<string, string> = {};
-        billingFields.forEach((field) => {
-          billingValues[field.name] = field.value;
-        });
+    
   
-        // Set the values of shipping address fields
-        const shippingFields = Array.from(shippingRef.current.querySelectorAll('input')) as HTMLInputElement[];
-        shippingFields.forEach((field) => {
-          if (billingValues.hasOwnProperty(field.name)) {
-            field.value = billingValues[field.name];
-          }
-        });
-      }
-    };
-
     handleCreateNewCustomer({
       customer,
       setError
@@ -327,6 +329,7 @@ const getStarted = () => {
                             className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
                             type="text"
+                            name="Attention"
                           />
                         </div>
                       </div>
@@ -337,6 +340,7 @@ const getStarted = () => {
                             className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
                             type="text"
+                            name="Country/Region"
                           />
                         </div>
                       </div>
@@ -346,10 +350,12 @@ const getStarted = () => {
                           <textarea
                             placeholder="street 1"
                             className="rounded-md  text-xs w-64 text-black p-2"
+                            name="street1"
                           ></textarea>
                           <textarea
                             placeholder="street 2"
                             className="rounded-md  text-xs w-64 text-black p-2"
+                            name="street2"
                           ></textarea>
                         </div>
                       </div>
@@ -360,6 +366,7 @@ const getStarted = () => {
                             className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
                             type="text"
+                            name="City"
                           />
                         </div>
                       </div>
@@ -370,6 +377,7 @@ const getStarted = () => {
                             className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
                             type="text"
+                            name="State"
                           />
                         </div>
                       </div>
@@ -380,7 +388,7 @@ const getStarted = () => {
                         <h3 className="text-sm text-secondary">
                           Shipping Address
                         </h3>
-                        <div className=" flex items-center text-secondary gap-2">
+                        <div onClick={copyBillingToShipping} className=" flex items-center text-secondary gap-2">
                           <PiCopySimple />
                           <p>Copy billing address</p>
                         </div>
@@ -393,6 +401,7 @@ const getStarted = () => {
                             className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
                             type="text"
+                            name="Attention"
                           />
                         </div>
                       </div>
@@ -403,6 +412,7 @@ const getStarted = () => {
                             className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
                             type="text"
+                            name="Country/Region"
                           />
                         </div>
                       </div>
@@ -412,10 +422,12 @@ const getStarted = () => {
                           <textarea
                             placeholder="street 1"
                             className="rounded-md  text-xs w-64 text-black p-2"
+                            name="street1"
                           ></textarea>
                           <textarea
                             placeholder="street 2"
                             className="rounded-md  text-xs w-64 text-black p-2"
+                            name="street2"
                           ></textarea>
                         </div>
                       </div>
@@ -426,6 +438,7 @@ const getStarted = () => {
                             className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
                             type="text"
+                            name="City"
                           />
                         </div>
                       </div>
@@ -436,6 +449,7 @@ const getStarted = () => {
                             className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
                             type="text"
+                            name="State"
                           />
                         </div>
                       </div>
