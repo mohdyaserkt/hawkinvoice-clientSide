@@ -41,7 +41,7 @@ interface ICustomerData {
     salutaion?: String;
     customerCompanyName?: String;
     mobile?: Number;
-    billingAddress: {
+    billingAddress?: {
       attention: String;
       region: String;
       street1: String;
@@ -49,7 +49,7 @@ interface ICustomerData {
       city: String;
       state: String;
     };
-    shippingAddress: {
+    shippingAddress?: {
       attention: String;
       region: String;
       street1: String;
