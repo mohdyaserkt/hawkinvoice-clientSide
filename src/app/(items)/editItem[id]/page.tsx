@@ -29,7 +29,7 @@ const getStarted = () => {
       TypeServiceInput,
       nameInput,
       unitInput,
-      sellingPriceInput,
+      sellingPriceInput,  
       descriptionInput,
     ] = Array.from(form.elements) as HTMLInputElement[];
 
