@@ -154,6 +154,8 @@ const getStarted = () => {
                   <td className="p-2 text-center">{item.description}</td>
                   <td className="p-2 text-center">₹ {item.sellingPrice}</td>
                   <td className="p-2 text-center">{item.unit}</td>
+                  <Link href={`/edititem/${item.id}`}><td className="p-2 text-center">edit</td></Link>
+
                 </tr>))} 
                 <tr className="border-b border-white">
                   <td className="p-2 text-center">sampleItem</td>
