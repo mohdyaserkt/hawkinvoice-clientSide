@@ -11,6 +11,12 @@ axiosInstance.interceptors.request.use(
       if (AccessToken) {
         config.headers["Authorization"] = `Bearer ${AccessToken}`;
       }
+
+      const currentCompany = localStorage.getItem("currentCompany");
+
+      if (currentCompany) {
+        config.headers["current-company"] = currentCompany;
+      }
     }
 
     return config;
