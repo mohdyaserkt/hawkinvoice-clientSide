@@ -290,14 +290,14 @@ const getStarted = () => {
                     className="relative flex cursor-pointer  items-center rounded-full p-3"
                     data-ripple-dark="true"
                   >
-                    <button className=" bg-secondary rounded w-36 h-8 px-3 text-xs">
+                    {/* <button className=" bg-secondary rounded w-36 h-8 px-3 text-xs">
                       submit
-                    </button>
-                    {/* <input
+                    </button> */}
+                    <input
                     id="login"
                     type="checkbox"
                     className="before:content[''] peer relative sm:w-3 sm:h-3 md:h-5 md:w-5 cursor-pointer appearance-none rounded border-2 border-white transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-black  checked:bg-black checked:before:bg-black hover:before:opacity-10"
-                  /> */}
+                  />
                     <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -315,15 +315,15 @@ const getStarted = () => {
                       </svg>
                     </div>
                   </label>
-                  {/* <label className="mt-px sm:hidden md:text-sm cursor-pointer select-none font-light text-white ">
+                  <label className="mt-px sm:hidden md:text-sm cursor-pointer select-none font-light text-white ">
                   I have a mobile business without a permanent physical location
                 </label>
                 <label className="mt-px sm:text-xs md:text-sm cursor-pointer select-none font-light text-white ">
                   I run a mobile business without a permanent location.
-                </label> */}
+                </label>
                 </div>
 
-                {/* <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4">
                 <div>
                   <input
                     type="text"
@@ -361,7 +361,7 @@ const getStarted = () => {
                     />
                   </div>
                 </div>
-              </div> */}
+              </div>
               </div>
             </div>
           </div>
