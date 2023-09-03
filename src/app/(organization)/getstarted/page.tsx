@@ -36,14 +36,13 @@ const getStarted = () => {
       phoneNumber: organizationState.phoneNumber as Number,
       NoOfemployes: organizationState.NoOfemployes as string,
       annualRevenue: organizationState.annualRevenue as string,
-      organizationAddress:{
-        address:organizationState.address,
-        apt:organizationState.apt,
-        city:organizationState.city,
-        state:organizationState.state,
-        zipCode:organizationState.zipCode
-      
-      }
+      organizationAddress: {
+        address: organizationState.address,
+        apt: organizationState.apt,
+        city: organizationState.city,
+        state: organizationState.state,
+        zipCode: organizationState.zipCode,
+      },
     })
       .then((res: any) => {
         if (res) {
@@ -72,10 +71,26 @@ const getStarted = () => {
           <div className="flex h-full justify-center my-24 ">
             <div className=" sm:w-11/12 md:w-9/12 lg:w-2/5 h-auto">
               <div className="text-white text-base">Let’s get started</div>
-              <div className="mt-2 mb-4">
+              <div className="mt-2 mb-4 flex justify-between">
                 <h1 className="text-white text-3xl">
                   Tell us about your business
                 </h1>
+                <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="2"
+                  stroke="white"
+                  className="w-10 h-10"
+                
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                  />
+                </svg></button>
               </div>
               <div className="mb-9">
                 <p className="text-white sm:text-sm text-base">
@@ -303,12 +318,11 @@ const getStarted = () => {
                     className="relative flex cursor-pointer  items-center rounded-full p-3"
                     data-ripple-dark="true"
                   >
-                    
                     <input
                       id="login"
                       checked={isChecked}
                       type="checkbox"
-                      onChange={()=>setIsChecked(!isChecked)}
+                      onChange={() => setIsChecked(!isChecked)}
                       className="before:content[''] peer relative sm:w-3 sm:h-3 md:h-5 md:w-5 cursor-pointer appearance-none rounded border-2 border-white transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-black  checked:bg-black checked:before:bg-black hover:before:opacity-10"
                     />
                     <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
@@ -337,7 +351,11 @@ const getStarted = () => {
                   </label>
                 </div>
 
-                <div className={`  ${isChecked ? 'hidden' : 'flex'} flex-col gap-4 `}>
+                <div
+                  className={`  ${
+                    isChecked ? "hidden" : "flex"
+                  } flex-col gap-4 `}
+                >
                   <div>
                     <input
                       type="text"
@@ -387,7 +405,7 @@ const getStarted = () => {
                       <input
                         type="text"
                         name="zipCode"
-                      id="zipCode"
+                        id="zipCode"
                         className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
                         placeholder="Zip code"
                         value={organizationState.zipCode}
@@ -396,13 +414,12 @@ const getStarted = () => {
                     </div>
                   </div>
                 </div>
-                
               </div>
-            </div><button className=" bg-secondary rounded w-36 h-8 px-3 text-xs">
-                      submit
-                    </button>
+            </div>
+            {/* <button className=" bg-secondary rounded w-36 h-8 px-3 text-xs">
+              submit
+            </button> */}
           </div>
-          
         </form>
       </div>
     </>
