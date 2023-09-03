@@ -22,74 +22,13 @@ import { handleEditItem } from "@/utils/items/editItem";
 import { handleGetSingleItem } from "@/utils/items/getSingleItem";
 
 const getStarted = () => {
-  const params = useParams();
-  const id = params.id;
-  const router = useRouter();
-
-  const [currentitem, setcurrentitem] = useState<IItemData>()
-
-  useEffect(() => {
-    handleGetSingleItem(id as string)
-      .then(({data}:any) => { 
-        console.log(data.item);
-        
-        setcurrentitem(data.item as IItemData)
-      })
-      .catch((err) => {
-        console.log(err);
-        alert(err);
-      });
-  }, []);
+  
 
 
 
 
 
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.target as HTMLFormElement;
-    const [
-      TypeGoodsInput,
-      TypeServiceInput,
-      nameInput,
-      unitInput,
-      sellingPriceInput,
-      descriptionInput,
-    ] = Array.from(form.elements) as HTMLInputElement[];
-
-    const item = {
-      id: id as string,
-      type: TypeGoodsInput.value == "on" ? "goods" : "service",
-      name: nameInput.value,
-      unit: unitInput.value,
-      sellingPrice: parseInt(sellingPriceInput.value),
-      description: descriptionInput.value,
-    };
-    console.log(item);
-
-    handleEditItem({
-      item,
-      setError,
-    })
-      .then((res: any) => {
-        if (res) {
-          console.log(res);
-          router?.push("/items");
-          alert(res);
-        }
-      })
-      .catch((err: ApiError) => {
-        console.log(err.message);
-        alert(err);
-      });
-  };
-  const [errors, setErrors] = useState<{
-    field: string;
-    errors: string[];
-  } | null>({ field: "", errors: [""] });
-  const setError = (field: string, errorMessages: string[]) =>
-    setErrors({ field, errors: errorMessages });
+  
   return (
     <>
       <div className="h-screen">
@@ -178,103 +117,8 @@ const getStarted = () => {
 
             <div className="pt-7 pl-16">
               <div>
-                <form
-                  onSubmit={handleSubmit}
-                  className="text-[13px] text-white"
-                >
-                  <div className="flex flex-col gap-7">
-                    <div className="flex space-x-28">
-                      <p>Type</p>
-                      <div className="flex space-x-2">
-                        <div className="flex space-x-2">
-                          <input
-                            name="Type"
-                            className="accent-secondary"
-                            type="radio"
-                            checked
-                          />
-                          <p>Goods</p>
-                        </div>
-                        <div className="flex space-x-2">
-                          <input
-                            name="Type"
-                            className="accent-secondary"
-                            type="radio"
-                          />
-                          <p>Services</p>
-                        </div>
-                      </div>
-                    </div>
+                <form>
 
-                    <div className="flex items-center gap-[98px]">
-                      <p>
-                        Name<span className="text-red-600">*</span>
-                      </p>
-
-                      <div className=" flex items-center">
-                        <input
-                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
-                          type="text"
-                          placeholder={currentitem?.name}
-                        />
-                      </div>
-                    </div>
-                    <div className="flex gap-[119px]">
-                      <p>Unit</p>
-                      <div>
-                        <input
-                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
-                          type="text"
-                          placeholder={currentitem?.unit}
-                        />
-                      </div>
-                    </div>
-                    {/* <div>
-                    <p>Currency</p>
-                    <div>
-                      <input type="text" />
-                    </div>
-                     focus:outline-none              </div> */}
-
-                    <div className="flex items-center gap-[60px]">
-                      <p>
-                        Selling Price<span className="text-red-600">*</span>
-                      </p>
-                      <div className="flex items-center">
-                        <input
-                          className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
-                          type="number"
-                         
-                          placeholder={currentitem?.sellingPrice as unknown as string}
-                        />
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-[71px]">
-                      <p>Description</p>
-                      <div className=" flex  w-80 ">
-                        <textarea
-                         
-                          className="focus:outline-none rounded-md  text-xs w-64 text-black p-2"
-                          placeholder={currentitem?.description}
-                        ></textarea>
-                      </div>
-                    </div>
-
-                    <div className="flex gap-2 ml-3">
-                      <button
-                        className="bg-secondary py-2 px-3 rounded-md text-sm text-black"
-                        type="submit"
-                      >
-                        Save
-                      </button>
-                      <button
-                        className=" rounded-md bg-white py-2 px-3 text-sm text-black"
-                        type="reset"
-                      >
-                        Cancel
-                      </button>
-                    </div>
-                  </div>
                 </form>
               </div>
             </div>
