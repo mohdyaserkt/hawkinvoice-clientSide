@@ -14,6 +14,13 @@ const getStarted = () => {
     phoneNumber: "",
     NoOfemployes: "",
     annualRevenue: "",
+    organizationAddress:{
+      address:"",
+      apt:"",
+      city:"",
+      state:"",
+      zipCode:""
+    }
   });
 
   console.log(organizationState);
@@ -329,6 +336,8 @@ const getStarted = () => {
                     type="text"
                     className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
                     placeholder="Address"
+                    value={organizationState.organizationAddress.address}
+                    onChange={setorganizationState}
                   />
                 </div>
                 <div>
@@ -336,6 +345,8 @@ const getStarted = () => {
                     type="text"
                     className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none "
                     placeholder="Apt, suite, etc. (Optional)"
+                    value={organizationState.organizationAddress.apt}
+                    onChange={setorganizationState}
                   />
                 </div>
                 <div>
@@ -343,6 +354,8 @@ const getStarted = () => {
                     type="text"
                     className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
                     placeholder="City"
+                    value={organizationState.organizationAddress.city}
+                    onChange={setorganizationState}
                   />
                 </div>
                 <div className="w-full flex justify-between gap-4">
@@ -351,6 +364,8 @@ const getStarted = () => {
                       type="text"
                       className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
                       placeholder="State"
+                      value={organizationState.organizationAddress.state}
+                    onChange={setorganizationState}
                     />
                   </div>
                   <div className="w-6/12 h-16">
@@ -358,6 +373,8 @@ const getStarted = () => {
                       type="text"
                       className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
                       placeholder="Zip code"
+                      value={organizationState.organizationAddress.zipCode}
+                    onChange={setorganizationState}
                     />
                   </div>
                 </div>
