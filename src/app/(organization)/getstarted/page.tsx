@@ -36,6 +36,14 @@ const getStarted = () => {
       phoneNumber: organizationState.phoneNumber as Number,
       NoOfemployes: organizationState.NoOfemployes as string,
       annualRevenue: organizationState.annualRevenue as string,
+      organizationAddress:{
+        address:organizationState.address,
+        apt:organizationState.apt,
+        city:organizationState.city,
+        state:organizationState.state,
+        zipCode:organizationState.zipCode
+      
+      }
     })
       .then((res: any) => {
         if (res) {

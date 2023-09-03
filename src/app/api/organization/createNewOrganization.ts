@@ -8,6 +8,7 @@ export const createNewOrganization = async ({
   phoneNumber,
   typeOfbusiness,
   userId,
+  organizationAddress
 }: IOrganizationData): Promise<IUser | Error> => {
   console.log("reached");
   
@@ -20,6 +21,7 @@ export const createNewOrganization = async ({
       phoneNumber,
       typeOfbusiness,
       userId,
+      organizationAddress
     });
    
     return Promise.resolve(response as any);

@@ -8,15 +8,11 @@ export const handleCreateNewOrganization = async ({
   businessName,
   phoneNumber,
   typeOfbusiness,
+  organizationAddress,
   setError,
 }: handleCreateNewOrganization): Promise<string | boolean | AxiosError> => {
   
   const user = JSON.parse(localStorage.getItem("user") as string);
-  businessName = businessName
-  typeOfbusiness = typeOfbusiness
-  phoneNumber = phoneNumber;
-  NoOfemployes = NoOfemployes
-  annualRevenue = annualRevenue
   const email = user.email
   const userId = user.id
 
@@ -29,6 +25,7 @@ export const handleCreateNewOrganization = async ({
       typeOfbusiness,
       email,
       userId,
+      organizationAddress
     });
     return Promise.resolve(tenant as any);
   } catch (error) {
