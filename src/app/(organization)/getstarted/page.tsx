@@ -7,6 +7,7 @@ import React, { useState } from "react";
 
 const getStarted = () => {
   const router = useRouter();
+  const [isChecked, setIsChecked] = useState(false);
 
   const [organizationState, setorganizationState] = HandleForm({
     businessName: "",
@@ -299,7 +300,9 @@ const getStarted = () => {
                     </button> */}
                     <input
                       id="login"
+                      checked={isChecked}
                       type="checkbox"
+                      onChange={()=>setIsChecked(!isChecked)}
                       className="before:content[''] peer relative sm:w-3 sm:h-3 md:h-5 md:w-5 cursor-pointer appearance-none rounded border-2 border-white transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-black  checked:bg-black checked:before:bg-black hover:before:opacity-10"
                     />
                     <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
@@ -328,7 +331,9 @@ const getStarted = () => {
                   </label>
                 </div>
 
-                <div className="flex flex-col gap-4 ">
+                <div className={`  ${
+          isChecked ? 'hidden' : 'flex'
+        } flex-col gap-4 `}>
                   <div>
                     <input
                       type="text"
