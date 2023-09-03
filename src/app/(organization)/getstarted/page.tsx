@@ -14,13 +14,11 @@ const getStarted = () => {
     phoneNumber: "",
     NoOfemployes: "",
     annualRevenue: "",
-    organizationAddress:{
-      address:"",
-      apt:"",
-      city:"",
-      state:"",
-      zipCode:""
-    }
+    address: "",
+    apt: "",
+    city: "",
+    state: "",
+    zipCode: "",
   });
 
   console.log(organizationState);
@@ -164,7 +162,6 @@ const getStarted = () => {
                       required
                       pattern="[0-9]{10}" // Specify your pattern here
                       title="Please enter a 10-digit phone number"
-                      
                     />
                     <h3 className="text-gray-400 sm:text-xs text-sm mt-1">
                       We’ll use this number to call you if needed. We don’t sell
@@ -301,10 +298,10 @@ const getStarted = () => {
                       submit
                     </button> */}
                     <input
-                    id="login"
-                    type="checkbox"
-                    className="before:content[''] peer relative sm:w-3 sm:h-3 md:h-5 md:w-5 cursor-pointer appearance-none rounded border-2 border-white transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-black  checked:bg-black checked:before:bg-black hover:before:opacity-10"
-                  />
+                      id="login"
+                      type="checkbox"
+                      className="before:content[''] peer relative sm:w-3 sm:h-3 md:h-5 md:w-5 cursor-pointer appearance-none rounded border-2 border-white transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-black  checked:bg-black checked:before:bg-black hover:before:opacity-10"
+                    />
                     <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -323,62 +320,73 @@ const getStarted = () => {
                     </div>
                   </label>
                   <label className="mt-px sm:hidden md:text-sm cursor-pointer select-none font-light text-white ">
-                  I have a mobile business without a permanent physical location
-                </label>
-                <label className="mt-px sm:text-xs md:text-sm cursor-pointer select-none font-light text-white ">
-                  I run a mobile business without a permanent location.
-                </label>
+                    I have a mobile business without a permanent physical
+                    location
+                  </label>
+                  <label className="mt-px sm:text-xs md:text-sm cursor-pointer select-none font-light text-white ">
+                    I run a mobile business without a permanent location.
+                  </label>
                 </div>
 
-                <div className="flex flex-col gap-4">
-                <div>
-                  <input
-                    type="text"
-                    className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
-                    placeholder="Address"
-                    value={organizationState.organizationAddress.address}
-                    onChange={setorganizationState}
-                  />
-                </div>
-                <div>
-                  <input
-                    type="text"
-                    className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none "
-                    placeholder="Apt, suite, etc. (Optional)"
-                    value={organizationState.organizationAddress.apt}
-                    onChange={setorganizationState}
-                  />
-                </div>
-                <div>
-                  <input
-                    type="text"
-                    className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
-                    placeholder="City"
-                    value={organizationState.organizationAddress.city}
-                    onChange={setorganizationState}
-                  />
-                </div>
-                <div className="w-full flex justify-between gap-4">
-                  <div className="w-6/12 h-16">
+                <div className="flex flex-col gap-4 ">
+                  <div>
                     <input
                       type="text"
                       className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
-                      placeholder="State"
-                      value={organizationState.organizationAddress.state}
-                    onChange={setorganizationState}
+                      placeholder="Address"
+                      name="address"
+                      id="address"
+                      value={organizationState.address}
+                      onChange={setorganizationState}
                     />
                   </div>
-                  <div className="w-6/12 h-16">
+                  <div>
+                    <input
+                      type="text"
+                      className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none "
+                      placeholder="Apt, suite, etc. (Optional)"
+                      name="apt"
+                      id="apt"
+                      value={organizationState.apt}
+                      onChange={setorganizationState}
+                    />
+                  </div>
+                  <div>
                     <input
                       type="text"
                       className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
-                      placeholder="Zip code"
-                      value={organizationState.organizationAddress.zipCode}
-                    onChange={setorganizationState}
+                      placeholder="City"
+                      name="city"
+                      id="state"
+                      value={organizationState.city}
+                      onChange={setorganizationState}
                     />
                   </div>
+                  <div className="w-full flex justify-between gap-4">
+                    <div className="w-6/12 h-16">
+                      <input
+                        type="text"
+                        className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
+                        placeholder="State"
+                        name="state"
+                        id="state"
+                        value={organizationState.state}
+                        onChange={setorganizationState}
+                      />
+                    </div>
+                    <div className="w-6/12 h-16">
+                      <input
+                        type="text"
+                        name="zipCode"
+                      id="zipCode"
+                        className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
+                        placeholder="Zip code"
+                        value={organizationState.zipCode}
+                        onChange={setorganizationState}
+                      />
+                    </div>
+                  </div>
                 </div>
-              </div>
               </div>
             </div>
           </div>
