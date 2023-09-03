@@ -12,7 +12,7 @@ axiosInstance.interceptors.request.use(
         config.headers["Authorization"] = `Bearer ${AccessToken}`;
       }
 
-      const currentOrganization = localStorage.getItem("currentOrganization");
+      const currentOrganization = JSON.parse(localStorage.getItem("currentOrganization") as string);
       console.log("this is my current company id ",currentOrganization);
       
 
