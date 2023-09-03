@@ -13,6 +13,8 @@ axiosInstance.interceptors.request.use(
       }
 
       const currentCompany = localStorage.getItem("currentCompany");
+      console.log("this is my current company id ",currentCompany);
+      
 
       if (currentCompany) {
         config.headers["current-company"] = currentCompany;
