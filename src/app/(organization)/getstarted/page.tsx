@@ -303,9 +303,7 @@ const getStarted = () => {
                     className="relative flex cursor-pointer  items-center rounded-full p-3"
                     data-ripple-dark="true"
                   >
-                    {/* <button className=" bg-secondary rounded w-36 h-8 px-3 text-xs">
-                      submit
-                    </button> */}
+                    
                     <input
                       id="login"
                       checked={isChecked}
@@ -339,9 +337,7 @@ const getStarted = () => {
                   </label>
                 </div>
 
-                <div className={`  ${
-          isChecked ? 'hidden' : 'flex'
-        } flex-col gap-4 `}>
+                <div className={`  ${isChecked ? 'hidden' : 'flex'} flex-col gap-4 `}>
                   <div>
                     <input
                       type="text"
@@ -400,9 +396,13 @@ const getStarted = () => {
                     </div>
                   </div>
                 </div>
+                
               </div>
-            </div>
+            </div><button className=" bg-secondary rounded w-36 h-8 px-3 text-xs">
+                      submit
+                    </button>
           </div>
+          
         </form>
       </div>
     </>
