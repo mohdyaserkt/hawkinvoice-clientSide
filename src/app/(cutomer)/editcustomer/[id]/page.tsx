@@ -327,7 +327,7 @@ const getStarted = () => {
                       </div>
                     </div>
                   </div>
-                  {/* <div className="flex gap-20">
+                  <div className="flex gap-20">
                     <div className="flex flex-col gap-4 mb-8 mt-9">
                       <h3 className="text-sm text-secondary">
                         Billing Address
@@ -454,7 +454,7 @@ const getStarted = () => {
                     </div>
 
                     <div></div>
-                  </div> */}
+                  </div>
                   <div className="flex gap-2 ml-3">
                     <button
                       className="bg-secondary py-2 px-3 rounded-md text-sm text-black"
