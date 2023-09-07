@@ -5,21 +5,20 @@ import {
   LiaFileInvoiceSolid,
 } from "react-icons/lia";
 import { MdRefresh } from "react-icons/md";
-import { PiHandbag, PiCopySimple } from "react-icons/pi";
+import { IoColorPaletteOutline } from "react-icons/io5";
 import { BsPlusSquareFill, BsFileEarmarkBarGraph } from "react-icons/bs";
 import { TbReceipt } from "react-icons/tb";
-import { SlOptions } from "react-icons/sl";
+import {FiUsers} from "react-icons/fi"
+
 import {
   AiOutlineSetting,
   AiOutlineHome,
   AiOutlineUser,
   AiOutlineSearch,
 } from "react-icons/ai";
-import { useParams, useRouter } from "next/navigation";
-import { ApiError } from "next/dist/server/api-utils";
-import { handleCreateNewItem } from "@/utils/items/createNewItem";
-import { handleEditItem } from "@/utils/items/editItem";
-import { handleGetSingleItem } from "@/utils/items/getSingleItem";
+import {
+  GoOrganization
+} from "react-icons/go"
 
 const getStarted = () => {
   
@@ -75,43 +74,24 @@ const getStarted = () => {
         </nav>
         <div className="flex">
           <div className=" w-56 flex flex-col gap-3 py-3 px-2 border ">
+            <div className="flex items-center bg-secondary  h-7 rounded-lg space-x-2">
+              <GoOrganization className="w-4 h-4 ml-2 text-gray-800" />
+              <p className="text-sm text-gray-800">Organization Profile</p>
+            </div>
             <div className="flex items-center  h-7 rounded-lg space-x-2">
-              <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Home</p>
-            </div>
-            <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
-              <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Customers</p>
+              <FiUsers className="w-4 h-4 ml-2 text-white" />
+              <p className="text-sm text-white">Users & Roles</p>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
-              <PiHandbag className="w-4 h-4 ml-2 text-white " />
-              <p className="text-sm text-white">Items</p>
+              <IoColorPaletteOutline className="w-4 h-4 ml-2 text-white " />
+              <p className="text-sm text-white">Templates</p>
             </div>
-            <div className="flex items-center h-7 rounded-lg space-x-2">
-              <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Invoices</p>
-            </div>
-            <div className="flex items-center h-7 rounded-lg space-x-2">
-              <img
-                src="/recievedpayments.svg"
-                alt=""
-                className="w-4 h-4 ml-2 text-white"
-              />
-              <p className="text-sm text-white">Payments Recieved</p>
-            </div>
-            <div className="flex items-center h-7 rounded-lg space-x-2">
-              <TbReceipt className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Expenses</p>
-            </div>
-            <div className="flex items-center h-7 rounded-lg space-x-2">
-              <BsFileEarmarkBarGraph className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Reports</p>
-            </div>
+            
           </div>
           <div className="w-full">
             <div className="p-5 flex justify-between w-full border-r-[1px] border-b-[1px] ">
               <div className="text-white">
-                <h2 className="text-xl">Edit Item</h2>
+                <h2 className="text-xl">Organization Profile</h2>
               </div>
             </div>
 
