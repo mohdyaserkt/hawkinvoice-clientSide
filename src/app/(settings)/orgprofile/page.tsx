@@ -100,7 +100,11 @@ const getStarted = () => {
                         <p>Your Logo</p>
                       </div>
                       <div>
-                        
+                      <input
+          type="file"
+          accept="image/*" // Optional: Restrict file types to images
+          // onChange={this.handleFileUpload}
+        />
                       </div>
                     </div>
                   </div>
