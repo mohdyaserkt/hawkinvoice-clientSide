@@ -8,7 +8,7 @@ import { MdRefresh } from "react-icons/md";
 import { IoColorPaletteOutline } from "react-icons/io5";
 import { BsPlusSquareFill, BsFileEarmarkBarGraph } from "react-icons/bs";
 import { TbReceipt } from "react-icons/tb";
-import {FiUsers} from "react-icons/fi"
+import { FiUsers } from "react-icons/fi";
 
 import {
   AiOutlineSetting,
@@ -16,18 +16,9 @@ import {
   AiOutlineUser,
   AiOutlineSearch,
 } from "react-icons/ai";
-import {
-  GoOrganization
-} from "react-icons/go"
+import { GoOrganization } from "react-icons/go";
 
 const getStarted = () => {
-  
-
-
-
-
-
-  
   return (
     <>
       <div className="h-screen">
@@ -74,6 +65,11 @@ const getStarted = () => {
         </nav>
         <div className="flex">
           <div className=" w-56 flex flex-col gap-3 py-3 px-2 border ">
+            <div className="flex items-center p-2">
+              <h1 className="text-white text-[23px]">
+                Settings
+              </h1>
+            </div>
             <div className="flex items-center bg-secondary  h-7 rounded-lg space-x-2">
               <GoOrganization className="w-4 h-4 ml-2 text-gray-800" />
               <p className="text-sm text-gray-800">Organization Profile</p>
@@ -86,20 +82,17 @@ const getStarted = () => {
               <IoColorPaletteOutline className="w-4 h-4 ml-2 text-white " />
               <p className="text-sm text-white">Templates</p>
             </div>
-            
           </div>
           <div className="w-full">
             <div className="p-5 flex justify-between w-full border-r-[1px] border-b-[1px] ">
               <div className="text-white">
-                <h2 className="text-xl">Organization Profile</h2>
+                <h2 className="text-xl flex items-center">Organization Profile | <span className="text-[15px] ml-2"> ID: 60022809358</span></h2>
               </div>
             </div>
 
             <div className="pt-7 pl-16">
               <div>
-                <form>
-
-                </form>
+                <form></form>
               </div>
             </div>
           </div>
