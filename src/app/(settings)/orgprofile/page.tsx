@@ -66,9 +66,7 @@ const getStarted = () => {
         <div className="flex">
           <div className=" w-56 flex flex-col gap-3 py-3 px-2 border ">
             <div className="flex items-center p-2">
-              <h1 className="text-white text-[23px]">
-                Settings
-              </h1>
+              <h1 className="text-white text-[23px]">Settings</h1>
             </div>
             <div className="flex items-center bg-secondary  h-7 rounded-lg space-x-2">
               <GoOrganization className="w-4 h-4 ml-2 text-gray-800" />
@@ -86,13 +84,27 @@ const getStarted = () => {
           <div className="w-full">
             <div className="p-5 flex justify-between w-full border-r-[1px] border-b-[1px] ">
               <div className="text-white">
-                <h2 className="text-xl flex items-center">Organization Profile | <span className="text-[15px] ml-2"> ID: 60022809358</span></h2>
+                <h2 className="text-xl flex items-center">
+                  Organization Profile |{" "}
+                  <span className="text-[15px] ml-2"> ID: 60022809358</span>
+                </h2>
               </div>
             </div>
 
             <div className="pt-7 pl-16">
               <div>
-                <form></form>
+                <form>
+                  <div>
+                    <div>
+                      <div>
+                        <p>Your Logo</p>
+                      </div>
+                      <div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
