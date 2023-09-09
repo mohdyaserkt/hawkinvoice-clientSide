@@ -8,7 +8,7 @@ import { MdRefresh } from "react-icons/md";
 import { IoColorPaletteOutline } from "react-icons/io5";
 import { BsPlusSquareFill, BsFileEarmarkBarGraph } from "react-icons/bs";
 import { TbReceipt } from "react-icons/tb";
-import { FiUsers } from "react-icons/fi";
+import { FiUsers,FiUpload } from "react-icons/fi";
 
 import {
   AiOutlineSetting,
@@ -95,27 +95,14 @@ const getStarted = () => {
               <div>
                 <form>
                   <div>
-                    <div>
+                    <div className="flex gap-[220px]">
                       <div>
-                        <p>Your Logo</p>
+                        <p className="text-white text-sm">Your Logo</p>
                       </div>
                       <div className="bg-white w-[250px] h-20 flex justify-center items-center rounded">
                         <div className="flex items-center gap-2">
                           
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth="1.5"
-                            stroke="currentColor"
-                            className="w-4 h-4 text-slate-600"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"
-                            />
-                          </svg>
+                        <FiUpload/>
 
                           <p className="text-xs">Upload lour logo</p>
                         </div>
@@ -124,6 +111,50 @@ const getStarted = () => {
                           accept="image/*" // Optional: Restrict file types to images
                           // onChange={this.handleFileUpload}
                         /> */}
+                      </div>
+                    </div>
+                    <div className="flex gap-[142px] items-center">
+                      <div>
+                        <p className="text-white text-sm">Organization Name <span className="text-red-800">*</span></p>
+                      </div>
+                      <div className="flex items-center">
+                        <input
+                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex gap-[232px] items-center">
+                      <div>
+                        <p className="text-white text-sm">Industry</p>
+                      </div>
+                      <div className="flex items-center">
+                        <input
+                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex gap-[191px] items-center">
+                      <div>
+                        <p className="text-white text-sm">Business Type</p>
+                      </div>
+                      <div className="flex items-center">
+                        <input
+                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex gap-[164px] items-center">
+                      <div>
+                        <p className="text-white text-sm">Business Location</p>
+                      </div>
+                      <div className="flex items-center">
+                        <input
+                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
+                          type="text"
+                        />
                       </div>
                     </div>
                   </div>
