@@ -169,7 +169,7 @@ const getStarted = () => {
                       <div>
                         <p className="text-white text-sm">Business Location</p>
                       </div>
-                      <div className="flex flex-col gap-5 w-1/3 ">
+                      <div className="flex flex-col gap-4 w-1/3 ">
                         <div>
                           <textarea
                             className="w-full  bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-xs text-blue-gray-700 outline-none placeholder:text-black"
