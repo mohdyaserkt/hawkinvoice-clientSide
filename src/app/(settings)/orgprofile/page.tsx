@@ -18,9 +18,8 @@ import {
 } from "react-icons/ai";
 import { GoOrganization } from "react-icons/go";
 
-
 const getStarted = () => {
-  const imageRef=useRef<HTMLInputElement>(null)
+  const imageRef = useRef<HTMLInputElement>(null);
   return (
     <>
       <div className="h-screen">
@@ -101,16 +100,20 @@ const getStarted = () => {
                       <div>
                         <p className="text-white text-sm">Your Logo</p>
                       </div>
-                      <div className="bg-white w-[250px] h-20 flex justify-center items-center rounded">
+                      <div
+                        onClick={() => imageRef.current?.click()} 
+                        className="bg-white w-[250px] h-20 flex justify-center items-center rounded cursor-context-menu"
+                      >
                         <div className="flex items-center gap-2">
                           <FiUpload />
 
                           <p className="text-xs">Upload lour logo</p>
                         </div>
-                        <input ref={imageRef}
+                        <input
+                          ref={imageRef}
                           className="hidden"
                           type="file"
-                          accept="image/*" 
+                          accept="image/*"
                           // onChange={this.handleFileUpload}
                         />
                       </div>
