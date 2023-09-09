@@ -17,9 +17,10 @@ import {
   AiOutlineSearch,
 } from "react-icons/ai";
 import { GoOrganization } from "react-icons/go";
-const imageRef=useRef<HTMLInputElement>(null)
+
 
 const getStarted = () => {
+  const imageRef=useRef<HTMLInputElement>(null)
   return (
     <>
       <div className="h-screen">
