@@ -65,7 +65,7 @@ const getStarted = () => {
           </div>
         </nav>
         <div className="flex">
-          <div className=" w-56 flex flex-col gap-3 py-3 px-2 border ">
+          <div className=" w-56 h-screen     flex flex-col gap-3 py-3 px-2 border ">
             <div className="flex items-center p-2">
               <h1 className="text-white text-[23px]">Settings</h1>
             </div>
