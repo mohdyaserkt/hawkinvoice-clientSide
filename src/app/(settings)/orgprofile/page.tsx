@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   LiaFileInvoiceDollarSolid,
   LiaFileInvoiceSolid,
@@ -17,6 +17,7 @@ import {
   AiOutlineSearch,
 } from "react-icons/ai";
 import { GoOrganization } from "react-icons/go";
+const imageRef=useRef<HTMLInputElement>(null)
 
 const getStarted = () => {
   return (
@@ -105,11 +106,12 @@ const getStarted = () => {
 
                           <p className="text-xs">Upload lour logo</p>
                         </div>
-                        {/* <input
+                        <input ref={imageRef}
+                          className="hidden"
                           type="file"
-                          accept="image/*" // Optional: Restrict file types to images
+                          accept="image/*" 
                           // onChange={this.handleFileUpload}
-                        /> */}
+                        />
                       </div>
                     </div>
                     <div className="flex gap-[142px] items-center">
