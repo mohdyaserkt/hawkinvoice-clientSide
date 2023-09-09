@@ -157,6 +157,70 @@ const getStarted = () => {
                         />
                       </div>
                     </div>
+                    <div
+                  // className={`  ${
+                  //   isChecked ? "hidden" : "flex"
+                  // } flex-col gap-4 `}
+                  className="flex flex-col gap-8 w-2/4 mt-28"
+                >
+                  <div>
+                    <input
+                      type="text"
+                      className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
+                      placeholder="Address"
+                      name="address"
+                      id="address"
+                      // value={organizationState.address}
+                      // onChange={setorganizationState}
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none "
+                      placeholder="Apt, suite, etc. (Optional)"
+                      name="apt"
+                      id="apt"
+                      // value={organizationState.apt}
+                      // onChange={setorganizationState}
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
+                      placeholder="City"
+                      name="city"
+                      id="state"
+                      // value={organizationState.city}
+                      // onChange={setorganizationState}
+                    />
+                  </div>
+                  <div className="w-full flex justify-between gap-4">
+                    <div className="w-6/12 h-16">
+                      <input
+                        type="text"
+                        className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
+                        placeholder="State"
+                        name="state"
+                        id="state"
+                        // value={organizationState.state}
+                        // onChange={setorganizationState}
+                      />
+                    </div>
+                    <div className="w-6/12 h-16">
+                      <input
+                        type="text"
+                        name="zipCode"
+                        id="zipCode"
+                        className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
+                        placeholder="Zip code"
+                        // value={organizationState.zipCode}
+                        // onChange={setorganizationState}
+                      />
+                    </div>
+                  </div>
+                </div>
                   </div>
                 </form>
               </div>
