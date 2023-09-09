@@ -102,7 +102,7 @@ const getStarted = () => {
                       </div>
                       <div
                         onClick={() => imageRef.current?.click()} 
-                        className="bg-white w-[250px] h-20 flex justify-center items-center rounded cursor-context-menu"
+                        className="bg-white w-[250px] h-20 flex justify-center items-center rounded cursor-pointer"
                       >
                         <div className="flex items-center gap-2">
                           <FiUpload />
