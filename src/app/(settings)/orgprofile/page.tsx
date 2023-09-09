@@ -8,7 +8,7 @@ import { MdRefresh } from "react-icons/md";
 import { IoColorPaletteOutline } from "react-icons/io5";
 import { BsPlusSquareFill, BsFileEarmarkBarGraph } from "react-icons/bs";
 import { TbReceipt } from "react-icons/tb";
-import { FiUsers,FiUpload } from "react-icons/fi";
+import { FiUsers, FiUpload } from "react-icons/fi";
 
 import {
   AiOutlineSetting,
@@ -101,8 +101,7 @@ const getStarted = () => {
                       </div>
                       <div className="bg-white w-[250px] h-20 flex justify-center items-center rounded">
                         <div className="flex items-center gap-2">
-                          
-                        <FiUpload/>
+                          <FiUpload />
 
                           <p className="text-xs">Upload lour logo</p>
                         </div>
@@ -115,7 +114,10 @@ const getStarted = () => {
                     </div>
                     <div className="flex gap-[142px] items-center">
                       <div>
-                        <p className="text-white text-sm">Organization Name <span className="text-red-800">*</span></p>
+                        <p className="text-white text-sm">
+                          Organization Name{" "}
+                          <span className="text-red-800">*</span>
+                        </p>
                       </div>
                       <div className="flex items-center">
                         <input
@@ -157,70 +159,75 @@ const getStarted = () => {
                         />
                       </div>
                     </div>
-                    <div
-                  // className={`  ${
-                  //   isChecked ? "hidden" : "flex"
-                  // } flex-col gap-4 `}
-                  className="flex flex-col gap-8 w-2/4 mt-28"
-                >
-                  <div>
-                    <input
-                      type="text"
-                      className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
-                      placeholder="Address"
-                      name="address"
-                      id="address"
-                      // value={organizationState.address}
-                      // onChange={setorganizationState}
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="text"
-                      className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none "
-                      placeholder="Apt, suite, etc. (Optional)"
-                      name="apt"
-                      id="apt"
-                      // value={organizationState.apt}
-                      // onChange={setorganizationState}
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="text"
-                      className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
-                      placeholder="City"
-                      name="city"
-                      id="state"
-                      // value={organizationState.city}
-                      // onChange={setorganizationState}
-                    />
-                  </div>
-                  <div className="w-full flex justify-between gap-4">
-                    <div className="w-6/12 h-16">
-                      <input
-                        type="text"
-                        className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
-                        placeholder="State"
-                        name="state"
-                        id="state"
-                        // value={organizationState.state}
-                        // onChange={setorganizationState}
-                      />
+                    <div className="flex gap-[164px] ">
+                      <div>
+                        <p className="text-white text-sm">Business Location</p>
+                      </div>
+                      <div
+                      // className={`  ${
+                      //   isChecked ? "hidden" : "flex"
+                      // } flex-col gap-4 `}
+                      className="flex flex-col gap-8 w-1/3 "
+                    >
+                      <div>
+                        <textarea
+                          className="w-full  bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-xs text-blue-gray-700 outline-none placeholder:text-black"
+                          placeholder="Address"
+                          name="address"
+                          id="address"
+                          // value={organizationState.address}
+                          // onChange={setorganizationState}
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          className="w-full h-8 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-xs text-blue-gray-700 outline-none "
+                          placeholder="Apt, suite, etc. (Optional)"
+                          name="apt"
+                          id="apt"
+                          // value={organizationState.apt}
+                          // onChange={setorganizationState}
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          className="w-full h-8 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-xs text-blue-gray-700 outline-none placeholder:text-black"
+                          placeholder="City"
+                          name="city"
+                          id="state"
+                          // value={organizationState.city}
+                          // onChange={setorganizationState}
+                        />
+                      </div>
+                      <div className="w-full flex justify-between gap-4">
+                        <div className="w-6/12 h-16">
+                          <input
+                            type="text"
+                            className="w-full h-8 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-xs text-blue-gray-700 outline-none placeholder:text-black"
+                            placeholder="State"
+                            name="state"
+                            id="state"
+                            // value={organizationState.state}
+                            // onChange={setorganizationState}
+                          />
+                        </div>
+                        <div className="w-6/12 h-16">
+                          <input
+                            type="text"
+                            name="zipCode"
+                            id="zipCode"
+                            className="w-full h-8 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-xs text-blue-gray-700 outline-none placeholder:text-black"
+                            placeholder="Zip code"
+                            // value={organizationState.zipCode}
+                            // onChange={setorganizationState}
+                          />
+                        </div>
+                      </div>
                     </div>
-                    <div className="w-6/12 h-16">
-                      <input
-                        type="text"
-                        name="zipCode"
-                        id="zipCode"
-                        className="w-full h-16 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-sm text-blue-gray-700 outline-none placeholder:text-black"
-                        placeholder="Zip code"
-                        // value={organizationState.zipCode}
-                        // onChange={setorganizationState}
-                      />
                     </div>
-                  </div>
-                </div>
+                    
                   </div>
                 </form>
               </div>
