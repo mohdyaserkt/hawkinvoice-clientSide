@@ -263,6 +263,19 @@ const getStarted = () => {
                         </div>
                       </div>
                     </div>
+                    <div>
+                      <div>
+                        <input type="checkbox" />{" "}
+                        <p>I have received the payment</p>
+                      </div>
+                      <div>
+                        <p>Payment Mode</p>
+                        <section>
+                            <option value="">cash</option>
+                            <option value="">Online Payment</option>
+                        </section>
+                      </div>
+                    </div>
                   </div>
                 </form>
               </div>
