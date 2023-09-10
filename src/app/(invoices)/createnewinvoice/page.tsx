@@ -117,20 +117,10 @@ const getStarted = () => {
                         Customer Name<span className="text-red-500">*</span>
                       </p>
                       <div>
-                        <div>
-                          <label className="sr-only">Underline select</label>
-                          <select
-                            id="underline_select"
-                            className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
-                          >
-                            <option selected>Choose a country</option>
-                            <option value="US">United States</option>
-                            <option value="CA">Canada</option>
-                            <option value="FR">France</option>
-                            <option value="DE">Germany</option>
-                          </select>
-                        </div>
-                        <div>0</div>
+                        <select name="" id="">
+                            <option value="">first Customer</option>
+                            <option value="">Second Customer</option>
+                        </select>
                       </div>
                     </div>
 
@@ -270,20 +260,20 @@ const getStarted = () => {
                       </div>
                       <div>
                         <p>Payment Mode</p>
-                        <section>
+                        <select>
                           <option value="">cash</option>
                           <option value="">Online Payment</option>
-                        </section>
+                        </select>
                       </div>
                     </div>
                     <div className="flex gap-2">
                       <button className="text-xs border  rounded-md border-secondary text-secondary w-36 p-2">
                         save as Draft
                       </button>
-                      <section>
-                          <option value="">save and send</option>
-                          <option value="">Save and Print</option>
-                        </section>
+                      <select>
+                        <option value="">save and send</option>
+                        <option value="">Save and Print</option>
+                      </select>
 
                       <button className="text-xs border  rounded-md border-red-700 text-red-700 w-16 py-2 p-2">
                         Cancel
