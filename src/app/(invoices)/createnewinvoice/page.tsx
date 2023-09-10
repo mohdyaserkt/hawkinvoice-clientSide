@@ -136,7 +136,9 @@ const getStarted = () => {
 
                     <div className="flex gap-[232px] items-center">
                       <div>
-                        <p className="text-white text-sm">Invoice# <span className="text-red-500">*</span></p>
+                        <p className="text-white text-sm">
+                          Invoice# <span className="text-red-500">*</span>
+                        </p>
                       </div>
                       <div className="flex items-center">
                         <input
@@ -158,7 +160,9 @@ const getStarted = () => {
                     </div>
                     <div className="flex gap-[232px] items-center">
                       <div>
-                        <p className="text-white text-sm">Invoice Date <span className="text-red-500">*</span></p>
+                        <p className="text-white text-sm">
+                          Invoice Date <span className="text-red-500">*</span>
+                        </p>
                       </div>
                       <div className="flex items-center">
                         <input
@@ -201,26 +205,45 @@ const getStarted = () => {
                     </div>
 
                     <table>
-                        <thead>
-                            <tr>
-                               <th>ITEM DETAILS</th>
-                               <th>QUANTITY</th>
-                               <th>RATE</th>
-                               <th>AMOUNT</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Type or click to select an item.</td>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                        </tbody>
+                      <thead>
+                        <tr>
+                          <th>ITEM DETAILS</th>
+                          <th>QUANTITY</th>
+                          <th>RATE</th>
+                          <th>AMOUNT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Type or click to select an item.</td>
+                          <td>1</td>
+                          <td>0</td>
+                          <td>0</td>
+                        </tr>
+                      </tbody>
                     </table>
-                    
-
-
+                    <div>
+                      <div>
+                        <div>
+                          <p>Customer Notes</p>
+                          <textarea></textarea>
+                        </div>
+                        <div>
+                          <p>Terms and Conditions</p>
+                          <textarea placeholder="Enter the terms and conditions of your business to be displayed in your transaction"></textarea>
+                        </div>
+                      </div>
+                      <div>
+                        <div>
+                            <p>Sub Total</p>
+                            <p>0.00</p>
+                        </div>
+                        <div>
+                            <p>Discount</p>
+                            
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </form>
               </div>
