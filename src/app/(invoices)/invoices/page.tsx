@@ -79,11 +79,11 @@ const getStarted = () => {
               <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Customers</p>
             </div>
-            <div className="flex items-center h-7 bg-secondary rounded-lg space-x-2">
+            <div className="flex items-center h-7 rounded-lg space-x-2">
               <PiHandbag className="w-4 h-4 ml-2 text-white " />
               <p className="text-sm text-white">Items</p>
             </div>
-            <div className="flex items-center h-7 rounded-lg space-x-2">
+            <div className="flex items-center h-7  bg-secondary rounded-lg space-x-2">
               <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Invoices</p>
             </div>
@@ -112,7 +112,7 @@ const getStarted = () => {
 
               <div className="flex space-x-2">
                 <div className="text-xs bg-secondary flex items-center text-white font-semibold px-3 py-2  rounded">
-                  <Link href='/addnewitem'><span className="mr-1">+</span> New</Link>
+                  <Link href='/createnewinvoice'><span className="mr-1">+</span> New</Link>
                 </div>
                 <div className="p-2 bg-white rounded">
                   <SlOptions className="w-4 h-4 text-gray-800 " />
@@ -159,10 +159,13 @@ const getStarted = () => {
 
                 </tr>))}  */}
                 <tr className="border-b border-white">
-                  <td className="p-2 text-center">sampleItem</td>
-                  <td className="p-2 text-center">sample Discription.ls</td>
-                  <td className="p-2 text-center">₹ 256</td>
-                  <td className="p-2 text-center">pcs</td>
+                  <td className="p-2 text-center">25/07/2023</td>
+                  <td className="p-2 text-center">INV-000003</td>
+                  <td className="p-2 text-center">256</td>
+                  <td className="p-2 text-center">Paid</td>
+                  <td className="p-2 text-center">25/07/2023</td>
+                  <td className="p-2 text-center">₹23,450.00</td>
+                  <td className="p-2 text-center">₹0.00</td>
                 </tr>
               </tbody>
             </table>
