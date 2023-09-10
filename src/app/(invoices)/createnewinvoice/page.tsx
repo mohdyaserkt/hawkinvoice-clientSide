@@ -188,6 +188,36 @@ const getStarted = () => {
                         />
                       </div>
                     </div>
+                    <div className="flex gap-[232px] items-center">
+                      <div>
+                        <p className="text-white text-sm">Subject</p>
+                      </div>
+                      <div className="flex items-center">
+                        <input
+                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                               <th>ITEM DETAILS</th>
+                               <th>QUANTITY</th>
+                               <th>RATE</th>
+                               <th>AMOUNT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Type or click to select an item.</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                   </div>
                 </form>
