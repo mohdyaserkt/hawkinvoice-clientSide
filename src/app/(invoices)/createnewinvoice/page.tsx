@@ -1,11 +1,11 @@
-
 "use client";
+import React, { useState } from "react";
 import {
   LiaFileInvoiceDollarSolid,
   LiaFileInvoiceSolid,
 } from "react-icons/lia";
 import { MdRefresh } from "react-icons/md";
-import { PiHandbag } from "react-icons/pi";
+import { PiHandbag, PiCopySimple } from "react-icons/pi";
 import { BsPlusSquareFill, BsFileEarmarkBarGraph } from "react-icons/bs";
 import { TbReceipt } from "react-icons/tb";
 import { SlOptions } from "react-icons/sl";
@@ -15,15 +15,13 @@ import {
   AiOutlineUser,
   AiOutlineSearch,
 } from "react-icons/ai";
-
-import Link from "next/link";
-import { handleGetItems } from "@/utils/items/getItems";
-
+import { useRouter } from "next/navigation";
+import { ApiError } from "next/dist/server/api-utils";
+import { handleCreateNewItem } from "@/utils/items/createNewItem";
 
 const getStarted = () => {
- 
+  const router = useRouter();
 
- 
   return (
     <>
       <div className="h-screen">
@@ -53,12 +51,11 @@ const getStarted = () => {
               <span className=" text-lg text-white ">|</span>
               <AiOutlineSetting className=" text-white" />
               <span className=" text-lg text-white ">|</span>
-              <select className="bg-blue-900 text-white focus:outline-none focus:ring focus:border-blue-300">
-                <option className="bg-blue-900">Organization</option>
-                <option className="bg-blue-900">Organization 2</option>
-                <option className="bg-blue-900">Organization 3</option>
+              <select className="">
+                <option>Organization</option>
+                <option>Organization 2</option>
+                <option>Organization 3</option>
               </select>
-
               <div className="pr-2">
                 <img
                   src="https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=900&t=st=1693152334~exp=1693152934~hmac=da365a4885d210047abff64bf790f521687c842a32793b5c0416be75b321f977"
@@ -75,7 +72,7 @@ const getStarted = () => {
               <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Home</p>
             </div>
-            <div className="flex items-center  h-7 rounded-lg space-x-2">
+            <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
               <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Customers</p>
             </div>
@@ -83,7 +80,7 @@ const getStarted = () => {
               <PiHandbag className="w-4 h-4 ml-2 text-white " />
               <p className="text-sm text-white">Items</p>
             </div>
-            <div className="flex items-center h-7  bg-secondary rounded-lg space-x-2">
+            <div className="flex items-center h-7 rounded-lg space-x-2">
               <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Invoices</p>
             </div>
@@ -105,70 +102,28 @@ const getStarted = () => {
             </div>
           </div>
           <div className="w-full">
-            <div className="p-5 flex justify-between w-full">
+            <div className="p-5 flex justify-between w-full border-r-[1px] border-b-[1px] ">
               <div className="text-white">
-                <h2 className="text-xl">All Invoices</h2>
-              </div>
-
-              <div className="flex space-x-2">
-                <div className="text-xs bg-secondary flex items-center text-white font-semibold px-3 py-2  rounded">
-                  <Link href='/createnewinvoice'><span className="mr-1">+</span> New</Link>
-                </div>
-                <div className="p-2 bg-white rounded">
-                  <SlOptions className="w-4 h-4 text-gray-800 " />
-                </div>
+                <h2 className="text-xl">New Invoice</h2>
               </div>
             </div>
-            <table className="w-full border-t border-white">
-              <thead className="bg-secondary text-xs font-normal">
-                <tr>
-                  <th className="border-b border-white p-2 text-center">
-                    DATE
-                  </th>
-                  <th className="border-b border-white p-2 text-center">
-                  Invoice#
-                  </th>
-                  <th className="border-b border-white p-2 text-center">
-                  Order Number
-                  </th>
-                  <th className="border-b border-white p-2 text-center">
-                  Customer Name
-                  </th>
-                  <th className="border-b border-white p-2 text-center">
-                  Status
-                  </th>
-                  <th className="border-b border-white p-2 text-center">
-                  Due Date
-                  </th>
-                  <th className="border-b border-white p-2 text-center">
-                  Amount
-                  </th>
-                  <th className="border-b border-white p-2 text-center">
-                  Balance Due
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="text-white text-sm">
-              {/* {myCustomers.map((item: any) => (
-                <tr className="border-b border-white" key={item.id}>
-                  <td className="p-2 text-center">{item.name}</td>
-                  <td className="p-2 text-center">{item.description}</td>
-                  <td className="p-2 text-center">₹ {item.sellingPrice}</td>
-                  <td className="p-2 text-center">{item.unit}</td>
-                  <Link href={`/edititem/${item.id}`}><td className="p-2 text-center">edit</td></Link>
 
-                </tr>))}  */}
-                <tr className="border-b border-white">
-                  <td className="p-2 text-center">25/07/2023</td>
-                  <td className="p-2 text-center">INV-000003</td>
-                  <td className="p-2 text-center">256</td>
-                  <td className="p-2 text-center">Paid</td>
-                  <td className="p-2 text-center">25/07/2023</td>
-                  <td className="p-2 text-center">₹23,450.00</td>
-                  <td className="p-2 text-center">₹0.00</td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="pt-7 pl-16">
+              <div>
+                <form className="text-[13px] text-white">
+
+                    <div>
+                        <div>
+                            <p>Customer Name<span className="text-red-500">*</span></p>
+                            
+                        </div>
+                    </div>
+
+                    
+                  
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -177,4 +132,3 @@ const getStarted = () => {
 };
 
 export default getStarted;
-                                                                                                                                                                                
