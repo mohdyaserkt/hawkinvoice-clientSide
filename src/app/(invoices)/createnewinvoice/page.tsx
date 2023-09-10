@@ -258,8 +258,8 @@ const getStarted = () => {
                         </div>
                         <hr />
                         <div>
-                            <h2>Total ( ₹ ) </h2>
-                            <h2>0.00</h2>
+                          <h2>Total ( ₹ ) </h2>
+                          <h2>0.00</h2>
                         </div>
                       </div>
                     </div>
