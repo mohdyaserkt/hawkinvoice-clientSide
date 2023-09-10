@@ -8,7 +8,7 @@ import { MdRefresh } from "react-icons/md";
 import { PiHandbag, PiCopySimple } from "react-icons/pi";
 import { BsPlusSquareFill, BsFileEarmarkBarGraph } from "react-icons/bs";
 import { TbReceipt } from "react-icons/tb";
-import { SlOptions } from "react-icons/sl";
+import { FiSearch } from "react-icons/fi";
 import {
   AiOutlineSetting,
   AiOutlineHome,
@@ -116,11 +116,16 @@ const getStarted = () => {
                       <p>
                         Customer Name<span className="text-red-500">*</span>
                       </p>
-                      <div>
-                        <select name="" id="">
+                      <div className="flex items-center">
+                        <div>
+                          <select name="" className="bg-transparent" id="">
                             <option value="">first Customer</option>
                             <option value="">Second Customer</option>
-                        </select>
+                          </select>
+                        </div>
+                        <div className="bg-secondary">
+                          <FiSearch />
+                        </div>
                       </div>
                     </div>
 
