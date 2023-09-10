@@ -136,7 +136,7 @@ const getStarted = () => {
 
                     <div className="flex gap-[232px] items-center">
                       <div>
-                        <p className="text-white text-sm">Industry</p>
+                        <p className="text-white text-sm">Invoice# <span className="text-red-500">*</span></p>
                       </div>
                       <div className="flex items-center">
                         <input
@@ -147,7 +147,7 @@ const getStarted = () => {
                     </div>
                     <div className="flex gap-[232px] items-center">
                       <div>
-                        <p className="text-white text-sm">Industry</p>
+                        <p className="text-white text-sm">Order Number</p>
                       </div>
                       <div className="flex items-center">
                         <input
@@ -158,7 +158,7 @@ const getStarted = () => {
                     </div>
                     <div className="flex gap-[232px] items-center">
                       <div>
-                        <p className="text-white text-sm">Industry</p>
+                        <p className="text-white text-sm">Invoice Date <span className="text-red-500">*</span></p>
                       </div>
                       <div className="flex items-center">
                         <input
@@ -167,7 +167,7 @@ const getStarted = () => {
                         />
                       </div>
                       <div>
-                        <p className="text-white text-sm">Industry</p>
+                        <p className="text-white text-sm">Due Date</p>
                       </div>
                       <div className="flex items-center">
                         <input
@@ -179,7 +179,7 @@ const getStarted = () => {
                     <hr />
                     <div className="flex gap-[232px] items-center">
                       <div>
-                        <p className="text-white text-sm">Industry</p>
+                        <p className="text-white text-sm">Salesperson</p>
                       </div>
                       <div className="flex items-center">
                         <input
