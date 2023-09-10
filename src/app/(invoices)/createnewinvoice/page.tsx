@@ -218,8 +218,8 @@ const getStarted = () => {
                             </tr>
                         </tbody>
                     </table>
-
                     
+
 
                   </div>
                 </form>
