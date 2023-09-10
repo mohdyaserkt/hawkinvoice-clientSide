@@ -240,7 +240,14 @@ const getStarted = () => {
                         </div>
                         <div>
                             <p>Discount</p>
-                            
+                            <div>
+                                <input type="text" />
+                                <select>
+                                    <option value="">%</option>
+                                    <option value="">inr</option>
+                                </select>
+                            </div>
+                            <p>0.00</p>
                         </div>
                       </div>
                     </div>
