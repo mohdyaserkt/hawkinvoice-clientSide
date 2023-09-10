@@ -235,19 +235,31 @@ const getStarted = () => {
                       </div>
                       <div>
                         <div>
-                            <p>Sub Total</p>
-                            <p>0.00</p>
+                          <p>Sub Total</p>
+                          <p>0.00</p>
                         </div>
                         <div>
-                            <p>Discount</p>
-                            <div>
-                                <input type="text" />
-                                <select>
-                                    <option value="">%</option>
-                                    <option value="">inr</option>
-                                </select>
-                            </div>
-                            <p>0.00</p>
+                          <p>Discount</p>
+                          <div>
+                            <input type="text" />
+                            <select>
+                              <option value="">%</option>
+                              <option value="">inr</option>
+                            </select>
+                          </div>
+                          <p>0.00</p>
+                        </div>
+                        <div>
+                          <div>
+                            <input type="text" />
+                            <input type="text" />
+                          </div>
+                          <p>0.00</p>
+                        </div>
+                        <hr />
+                        <div>
+                            <h2>Total ( ₹ ) </h2>
+                            <h2>0.00</h2>
                         </div>
                       </div>
                     </div>
