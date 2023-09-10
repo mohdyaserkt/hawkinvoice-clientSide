@@ -134,7 +134,61 @@ const getStarted = () => {
                       </div>
                     </div>
 
-                    
+                    <div className="flex gap-[232px] items-center">
+                      <div>
+                        <p className="text-white text-sm">Industry</p>
+                      </div>
+                      <div className="flex items-center">
+                        <input
+                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex gap-[232px] items-center">
+                      <div>
+                        <p className="text-white text-sm">Industry</p>
+                      </div>
+                      <div className="flex items-center">
+                        <input
+                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex gap-[232px] items-center">
+                      <div>
+                        <p className="text-white text-sm">Industry</p>
+                      </div>
+                      <div className="flex items-center">
+                        <input
+                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
+                          type="text"
+                        />
+                      </div>
+                      <div>
+                        <p className="text-white text-sm">Industry</p>
+                      </div>
+                      <div className="flex items-center">
+                        <input
+                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <hr />
+                    <div className="flex gap-[232px] items-center">
+                      <div>
+                        <p className="text-white text-sm">Industry</p>
+                      </div>
+                      <div className="flex items-center">
+                        <input
+                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+
                   </div>
                 </form>
               </div>
