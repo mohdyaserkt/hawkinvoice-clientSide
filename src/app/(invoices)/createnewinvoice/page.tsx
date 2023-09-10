@@ -271,10 +271,23 @@ const getStarted = () => {
                       <div>
                         <p>Payment Mode</p>
                         <section>
-                            <option value="">cash</option>
-                            <option value="">Online Payment</option>
+                          <option value="">cash</option>
+                          <option value="">Online Payment</option>
                         </section>
                       </div>
+                    </div>
+                    <div className="flex gap-2">
+                      <button className="text-xs border  rounded-md border-secondary text-secondary w-36 p-2">
+                        save as Draft
+                      </button>
+                      <section>
+                          <option value="">save and send</option>
+                          <option value="">Save and Print</option>
+                        </section>
+
+                      <button className="text-xs border  rounded-md border-red-700 text-red-700 w-16 py-2 p-2">
+                        Cancel
+                      </button>
                     </div>
                   </div>
                 </form>
