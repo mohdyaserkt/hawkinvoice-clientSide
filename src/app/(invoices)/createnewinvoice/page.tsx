@@ -129,7 +129,7 @@ const getStarted = () => {
                       </div>
                     </div>
 
-                    <div className="flex gap-[232px] items-center">
+                    <div className="flex gap-[113px] items-center">
                       <div>
                         <p className="text-white text-sm">
                           Invoice# <span className="text-red-500">*</span>
