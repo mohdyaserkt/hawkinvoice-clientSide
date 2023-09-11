@@ -159,6 +159,7 @@ const getStarted = () => {
                           Invoice Date <span className="text-red-500">*</span>
                         </p>
                       </div>
+                      <div className="flex gap-8 items-center ">
                       <div className="flex items-center">
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
@@ -173,6 +174,7 @@ const getStarted = () => {
                           className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                           type="text"
                         />
+                      </div>
                       </div>
                     </div>
                     <hr />
