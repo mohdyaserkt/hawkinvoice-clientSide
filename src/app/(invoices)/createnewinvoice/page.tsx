@@ -189,15 +189,16 @@ const getStarted = () => {
                         />
                       </div>
                     </div>
+                    <hr />
                     <div className="flex gap-[132px] items-center">
                       <div>
                         <p className="text-white text-sm">Subject</p>
                       </div>
                       <div className="flex items-center">
                         <input
-                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
+                          className="focus:outline-none rounded-md w-[470px] h-8 text-xs text-black p-2"
                           type="text"
-                          placeholder=""
+                          placeholder="Let your customer know what this Invoice is for"
                         />
                       </div>
                     </div>
@@ -254,7 +255,7 @@ const getStarted = () => {
                           </div>
                           <p>0.00</p>
                         </div>
-                        <hr />
+                        
                         <div>
                           <h2>Total ( ₹ ) </h2>
                           <h2>0.00</h2>
