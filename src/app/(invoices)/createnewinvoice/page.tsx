@@ -203,9 +203,9 @@ const getStarted = () => {
                       </div>
                     </div>
 
-                    <table>
-                      <thead>
-                        <tr>
+                    <table className="w-7/12">
+                      <thead  className="bg-secondary text-gray-900">
+                        <tr className="">
                           <th>ITEM DETAILS</th>
                           <th>QUANTITY</th>
                           <th>RATE</th>
