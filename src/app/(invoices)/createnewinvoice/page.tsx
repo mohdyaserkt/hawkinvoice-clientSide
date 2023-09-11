@@ -112,18 +112,18 @@ const getStarted = () => {
               <div>
                 <form className="text-[13px] text-white">
                   <div>
-                    <div className="flex">
+                    <div className="flex items-center gap-[72px]">
                       <p>
                         Customer Name<span className="text-red-500">*</span>
                       </p>
                       <div className="flex items-center">
                         <div>
-                          <select name="" className="bg-transparent" id="">
+                          <select name="" className="bg-transparent border rounded-l-md w-[503px] h-8 px-3" id="">
                             <option value="">first Customer</option>
                             <option value="">Second Customer</option>
                           </select>
                         </div>
-                        <div className="bg-secondary">
+                        <div className="bg-secondary h-8 w-8 flex items-center justify-center  rounded-r-md">
                           <FiSearch />
                         </div>
                       </div>
