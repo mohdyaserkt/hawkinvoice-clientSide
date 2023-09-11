@@ -206,18 +206,24 @@ const getStarted = () => {
                     <table className="w-7/12">
                       <thead  className="bg-secondary h-8 text-gray-900">
                         <tr className="">
-                          <th>ITEM DETAILS</th>
+                          <th className="text-start ml-2">ITEM DETAILS</th>
                           <th>QUANTITY</th>
                           <th>RATE</th>
                           <th>AMOUNT</th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody className="border text-xs">
+                        <tr className="border">
+                          <td className="text-start">Type or click to select an item.</td>
+                          <td className="text-center">1.00</td>
+                          <td className="text-center">0.00</td>
+                          <td className="text-center">0.00</td>
+                        </tr>
                         <tr>
-                          <td>Type or click to select an item.</td>
-                          <td>1</td>
-                          <td>0</td>
-                          <td>0</td>
+                          <td className="text-start">Type or click to select an item.</td>
+                          <td className="text-center">1.00</td>
+                          <td className="text-center">0.00</td>
+                          <td className="text-center">0.00</td>
                         </tr>
                       </tbody>
                     </table>
