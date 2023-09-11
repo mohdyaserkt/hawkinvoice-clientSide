@@ -142,7 +142,7 @@ const getStarted = () => {
                         />
                       </div>
                     </div>
-                    <div className="flex gap-[232px] items-center">
+                    <div className="flex gap-[85px] items-center">
                       <div>
                         <p className="text-white text-sm">Order Number</p>
                       </div>
@@ -153,7 +153,7 @@ const getStarted = () => {
                         />
                       </div>
                     </div>
-                    <div className="flex gap-[232px] items-center">
+                    <div className="flex gap-[87px] items-center">
                       <div>
                         <p className="text-white text-sm">
                           Invoice Date <span className="text-red-500">*</span>
@@ -170,7 +170,7 @@ const getStarted = () => {
                       </div>
                       <div className="flex items-center">
                         <input
-                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
+                          className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                           type="text"
                         />
                       </div>
