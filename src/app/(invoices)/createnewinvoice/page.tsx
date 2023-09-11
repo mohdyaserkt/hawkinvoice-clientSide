@@ -118,9 +118,9 @@ const getStarted = () => {
                       </p>
                       <div className="flex items-center">
                         <div>
-                          <select name="" className="bg-transparent border rounded-l-md w-[503px] h-8 px-3" id="">
-                            <option value="">first Customer</option>
-                            <option value="">Second Customer</option>
+                          <select name="" className=" bg-transparent border rounded-l-md w-[503px] h-8 px-3" id="">
+                            <option value="" className="">first Customer</option>
+                            <option value="" className="">Second Customer</option>
                           </select>
                         </div>
                         <div className="bg-secondary h-8 w-8 flex items-center justify-center  rounded-r-md">
