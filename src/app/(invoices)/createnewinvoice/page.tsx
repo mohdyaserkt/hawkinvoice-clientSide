@@ -203,7 +203,7 @@ const getStarted = () => {
                       </div>
                     </div>
 
-                    <table className="w-7/12">
+                    <table className="w-7/12 ">
                       <thead  className="bg-secondary h-8 text-gray-900 border border-secondary">
                         <tr className="">
                           <th className="text-start pl-1">ITEM DETAILS</th>
@@ -216,7 +216,7 @@ const getStarted = () => {
                         <tr className="border h-16">
                           <td className="text-start pl-1">Type or click to select an item.</td>
 
-                          <td className="text-center">1.00</td>
+                          <td className="text-center"><input type="text" value={10} className="bg-transparent focus:outline-none rounded-md text-center text-xs" /></td>
                           <td className="text-center">0.00</td>
                           <td className="text-center">0.00</td>
                         </tr>
