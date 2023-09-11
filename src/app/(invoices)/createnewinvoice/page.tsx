@@ -112,7 +112,7 @@ const getStarted = () => {
               <div>
                 <form className="text-[13px] text-white">
                   <div>
-                    <div>
+                    <div className="flex">
                       <p>
                         Customer Name<span className="text-red-500">*</span>
                       </p>
