@@ -204,23 +204,26 @@ const getStarted = () => {
                     </div>
 
                     <table className="w-7/12">
-                      <thead  className="bg-secondary h-8 text-gray-900">
+                      <thead  className="bg-secondary h-8 text-gray-900 border border-secondary">
                         <tr className="">
-                          <th className="text-start ml-2">ITEM DETAILS</th>
+                          <th className="text-start pl-1">ITEM DETAILS</th>
                           <th>QUANTITY</th>
                           <th>RATE</th>
                           <th>AMOUNT</th>
                         </tr>
                       </thead>
                       <tbody className="border text-xs">
-                        <tr className="border">
-                          <td className="text-start">Type or click to select an item.</td>
+                        <tr className="border h-16">
+                          <td className="text-start pl-1">Type or click to select an item.</td>
+
                           <td className="text-center">1.00</td>
                           <td className="text-center">0.00</td>
                           <td className="text-center">0.00</td>
                         </tr>
                         <tr>
-                          <td className="text-start">Type or click to select an item.</td>
+                        <td className="text-start pl-1 h-16">Type or click to select an item.</td>
+
+
                           <td className="text-center">1.00</td>
                           <td className="text-center">0.00</td>
                           <td className="text-center">0.00</td>
