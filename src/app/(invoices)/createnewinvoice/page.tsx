@@ -178,7 +178,7 @@ const getStarted = () => {
                       </div>
                     </div>
                     <hr />
-                    <div className="flex gap-[232px] items-center">
+                    <div className="flex gap-[99px] items-center">
                       <div>
                         <p className="text-white text-sm">Salesperson</p>
                       </div>
@@ -189,7 +189,7 @@ const getStarted = () => {
                         />
                       </div>
                     </div>
-                    <div className="flex gap-[232px] items-center">
+                    <div className="flex gap-[132px] items-center">
                       <div>
                         <p className="text-white text-sm">Subject</p>
                       </div>
@@ -197,6 +197,7 @@ const getStarted = () => {
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
+                          placeholder=""
                         />
                       </div>
                     </div>
