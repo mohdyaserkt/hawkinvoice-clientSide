@@ -35,14 +35,14 @@ const getStarted = () => {
     setItems([...items, { quantity: 0, rate: 0 }]);
   };
 
-  const handleTextareaFocus = () => {
+  const handleTextareaFocus = (key:string) => {
     console.log("worked");
 
     if (slectRef.current) {
       slectRef.current.classList.remove("hidden");
     }
   };
-  const handleTextareaBlur=()=>{
+  const handleTextareaBlur=(key:string)=>{
     if (slectRef.current) {
         slectRef.current.classList.add("hidden");
       }
@@ -260,14 +260,15 @@ const getStarted = () => {
                             <tr className="border h-16" key={index}>
                               <td className="text-start pl-1">
                                 <textarea
-                                  onFocus={handleTextareaFocus}
-                                  onBlur={handleTextareaBlur}
+                                  onFocus={()=>handleTextareaFocus(`selectdiv${index}`)}
+                                  onBlur={()=>handleTextareaBlur(`selectdiv${index}`)}
                                   placeholder=" Type or click to select an item."
                                   className="border-none bg-transparent rounded-md text-xs w-64 p-2 focus:outline-none placeholder:text-white"
                                 ></textarea>
 
                                 <div
                                   ref={slectRef}
+                                  key={`selectdiv${index}`}
                                   className="absolute bg-primary text-black rounded-md w-80 p-5 border  flex flex-col gap-3 ml-[-6px] mt-4 hidden "
                                 >
                                   <div className="text-secondary border rounded-md hover:text-blue-500">
