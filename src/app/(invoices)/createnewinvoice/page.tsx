@@ -215,15 +215,12 @@ const getStarted = () => {
                       <tbody className="border text-xs">
                         <tr className="border h-16">
                           <td className="text-start pl-1">Type or click to select an item.</td>
-
                           <td className="text-center"><input type="text" defaultValue={"0.00"} className="bg-transparent focus:outline-none rounded-md text-center text-xs" /></td>
                           <td className="text-center"><input type="text" defaultValue={"0.00"} className="bg-transparent focus:outline-none rounded-md text-center text-xs" /></td>
                           <td className="text-center">0.00</td>
                         </tr>
                         <tr>
-                        <td className="text-start pl-1 h-16">Type or click to select an item.</td>
-
-
+                          <td className="text-start pl-1 h-16">Type or click to select an item.</td>
                           <td className="text-center">1.00</td>
                           <td className="text-center">0.00</td>
                           <td className="text-center">0.00</td>
