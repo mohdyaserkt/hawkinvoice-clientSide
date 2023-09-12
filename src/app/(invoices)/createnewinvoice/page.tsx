@@ -1,5 +1,5 @@
 "use client";
-import React, { ChangeEvent, useRef, useState } from "react";
+import React, { ChangeEvent, useMemo, useRef, useState } from "react";
 import {
   LiaFileInvoiceDollarSolid,
   LiaFileInvoiceSolid,
@@ -31,7 +31,11 @@ const getStarted = () => {
   const slectRef = useRef<HTMLDivElement>(null);
 
   const [items, setItems] = useState<Item[]>([{ quantity: 0, rate: 0 }]);
-  const rowRefs = Array.from({ length:items.length }, () => useRef<HTMLDivElement>(null));
+
+  const rowRefs = useMemo(() => {
+    return Array.from({ length: items.length }, () => useRef<HTMLDivElement>(null));
+  }, [items.length])
+
   const addRow = () => {
     setItems([...items, { quantity: 0, rate: 0 }]);
   };
