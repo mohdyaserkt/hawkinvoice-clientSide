@@ -271,7 +271,7 @@ const getStarted = () => {
                           ))}
                           <tr className="border h-16">
                             <td className="text-start pl-1">
-                                <textarea className=" bg-transparent border-0 focus:border-0 rounded-md  text-xs w-64 p-2">
+                                <textarea className=" bg-transparent border-none border-transparent overflow-auto rounded-md  text-xs w-64 p-2">
                                     Type or click to select an item.
                                 </textarea>
                               
