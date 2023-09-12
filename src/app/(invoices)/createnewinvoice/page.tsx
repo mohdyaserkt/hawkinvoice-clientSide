@@ -20,10 +20,10 @@ import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
 
 interface Item {
-    quantity: number;
-    rate: number;
-    [key: string]: number; // Add an index signature for dynamic keys
-  }
+  quantity: number;
+  rate: number;
+  [key: string]: number; // Add an index signature for dynamic keys
+}
 
 const getStarted = () => {
   const router = useRouter();
@@ -32,7 +32,10 @@ const getStarted = () => {
   const addRow = () => {
     setItems([...items, { quantity: 1, rate: 0 }]);
   };
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>, index: number) => {
+  const handleInputChange = (
+    e: ChangeEvent<HTMLInputElement>,
+    index: number
+  ) => {
     const { name, value } = e.target;
     const newItems = [...items];
     newItems[index][name] = parseFloat(value) || 0;
@@ -134,9 +137,17 @@ const getStarted = () => {
                       </p>
                       <div className="flex items-center">
                         <div>
-                          <select name="" className=" bg-transparent border rounded-l-md w-[503px] h-8 px-3" id="">
-                            <option value="" className="">first Customer</option>
-                            <option value="" className="">Second Customer</option>
+                          <select
+                            name=""
+                            className=" bg-transparent border rounded-l-md w-[503px] h-8 px-3"
+                            id=""
+                          >
+                            <option value="" className="">
+                              first Customer
+                            </option>
+                            <option value="" className="">
+                              Second Customer
+                            </option>
                           </select>
                         </div>
                         <div className="bg-secondary h-8 w-8 flex items-center justify-center  rounded-r-md">
@@ -176,21 +187,21 @@ const getStarted = () => {
                         </p>
                       </div>
                       <div className="flex gap-8 items-center ">
-                      <div className="flex items-center">
-                        <input
-                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
-                          type="text"
-                        />
-                      </div>
-                      <div>
-                        <p className="text-white text-sm">Due Date</p>
-                      </div>
-                      <div className="flex items-center">
-                        <input
-                          className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
-                          type="text"
-                        />
-                      </div>
+                        <div className="flex items-center">
+                          <input
+                            className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
+                            type="text"
+                          />
+                        </div>
+                        <div>
+                          <p className="text-white text-sm">Due Date</p>
+                        </div>
+                        <div className="flex items-center">
+                          <input
+                            className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
+                            type="text"
+                          />
+                        </div>
                       </div>
                     </div>
                     <hr />
@@ -220,7 +231,7 @@ const getStarted = () => {
                     </div>
 
                     <table className="w-7/12 ">
-                      <thead  className="bg-secondary h-8 text-gray-900 border border-secondary">
+                      <thead className="bg-secondary h-8 text-gray-900 border border-secondary">
                         <tr className="">
                           <th className="text-start pl-1">ITEM DETAILS</th>
                           <th>QUANTITY</th>
@@ -229,14 +240,56 @@ const getStarted = () => {
                         </tr>
                       </thead>
                       <tbody className="border text-xs">
+                        {items.map((item, index) => (
+                          <tr className="border h-16" key={index}>
+                            <td className="text-start pl-1">
+                              Type or click to select an item.
+                            </td>
+                            <td className="text-center">
+                              <input
+                                type="text"
+                                name="quantity"
+                                defaultValue={item.quantity}
+                                onChange={(e) => handleInputChange(e, index)}
+                                className="bg-transparent focus:outline-none rounded-md text-center text-xs"
+                              />
+                            </td>
+                            <td className="text-center">
+                              <input
+                                type="text"
+                                name="rate"
+                                onChange={(e) => handleInputChange(e, index)}
+                                defaultValue={item.rate}
+                                className="bg-transparent focus:outline-none rounded-md text-center text-xs"
+                              />
+                            </td>
+                            <td className="text-center">0.00</td>
+                          </tr>
+                        ))}
                         <tr className="border h-16">
-                          <td className="text-start pl-1">Type or click to select an item.</td>
-                          <td className="text-center"><input type="text" defaultValue={"0.00"} className="bg-transparent focus:outline-none rounded-md text-center text-xs" /></td>
-                          <td className="text-center"><input type="text" defaultValue={"0.00"} className="bg-transparent focus:outline-none rounded-md text-center text-xs" /></td>
+                          <td className="text-start pl-1">
+                            Type or click to select an item.
+                          </td>
+                          <td className="text-center">
+                            <input
+                              type="text"
+                              defaultValue={"0.00"}
+                              className="bg-transparent focus:outline-none rounded-md text-center text-xs"
+                            />
+                          </td>
+                          <td className="text-center">
+                            <input
+                              type="text"
+                              defaultValue={"0.00"}
+                              className="bg-transparent focus:outline-none rounded-md text-center text-xs"
+                            />
+                          </td>
                           <td className="text-center">0.00</td>
                         </tr>
                         <tr>
-                          <td className="text-start pl-1 h-16">Type or click to select an item.</td>
+                          <td className="text-start pl-1 h-16">
+                            Type or click to select an item.
+                          </td>
                           <td className="text-center">1.00</td>
                           <td className="text-center">0.00</td>
                           <td className="text-center">0.00</td>
@@ -277,7 +330,7 @@ const getStarted = () => {
                           </div>
                           <p>0.00</p>
                         </div>
-                        
+
                         <div>
                           <h2>Total ( ₹ ) </h2>
                           <h2>0.00</h2>
