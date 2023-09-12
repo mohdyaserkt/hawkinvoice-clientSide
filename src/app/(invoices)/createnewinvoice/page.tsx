@@ -28,9 +28,9 @@ interface Item {
 const getStarted = () => {
   const router = useRouter();
 
-  const [items, setItems] = useState<Item[]>([{ quantity: 1, rate: 0 }]);
+  const [items, setItems] = useState<Item[]>([{ quantity: 0, rate: 0 }]);
   const addRow = () => {
-    setItems([...items, { quantity: 1, rate: 0 }]);
+    setItems([...items, { quantity: 0, rate: 0 }]);
   };
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement>,
@@ -40,6 +40,7 @@ const getStarted = () => {
     const newItems = [...items];
     newItems[index][name] = parseFloat(value) || 0;
     setItems(newItems);
+    addRow()
   };
   return (
     <>
@@ -263,16 +264,18 @@ const getStarted = () => {
                                 className="bg-transparent focus:outline-none rounded-md text-center text-xs"
                               />
                             </td>
-                            <td className="text-center">0.00</td>
+                            <td className="text-center">{item.quantity * item.rate}.00</td>
                           </tr>
                         ))}
-                        <tr className="border h-16">
+                        {/* <tr className="border h-16">
                           <td className="text-start pl-1">
                             Type or click to select an item.
                           </td>
                           <td className="text-center">
                             <input
                               type="text"
+                              name="quantity"
+                              onChange={(e) => handleInputChange(e)}
                               defaultValue={"0.00"}
                               className="bg-transparent focus:outline-none rounded-md text-center text-xs"
                             />
@@ -280,12 +283,14 @@ const getStarted = () => {
                           <td className="text-center">
                             <input
                               type="text"
+                              name="rate"
+                            onChange={(e) => handleInputChange(e)}
                               defaultValue={"0.00"}
                               className="bg-transparent focus:outline-none rounded-md text-center text-xs"
                             />
                           </td>
                           <td className="text-center">0.00</td>
-                        </tr>
+                        </tr> */}
                         <tr>
                           <td className="text-start pl-1 h-16">
                             Type or click to select an item.
