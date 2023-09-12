@@ -21,31 +21,34 @@ import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import Createinvoice from "@/components/createinvoice/createinvoice";
 
-interface Item {
-  quantity: number;
-  rate: number;
-  itemName:string;
-  [key: string]: string|number;
-  // Add an index signature for dynamic keys
-  
-  
-  
-}
-
-
-
+const fetchedItems = [
+  {
+    itemName: "item1",
+    rate: 502,
+  }, {
+    itemName: "item2",
+    rate: 502,
+  }, {
+    itemName: "item",
+    rate: 502,
+  }, {
+    itemName: "item3",
+    rate: 502,
+  },
+];
 
 const getStarted = () => {
   const router = useRouter();
   const slectRef = useRef<HTMLDivElement>(null);
 
-  const [items, setItems] = useState<Item[]>([{ quantity: 0, rate: 0, itemName:""}]);
+  const [items, setItems] = useState<Item[]>([
+    { quantity: 0, rate: 0, itemName: "" },
+  ]);
 
   console.log(items);
-  
 
   const addRow = () => {
-    setItems([...items, { quantity: 0, rate: 0,itemName:""}]);
+    setItems([...items, { quantity: 0, rate: 0, itemName: "" }]);
   };
 
   const handleInputChange = (
@@ -53,7 +56,7 @@ const getStarted = () => {
     index: number
   ) => {
     const { name, value } = e.target;
-    const newItems= [...items];
+    const newItems = [...items];
     newItems[index][name] = value;
     setItems(newItems);
   };
