@@ -19,6 +19,7 @@ import {
 import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
+import Createinvoice from "@/components/createinvoice/createinvoice";
 
 interface Item {
   quantity: number;
@@ -32,26 +33,9 @@ const getStarted = () => {
 
   const [items, setItems] = useState<Item[]>([{ quantity: 0, rate: 0 }]);
 
-  const rowRefs = useMemo(() => {
-    return Array.from({ length: items.length }, () => useRef<HTMLDivElement>(null));
-  }, [items.length])
-
   const addRow = () => {
     setItems([...items, { quantity: 0, rate: 0 }]);
   };
-
-  const handleTextareaFocus = (index:number) => {
-    console.log("worked");
-
-    if (rowRefs[index].current) {
-        rowRefs[index].current?.classList.remove("hidden");
-    }
-  };
-  const handleTextareaBlur=(index:number)=>{
-    if (rowRefs[index].current) {
-        rowRefs[index].current?.classList.add("hidden");
-      }
-  }
 
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement>,
@@ -262,90 +246,13 @@ const getStarted = () => {
                         </thead>
                         <tbody className="border text-xs">
                           {items.map((item, index) => (
-                            <tr className="border h-16" key={index}>
-                              <td className="text-start pl-1">
-                                <textarea
-                                  onFocus={()=>handleTextareaFocus(index)}
-                                  onBlur={()=>handleTextareaBlur(index)}
-                                  placeholder=" Type or click to select an item."
-                                  className="border-none bg-transparent rounded-md text-xs w-64 p-2 focus:outline-none placeholder:text-white"
-                                ></textarea>
-
-                                <div
-                                  ref={rowRefs[index]}
-                                  key={`selectdiv${index}`}
-                                  className="absolute bg-primary text-black rounded-md w-80 p-5 border  flex flex-col gap-3 ml-[-6px] mt-4 hidden "
-                                >
-                                  <div className="text-secondary border rounded-md hover:text-blue-500">
-                                    <h1 className="font-bold p-3 ">New Item</h1>
-                                  </div>
-                                  <div className="text-secondary border rounded-md hover:text-blue-500">
-                                    <h1 className="font-bold p-3">New Item</h1>
-                                  </div>
-                                  <div className="text-secondary border rounded-md hover:text-blue-500">
-                                    <h1 className="font-bold p-3">New Item</h1>
-                                  </div>
-                                </div>
-                              </td>
-                              <td className="text-center">
-                                <input
-                                  type="text"
-                                  name="quantity"
-                                  defaultValue={`${item.quantity}.00`}
-                                  onChange={(e) => handleInputChange(e, index)}
-                                  className="bg-transparent focus:outline-none rounded-md text-center text-xs"
-                                />
-                              </td>
-                              <td className="text-center">
-                                <input
-                                  type="text"
-                                  name="rate"
-                                  onChange={(e) => handleInputChange(e, index)}
-                                  defaultValue={`${item.rate}.00`}
-                                  className="bg-transparent focus:outline-none rounded-md text-center text-xs"
-                                />
-                              </td>
-                              <td className="text-center">
-                                {item.quantity * item.rate}.00
-                              </td>
-                            </tr>
+                            <Createinvoice
+                              item={item}
+                              handleInputChange={handleInputChange}
+                              key={index}
+                              index={index}
+                            />
                           ))}
-                          <tr className="border h-16">
-                            <td className="text-start pl-1 ">
-                              <textarea
-                                placeholder=" Type or click to select an item."
-                                className="border-none bg-transparent rounded-md text-xs w-64 p-2 focus:outline-none placeholder:text-white"
-                              ></textarea>
-                              <div className="absolute bg-primary text-black rounded-md w-80 p-5 border   flex-col gap-3 ml-[-6px] mt-4 hidden ">
-                                <div className="text-secondary border rounded-md hover:text-blue-500">
-                                  <h1 className="font-bold p-3 ">New Item</h1>
-                                </div>
-                                <div className="text-secondary border rounded-md hover:text-blue-500">
-                                  <h1 className="font-bold p-3">New Item</h1>
-                                </div>
-                                <div className="text-secondary border rounded-md hover:text-blue-500">
-                                  <h1 className="font-bold p-3">New Item</h1>
-                                </div>
-                              </div>
-                            </td>
-                            <td className="text-center">
-                              <input
-                                type="text"
-                                name="quantity"
-                                defaultValue={"0.00"}
-                                className="bg-transparent focus:outline-none rounded-md text-center text-xs"
-                              />
-                            </td>
-                            <td className="text-center">
-                              <input
-                                type="text"
-                                name="rate"
-                                defaultValue={"0.00"}
-                                className="bg-transparent focus:outline-none rounded-md text-center text-xs"
-                              />
-                            </td>
-                            <td className="text-center">0.00</td>
-                          </tr>
                         </tbody>
                       </table>
                       <div
