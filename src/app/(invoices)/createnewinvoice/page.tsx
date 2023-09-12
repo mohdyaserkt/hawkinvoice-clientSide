@@ -40,7 +40,6 @@ const getStarted = () => {
     const newItems = [...items];
     newItems[index][name] = parseFloat(value) || 0;
     setItems(newItems);
-    addRow()
   };
   return (
     <>
