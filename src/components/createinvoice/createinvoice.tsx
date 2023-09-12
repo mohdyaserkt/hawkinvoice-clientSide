@@ -17,14 +17,11 @@ const Createinvoice = ({ item ,handleInputChange,index }: any) => {
             isopened ? "flex" : "hidden"
           } absolute bg-primary text-black rounded-md w-80 p-5 border   flex-col gap-3 ml-[-6px] mt-4  `}
         >
-          <input onClick={()=>{}} className="text-secondary bg-transparent border rounded-md hover:text-blue-500"/>
+          <input onClick={(e)=>handleInputChange(e, index)} value="New Item" disabled className="text-secondary bg-transparent p-3  border rounded-md hover:text-blue-500"/>
+          <input onClick={(e)=>handleInputChange(e, index)} value="New Item" disabled className="text-secondary bg-transparent p-3  border rounded-md hover:text-blue-500"/>
+          <input onClick={(e)=>handleInputChange(e, index)} value="New Item" disabled className="text-secondary bg-transparent p-3  border rounded-md hover:text-blue-500"/>
             
-          <div className="text-secondary border rounded-md hover:text-blue-500">
-            <h1 className="font-bold p-3">New Item</h1>
-          </div>
-          <div className="text-secondary border rounded-md hover:text-blue-500">
-            <h1 className="font-bold p-3">New Item</h1>
-          </div>
+         
         </div>
       </td>
       <td className="text-center">
