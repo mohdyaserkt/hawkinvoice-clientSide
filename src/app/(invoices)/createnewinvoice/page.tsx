@@ -9,7 +9,7 @@ import { PiHandbag, PiCopySimple } from "react-icons/pi";
 import { BsPlusSquareFill, BsFileEarmarkBarGraph } from "react-icons/bs";
 import { TbReceipt } from "react-icons/tb";
 import { FiSearch } from "react-icons/fi";
-import {IoMdAddCircleOutline} from "react-icons/io"
+import { IoMdAddCircleOutline } from "react-icons/io";
 import {
   AiOutlineSetting,
   AiOutlineHome,
@@ -231,27 +231,56 @@ const getStarted = () => {
                       </div>
                     </div>
                     <div>
-                    <table className="w-7/12 ">
-                      <thead className="bg-secondary h-8 text-gray-900 border border-secondary">
-                        <tr className="">
-                          <th className="text-start pl-1">ITEM DETAILS</th>
-                          <th>QUANTITY</th>
-                          <th>RATE</th>
-                          <th>AMOUNT</th>
-                        </tr>
-                      </thead>
-                      <tbody className="border text-xs">
-                        {items.map((item, index) => (
-                          <tr className="border h-16" key={index}>
+                      <table className="w-7/12 ">
+                        <thead className="bg-secondary h-8 text-gray-900 border border-secondary">
+                          <tr className="">
+                            <th className="text-start pl-1">ITEM DETAILS</th>
+                            <th>QUANTITY</th>
+                            <th>RATE</th>
+                            <th>AMOUNT</th>
+                          </tr>
+                        </thead>
+                        <tbody className="border text-xs">
+                          {items.map((item, index) => (
+                            <tr className="border h-16" key={index}>
+                              <td className="text-start pl-1">
+                                Type or click to select an item.
+                              </td>
+                              <td className="text-center">
+                                <input
+                                  type="text"
+                                  name="quantity"
+                                  defaultValue={`${item.quantity}.00`}
+                                  onChange={(e) => handleInputChange(e, index)}
+                                  className="bg-transparent focus:outline-none rounded-md text-center text-xs"
+                                />
+                              </td>
+                              <td className="text-center">
+                                <input
+                                  type="text"
+                                  name="rate"
+                                  onChange={(e) => handleInputChange(e, index)}
+                                  defaultValue={`${item.rate}.00`}
+                                  className="bg-transparent focus:outline-none rounded-md text-center text-xs"
+                                />
+                              </td>
+                              <td className="text-center">
+                                {item.quantity * item.rate}.00
+                              </td>
+                            </tr>
+                          ))}
+                          <tr className="border h-16">
                             <td className="text-start pl-1">
-                              Type or click to select an item.
+                                <textarea className="text-gray-900 bg-transparent border-0 focus:border-0">
+                                    Type or click to select an item.
+                                </textarea>
+                              
                             </td>
                             <td className="text-center">
                               <input
                                 type="text"
                                 name="quantity"
-                                defaultValue={`${item.quantity}.00`}
-                                onChange={(e) => handleInputChange(e, index)}
+                                defaultValue={"0.00"}
                                 className="bg-transparent focus:outline-none rounded-md text-center text-xs"
                               />
                             </td>
@@ -259,21 +288,22 @@ const getStarted = () => {
                               <input
                                 type="text"
                                 name="rate"
-                                onChange={(e) => handleInputChange(e, index)}
-                                defaultValue={`${item.rate}.00`}
+                                defaultValue={"0.00"}
                                 className="bg-transparent focus:outline-none rounded-md text-center text-xs"
                               />
                             </td>
-                            <td className="text-center">{item.quantity * item.rate}.00</td>
+                            <td className="text-center">0.00</td>
                           </tr>
-                        ))}
-                        
-                      </tbody>
-                    </table>
-                    <div onClick={addRow}  className="text-xs border flex gap-1 items-center cursor-pointer  rounded-md border-secondary text-secondary w-36 p-2 m-2">
-                    <IoMdAddCircleOutline className="w-4 h-4"/> Add another line
+                        </tbody>
+                      </table>
+                      <div
+                        onClick={addRow}
+                        className="text-xs border flex gap-1 items-center cursor-pointer  rounded-md border-secondary text-secondary w-36 p-2 m-2"
+                      >
+                        <IoMdAddCircleOutline className="w-4 h-4" /> Add another
+                        line
                       </div>
-                      </div>
+                    </div>
                     <div>
                       <div>
                         <div>
