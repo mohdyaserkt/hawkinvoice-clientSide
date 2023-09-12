@@ -270,10 +270,15 @@ const getStarted = () => {
                             </tr>
                           ))}
                           <tr className="border h-16">
-                            <td className="text-start pl-1">
+                            <td className="text-start pl-1 relative">
                               <textarea placeholder=" Type or click to select an item." className="border-none bg-transparent rounded-md text-xs w-64 p-2 focus:outline-none placeholder:text-white">
                                
                               </textarea>
+                              <div className="absolute bg-white text-black rounded-md w-80 p-5 ml-4 ">
+                                <div className="bg-secondary rounded-md">
+                                   <h1 className="font-bold p-3">New Item</h1>
+                                </div>
+                              </div>
                             </td>
                             <td className="text-center">
                               <input
