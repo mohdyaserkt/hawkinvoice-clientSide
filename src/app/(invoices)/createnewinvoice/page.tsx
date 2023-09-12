@@ -28,25 +28,25 @@ interface Item {
 
 const getStarted = () => {
   const router = useRouter();
-  const slectRef=useRef<HTMLDivElement>(null)
+  const slectRef = useRef<HTMLDivElement>(null);
 
   const [items, setItems] = useState<Item[]>([{ quantity: 0, rate: 0 }]);
   const addRow = () => {
     setItems([...items, { quantity: 0, rate: 0 }]);
   };
 
-  const handleTextareaFocus=()=>{
+  const handleTextareaFocus = () => {
     console.log("worked");
-    
+
     if (slectRef.current) {
-        slectRef.current.classList.remove('hidden');
+      slectRef.current.classList.remove("hidden");
+    }
+  };
+  const handleTextareaBlur=()=>{
+    if (slectRef.current) {
+        slectRef.current.classList.add("hidden");
       }
   }
-
-
-
-
-
 
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement>,
@@ -261,11 +261,15 @@ const getStarted = () => {
                               <td className="text-start pl-1">
                                 <textarea
                                   onFocus={handleTextareaFocus}
+                                  onBlur={handleTextareaBlur}
                                   placeholder=" Type or click to select an item."
                                   className="border-none bg-transparent rounded-md text-xs w-64 p-2 focus:outline-none placeholder:text-white"
                                 ></textarea>
-                                
-                                <div ref={slectRef} className="absolute bg-primary text-black rounded-md w-80 p-5 border  flex flex-col gap-3 ml-[-6px] mt-4 hidden ">
+
+                                <div
+                                  ref={slectRef}
+                                  className="absolute bg-primary text-black rounded-md w-80 p-5 border  flex flex-col gap-3 ml-[-6px] mt-4 hidden "
+                                >
                                   <div className="text-secondary border rounded-md hover:text-blue-500">
                                     <h1 className="font-bold p-3 ">New Item</h1>
                                   </div>
