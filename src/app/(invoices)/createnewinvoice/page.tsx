@@ -9,6 +9,7 @@ import { PiHandbag, PiCopySimple } from "react-icons/pi";
 import { BsPlusSquareFill, BsFileEarmarkBarGraph } from "react-icons/bs";
 import { TbReceipt } from "react-icons/tb";
 import { FiSearch } from "react-icons/fi";
+import {IoMdAddCircleOutline} from "react-icons/io"
 import {
   AiOutlineSetting,
   AiOutlineHome,
@@ -229,7 +230,7 @@ const getStarted = () => {
                         />
                       </div>
                     </div>
-
+                    <div>
                     <table className="w-7/12 ">
                       <thead className="bg-secondary h-8 text-gray-900 border border-secondary">
                         <tr className="">
@@ -300,6 +301,10 @@ const getStarted = () => {
                         </tr>
                       </tbody>
                     </table>
+                    <div onClick={addRow}  className="text-xs border flex gap-1 items-center cursor-pointer  rounded-md border-secondary text-secondary w-36 p-2 m-2">
+                    <IoMdAddCircleOutline className="w-4 h-4"/> Add another line
+                      </div>
+                      </div>
                     <div>
                       <div>
                         <div>
