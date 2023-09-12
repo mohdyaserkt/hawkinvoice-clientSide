@@ -248,7 +248,7 @@ const getStarted = () => {
                                   placeholder=" Type or click to select an item."
                                   className="border-none bg-transparent rounded-md text-xs w-64 p-2 focus:outline-none placeholder:text-white"
                                 ></textarea>
-                                <div className="absolute bg-primary text-black rounded-md w-80 p-5 border  flex flex-col gap-3 ml-[-6px] mt-4 ">
+                                <div className="absolute bg-primary text-black rounded-md w-80 p-5 border  flex flex-col gap-3 ml-[-6px] mt-4 hidden ">
                                   <div className="text-secondary border rounded-md hover:text-blue-500">
                                     <h1 className="font-bold p-3 ">New Item</h1>
                                   </div>
@@ -283,7 +283,7 @@ const getStarted = () => {
                               </td>
                             </tr>
                           ))}
-                          <tr className="border h-16">
+                          {/* <tr className="border h-16">
                             <td className="text-start pl-1 ">
                               <textarea
                                 placeholder=" Type or click to select an item."
@@ -318,7 +318,7 @@ const getStarted = () => {
                               />
                             </td>
                             <td className="text-center">0.00</td>
-                          </tr>
+                          </tr> */}
                         </tbody>
                       </table>
                       <div
