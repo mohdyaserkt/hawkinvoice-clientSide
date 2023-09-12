@@ -300,7 +300,7 @@ const getStarted = () => {
                               </td>
                             </tr>
                           ))}
-                          {/* <tr className="border h-16">
+                          <tr className="border h-16">
                             <td className="text-start pl-1 ">
                               <textarea
                                 placeholder=" Type or click to select an item."
@@ -335,7 +335,7 @@ const getStarted = () => {
                               />
                             </td>
                             <td className="text-center">0.00</td>
-                          </tr> */}
+                          </tr>
                         </tbody>
                       </table>
                       <div
