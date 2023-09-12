@@ -274,14 +274,14 @@ const getStarted = () => {
                               <textarea placeholder=" Type or click to select an item." className="border-none bg-transparent rounded-md text-xs w-64 p-2 focus:outline-none placeholder:text-white">
                                
                               </textarea>
-                              <div className="absolute bg-white text-black rounded-md w-80 p-5 ml-4 ">
-                                <div className="bg-secondary rounded-md">
+                              <div className="absolute bg-primary text-black rounded-md w-80 p-5 border  flex flex-col gap-3 ml-[-6px] mt-4 ">
+                                <div className="text-secondary border rounded-md">
                                    <h1 className="font-bold p-3">New Item</h1>
                                 </div>
-                                <div className="bg-secondary rounded-md">
+                                <div className="text-secondary border rounded-md">
                                    <h1 className="font-bold p-3">New Item</h1>
                                 </div>
-                                <div className="bg-secondary rounded-md">
+                                <div className="text-secondary border rounded-md">
                                    <h1 className="font-bold p-3">New Item</h1>
                                 </div>
                               </div>
