@@ -278,6 +278,12 @@ const getStarted = () => {
                                 <div className="bg-secondary rounded-md">
                                    <h1 className="font-bold p-3">New Item</h1>
                                 </div>
+                                <div className="bg-secondary rounded-md">
+                                   <h1 className="font-bold p-3">New Item</h1>
+                                </div>
+                                <div className="bg-secondary rounded-md">
+                                   <h1 className="font-bold p-3">New Item</h1>
+                                </div>
                               </div>
                             </td>
                             <td className="text-center">
