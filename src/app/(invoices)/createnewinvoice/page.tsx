@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import {
   LiaFileInvoiceDollarSolid,
   LiaFileInvoiceSolid,
@@ -19,9 +19,25 @@ import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
 
+interface Item {
+    quantity: number;
+    rate: number;
+    [key: string]: number; // Add an index signature for dynamic keys
+  }
+
 const getStarted = () => {
   const router = useRouter();
 
+  const [items, setItems] = useState<Item[]>([{ quantity: 1, rate: 0 }]);
+  const addRow = () => {
+    setItems([...items, { quantity: 1, rate: 0 }]);
+  };
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>, index: number) => {
+    const { name, value } = e.target;
+    const newItems = [...items];
+    newItems[index][name] = parseFloat(value) || 0;
+    setItems(newItems);
+  };
   return (
     <>
       <div className="h-screen">
