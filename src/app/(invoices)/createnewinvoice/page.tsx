@@ -275,8 +275,8 @@ const getStarted = () => {
                                
                               </textarea>
                               <div className="absolute bg-primary text-black rounded-md w-80 p-5 border  flex flex-col gap-3 ml-[-6px] mt-4 ">
-                                <div className="text-secondary border rounded-md">
-                                   <h1 className="font-bold p-3">New Item</h1>
+                                <div className="text-secondary border rounded-md hover:bg-blue-400">
+                                   <h1 className="font-bold p-3 ">New Item</h1>
                                 </div>
                                 <div className="text-secondary border rounded-md">
                                    <h1 className="font-bold p-3">New Item</h1>
