@@ -217,7 +217,8 @@ const getStarted = () => {
                         <div className="flex items-center">
                           <input
                             className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
-                            type="text"
+                            type="date"
+                            
                           />
                         </div>
                         <div>
@@ -226,7 +227,7 @@ const getStarted = () => {
                         <div className="flex items-center">
                           <input
                             className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
-                            type="text"
+                            type="date"
                           />
                         </div>
                       </div>
@@ -288,7 +289,7 @@ const getStarted = () => {
                       </div>
                     </div>
                     <div className="flex gap-16">
-                      <div className=" flex flex-col gap-2">
+                      <div className=" flex flex-col gap-4">
                         <div className=" flex flex-col gap-1">
                           <p className="text-xs">Customer Notes</p>
                           <textarea className="focus:outline-none bg-transparent border rounded-md w-[448px] h-20 p-3"></textarea>
