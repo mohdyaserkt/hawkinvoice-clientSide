@@ -50,6 +50,10 @@ const getStarted = () => {
   const addRow = () => {
     setItems([...items, { quantity: 0, rate: 0, itemName: "" }]);
   };
+  const addSelectedItem = (rate:number,itemName:string) => {
+    setItems([...items, { quantity: 1, rate: rate, itemName:itemName}]);
+  };
+
 
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement>,
