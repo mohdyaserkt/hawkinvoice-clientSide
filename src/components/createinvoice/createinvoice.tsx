@@ -13,7 +13,7 @@ const Createinvoice = ({
       <td className="text-start pl-1">
         <textarea
           onFocus={() => setisopened(!isopened)}
-        //   onBlur={() => setisopened(!isopened)}
+          onBlur={(e) => {e.target.value.length>0?setisopened(!isopened):null}}
           name="itemName"
           onChange={(e) => handleInputChange(e, index)}
           placeholder=" Type or click to select an item."
