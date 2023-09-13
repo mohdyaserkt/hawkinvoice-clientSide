@@ -16,6 +16,7 @@ const Createinvoice = ({
           onBlur={(e) => {e.target.value.length>0?setisopened(!isopened):null}}
           name="itemName"
           onChange={(e) => handleInputChange(e, index)}
+          onInput={() => setisopened(false)}
           placeholder=" Type or click to select an item."
           defaultValue={item.itemName}
           className="border-none bg-transparent rounded-md text-xs w-64 p-2 focus:outline-none placeholder:text-white"
