@@ -41,6 +41,8 @@ const fetchedItems = [
 ];
 
 const getStarted = () => {
+
+  const [paymentMode, setpaymentMode] = useState(false)
   const router = useRouter();
   const slectRef = useRef<HTMLDivElement>(null);
 
@@ -312,9 +314,9 @@ const getStarted = () => {
                                 type="text"
                                 className="bg-transparent border text-center rounded-s-md w-16 h-8  focus:outline-none"
                               />
-                              <select className="bg-transparent border text-center h-8 rounded-e-md ">
+                              <select className="bg-transparent border-y border-r text-center h-8 rounded-e-md ">
                                 <option value="">%</option>
-                                <option value="">inr</option>
+                                <option value="">₹</option>
                               </select>
                             </div>
                           </div>
@@ -333,7 +335,7 @@ const getStarted = () => {
                           </div>
                           <p>0.00</p>
                         </div>
-                        <hr  className="w-7/12"/>
+                        <hr />
                         <div className="flex justify-between text-base">
                           <h2>Total ( ₹ ) </h2>
                           <h2>0.00</h2>
@@ -349,9 +351,9 @@ const getStarted = () => {
                         >
                           <input
                             id="login"
-                            // checked={isChecked}
+                            checked={paymentMode}
                             type="checkbox"
-                            // onChange={() => setIsChecked(!isChecked)}
+                            onChange={() => setpaymentMode(!paymentMode)}
                             className="before:content[''] peer relative sm:w-3 sm:h-3 md:h-4 md:w-4 cursor-pointer appearance-none rounded border border-white transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-black  checked:bg-black checked:before:bg-black hover:before:opacity-10"
                           />
                           <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
@@ -375,26 +377,20 @@ const getStarted = () => {
                           I have received the payment
                         </label>
                       </div>
-                      {/* <div className="flex gap-1">
-                        <input
-                          type="checkbox"
-                          className="appearance-none bg-transparent border border-white w-4 h-4 rounded checked:bg-transparent checked:border-white checked:text-green-500"
-                        />
-                        <p>I have received the payment</p>
-                      </div> */}
-                      <div>
+                      
+                      <div className={`${paymentMode?"flex":"hidden"} items-center gap-5 my-3 px-2 `}>
                         <p>Payment Mode</p>
-                        <select>
+                        <select className="bg-transparent rounded-md p-2 border">
                           <option value="">cash</option>
                           <option value="">Online Payment</option>
                         </select>
                       </div>
                     </div>
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 mb-10">
                       <button className="text-xs border  rounded-md border-secondary text-secondary w-36 p-2">
                         save as Draft
                       </button>
-                      <select>
+                      <select className="bg-transparent border rounded-md p-2">
                         <option value="">save and send</option>
                         <option value="">Save and Print</option>
                       </select>
