@@ -218,6 +218,7 @@ const getStarted = () => {
                           <input
                             className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                             type="date"
+                            defaultValue={new Date().toISOString().split('T')[0]}
                             
                           />
                         </div>
