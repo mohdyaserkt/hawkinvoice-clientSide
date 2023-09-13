@@ -284,7 +284,7 @@ const getStarted = () => {
                         line
                       </div>
                     </div>
-                    <div className="flex">
+                    <div className="flex gap-4">
                       <div  className=" flex flex-col gap-2">
                         <div className=" flex flex-col gap-1">
                           <p className="text-xs">Customer Notes</p>
@@ -295,12 +295,12 @@ const getStarted = () => {
                           <textarea className="focus:outline-none bg-transparent border rounded-md w-[448px] h-20 p-3" placeholder="Enter the terms and conditions of your business to be displayed in your transaction"></textarea>
                         </div>
                       </div>
-                      <div>
-                        <div>
+                      <div className="border rounded-md p-5 ">
+                        <div className="flex  justify-between text-sm">
                           <p>Sub Total</p>
                           <p>0.00</p>
                         </div>
-                        <div>
+                        <div className="flex  justify-between text-sm">
                           <p>Discount</p>
                           <div>
                             <input type="text" />
@@ -311,7 +311,7 @@ const getStarted = () => {
                           </div>
                           <p>0.00</p>
                         </div>
-                        <div>
+                        <div className="flex justify-between">
                           <div>
                             <input type="text" />
                             <input type="text" />
