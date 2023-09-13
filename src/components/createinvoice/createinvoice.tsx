@@ -17,6 +17,7 @@ const Createinvoice = ({
           name="itemName"
           onChange={(e) => handleInputChange(e, index)}
           placeholder=" Type or click to select an item."
+          defaultValue={item.itemName}
           className="border-none bg-transparent rounded-md text-xs w-64 p-2 focus:outline-none placeholder:text-white"
         ></textarea>
 
