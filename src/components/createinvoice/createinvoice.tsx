@@ -27,7 +27,8 @@ const Createinvoice = ({
           } absolute bg-primary text-black rounded-md w-80 p-5 border   flex-col gap-3 ml-[-6px] mt-4  `}
         >
           {fetchedItems.map((item:any,index:number) => (
-            <div key={index} onClick={()=>addSelectedItem(item.rate,item.itemName)} className="text-secondary border rounded-md hover:text-blue-500">
+            <div key={index} onClick={()=>{addSelectedItem(item.rate,item.itemName)
+            setisopened(!isopened)}} className="text-secondary border rounded-md hover:text-blue-500">
               <h1 className="font-bold p-3 ">{item.itemName}</h1>
             </div>
           ))}
