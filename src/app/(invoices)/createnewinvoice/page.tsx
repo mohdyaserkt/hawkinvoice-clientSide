@@ -25,16 +25,19 @@ const fetchedItems = [
   {
     itemName: "item1",
     rate: 502,
-  }, {
+  },
+  {
     itemName: "item2",
     rate: 502,
-  }, {
+  },
+  {
     itemName: "item",
     rate: 502,
-  }, {
+  },
+  {
     itemName: "item3",
     rate: 502,
-  }
+  },
 ];
 
 const getStarted = () => {
@@ -50,10 +53,9 @@ const getStarted = () => {
   const addRow = () => {
     setItems([...items, { quantity: 0, rate: 0, itemName: "" }]);
   };
-  const addSelectedItem = (rate:number,itemName:string) => {
-    setItems([...items, { quantity: 1, rate: rate, itemName:itemName}]);
+  const addSelectedItem = (rate: number, itemName: string) => {
+    setItems([...items, { quantity: 1, rate: rate, itemName: itemName }]);
   };
-
 
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement>,
@@ -271,7 +273,6 @@ const getStarted = () => {
                               index={index}
                               fetchedItems={fetchedItems}
                               addSelectedItem={addSelectedItem}
-
                             />
                           ))}
                         </tbody>
@@ -284,42 +285,56 @@ const getStarted = () => {
                         line
                       </div>
                     </div>
-                    <div className="flex gap-4">
-                      <div  className=" flex flex-col gap-2">
+                    <div className="flex gap-16">
+                      <div className=" flex flex-col gap-2">
                         <div className=" flex flex-col gap-1">
                           <p className="text-xs">Customer Notes</p>
                           <textarea className="focus:outline-none bg-transparent border rounded-md w-[448px] h-20 p-3"></textarea>
                         </div>
                         <div className=" flex flex-col gap-1">
                           <p className="text-xs">Terms and Conditions</p>
-                          <textarea className="focus:outline-none bg-transparent border rounded-md w-[448px] h-20 p-3" placeholder="Enter the terms and conditions of your business to be displayed in your transaction"></textarea>
+                          <textarea
+                            className="focus:outline-none bg-transparent border rounded-md w-[448px] h-20 p-3"
+                            placeholder="Enter the terms and conditions of your business to be displayed in your transaction"
+                          ></textarea>
                         </div>
                       </div>
-                      <div className="border rounded-md p-5 ">
+                      <div className="border rounded-md p-5 flex flex-col gap-5 ">
                         <div className="flex  justify-between text-sm">
                           <p>Sub Total</p>
                           <p>0.00</p>
                         </div>
-                        <div className="flex  justify-between text-sm">
-                          <p>Discount</p>
-                          <div>
-                            <input type="text" />
-                            <select>
-                              <option value="">%</option>
-                              <option value="">inr</option>
-                            </select>
+                        <div className="flex  justify-between text-sm items-center">
+                          <div className="flex gap-[100px] items-center">
+                            <p>Discount</p>
+                            <div className="items-center">
+                              <input
+                                type="text"
+                                className="bg-transparent border text-center rounded-s-md w-16 h-8  focus:outline-none"
+                              />
+                              <select className="bg-transparent border text-center h-8 rounded-e-md ">
+                                <option value="">%</option>
+                                <option value="">inr</option>
+                              </select>
+                            </div>
                           </div>
                           <p>0.00</p>
                         </div>
-                        <div className="flex justify-between">
-                          <div>
-                            <input type="text" />
-                            <input type="text" />
+                        <div className="flex gap-6 justify-between items-center text-sm">
+                          <div className="flex  gap-8">
+                            <input
+                              type="text"
+                              className="bg-transparent border h-8 rounded-md w-32 focus:outline-none"
+                            />
+                            <input
+                              type="text"
+                              className="bg-transparent border h-8 rounded-md w-[101px] focus:outline-none"
+                            />
                           </div>
                           <p>0.00</p>
                         </div>
-
-                        <div>
+                        <hr />
+                        <div className="flex justify-between text-base">
                           <h2>Total ( ₹ ) </h2>
                           <h2>0.00</h2>
                         </div>
