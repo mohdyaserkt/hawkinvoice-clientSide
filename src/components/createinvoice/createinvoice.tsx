@@ -12,7 +12,7 @@ const Createinvoice = ({
     <tr className="border h-16">
       <td className="text-start pl-1">
         <textarea
-          onFocus={() => setisopened(!isopened)}
+          onFocus={() => setisopened(true)}
           onBlur={(e) => {e.target.value.length>0?setisopened(!isopened):null}}
           name="itemName"
           onChange={(e) => handleInputChange(e, index)}
