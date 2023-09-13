@@ -229,6 +229,8 @@ const getStarted = () => {
                           <input
                             className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                             type="date"
+                            defaultValue={(new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)).toISOString().split('T')[0]}
+                            
                           />
                         </div>
                       </div>
