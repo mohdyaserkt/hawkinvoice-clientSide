@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 
-const Createinvoice = ({ item ,handleInputChange,index }: any) => {
+const Createinvoice = ({
+  item,
+  handleInputChange,
+  index,
+  fetchedItems,
+}: any) => {
   const [isopened, setisopened] = useState(false);
   return (
     <tr className="border h-16">
@@ -19,15 +24,11 @@ const Createinvoice = ({ item ,handleInputChange,index }: any) => {
             isopened ? "flex" : "hidden"
           } absolute bg-primary text-black rounded-md w-80 p-5 border   flex-col gap-3 ml-[-6px] mt-4  `}
         >
-          <div className="text-secondary border rounded-md hover:text-blue-500">
-            <h1 className="font-bold p-3 ">New Item</h1>
-          </div>
-          <div className="text-secondary border rounded-md hover:text-blue-500">
-            <h1 className="font-bold p-3">New Item</h1>
-          </div>
-          <div className="text-secondary border rounded-md hover:text-blue-500">
-            <h1 className="font-bold p-3">New Item</h1>
-          </div>
+          {fetchedItems.map((item:any,index:number) => (
+            <div key={index} className="text-secondary border rounded-md hover:text-blue-500">
+              <h1 className="font-bold p-3 ">{item.itemName}</h1>
+            </div>
+          ))}
         </div>
       </td>
       <td className="text-center">
@@ -35,7 +36,7 @@ const Createinvoice = ({ item ,handleInputChange,index }: any) => {
           type="text"
           name="quantity"
           defaultValue={`${item.quantity}.00`}
-           onChange={(e) => handleInputChange(e, index)}
+          onChange={(e) => handleInputChange(e, index)}
           className="bg-transparent focus:outline-none rounded-md text-center text-xs"
         />
       </td>
@@ -43,7 +44,7 @@ const Createinvoice = ({ item ,handleInputChange,index }: any) => {
         <input
           type="text"
           name="rate"
-            onChange={(e) => handleInputChange(e, index)}
+          onChange={(e) => handleInputChange(e, index)}
           defaultValue={`${item.rate}.00`}
           className="bg-transparent focus:outline-none rounded-md text-center text-xs"
         />

@@ -34,7 +34,7 @@ const fetchedItems = [
   }, {
     itemName: "item3",
     rate: 502,
-  },
+  }
 ];
 
 const getStarted = () => {
@@ -265,6 +265,7 @@ const getStarted = () => {
                               handleInputChange={handleInputChange}
                               key={index}
                               index={index}
+                              fetchedItems={fetchedItems}
                             />
                           ))}
                         </tbody>
