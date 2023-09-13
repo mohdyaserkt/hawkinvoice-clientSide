@@ -270,6 +270,8 @@ const getStarted = () => {
                               key={index}
                               index={index}
                               fetchedItems={fetchedItems}
+                              addSelectedItem={addSelectedItem}
+
                             />
                           ))}
                         </tbody>
