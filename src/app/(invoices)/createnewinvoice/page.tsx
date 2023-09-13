@@ -155,7 +155,7 @@ const getStarted = () => {
             <div className="pt-7 pl-16">
               <div>
                 <form className="text-[13px] text-white">
-                  <div>
+                  <div className="flex flex-col gap-6">
                     <div className="flex items-center gap-[72px]">
                       <p>
                         Customer Name<span className="text-red-500">*</span>
@@ -341,8 +341,8 @@ const getStarted = () => {
                       </div>
                     </div>
                     <div>
-                      <div>
-                        <input type="checkbox" />{" "}
+                      <div className="flex gap-1">
+                        <input type="checkbox" className="" />{" "}
                         <p>I have received the payment</p>
                       </div>
                       <div>
