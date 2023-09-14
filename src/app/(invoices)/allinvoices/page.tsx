@@ -119,56 +119,7 @@ const getStarted = () => {
                 </div>
               </div>
             </div>
-            <table className="w-full border-t border-white">
-              <thead className="bg-secondary text-xs font-normal">
-                <tr>
-                  <th className="border-b border-white p-2 text-center">
-                    DATE
-                  </th>
-                  <th className="border-b border-white p-2 text-center">
-                  Invoice#
-                  </th>
-                  <th className="border-b border-white p-2 text-center">
-                  Order Number
-                  </th>
-                  <th className="border-b border-white p-2 text-center">
-                  Customer Name
-                  </th>
-                  <th className="border-b border-white p-2 text-center">
-                  Status
-                  </th>
-                  <th className="border-b border-white p-2 text-center">
-                  Due Date
-                  </th>
-                  <th className="border-b border-white p-2 text-center">
-                  Amount
-                  </th>
-                  <th className="border-b border-white p-2 text-center">
-                  Balance Due
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="text-white text-sm">
-              {/* {myCustomers.map((item: any) => (
-                <tr className="border-b border-white" key={item.id}>
-                  <td className="p-2 text-center">{item.name}</td>
-                  <td className="p-2 text-center">{item.description}</td>
-                  <td className="p-2 text-center">₹ {item.sellingPrice}</td>
-                  <td className="p-2 text-center">{item.unit}</td>
-                  <Link href={`/edititem/${item.id}`}><td className="p-2 text-center">edit</td></Link>
-
-                </tr>))}  */}
-                <tr className="border-b border-white">
-                  <td className="p-2 text-center">25/07/2023</td>
-                  <td className="p-2 text-center">INV-000003</td>
-                  <td className="p-2 text-center">256</td>
-                  <td className="p-2 text-center">Paid</td>
-                  <td className="p-2 text-center">25/07/2023</td>
-                  <td className="p-2 text-center">₹23,450.00</td>
-                  <td className="p-2 text-center">₹0.00</td>
-                </tr>
-              </tbody>
-            </table>
+            
           </div>
         </div>
       </div>
