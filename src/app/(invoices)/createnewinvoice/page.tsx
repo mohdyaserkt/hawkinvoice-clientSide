@@ -41,8 +41,7 @@ const fetchedItems = [
 ];
 
 const getStarted = () => {
-
-  const [paymentMode, setpaymentMode] = useState(false)
+  const [paymentMode, setpaymentMode] = useState(false);
   const router = useRouter();
   const slectRef = useRef<HTMLDivElement>(null);
 
@@ -218,8 +217,9 @@ const getStarted = () => {
                           <input
                             className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                             type="date"
-                            defaultValue={new Date().toISOString().split('T')[0]}
-                            
+                            defaultValue={
+                              new Date().toISOString().split("T")[0]
+                            }
                           />
                         </div>
                         <div>
@@ -229,13 +229,16 @@ const getStarted = () => {
                           <input
                             className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                             type="date"
-                            defaultValue={(new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)).toISOString().split('T')[0]}
-                            
+                            defaultValue={
+                              new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
+                                .toISOString()
+                                .split("T")[0]
+                            }
                           />
                         </div>
                       </div>
                     </div>
-                    <hr  className="w-7/12"/>
+                    <hr className="w-7/12" />
                     <div className="flex gap-[99px] items-center">
                       <div>
                         <p className="text-white text-sm">Salesperson</p>
@@ -247,7 +250,7 @@ const getStarted = () => {
                         />
                       </div>
                     </div>
-                    <hr  className="w-7/12"/>
+                    <hr className="w-7/12" />
                     <div className="flex gap-[132px] items-center">
                       <div>
                         <p className="text-white text-sm">Subject</p>
@@ -346,7 +349,7 @@ const getStarted = () => {
                         </div>
                       </div>
                     </div>
-                    <hr  className="w-7/12"/>
+                    <hr className="w-7/12" />
                     <div>
                       <div className="inline-flex items-center ">
                         <label
@@ -357,7 +360,9 @@ const getStarted = () => {
                             id="login"
                             checked={paymentMode}
                             type="checkbox"
-                            onChange={() => setpaymentMode(!paymentMode)}
+                            onChange={() => {
+                              setpaymentMode(!paymentMode);
+                            }}
                             className="before:content[''] peer relative sm:w-3 sm:h-3 md:h-4 md:w-4 cursor-pointer appearance-none rounded border border-white transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-black  checked:bg-black checked:before:bg-black hover:before:opacity-10"
                           />
                           <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
@@ -381,8 +386,12 @@ const getStarted = () => {
                           I have received the payment
                         </label>
                       </div>
-                      
-                      <div className={`${paymentMode?"flex":"hidden"} items-center gap-5 my-3 px-2 `}>
+
+                      <div
+                        className={`${
+                          paymentMode ? "flex" : "hidden"
+                        } items-center gap-5 my-3 px-2 `}
+                      >
                         <p>Payment Mode</p>
                         <select className="bg-transparent rounded-md p-2 border">
                           <option value="">cash</option>
