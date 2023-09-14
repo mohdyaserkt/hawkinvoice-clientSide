@@ -1,4 +1,3 @@
-
 "use client";
 import {
   LiaFileInvoiceDollarSolid,
@@ -19,11 +18,7 @@ import {
 import Link from "next/link";
 import { handleGetItems } from "@/utils/items/getItems";
 
-
 const getStarted = () => {
- 
-
- 
   return (
     <>
       <div className="h-screen">
@@ -70,7 +65,10 @@ const getStarted = () => {
           </div>
         </nav>
         <div className="flex">
-          <div style={{ height: 'calc(100vh - 47px)' }} className=" w-56 flex flex-col gap-3 py-3 px-2 border ">
+          <div
+            style={{ height: "calc(100vh - 47px)" }}
+            className=" w-56 flex flex-col gap-3 py-3 px-2 border "
+          >
             <div className="flex items-center  h-7 rounded-lg space-x-2">
               <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Home</p>
@@ -105,21 +103,46 @@ const getStarted = () => {
             </div>
           </div>
           <div className="w-full">
-            <div className="p-5 flex justify-between w-full">
+            {/* <div className="p-5 flex justify-between w-full">
               <div className="text-white">
                 <h2 className="text-xl">All Invoices</h2>
               </div>
 
               <div className="flex space-x-2">
                 <div className="text-xs bg-secondary flex items-center text-white font-semibold px-3 py-2  rounded">
-                  <Link href='/createnewinvoice'><span className="mr-1">+</span> New</Link>
+                  <Link href="/createnewinvoice">
+                    <span className="mr-1">+</span> New
+                  </Link>
                 </div>
                 <div className="p-2 bg-white rounded">
                   <SlOptions className="w-4 h-4 text-gray-800 " />
                 </div>
               </div>
+            </div> */}
+
+            <div className="flex">
+              <div style={{ height: "calc(100vh - 47px)" }} className="w-[415px] border-e border-b  bg-orange-600">
+                <div className="flex justify-between items-center p-4  border-b h-[71px]">
+                  <div className="text-white">
+                    <h2 className="text-base">All Invoices</h2>
+                  </div>
+
+                  <div className="flex space-x-2">
+                    <div className="text-xs bg-secondary flex items-center text-white font-semibold px-3 py-2 h-8  rounded">
+                      <Link href="/createnewinvoice">
+                        <span className="mr-1">+</span> New
+                      </Link>
+                    </div>
+                    <div className="p-2 bg-white rounded  h-8 ">
+                      <SlOptions className="w-4 h-4 text-gray-800 " />
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div className="w-full">main</div>
             </div>
-            
+
           </div>
         </div>
       </div>
