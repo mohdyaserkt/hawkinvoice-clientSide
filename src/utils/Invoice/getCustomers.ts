@@ -1,8 +1,5 @@
 import { getCustomersforinvoice } from "@/app/api/invoice/getCustomers";
 import { AxiosError } from "axios";
-import "react-toastify/dist/ReactToastify.css";
-
-
 export const handleGetCustomersforinvoice = async (): Promise<
   string | boolean | AxiosError
 > => {
