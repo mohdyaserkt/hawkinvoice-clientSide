@@ -178,7 +178,8 @@ const getStarted = () => {
                       <div className="flex items-center">
                         <div>
                           <select
-                            name=""
+                      
+                            name="customerName"
                             className=" bg-transparent border rounded-l-md w-[503px] h-8 px-3"
                             id=""
                           >
@@ -244,6 +245,7 @@ const getStarted = () => {
                         </div>
                         <div className="flex items-center">
                           <input
+                          name="dueDate"
                             className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                             type="date"
                             defaultValue={
@@ -262,6 +264,8 @@ const getStarted = () => {
                       </div>
                       <div className="flex items-center">
                         <input
+                        name="salesPerson"
+                          
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
                         />
@@ -274,6 +278,7 @@ const getStarted = () => {
                       </div>
                       <div className="flex items-center">
                         <input
+                        name="subject"
                           className="focus:outline-none rounded-md w-[470px] h-8 text-xs text-black p-2"
                           type="text"
                           placeholder="Let your customer know what this Invoice is for"
@@ -335,10 +340,11 @@ const getStarted = () => {
                             <p>Discount</p>
                             <div className="items-center">
                               <input
+                                name="discount"
                                 type="text"
                                 className="bg-transparent border text-center rounded-s-md w-16 h-8  focus:outline-none"
                               />
-                              <select className="bg-transparent border-y border-r text-center h-8 rounded-e-md ">
+                              <select name="discountType" className="bg-transparent border-y border-r text-center h-8 rounded-e-md ">
                                 <option value="">%</option>
                                 <option value="">₹</option>
                               </select>
@@ -349,10 +355,12 @@ const getStarted = () => {
                         <div className="flex gap-6 justify-between items-center text-sm">
                           <div className="flex  gap-8">
                             <input
+                              name="adjustment"
                               type="text"
                               className="bg-transparent border h-8 rounded-md w-32 focus:outline-none"
                             />
                             <input
+                              name="adjustmentValue"
                               type="text"
                               className="bg-transparent border h-8 rounded-md w-[101px] focus:outline-none"
                             />
@@ -374,6 +382,7 @@ const getStarted = () => {
                           data-ripple-dark="true"
                         >
                           <input
+                            name="recievedPayment"
                             id="login"
                             checked={paymentMode}
                             type="checkbox"
@@ -410,7 +419,7 @@ const getStarted = () => {
                         } items-center gap-5 my-3 px-2 `}
                       >
                         <p>Payment Mode</p>
-                        <select className="bg-transparent rounded-md p-2 border">
+                        <select name="paymentMode" className="bg-transparent rounded-md p-2 border">
                           <option value="">cash</option>
                           <option value="">Online Payment</option>
                         </select>
