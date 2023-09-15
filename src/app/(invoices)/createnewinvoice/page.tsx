@@ -101,6 +101,8 @@ const getStarted = () => {
     { quantity: 0, rate: 0, itemName: "", id: "" },
   ]);
 
+  console.log(items,"myitems");
+  
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
