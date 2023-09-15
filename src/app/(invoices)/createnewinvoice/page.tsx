@@ -49,6 +49,8 @@ const fetchedItems = [
 ];
 
 const getStarted = () => {
+
+  
   const [myCustomers, setmyCustomers] = useState([
     {
       customerType: "business",
@@ -104,6 +106,14 @@ const getStarted = () => {
   console.log(items,"myitems");
   
   const [totalPrice, setTotalPrice] = useState(0);
+  const calculatesubtotal=()=>{
+    let total = 0;
+    for (const item of items) {
+      total += item.quantity * item.rate;
+    }
+    setTotalPrice(total);
+    console.log(totalPrice);
+  }
 
 
   const addRow = () => {
