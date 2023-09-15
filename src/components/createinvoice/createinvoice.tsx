@@ -39,17 +39,17 @@ const Createinvoice = ({
 
 ])
 
-  // useEffect(() => {
+  useEffect(() => {
     
-  //     handleGetItemsForInvoice()
-  //     .then(({ data }: any) => {
-  //       setmyItems(data.items);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       alert(err);
-  //     });
-  // }, []);
+      handleGetItemsForInvoice()
+      .then(({ data }: any) => {
+        setmyItems(data.items);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+  }, []);
   console.log(myItems);
   
   
