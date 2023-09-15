@@ -79,7 +79,6 @@ const getStarted = () => {
       id: "650423b1f0b7234969047c75",
     },
   ]);
- 
 
   useEffect(() => {
     handleGetCustomersforinvoice()
@@ -91,23 +90,39 @@ const getStarted = () => {
         alert(err);
       });
   }, []);
+
   console.log(myCustomers);
 
   const [paymentMode, setpaymentMode] = useState(false);
   const router = useRouter();
   const slectRef = useRef<HTMLDivElement>(null);
-  const [customerId, setCustomerId] = useState("")
+  const [customerId, setCustomerId] = useState("");
   const [items, setItems] = useState<Item[]>([
-    { quantity: 0, rate: 0, itemName: "",id:"" },
+    { quantity: 0, rate: 0, itemName: "", id: "" },
   ]);
 
-  console.log(items);
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    let total = 0;
+
+    for (const item of items) {
+      total += item.quantity * item.rate;
+    }
+
+    setTotalPrice(total);
+    console.log(totalPrice);
+    
+  }, [items]);
 
   const addRow = () => {
-    setItems([...items, { quantity: 0, rate: 0, itemName: "",id:"" }]);
+    setItems([...items, { quantity: 0, rate: 0, itemName: "", id: "" }]);
   };
-  const addSelectedItem = (rate: number, itemName: string,id:string) => {
-    setItems([...items, { quantity: 1, rate: rate, itemName: itemName,id:id }]);
+  const addSelectedItem = (rate: number, itemName: string, id: string) => {
+    setItems([
+      ...items,
+      { quantity: 1, rate: rate, itemName: itemName, id: id },
+    ]);
   };
 
   const handleInputChange = (
@@ -240,7 +255,7 @@ const getStarted = () => {
                               <option
                                 key={item.id}
                                 value={item.displayName}
-                                onClick={()=>setCustomerId(item.id)}
+                                onClick={() => setCustomerId(item.id)}
                                 className=""
                               >
                                 {item.displayName}
