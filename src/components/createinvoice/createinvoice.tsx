@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { handleGetItemsForInvoice } from "@/utils/Invoice/getItems";
+import React, { useEffect, useState } from "react";
 
 const Createinvoice = ({
   item,
@@ -7,6 +8,23 @@ const Createinvoice = ({
   fetchedItems,
   addSelectedItem
 }: any) => {
+
+  const [myItems, setmyItems] = useState([])
+
+  useEffect(() => {
+    
+      handleGetItemsForInvoice()
+      .then(({ data }: any) => {
+        setmyItems(data.items);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+  }, []);
+  console.log(myItems);
+  
+  
   const [isopened, setisopened] = useState(false);
   return (
     <tr className="border h-16">
@@ -27,7 +45,7 @@ const Createinvoice = ({
             isopened ? "flex" : "hidden"
           } absolute bg-primary text-black rounded-md w-80 p-5 border   flex-col gap-3 ml-[-6px] mt-4  `}
         >
-          {fetchedItems.map((item:any,index:number) => (
+          {myItems.map((item:any,index:number) => (
             <div key={index} onClick={()=>{addSelectedItem(item.rate,item.itemName)
             setisopened(!isopened)}} className="text-secondary border rounded-md hover:text-blue-500">
               <h1 className="font-bold p-3 ">{item.itemName}</h1>
