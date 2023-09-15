@@ -79,20 +79,12 @@ const getStarted = () => {
       id: "650423b1f0b7234969047c75",
     },
   ]);
-  const [myItems, setmyItems] = useState([])
+ 
 
   useEffect(() => {
     handleGetCustomersforinvoice()
       .then(({ data }: any) => {
         setmyCustomers(data.customers);
-      })
-      .catch((err) => {
-        console.log(err);
-        alert(err);
-      });
-      handleGetItemsForInvoice()
-      .then(({ data }: any) => {
-        setmyItems(data.items);
       })
       .catch((err) => {
         console.log(err);
