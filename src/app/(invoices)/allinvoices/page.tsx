@@ -19,11 +19,38 @@ import { IoMailOutline } from "react-icons/io5";
 
 import Link from "next/link";
 import { handleGetItems } from "@/utils/items/getItems";
+import { useRef } from "react";
 
 const getStarted = () => {
 
-  const handlePrint = () => {
-    window.print();
+  const printableRef = useRef<HTMLDivElement | null>(null);
+
+  const printDiv = () => {
+    const content = printableRef.current;
+
+    if (content) {
+      const printWindow = window.open('', '', 'width=600,height=600');
+      
+      // Write the content of the target div into the new window
+      printWindow?.document.open();
+      printWindow?.document.write(`
+        <html>
+          <head>
+            <title>Print</title>
+          </head>
+          <body>
+            ${content.innerHTML}
+          </body>
+        </html>
+      `);
+      printWindow?.document.close();
+
+      // Trigger the print operation in the new window
+      printWindow?.print();
+      // printWindow?.onafterprint = function () {
+      //   printWindow?.close(); // Close the new window after printing
+      // };
+    }
   };
   return (
     <>
@@ -180,8 +207,8 @@ const getStarted = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full">
-                <div  className="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto my-4 sm:my-10">
+              <div ref={printableRef} className="w-full">
+                <div   className="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto my-4 sm:my-10">
                   {/* Grid */}
                   <div className="mb-5 pb-5 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
                     <div>
@@ -208,7 +235,7 @@ const getStarted = () => {
                         </svg>
                         Invoice PDF
                       </a>
-                      <a onClick={handlePrint}
+                      <a onClick={printDiv}
                         className="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"
                         href="#"
                       >
