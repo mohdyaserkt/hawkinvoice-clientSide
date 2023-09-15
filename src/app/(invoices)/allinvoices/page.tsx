@@ -21,6 +21,10 @@ import Link from "next/link";
 import { handleGetItems } from "@/utils/items/getItems";
 
 const getStarted = () => {
+
+  const handlePrint = () => {
+    window.print();
+  };
   return (
     <>
       <div className="h-screen">
@@ -177,7 +181,7 @@ const getStarted = () => {
                 </div>
               </div>
               <div className="w-full">
-                <div className="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto my-4 sm:my-10">
+                <div  className="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto my-4 sm:my-10">
                   {/* Grid */}
                   <div className="mb-5 pb-5 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
                     <div>
@@ -204,7 +208,7 @@ const getStarted = () => {
                         </svg>
                         Invoice PDF
                       </a>
-                      <a
+                      <a onClick={handlePrint}
                         className="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"
                         href="#"
                       >
