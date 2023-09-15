@@ -80,16 +80,16 @@ const getStarted = () => {
     },
   ]);
 
-  useEffect(() => {
-    handleGetCustomersforinvoice()
-      .then(({ data }: any) => {
-        setmyCustomers(data.customers);
-      })
-      .catch((err) => {
-        console.log(err);
-        alert(err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   handleGetCustomersforinvoice()
+  //     .then(({ data }: any) => {
+  //       setmyCustomers(data.customers);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       alert(err);
+  //     });
+  // }, []);
 
   console.log(myCustomers);
 
