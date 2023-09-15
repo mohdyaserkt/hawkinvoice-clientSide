@@ -1,5 +1,11 @@
 "use client";
-import React, { ChangeEvent, useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  ChangeEvent,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import {
   LiaFileInvoiceDollarSolid,
   LiaFileInvoiceSolid,
@@ -42,7 +48,6 @@ const fetchedItems = [
 ];
 
 const getStarted = () => {
-
   const [myCustomers, setmyCustomers] = useState([]);
 
   useEffect(() => {
@@ -55,10 +60,8 @@ const getStarted = () => {
         alert(err);
       });
   }, []);
-  console.log(
-    myCustomers
-  );
-  
+  console.log(myCustomers);
+
   const [paymentMode, setpaymentMode] = useState(false);
   const router = useRouter();
   const slectRef = useRef<HTMLDivElement>(null);
@@ -202,15 +205,15 @@ const getStarted = () => {
                             className=" bg-transparent border rounded-l-md w-[503px] h-8 px-3"
                             id=""
                           >
-                            {
-                              myCustomers.map((item:any,index)=>(
-                                <option  key={item.id} value="" className="">
-                                  <input name="customerId" className="hidden" value={item.id} type="text" />
-                              {item.displayName}
-                            </option>
-                              ))
-                            }
-                            
+                            {myCustomers.map((item: any, index) => (
+                              <>
+                                <option key={item.id} value="" className="">
+                                  {item.displayName}
+                                </option>
+                                <input name="customerId" className="hidden" value={item.id} type="text" />
+                              </>
+                            ))}
+
                             <option value="dummy" className="">
                               dummy Customer
                             </option>
