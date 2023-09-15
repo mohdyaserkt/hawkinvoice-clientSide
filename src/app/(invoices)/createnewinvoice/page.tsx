@@ -44,6 +44,7 @@ const fetchedItems = [
 const getStarted = () => {
 
   const [myCustomers, setmyCustomers] = useState([]);
+
   useEffect(() => {
     handleGetCustomersforinvoice()
       .then(({ data }: any) => {
@@ -54,6 +55,10 @@ const getStarted = () => {
         alert(err);
       });
   }, []);
+  console.log(
+    myCustomers
+  );
+  
   const [paymentMode, setpaymentMode] = useState(false);
   const router = useRouter();
   const slectRef = useRef<HTMLDivElement>(null);
@@ -198,15 +203,16 @@ const getStarted = () => {
                             id=""
                           >
                             {
-                              myCustomers.map((item,index)=>(
-                                <option value="" className="">
-                              first Customer
+                              myCustomers.map((item:any,index)=>(
+                                <option  key={item.id} value="" className="">
+                                  <input name="customerId" className="hidden" value={item.id} type="text" />
+                              {item.displayName}
                             </option>
                               ))
                             }
                             
                             <option value="dummy" className="">
-                              Second Customer
+                              dummy Customer
                             </option>
                           </select>
                         </div>
