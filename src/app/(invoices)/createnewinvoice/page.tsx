@@ -1,5 +1,5 @@
 "use client";
-import React, { ChangeEvent, useMemo, useRef, useState } from "react";
+import React, { ChangeEvent, useEffect, useMemo, useRef, useState } from "react";
 import {
   LiaFileInvoiceDollarSolid,
   LiaFileInvoiceSolid,
@@ -20,6 +20,7 @@ import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import Createinvoice from "@/components/createinvoice/createinvoice";
+import { handleGetCustomersforinvoice } from "@/utils/Invoice/getCustomers";
 
 const fetchedItems = [
   {
@@ -41,6 +42,18 @@ const fetchedItems = [
 ];
 
 const getStarted = () => {
+
+  const [myCustomers, setmyCustomers] = useState([]);
+  useEffect(() => {
+    handleGetCustomersforinvoice()
+      .then(({ data }: any) => {
+        setmyCustomers(data.customers);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+  }, []);
   const [paymentMode, setpaymentMode] = useState(false);
   const router = useRouter();
   const slectRef = useRef<HTMLDivElement>(null);
@@ -67,7 +80,6 @@ const getStarted = () => {
     newItems[index][name] = value;
     setItems(newItems);
   };
-
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -169,7 +181,10 @@ const getStarted = () => {
 
             <div className="pt-7 pl-16">
               <div>
-                <form onSubmit={handleSubmit} className="text-[13px] text-white">
+                <form
+                  onSubmit={handleSubmit}
+                  className="text-[13px] text-white"
+                >
                   <div className="flex flex-col gap-6">
                     <div className="flex items-center gap-[72px]">
                       <p>
@@ -178,15 +193,19 @@ const getStarted = () => {
                       <div className="flex items-center">
                         <div>
                           <select
-                      
                             name="customerName"
                             className=" bg-transparent border rounded-l-md w-[503px] h-8 px-3"
                             id=""
                           >
-                            <option value="" className="">
+                            {
+                              myCustomers.map((item,index)=>(
+                                <option value="" className="">
                               first Customer
                             </option>
-                            <option value="" className="">
+                              ))
+                            }
+                            
+                            <option value="dummy" className="">
                               Second Customer
                             </option>
                           </select>
@@ -205,7 +224,7 @@ const getStarted = () => {
                       </div>
                       <div className="flex items-center">
                         <input
-                        name="invoiceNumber"
+                          name="invoiceNumber"
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
                         />
@@ -217,7 +236,7 @@ const getStarted = () => {
                       </div>
                       <div className="flex items-center">
                         <input
-                        name="orderNumber"
+                          name="orderNumber"
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
                         />
@@ -245,7 +264,7 @@ const getStarted = () => {
                         </div>
                         <div className="flex items-center">
                           <input
-                          name="dueDate"
+                            name="dueDate"
                             className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                             type="date"
                             defaultValue={
@@ -264,8 +283,7 @@ const getStarted = () => {
                       </div>
                       <div className="flex items-center">
                         <input
-                        name="salesPerson"
-                          
+                          name="salesPerson"
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
                         />
@@ -278,7 +296,7 @@ const getStarted = () => {
                       </div>
                       <div className="flex items-center">
                         <input
-                        name="subject"
+                          name="subject"
                           className="focus:outline-none rounded-md w-[470px] h-8 text-xs text-black p-2"
                           type="text"
                           placeholder="Let your customer know what this Invoice is for"
@@ -344,7 +362,10 @@ const getStarted = () => {
                                 type="text"
                                 className="bg-transparent border text-center rounded-s-md w-16 h-8  focus:outline-none"
                               />
-                              <select name="discountType" className="bg-transparent border-y border-r text-center h-8 rounded-e-md ">
+                              <select
+                                name="discountType"
+                                className="bg-transparent border-y border-r text-center h-8 rounded-e-md "
+                              >
                                 <option value="percentage">%</option>
                                 <option value="price">₹</option>
                               </select>
@@ -419,7 +440,10 @@ const getStarted = () => {
                         } items-center gap-5 my-3 px-2 `}
                       >
                         <p>Payment Mode</p>
-                        <select name="paymentMode" className="bg-transparent rounded-md p-2 border">
+                        <select
+                          name="paymentMode"
+                          className="bg-transparent rounded-md p-2 border"
+                        >
                           <option value="cash">cash</option>
                           <option value="onlinePayment">Online Payment</option>
                         </select>
