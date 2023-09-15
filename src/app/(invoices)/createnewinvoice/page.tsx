@@ -27,6 +27,7 @@ import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import Createinvoice from "@/components/createinvoice/createinvoice";
 import { handleGetCustomersforinvoice } from "@/utils/Invoice/getCustomers";
+import { handleGetItemsForInvoice } from "@/utils/Invoice/getItems";
 
 const fetchedItems = [
   {
@@ -78,11 +79,20 @@ const getStarted = () => {
       id: "650423b1f0b7234969047c75",
     },
   ]);
+  const [myItems, setmyItems] = useState([])
 
   useEffect(() => {
     handleGetCustomersforinvoice()
       .then(({ data }: any) => {
         setmyCustomers(data.customers);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+      handleGetItemsForInvoice()
+      .then(({ data }: any) => {
+        setmyItems(data.items);
       })
       .catch((err) => {
         console.log(err);
