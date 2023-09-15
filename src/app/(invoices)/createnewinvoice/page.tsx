@@ -98,16 +98,16 @@ const getStarted = () => {
   const slectRef = useRef<HTMLDivElement>(null);
   const [customerId, setCustomerId] = useState("")
   const [items, setItems] = useState<Item[]>([
-    { quantity: 0, rate: 0, itemName: "" },
+    { quantity: 0, rate: 0, itemName: "",id:"" },
   ]);
 
   console.log(items);
 
   const addRow = () => {
-    setItems([...items, { quantity: 0, rate: 0, itemName: "" }]);
+    setItems([...items, { quantity: 0, rate: 0, itemName: "",id:"" }]);
   };
-  const addSelectedItem = (rate: number, itemName: string) => {
-    setItems([...items, { quantity: 1, rate: rate, itemName: itemName }]);
+  const addSelectedItem = (rate: number, itemName: string,id:string) => {
+    setItems([...items, { quantity: 1, rate: rate, itemName: itemName,id:id }]);
   };
 
   const handleInputChange = (
