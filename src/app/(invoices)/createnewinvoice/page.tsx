@@ -118,12 +118,14 @@ const getStarted = () => {
 
   const addRow = () => {
     setItems([...items, { quantity: 0, rate: 0, itemName: "", id: "" }]);
+    calculatesubtotal()
   };
   const addSelectedItem = (rate: number, itemName: string, id: string) => {
     setItems([
       ...items,
       { quantity: 1, rate: rate, itemName: itemName, id: id },
     ]);
+    calculatesubtotal()
   };
 
   const handleInputChange = (
@@ -134,6 +136,7 @@ const getStarted = () => {
     const newItems = [...items];
     newItems[index][name] = value;
     setItems(newItems);
+    calculatesubtotal()
    
   };
 
