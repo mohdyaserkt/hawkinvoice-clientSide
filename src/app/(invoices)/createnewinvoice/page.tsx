@@ -345,8 +345,8 @@ const getStarted = () => {
                                 className="bg-transparent border text-center rounded-s-md w-16 h-8  focus:outline-none"
                               />
                               <select name="discountType" className="bg-transparent border-y border-r text-center h-8 rounded-e-md ">
-                                <option value="">%</option>
-                                <option value="">₹</option>
+                                <option value="percentage">%</option>
+                                <option value="price">₹</option>
                               </select>
                             </div>
                           </div>
@@ -420,8 +420,8 @@ const getStarted = () => {
                       >
                         <p>Payment Mode</p>
                         <select name="paymentMode" className="bg-transparent rounded-md p-2 border">
-                          <option value="">cash</option>
-                          <option value="">Online Payment</option>
+                          <option value="cash">cash</option>
+                          <option value="onlinePayment">Online Payment</option>
                         </select>
                       </div>
                     </div>
