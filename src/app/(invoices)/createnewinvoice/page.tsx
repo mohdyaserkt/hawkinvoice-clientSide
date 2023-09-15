@@ -67,6 +67,20 @@ const getStarted = () => {
     newItems[index][name] = value;
     setItems(newItems);
   };
+
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const inputObject: { [key: string]: string } = {};
+
+    formData.forEach((value, key) => {
+      inputObject[key] = String(value);
+    });
+    // Now you can access the input data in the inputObject
+    console.log(inputObject);
+  };
+
   return (
     <>
       <div className="h-screen">
@@ -155,7 +169,7 @@ const getStarted = () => {
 
             <div className="pt-7 pl-16">
               <div>
-                <form className="text-[13px] text-white">
+                <form onSubmit={handleSubmit} className="text-[13px] text-white">
                   <div className="flex flex-col gap-6">
                     <div className="flex items-center gap-[72px]">
                       <p>
@@ -190,6 +204,7 @@ const getStarted = () => {
                       </div>
                       <div className="flex items-center">
                         <input
+                        name="invoiceNumber"
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
                         />
@@ -201,6 +216,7 @@ const getStarted = () => {
                       </div>
                       <div className="flex items-center">
                         <input
+                        name="orderNumber"
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
                         />
@@ -215,6 +231,7 @@ const getStarted = () => {
                       <div className="flex gap-8 items-center ">
                         <div className="flex items-center">
                           <input
+                            name="invoiceDate"
                             className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                             type="date"
                             defaultValue={
