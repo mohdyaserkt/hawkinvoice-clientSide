@@ -48,7 +48,36 @@ const fetchedItems = [
 ];
 
 const getStarted = () => {
-  const [myCustomers, setmyCustomers] = useState([]);
+  const [myCustomers, setmyCustomers] = useState([
+    {
+      customerType: "business",
+      customerCompanyName: "company",
+      mobile: 7854215478,
+      firstName: "ms",
+      lastName: "suhail",
+      displayName: "my dispal",
+      workPhone: 7854215478,
+      email: "helo@gmail.com",
+      profile:
+        "https://cdn.create.vista.com/api/media/small/356209164/stock-vector-user-avatar-illustration-anonymous-sign",
+      createdDate: "2023-09-15T09:10:56.130Z",
+      id: "65041fa0f0b7234969047c71",
+    },
+    {
+      customerType: "business",
+      customerCompanyName: "mycompant",
+      mobile: 7854217854,
+      firstName: "firshtnmae",
+      lastName: "lastma",
+      displayName: "diplayname",
+      workPhone: 7854215478,
+      email: "helo@gmail.com",
+      profile:
+        "https://cdn.create.vista.com/api/media/small/356209164/stock-vector-user-avatar-illustration-anonymous-sign",
+      createdDate: "2023-09-15T09:28:17.839Z",
+      id: "650423b1f0b7234969047c75",
+    },
+  ]);
 
   useEffect(() => {
     handleGetCustomersforinvoice()
@@ -65,7 +94,7 @@ const getStarted = () => {
   const [paymentMode, setpaymentMode] = useState(false);
   const router = useRouter();
   const slectRef = useRef<HTMLDivElement>(null);
-
+  const [customerId, setCustomerId] = useState("")
   const [items, setItems] = useState<Item[]>([
     { quantity: 0, rate: 0, itemName: "" },
   ]);
@@ -206,18 +235,26 @@ const getStarted = () => {
                             id=""
                           >
                             {myCustomers.map((item: any, index) => (
-                              <>
-                                <option key={item.id} value="" className="">
-                                  {item.displayName}
-                                </option>
-                                <input name="customerId" className="hidden" value={item.id} type="text" />
-                              </>
+                              <option
+                                key={item.id}
+                                value={item.displayName}
+                                onClick={()=>setCustomerId(item.id)}
+                                className=""
+                              >
+                                {item.displayName}
+                              </option>
                             ))}
 
                             <option value="dummy" className="">
                               dummy Customer
                             </option>
                           </select>
+                          <input
+                            name="customerId"
+                            className="hidden"
+                            defaultValue={customerId}
+                            type="text"
+                          />
                         </div>
                         <div className="bg-secondary h-8 w-8 flex items-center justify-center  rounded-r-md">
                           <FiSearch />
