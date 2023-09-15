@@ -105,17 +105,6 @@ const getStarted = () => {
   
   const [totalPrice, setTotalPrice] = useState(0);
 
-  useEffect(() => {
-    let total = 0;
-
-    for (const item of items) {
-      total += item.quantity * item.rate;
-    }
-
-    setTotalPrice(total);
-    console.log(totalPrice);
-    
-  }, [items]);
 
   const addRow = () => {
     setItems([...items, { quantity: 0, rate: 0, itemName: "", id: "" }]);
@@ -135,6 +124,7 @@ const getStarted = () => {
     const newItems = [...items];
     newItems[index][name] = value;
     setItems(newItems);
+   
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
