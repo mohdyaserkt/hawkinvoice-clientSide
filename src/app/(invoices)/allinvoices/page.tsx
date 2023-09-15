@@ -15,6 +15,8 @@ import {
   AiOutlineSearch,
 } from "react-icons/ai";
 
+import { IoMailOutline } from "react-icons/io5";
+
 import Link from "next/link";
 import { handleGetItems } from "@/utils/items/getItems";
 
@@ -121,7 +123,10 @@ const getStarted = () => {
             </div> */}
 
             <div className="flex">
-              <div style={{ height: "calc(100vh - 47px)" }} className="w-[415px] border-e border-b  bg-orange-600">
+              <div
+                style={{ height: "calc(100vh - 47px)" }}
+                className="w-[415px] border-e border-b  bg-orange-600"
+              >
                 <div className="flex justify-between items-center p-4  border-b h-[71px]">
                   <div className="text-white">
                     <h2 className="text-base">All Invoices</h2>
@@ -138,11 +143,40 @@ const getStarted = () => {
                     </div>
                   </div>
                 </div>
-
+                <div>
+                  <div>
+                    <div className="flex bg-slate-500 h-16 py-2 pe-1 ps-2">
+                      <div>
+                        <input type="checkbox" className="mx-2" />
+                      </div>
+                      <div className="flex justify-between w-full">
+                        <div className="bg-slate-950  flex flex-col justify-center">
+                          <div className="flex flex-col bg-orange-400">
+                            <h3 className="text-sm">checkbusciness</h3>
+                            <div className="flex gap-2 text-[13px] items-center">
+                              <p className="">INV-000014</p>
+                              <p>|</p>
+                              <p className="text-secondary">14/09/2023</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="bg-yellow-50 flex flex-col justify-center ">
+                            <div>
+                          <div className="text-end">
+                            <h2 className="text-sm">1002.00</h2>
+                          </div>
+                          <div className="flex text-[13px]">
+                            <h3 className="">DUE TODAY</h3>
+                            <IoMailOutline/>
+                          </div></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="w-full">main</div>
             </div>
-
           </div>
         </div>
       </div>
