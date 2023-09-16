@@ -435,7 +435,7 @@ const getStarted = () => {
                               </select>
                             </div>
                           </div>
-                          <p>- {discount}.00</p>
+                          <p>- {discount}</p>
                         </div>
                         <div className="flex gap-6 justify-between items-center text-sm">
                           <div className="flex  gap-8">
