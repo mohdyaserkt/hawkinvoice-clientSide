@@ -28,6 +28,8 @@ import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import Createinvoice from "@/components/createinvoice/createinvoice";
 import { handleGetCustomersforinvoice } from "@/utils/Invoice/getCustomers";
 import { handleGetItemsForInvoice } from "@/utils/Invoice/getItems";
+import { IItem } from "../../../../types/invoice/createinvoice";
+
 
 
 
@@ -80,7 +82,7 @@ const getStarted = () => {
   const router = useRouter();
   const slectRef = useRef<HTMLDivElement>(null);
   const [customerId, setCustomerId] = useState("");
-  const [items, setItems] = useState<Item[]>([
+  const [items, setItems] = useState<IItem[]>([
     { quantity: 0, rate: 0, itemName: "", id: "" },
   ]);
   const [subtotal, setsubTotal] = useState(0);

@@ -1,4 +1,4 @@
-interface Item {
+export interface IItem {
     quantity: number;
     rate: number;
     itemName:string;
@@ -8,4 +8,27 @@ interface Item {
     
     
     
+  }
+
+
+  export interface Invoice {
+    id?:string;
+    customerName: string;
+    customerEmail: string;
+    invoiceNumber: string;
+    customerId:string;
+    orderNumber?: string;
+    invoiceDate: Date;
+    dueDate: Date;
+    salesPerson?: string;
+    subject?: string;
+    itemDetails: any[]; // You can define a more specific type for itemDetails
+    subTotal: number;
+    discount?: number;
+    Adjustment?: object;
+    Total: number;
+    customerNotes?: string;
+    termsAndConditions?: string;
+    status?: string;
+    paymentMode?: string;
   }
