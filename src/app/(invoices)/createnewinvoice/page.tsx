@@ -49,8 +49,6 @@ const fetchedItems = [
 ];
 
 const getStarted = () => {
-
-  
   const [myCustomers, setmyCustomers] = useState([
     {
       customerType: "business",
@@ -102,31 +100,34 @@ const getStarted = () => {
   const [items, setItems] = useState<Item[]>([
     { quantity: 0, rate: 0, itemName: "", id: "" },
   ]);
+  const [total, setTotal] = useState(0);
 
-  console.log(items,"myitems");
-  
-  const [totalPrice, setTotalPrice] = useState(0);
-  console.log(totalPrice,"sddsds");
-  const calculatesubtotal=()=>{
+  // Calculate the total subtotal whenever items change
+  useEffect(() => {
+    const newTotal = items.reduce((accumulator, item) => {
+      return accumulator + item.quantity * item.rate;
+    }, 0);
+
+    setTotal(newTotal);
+  }, [items]);
+  console.log(items, "myitems");
+  console.log(total, "mytotal");
+
+  const calculatesubtotal = () => {
     let total = 0;
     for (const item of items) {
       total += item.quantity * item.rate;
     }
-    setTotalPrice(total);
-    console.log(totalPrice,"sds");
-  }
-
+  };
 
   const addRow = () => {
     setItems([...items, { quantity: 0, rate: 0, itemName: "", id: "" }]);
-   
   };
   const addSelectedItem = (rate: number, itemName: string, id: string) => {
     setItems([
       ...items,
       { quantity: 1, rate: rate, itemName: itemName, id: id },
     ]);
-   
   };
 
   const handleInputChange = (
@@ -137,7 +138,6 @@ const getStarted = () => {
     const newItems = [...items];
     newItems[index][name] = value;
     setItems(newItems);
-   
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -419,7 +419,7 @@ const getStarted = () => {
                       <div className="border rounded-md p-5 flex flex-col gap-5 ">
                         <div className="flex  justify-between text-sm">
                           <p>Sub Total</p>
-                          <p>{totalPrice}.00</p>
+                          <p>{total}.00</p>
                         </div>
                         <div className="flex  justify-between text-sm items-center">
                           <div className="flex gap-[100px] items-center">
