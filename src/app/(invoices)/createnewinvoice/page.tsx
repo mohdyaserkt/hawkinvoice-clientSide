@@ -134,9 +134,14 @@ const getStarted = () => {
   };
 
   const checkDiscount=(e: React.FocusEvent<HTMLInputElement>)=>{
-    const discount = e.target.value;
+    const discount = e.target.value as unknown as number;
     const dsctype = (discountType?.current as unknown as HTMLInputElement)?.value;
-    
+    if(dsctype=="price"){
+      setsubTotal(subtotal-discount)
+    }else if(dsctype=="percentage"){
+
+    }
+
 
   }
 
