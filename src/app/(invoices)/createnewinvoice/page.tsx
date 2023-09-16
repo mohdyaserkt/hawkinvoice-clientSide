@@ -119,14 +119,14 @@ const getStarted = () => {
 
   const addRow = () => {
     setItems([...items, { quantity: 0, rate: 0, itemName: "", id: "" }]);
-    calculatesubtotal()
+   
   };
   const addSelectedItem = (rate: number, itemName: string, id: string) => {
     setItems([
       ...items,
       { quantity: 1, rate: rate, itemName: itemName, id: id },
     ]);
-    calculatesubtotal()
+   
   };
 
   const handleInputChange = (
@@ -137,7 +137,6 @@ const getStarted = () => {
     const newItems = [...items];
     newItems[index][name] = value;
     setItems(newItems);
-    calculatesubtotal()
    
   };
 
@@ -420,12 +419,12 @@ const getStarted = () => {
                       <div className="border rounded-md p-5 flex flex-col gap-5 ">
                         <div className="flex  justify-between text-sm">
                           <p>Sub Total</p>
-                          <p>0.00</p>
+                          <p>{totalPrice}.00</p>
                         </div>
                         <div className="flex  justify-between text-sm items-center">
                           <div className="flex gap-[100px] items-center">
                             <p>Discount</p>
-                            <div className="items-center">
+                            <div className=" flex items-center">
                               <input
                                 name="discount"
                                 type="text"
