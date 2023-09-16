@@ -137,8 +137,9 @@ const getStarted = () => {
     const discount = e.target.value as unknown as number;
     const dsctype = (discountType?.current as unknown as HTMLInputElement)?.value;
     if(dsctype=="price"){
-      setsubTotal(subtotal-discount)
+      setdiscount(discount)
     }else if(dsctype=="percentage"){
+      const discountAmount = (subtotal * discount) / 100;
 
     }
 
