@@ -85,6 +85,7 @@ const getStarted = () => {
   ]);
   const [subtotal, setsubTotal] = useState(0);
   const [discount,setdiscount]= useState(0)
+  const [adjustment, setadjustment] = useState(0)
 
 
 
