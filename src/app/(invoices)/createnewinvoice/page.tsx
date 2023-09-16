@@ -140,6 +140,7 @@ const getStarted = () => {
       setdiscount(discount)
     }else if(dsctype=="percentage"){
       const discountAmount = (subtotal * discount) / 100;
+      setdiscount(discountAmount)
 
     }
 
