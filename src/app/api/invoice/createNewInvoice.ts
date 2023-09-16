@@ -1,7 +1,7 @@
 import { IInvoice } from "../../../../types/invoice/createinvoice";
 import axiosInstance from "../axios";
 
-export const createNewCutomer = async (invoice: IInvoice): Promise<IUser | Error> => {
+export const createNewInvoice = async (invoice: IInvoice): Promise<IUser | Error> => {
   console.log("reached");
 
   try {
