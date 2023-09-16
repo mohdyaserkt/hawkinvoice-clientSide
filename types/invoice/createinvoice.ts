@@ -11,7 +11,7 @@ export interface IItem {
   }
 
 
-  export interface Invoice {
+  export interface IInvoice {
     id?:string;
     customerName: string;
     customerEmail: string;

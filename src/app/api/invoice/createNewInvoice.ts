@@ -1,10 +1,11 @@
+import { IInvoice } from "../../../../types/invoice/createinvoice";
 import axiosInstance from "../axios";
 
-export const createNewCutomer = async (customer: ICustomerData): Promise<IUser | Error> => {
+export const createNewCutomer = async (invoice: IInvoice): Promise<IUser | Error> => {
   console.log("reached");
 
   try {
-    const response = await axiosInstance.post(`/api/customer/create-customer`, customer);
+    const response = await axiosInstance.post(`/api/invoice/create-invoice`, invoice);
 
     return Promise.resolve(response as any);
   } catch (error) {
