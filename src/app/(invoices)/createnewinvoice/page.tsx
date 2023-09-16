@@ -113,13 +113,7 @@ const getStarted = () => {
   console.log(items, "myitems");
   console.log(total, "mytotal");
 
-  const calculatesubtotal = () => {
-    let total = 0;
-    for (const item of items) {
-      total += item.quantity * item.rate;
-    }
-  };
-
+  
   const addRow = () => {
     setItems([...items, { quantity: 0, rate: 0, itemName: "", id: "" }]);
   };
@@ -365,7 +359,7 @@ const getStarted = () => {
                       <div className="flex items-center">
                         <input
                           name="subject"
-                          className="focus:outline-none rounded-md w-[470px] h-8 text-xs text-black p-2"
+                          className="focus:outline-none rounded-md w-[470px] h-8 text-xs text-black p-2 placeholder:text-gray-900"
                           type="text"
                           placeholder="Let your customer know what this Invoice is for"
                         />
