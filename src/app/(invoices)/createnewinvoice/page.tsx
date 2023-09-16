@@ -451,7 +451,7 @@ const getStarted = () => {
                               onChange={(e) => setadjustment(Number(e.target.value))}
 
                               type="text"
-                              className="bg-transparent border h-8 rounded-md w-[101px] focus:outline-none"
+                              className="bg-transparent border h-8 rounded-md w-[101px] focus:outline-none text-center"
                             />
                           </div>
                           <p>{adjustment}.00</p>
@@ -459,7 +459,7 @@ const getStarted = () => {
                         <hr />
                         <div className="flex justify-between text-base">
                           <h2>Total ( ₹ ) </h2>
-                          <h2>0.00</h2>
+                          <h2>{(subtotal-discount)+adjustment}.00</h2>
                         </div>
                       </div>
                     </div>
