@@ -447,11 +447,14 @@ const getStarted = () => {
                             />
                             <input
                               name="adjustmentValue"
+                              defaultValue={adjustment}
+                              onChange={(e) => setadjustment(Number(e.target.value))}
+
                               type="text"
                               className="bg-transparent border h-8 rounded-md w-[101px] focus:outline-none"
                             />
                           </div>
-                          <p>0.00</p>
+                          <p>{adjustment}.00</p>
                         </div>
                         <hr />
                         <div className="flex justify-between text-base">
