@@ -90,7 +90,7 @@ const getStarted = () => {
 
 
 
-
+  const discountType = useRef(null)
   useEffect(() => {
     const newsubTotal = items.reduce((accumulator, item) => {
       return accumulator + item.quantity * item.rate;
@@ -132,6 +132,13 @@ const getStarted = () => {
     });
     console.log(inputObject);
   };
+
+  const checkDiscount=(e: React.FocusEvent<HTMLInputElement>)=>{
+    const discount = e.target.value;
+    const dsctype = (discountType?.current as unknown as HTMLInputElement)?.value;
+    
+
+  }
 
   return (
     <>
@@ -408,9 +415,11 @@ const getStarted = () => {
                               <input
                                 name="discount"
                                 type="text"
+                                onBlur={checkDiscount}
                                 className="bg-transparent border text-center rounded-s-md w-16 h-8  focus:outline-none"
                               />
                               <select
+                              ref={discountType}
                                 name="discountType"
                                 className="bg-transparent border-y border-r text-center h-8 rounded-e-md "
                               >
@@ -419,7 +428,7 @@ const getStarted = () => {
                               </select>
                             </div>
                           </div>
-                          <p>0.00</p>
+                          <p>- {discount}.00</p>
                         </div>
                         <div className="flex gap-6 justify-between items-center text-sm">
                           <div className="flex  gap-8">
