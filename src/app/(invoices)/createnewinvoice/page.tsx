@@ -29,24 +29,7 @@ import Createinvoice from "@/components/createinvoice/createinvoice";
 import { handleGetCustomersforinvoice } from "@/utils/Invoice/getCustomers";
 import { handleGetItemsForInvoice } from "@/utils/Invoice/getItems";
 
-const fetchedItems = [
-  {
-    itemName: "item1",
-    rate: 502,
-  },
-  {
-    itemName: "item2",
-    rate: 502,
-  },
-  {
-    itemName: "item",
-    rate: 502,
-  },
-  {
-    itemName: "item3",
-    rate: 502,
-  },
-];
+
 
 const getStarted = () => {
   const [myCustomers, setmyCustomers] = useState([
@@ -91,7 +74,7 @@ const getStarted = () => {
     //   });
   }, []);
 
-  console.log(myCustomers);
+;
 
   const [paymentMode, setpaymentMode] = useState(false);
   const router = useRouter();
@@ -100,18 +83,23 @@ const getStarted = () => {
   const [items, setItems] = useState<Item[]>([
     { quantity: 0, rate: 0, itemName: "", id: "" },
   ]);
-  const [total, setTotal] = useState(0);
+  const [subtotal, setsubTotal] = useState(0);
+  const [discount,setdiscount]= useState(0)
 
-  // Calculate the total subtotal whenever items change
+
+
+
+
+
   useEffect(() => {
-    const newTotal = items.reduce((accumulator, item) => {
+    const newsubTotal = items.reduce((accumulator, item) => {
       return accumulator + item.quantity * item.rate;
     }, 0);
 
-    setTotal(newTotal);
+    setsubTotal(newsubTotal);
   }, [items]);
   console.log(items, "myitems");
-  console.log(total, "mytotal");
+  console.log(subtotal, "mysubtotal");
 
   
   const addRow = () => {
@@ -142,7 +130,6 @@ const getStarted = () => {
     formData.forEach((value, key) => {
       inputObject[key] = String(value);
     });
-    // Now you can access the input data in the inputObject
     console.log(inputObject);
   };
 
@@ -382,7 +369,6 @@ const getStarted = () => {
                               handleInputChange={handleInputChange}
                               key={index}
                               index={index}
-                              fetchedItems={fetchedItems}
                               addSelectedItem={addSelectedItem}
                             />
                           ))}
@@ -413,7 +399,7 @@ const getStarted = () => {
                       <div className="border rounded-md p-5 flex flex-col gap-5 ">
                         <div className="flex  justify-between text-sm">
                           <p>Sub Total</p>
-                          <p>{total}.00</p>
+                          <p>{subtotal}.00</p>
                         </div>
                         <div className="flex  justify-between text-sm items-center">
                           <div className="flex gap-[100px] items-center">
