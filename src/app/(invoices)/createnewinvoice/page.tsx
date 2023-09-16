@@ -411,7 +411,7 @@ const getStarted = () => {
                           ></textarea>
                         </div>
                       </div>
-                      <div className="border rounded-md p-5 flex flex-col gap-5 ">
+                      <div className="border rounded-md p-5 flex flex-col gap-5  ">
                         <div className="flex  justify-between text-sm">
                           <p>Sub Total</p>
                           <p>{subtotal}.00</p>
