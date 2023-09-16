@@ -258,7 +258,6 @@ const getStarted = () => {
                               <option
                                 key={item.id}
                                 value={item.displayName}
-                                onClick={() => setCustomerId(item.id)}
                                 className=""
                               >
                                 {item.displayName}
