@@ -1,5 +1,5 @@
 import { AxiosError } from "axios";
-import { getInvoices } from "@/app/api/invoice/get Invoices";
+import { getInvoices } from "@/app/api/invoice/getInvoices";
 
 export const handleGetInvoices= async (): Promise<
   string | boolean | AxiosError
