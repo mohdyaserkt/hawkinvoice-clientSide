@@ -136,7 +136,7 @@ const getStarted = () => {
             </div>
           </div>
           <div className="w-full">
-            {/* <div className="p-5 flex justify-between w-full">
+            {/* <div className="p-5 flex justify-between w-full">   
               <div className="text-white">
                 <h2 className="text-xl">All Invoices</h2>
               </div>
