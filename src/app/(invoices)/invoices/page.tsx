@@ -173,8 +173,6 @@ const getStarted = () => {
                   <td className="p-2 text-center">{item.invoiceDate.toLocaleDateString()}</td>
                   <td className="p-2 text-center">{item.Total}</td>
                   <td className="p-2 text-center">{item.status=="paid"?"0.00":item.Total}</td>
-                  <Link href={`/edititem/${item.id}`}><td className="p-2 text-center">edit</td></Link>
-
                 </tr>))} 
                 <tr className="border-b border-white">
                   <td className="p-2 text-center">25/07/2023</td>
