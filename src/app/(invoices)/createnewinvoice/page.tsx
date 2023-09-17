@@ -258,8 +258,12 @@ const getStarted = () => {
                             className=" bg-transparent border rounded-l-md w-[503px] h-8 px-3"
                             id=""
                             onChange={handleSelectChange}
+                            required
                             
                           >
+                            <option  disabled selected  className="">
+                              Select a  Customer
+                            </option>
                             {myCustomers.map((item: any, index) => (
                               <option
                                 key={item.id}
@@ -270,9 +274,7 @@ const getStarted = () => {
                               </option>
                             ))}
 
-                            <option value="dummy" className="">
-                              dummy Customer
-                            </option>
+                            
                           </select>
                           <input
                             name="customerId"
