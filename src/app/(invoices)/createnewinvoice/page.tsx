@@ -267,9 +267,9 @@ const getStarted = () => {
                             onChange={handleSelectChange}
                             required
                           >
-                            <option hidden value="" className="">
+                            {/* <option hidden value="" className="">
                               Select a Customer
-                            </option>
+                            </option> */}
                             {myCustomers.map((item: any, index) => (
                               <option
                                 key={item.id}
