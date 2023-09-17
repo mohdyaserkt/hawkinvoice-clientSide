@@ -449,6 +449,8 @@ const getStarted = () => {
                             <input
                               name="adjustment"
                               type="text"
+                              
+                              required={adjustment>0?true:false}
                               className="bg-transparent border h-8 rounded-md w-32 focus:outline-none"
                             />
                             <input
