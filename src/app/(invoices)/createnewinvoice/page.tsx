@@ -28,7 +28,8 @@ import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import Createinvoice from "@/components/createinvoice/createinvoice";
 import { handleGetCustomersforinvoice } from "@/utils/Invoice/getCustomers";
 import { handleGetItemsForInvoice } from "@/utils/Invoice/getItems";
-import { IItem } from "../../../../types/invoice/createinvoice";
+import { IInvoice, IItem } from "../../../../types/invoice/createinvoice";
+import { handleCreateNewInovice } from "@/utils/Invoice/createNewInvoice";
 
 const getStarted = () => {
   const [myCustomers, setmyCustomers] = useState([
@@ -84,6 +85,11 @@ const getStarted = () => {
   const [subtotal, setsubTotal] = useState(0);
   const [discount, setdiscount] = useState(0);
   const [adjustment, setadjustment] = useState(0);
+  const [errors, setErrors] = useState<{
+    field: string;
+    errors: string[];
+  } | null>({ field: "", errors: [""] });
+  
 
   const discountType = useRef(null);
   useEffect(() => {
@@ -119,20 +125,20 @@ const getStarted = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    let inputObject: { [key: string]: string|Number|object } = {};
+    let inputObject: { [key: string]: string | Number | object } = {};
 
     formData.forEach((value, key) => {
       inputObject[key] = String(value);
     });
-    inputObject.subTotal=subtotal 
-    inputObject.Total=subtotal-discount+adjustment
-    inputObject.status=inputObject.recievedPayment?"paid":"pending"
-    
-    inputObject.Adjustment={
-      adjustment:inputObject.adjustment,
-      adjustmentValue:inputObject.adjustmentValue
-    }
-    inputObject.itemDetails=[...items]
+    inputObject.subTotal = subtotal;
+    inputObject.Total = subtotal - discount + adjustment;
+    inputObject.status = inputObject.recievedPayment ? "paid" : "pending";
+
+    inputObject.Adjustment = {
+      adjustment: inputObject.adjustment,
+      adjustmentValue: inputObject.adjustmentValue,
+    };
+    inputObject.itemDetails = [...items];
     delete inputObject.adjustment;
     delete inputObject.adjustmentValue;
     delete inputObject.discountType;
@@ -142,6 +148,24 @@ const getStarted = () => {
     delete inputObject.recievedPayment;
 
     console.log(inputObject);
+
+    let invoice = inputObject as unknown as IInvoice;
+    handleCreateNewInovice({
+      invoice,
+      setError,
+    })
+      .then((res: any) => {
+        if (res) {
+          console.log(res);
+          router?.push("/customers");
+          alert(res);
+        }
+      })
+      .catch((err: ApiError) => {
+        console.log(err.message);
+        alert(err);
+      });
+      
   };
 
   const checkDiscount = (e: React.FocusEvent<HTMLInputElement>) => {
@@ -156,11 +180,16 @@ const getStarted = () => {
     }
   };
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedIndex = event.target.selectedIndex-1;
+    const selectedIndex = event.target.selectedIndex - 1;
     setCustomerId(myCustomers[selectedIndex].id);
     setcustomerEmail(myCustomers[selectedIndex].email);
     console.log("Selected Option Index:", selectedIndex);
   };
+  
+
+  const setError = (field: string, errorMessages: string[]) =>
+    setErrors({ field, errors: errorMessages });
+  
   return (
     <>
       <div className="h-screen">
@@ -263,7 +292,6 @@ const getStarted = () => {
                           <select
                             name="customerName"
                             className=" bg-transparent border rounded-l-md w-[503px] h-8 px-3"
-                    
                             onChange={handleSelectChange}
                             required
                           >
@@ -420,11 +448,15 @@ const getStarted = () => {
                       <div className=" flex flex-col gap-4">
                         <div className=" flex flex-col gap-1">
                           <p className="text-xs">Customer Notes</p>
-                          <textarea name="customerNotes" className="focus:outline-none bg-transparent border rounded-md w-[448px] h-20 p-3"></textarea>
+                          <textarea
+                            name="customerNotes"
+                            className="focus:outline-none bg-transparent border rounded-md w-[448px] h-20 p-3"
+                          ></textarea>
                         </div>
                         <div className=" flex flex-col gap-1">
                           <p className="text-xs">Terms and Conditions</p>
-                          <textarea name="termsAndConditions"
+                          <textarea
+                            name="termsAndConditions"
                             className="focus:outline-none bg-transparent border rounded-md w-[448px] h-20 p-3"
                             placeholder="Enter the terms and conditions of your business to be displayed in your transaction"
                           ></textarea>
