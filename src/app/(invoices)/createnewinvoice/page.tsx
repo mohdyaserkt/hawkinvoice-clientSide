@@ -77,6 +77,7 @@ const getStarted = () => {
   const router = useRouter();
   const slectRef = useRef<HTMLDivElement>(null);
   const [customerId, setCustomerId] = useState("");
+  const [customerEmail, setcustomerEmail] = useState("");
   const [items, setItems] = useState<IItem[]>([
     { quantity: 0, rate: 0, itemName: "", id: "" },
   ]);
@@ -118,11 +119,28 @@ const getStarted = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const inputObject: { [key: string]: string } = {};
+    let inputObject: { [key: string]: string|Number|object } = {};
 
     formData.forEach((value, key) => {
       inputObject[key] = String(value);
     });
+    inputObject.subTotal=subtotal 
+    inputObject.Total=subtotal-discount+adjustment
+    inputObject.status=inputObject.recievedPayment?"paid":"pending"
+    
+    inputObject.Adjustment={
+      adjustment:inputObject.adjustment,
+      adjustmentValue:inputObject.adjustmentValue
+    }
+    inputObject.itemDetails=[...items]
+    delete inputObject.adjustment;
+    delete inputObject.adjustmentValue;
+    delete inputObject.discountType;
+    delete inputObject.itemName;
+    delete inputObject.quantity;
+    delete inputObject.rate;
+    delete inputObject.recievedPayment;
+
     console.log(inputObject);
   };
 
@@ -140,6 +158,7 @@ const getStarted = () => {
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedIndex = event.target.selectedIndex;
     setCustomerId(myCustomers[selectedIndex].id);
+    setcustomerEmail(myCustomers[selectedIndex].email);
     console.log("Selected Option Index:", selectedIndex);
   };
   return (
@@ -265,6 +284,12 @@ const getStarted = () => {
                             name="customerId"
                             className="hidden"
                             defaultValue={customerId}
+                            type="text"
+                          />
+                          <input
+                            name="customerEmail"
+                            className="hidden"
+                            defaultValue={customerEmail}
                             type="text"
                           />
                         </div>
@@ -395,11 +420,11 @@ const getStarted = () => {
                       <div className=" flex flex-col gap-4">
                         <div className=" flex flex-col gap-1">
                           <p className="text-xs">Customer Notes</p>
-                          <textarea className="focus:outline-none bg-transparent border rounded-md w-[448px] h-20 p-3"></textarea>
+                          <textarea name="customerNotes" className="focus:outline-none bg-transparent border rounded-md w-[448px] h-20 p-3"></textarea>
                         </div>
                         <div className=" flex flex-col gap-1">
                           <p className="text-xs">Terms and Conditions</p>
-                          <textarea
+                          <textarea name="termsAndConditions"
                             className="focus:outline-none bg-transparent border rounded-md w-[448px] h-20 p-3"
                             placeholder="Enter the terms and conditions of your business to be displayed in your transaction"
                           ></textarea>
