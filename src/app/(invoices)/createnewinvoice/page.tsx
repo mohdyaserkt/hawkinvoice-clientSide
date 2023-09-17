@@ -258,6 +258,7 @@ const getStarted = () => {
                             className=" bg-transparent border rounded-l-md w-[503px] h-8 px-3"
                             id=""
                             onChange={handleSelectChange}
+                            
                           >
                             {myCustomers.map((item: any, index) => (
                               <option
