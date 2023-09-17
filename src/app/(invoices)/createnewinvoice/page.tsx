@@ -30,9 +30,6 @@ import { handleGetCustomersforinvoice } from "@/utils/Invoice/getCustomers";
 import { handleGetItemsForInvoice } from "@/utils/Invoice/getItems";
 import { IItem } from "../../../../types/invoice/createinvoice";
 
-
-
-
 const getStarted = () => {
   const [myCustomers, setmyCustomers] = useState([
     {
@@ -76,8 +73,6 @@ const getStarted = () => {
     //   });
   }, []);
 
-;
-
   const [paymentMode, setpaymentMode] = useState(false);
   const router = useRouter();
   const slectRef = useRef<HTMLDivElement>(null);
@@ -86,14 +81,10 @@ const getStarted = () => {
     { quantity: 0, rate: 0, itemName: "", id: "" },
   ]);
   const [subtotal, setsubTotal] = useState(0);
-  const [discount,setdiscount]= useState(0)
-  const [adjustment, setadjustment] = useState(0)
+  const [discount, setdiscount] = useState(0);
+  const [adjustment, setadjustment] = useState(0);
 
-
-
-
-
-  const discountType = useRef(null)
+  const discountType = useRef(null);
   useEffect(() => {
     const newsubTotal = items.reduce((accumulator, item) => {
       return accumulator + item.quantity * item.rate;
@@ -104,7 +95,6 @@ const getStarted = () => {
   console.log(items, "myitems");
   console.log(subtotal, "mysubtotal");
 
-  
   const addRow = () => {
     setItems([...items, { quantity: 0, rate: 0, itemName: "", id: "" }]);
   };
@@ -136,23 +126,21 @@ const getStarted = () => {
     console.log(inputObject);
   };
 
-  const checkDiscount=(e: React.FocusEvent<HTMLInputElement>)=>{
+  const checkDiscount = (e: React.FocusEvent<HTMLInputElement>) => {
     const discount = e.target.value as unknown as number;
-    const dsctype = (discountType?.current as unknown as HTMLInputElement)?.value;
-    if(dsctype=="price"){
-      setdiscount(discount)
-    }else if(dsctype=="percentage"){
+    const dsctype = (discountType?.current as unknown as HTMLInputElement)
+      ?.value;
+    if (dsctype == "price") {
+      setdiscount(discount);
+    } else if (dsctype == "percentage") {
       const discountAmount = (subtotal * discount) / 100;
-      setdiscount(discountAmount)
-
+      setdiscount(discountAmount);
     }
-
-
-  }
+  };
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedIndex = event.target.selectedIndex;
     setCustomerId(myCustomers[selectedIndex].id);
-    console.log('Selected Option Index:', selectedIndex);
+    console.log("Selected Option Index:", selectedIndex);
   };
   return (
     <>
@@ -256,13 +244,12 @@ const getStarted = () => {
                           <select
                             name="customerName"
                             className=" bg-transparent border rounded-l-md w-[503px] h-8 px-3"
-                            id=""
+                    
                             onChange={handleSelectChange}
                             required
-                            
                           >
-                            <option  disabled selected  className="">
-                              Select a  Customer
+                            <option hidden value="" className="">
+                              Select a Customer
                             </option>
                             {myCustomers.map((item: any, index) => (
                               <option
@@ -273,8 +260,6 @@ const getStarted = () => {
                                 {item.displayName}
                               </option>
                             ))}
-
-                            
                           </select>
                           <input
                             name="customerId"
@@ -436,7 +421,7 @@ const getStarted = () => {
                                 className="bg-transparent border text-center rounded-s-md w-16 h-8  focus:outline-none"
                               />
                               <select
-                              ref={discountType}
+                                ref={discountType}
                                 name="discountType"
                                 className="bg-transparent border-y border-r text-center h-8 rounded-e-md "
                               >
@@ -452,15 +437,15 @@ const getStarted = () => {
                             <input
                               name="adjustment"
                               type="text"
-                              
-                              required={adjustment>0?true:false}
+                              required={adjustment > 0 ? true : false}
                               className="bg-transparent border h-8 rounded-md w-32 focus:outline-none"
                             />
                             <input
                               name="adjustmentValue"
                               defaultValue={adjustment}
-                              onChange={(e) => setadjustment(Number(e.target.value))}
-
+                              onChange={(e) =>
+                                setadjustment(Number(e.target.value))
+                              }
                               type="text"
                               className="bg-transparent border h-8 rounded-md w-[101px] focus:outline-none text-center"
                             />
@@ -470,7 +455,7 @@ const getStarted = () => {
                         <hr />
                         <div className="flex justify-between text-base">
                           <h2>Total ( ₹ ) </h2>
-                          <h2>{(subtotal-discount)+adjustment}.00</h2>
+                          <h2>{subtotal - discount + adjustment}.00</h2>
                         </div>
                       </div>
                     </div>
