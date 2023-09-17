@@ -156,7 +156,7 @@ const getStarted = () => {
     }
   };
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedIndex = event.target.selectedIndex;
+    const selectedIndex = event.target.selectedIndex-1;
     setCustomerId(myCustomers[selectedIndex].id);
     setcustomerEmail(myCustomers[selectedIndex].email);
     console.log("Selected Option Index:", selectedIndex);
