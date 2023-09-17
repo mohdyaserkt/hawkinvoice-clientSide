@@ -149,7 +149,11 @@ const getStarted = () => {
 
 
   }
-
+  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedIndex = event.target.selectedIndex;
+    setCustomerId(myCustomers[selectedIndex].id);
+    console.log('Selected Option Index:', selectedIndex);
+  };
   return (
     <>
       <div className="h-screen">
@@ -253,6 +257,7 @@ const getStarted = () => {
                             name="customerName"
                             className=" bg-transparent border rounded-l-md w-[503px] h-8 px-3"
                             id=""
+                            onChange={handleSelectChange}
                           >
                             {myCustomers.map((item: any, index) => (
                               <option
