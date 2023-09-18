@@ -21,15 +21,14 @@ import Link from "next/link";
 import { handleGetItems } from "@/utils/items/getItems";
 import { useEffect, useRef, useState } from "react";
 import { handleGetInvoices } from "@/utils/Invoice/getInvoices";
+import { IInvoice } from "../../../../../types/invoice/createinvoice";
 
 const getStarted = () => {
-
-
   const [myInvoices, setmyInvoices] = useState([]);
   useEffect(() => {
     handleGetInvoices()
-      .then(({data}:any) => { 
-        setmyInvoices(data.invoices)
+      .then(({ data }: any) => {
+        setmyInvoices(data.invoices);
       })
       .catch((err) => {
         console.log(err);
@@ -37,16 +36,14 @@ const getStarted = () => {
       });
   }, []);
 
-
-
   const printableRef = useRef<HTMLDivElement | null>(null);
 
   const printDiv = () => {
     const content = printableRef.current;
 
     if (content) {
-      const printWindow = window.open('', '', 'width=600,height=600');
-      
+      const printWindow = window.open("", "", "width=600,height=600");
+
       // Write the content of the target div into the new window
       printWindow?.document.open();
       printWindow?.document.write(`
@@ -191,98 +188,42 @@ const getStarted = () => {
                   </div>
                 </div>
                 <div>
-                <div>
-                    <div className="flex h-16 py-2 pe-1 ps-2 border-b">
-                      <div>
-                        <input type="checkbox" className="mx-2" />
-                      </div>
-                      <div className="flex justify-between w-full ">
-                        <div className="  flex flex-col justify-center text-white">
-                          <div className="flex flex-col ">
-                            <h3 className="text-sm">checkbusciness</h3>
-                            <div className="flex gap-2 text-[13px] items-center">
-                              <p className="">INV-000014</p>
-                              <p>|</p>
-                              <p className="text-secondary">14/09/2023</p>
+                  {myInvoices.map((item:IInvoice, index) => (
+                    <div>
+                      <div className="flex h-16 py-2 pe-1 ps-2 border-b">
+                        <div>
+                          <input type="checkbox" className="mx-2" />
+                        </div>
+                        <div className="flex justify-between w-full ">
+                          <div className="  flex flex-col justify-center text-white">
+                            <div className="flex flex-col ">
+                              <h3 className="text-sm">{item.customerName}</h3>
+                              <div className="flex gap-2 text-[13px] items-center">
+                                <p className="">{item.invoiceNumber}</p>
+                                <p>|</p>
+                                <p className="text-secondary">14/09/2023</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div className=" flex flex-col justify-center ">
-                          <div>
-                            <div className="text-end">
-                              <h2 className="text-sm text-white">1002.00</h2>
-                            </div>
-                            <div className="flex gap-2 text-[13px] items-center text-white">
-                              <h3 className="">DUE TODAY</h3>
-                              <IoMailOutline className="text-secondary" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div><div>
-                    <div className="flex h-16 py-2 pe-1 ps-2 border-b">
-                      <div>
-                        <input type="checkbox" className="mx-2" />
-                      </div>
-                      <div className="flex justify-between w-full ">
-                        <div className="  flex flex-col justify-center text-white">
-                          <div className="flex flex-col ">
-                            <h3 className="text-sm">checkbusciness</h3>
-                            <div className="flex gap-2 text-[13px] items-center">
-                              <p className="">INV-000014</p>
-                              <p>|</p>
-                              <p className="text-secondary">14/09/2023</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className=" flex flex-col justify-center ">
-                          <div>
-                            <div className="text-end">
-                              <h2 className="text-sm text-white">1002.00</h2>
-                            </div>
-                            <div className="flex gap-2 text-[13px] items-center text-white">
-                              <h3 className="">DUE TODAY</h3>
-                              <IoMailOutline className="text-secondary" />
+                          <div className=" flex flex-col justify-center ">
+                            <div>
+                              <div className="text-end">
+                                <h2 className="text-sm text-white">1002.00</h2>
+                              </div>
+                              <div className="flex gap-2 text-[13px] items-center text-white">
+                                <h3 className="">DUE TODAY</h3>
+                                <IoMailOutline className="text-secondary" />
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div><div>
-                    <div className="flex h-16 py-2 pe-1 ps-2 border-b">
-                      <div>
-                        <input type="checkbox" className="mx-2" />
-                      </div>
-                      <div className="flex justify-between w-full ">
-                        <div className="  flex flex-col justify-center text-white">
-                          <div className="flex flex-col ">
-                            <h3 className="text-sm">checkbusciness</h3>
-                            <div className="flex gap-2 text-[13px] items-center">
-                              <p className="">INV-000014</p>
-                              <p>|</p>
-                              <p className="text-secondary">14/09/2023</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className=" flex flex-col justify-center ">
-                          <div>
-                            <div className="text-end">
-                              <h2 className="text-sm text-white">1002.00</h2>
-                            </div>
-                            <div className="flex gap-2 text-[13px] items-center text-white">
-                              <h3 className="">DUE TODAY</h3>
-                              <IoMailOutline className="text-secondary" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
               <div ref={printableRef} className="w-full">
-                <div   className="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto my-4 sm:my-10">
+                <div className="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto my-4 sm:my-10">
                   {/* Grid */}
                   <div className="mb-5 pb-5 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
                     <div>
@@ -309,7 +250,8 @@ const getStarted = () => {
                         </svg>
                         Invoice PDF
                       </a>
-                      <a onClick={printDiv}
+                      <a
+                        onClick={printDiv}
                         className="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"
                         href="#"
                       >
