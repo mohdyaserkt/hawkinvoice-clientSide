@@ -175,7 +175,7 @@ const getStarted = () => {
                       
                     </div>
 
-                    <div className="flex items-center gap-[88px]">
+                    <div className="flex items-center gap-[76px]">
                       <p>
                         Category<span className="text-red-600">*</span>
                       </p>
