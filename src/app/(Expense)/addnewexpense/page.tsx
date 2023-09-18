@@ -209,7 +209,7 @@ const getStarted = () => {
 
                     <div className="flex items-center gap-[60px]">
                       <p>
-                        Selling Price<span className="text-red-600">*</span>
+                        Invoice#<span className="text-red-600">*</span>
                       </p>
                       <div className="flex items-center">
                         <input
@@ -220,7 +220,7 @@ const getStarted = () => {
                       </div>
                     </div>
                     <div className="flex items-start gap-[71px]">
-                      <p>Description</p>
+                      <p>Notes</p>
                       <div className=" flex  w-80 ">
                         <textarea
                           placeholder="Description "
