@@ -159,7 +159,7 @@ const getStarted = () => {
                   className="text-[13px] text-white"
                 >
                   <div className="flex flex-col gap-7">
-                    <div className="flex space-x-28">
+                    <div className="flex space-x-28 items-center">
                       <p>Date</p>
                       
                       <div className="flex items-center">
@@ -175,16 +175,20 @@ const getStarted = () => {
                       
                     </div>
 
-                    <div className="flex items-center gap-[98px]">
+                    <div className="flex items-center gap-[88px]">
                       <p>
-                        Name<span className="text-red-600">*</span>
+                        Category<span className="text-red-600">*</span>
                       </p>
 
                       <div className=" flex items-center">
-                        <input
-                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
-                          type="text"
-                        />
+                        <select
+                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2 bg-white"
+                         
+                        >
+                          <option value="">fires</option>
+                          <option value="">dskf</option>
+                          <option value="">dss</option>
+                        </select>
                       </div>
                     </div>
                     <div className="flex gap-[119px]">
