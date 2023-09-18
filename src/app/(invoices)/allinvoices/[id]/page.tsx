@@ -22,6 +22,7 @@ import { handleGetItems } from "@/utils/items/getItems";
 import { useEffect, useRef, useState } from "react";
 import { handleGetInvoices } from "@/utils/Invoice/getInvoices";
 import { IInvoice } from "../../../../../types/invoice/createinvoice";
+import DueDateComponent from "@/components/invoice/allInvoices/dueDateComponent";
 
 const getStarted = () => {
   const [myInvoices, setmyInvoices] = useState([]);
@@ -211,7 +212,7 @@ const getStarted = () => {
                                 <h2 className="text-sm text-white">{item.Total}.00</h2>
                               </div>
                               <div className="flex gap-2 text-[13px] items-center text-white">
-                                <h3 className="">DUE TODAY</h3>
+                                <DueDateComponent dueDate={item.dueDate}/>
                                 <IoMailOutline className="text-secondary" />
                               </div>
                             </div>

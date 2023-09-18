@@ -25,7 +25,7 @@ import {
 import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
-import Createinvoice from "@/components/createinvoice/createinvoice";
+import Createinvoice from "@/components/invoice/createinvoice/createinvoice";
 import { handleGetCustomersforinvoice } from "@/utils/Invoice/getCustomers";
 import { handleGetItemsForInvoice } from "@/utils/Invoice/getItems";
 import { IInvoice, IItem } from "../../../../types/invoice/createinvoice";
