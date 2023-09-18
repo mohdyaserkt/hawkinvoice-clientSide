@@ -3,6 +3,8 @@ export interface IItem {
   rate: number;
   itemName: string;
   id: string;
+  [key: string]: string | number;
+  // Add an index signature for dynamic keys
 }
 
 export interface IInvoice {

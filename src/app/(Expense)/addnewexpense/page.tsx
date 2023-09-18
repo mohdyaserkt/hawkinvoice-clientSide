@@ -160,25 +160,19 @@ const getStarted = () => {
                 >
                   <div className="flex flex-col gap-7">
                     <div className="flex space-x-28">
-                      <p>Type</p>
-                      <div className="flex space-x-2">
-                        <div className="flex space-x-2">
+                      <p>Date</p>
+                      
+                      <div className="flex items-center">
                           <input
-                            name="Type"
-                            className="accent-secondary"
-                            type="radio" checked
+                            name="expenseDate"
+                            className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
+                            type="date"
+                            defaultValue={
+                              new Date().toISOString().split("T")[0]
+                            }
                           />
-                          <p>Goods</p>
                         </div>
-                        <div className="flex space-x-2">
-                          <input
-                            name="Type"
-                            className="accent-secondary"
-                            type="radio"
-                          />
-                          <p>Services</p>
-                        </div>
-                      </div>
+                      
                     </div>
 
                     <div className="flex items-center gap-[98px]">
