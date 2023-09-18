@@ -191,7 +191,65 @@ const getStarted = () => {
                   </div>
                 </div>
                 <div>
-                  <div>
+                <div>
+                    <div className="flex h-16 py-2 pe-1 ps-2 border-b">
+                      <div>
+                        <input type="checkbox" className="mx-2" />
+                      </div>
+                      <div className="flex justify-between w-full ">
+                        <div className="  flex flex-col justify-center text-white">
+                          <div className="flex flex-col ">
+                            <h3 className="text-sm">checkbusciness</h3>
+                            <div className="flex gap-2 text-[13px] items-center">
+                              <p className="">INV-000014</p>
+                              <p>|</p>
+                              <p className="text-secondary">14/09/2023</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className=" flex flex-col justify-center ">
+                          <div>
+                            <div className="text-end">
+                              <h2 className="text-sm text-white">1002.00</h2>
+                            </div>
+                            <div className="flex gap-2 text-[13px] items-center text-white">
+                              <h3 className="">DUE TODAY</h3>
+                              <IoMailOutline className="text-secondary" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div><div>
+                    <div className="flex h-16 py-2 pe-1 ps-2 border-b">
+                      <div>
+                        <input type="checkbox" className="mx-2" />
+                      </div>
+                      <div className="flex justify-between w-full ">
+                        <div className="  flex flex-col justify-center text-white">
+                          <div className="flex flex-col ">
+                            <h3 className="text-sm">checkbusciness</h3>
+                            <div className="flex gap-2 text-[13px] items-center">
+                              <p className="">INV-000014</p>
+                              <p>|</p>
+                              <p className="text-secondary">14/09/2023</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className=" flex flex-col justify-center ">
+                          <div>
+                            <div className="text-end">
+                              <h2 className="text-sm text-white">1002.00</h2>
+                            </div>
+                            <div className="flex gap-2 text-[13px] items-center text-white">
+                              <h3 className="">DUE TODAY</h3>
+                              <IoMailOutline className="text-secondary" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div><div>
                     <div className="flex h-16 py-2 pe-1 ps-2 border-b">
                       <div>
                         <input type="checkbox" className="mx-2" />
