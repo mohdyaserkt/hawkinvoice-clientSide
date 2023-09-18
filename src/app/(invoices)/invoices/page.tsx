@@ -28,7 +28,7 @@ const getStarted = () => {
   useEffect(() => {
     handleGetInvoices()
       .then(({data}:any) => { 
-        setmyInvoices(data.customers)
+        setmyInvoices(data.invoices)
       })
       .catch((err) => {
         console.log(err);

@@ -19,9 +19,25 @@ import { IoMailOutline } from "react-icons/io5";
 
 import Link from "next/link";
 import { handleGetItems } from "@/utils/items/getItems";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { handleGetInvoices } from "@/utils/Invoice/getInvoices";
 
 const getStarted = () => {
+
+
+  const [myInvoices, setmyInvoices] = useState([]);
+  useEffect(() => {
+    handleGetInvoices()
+      .then(({data}:any) => { 
+        setmyInvoices(data.invoices)
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+  }, []);
+
+
 
   const printableRef = useRef<HTMLDivElement | null>(null);
 
