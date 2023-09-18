@@ -23,9 +23,12 @@ import { useEffect, useRef, useState } from "react";
 import { handleGetInvoices } from "@/utils/Invoice/getInvoices";
 import { IInvoice } from "../../../../../types/invoice/createinvoice";
 import DueDateComponent from "@/components/invoice/allInvoices/dueDateComponent";
+import { useParams } from "next/navigation";
 
 const getStarted = () => {
   const [myInvoices, setmyInvoices] = useState([]);
+  const params = useParams();
+  const id = params.id;
   useEffect(() => {
     handleGetInvoices()
       .then(({ data }: any) => {
