@@ -30,15 +30,33 @@ const getStarted = () => {
   const params = useParams();
   const id = params.id;
   useEffect(() => {
-    handleGetInvoices()
-      .then(({ data }: any) => {
-        setmyInvoices(data.invoices);
-      })
-      .catch((err) => {
-        console.log(err);
-        alert(err);
-      });
+    
   }, []);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const GetInvoices=()=>{
+    handleGetInvoices()
+    .then(({ data }: any) => {
+      setmyInvoices(data.invoices);
+    })
+    .catch((err) => {
+      console.log(err);
+      alert(err);
+    });
+  }
 
   const printableRef = useRef<HTMLDivElement | null>(null);
 
