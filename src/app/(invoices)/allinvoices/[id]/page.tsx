@@ -201,14 +201,14 @@ const getStarted = () => {
                               <div className="flex gap-2 text-[13px] items-center">
                                 <p className="">{item.invoiceNumber}</p>
                                 <p>|</p>
-                                <p className="text-secondary">14/09/2023</p>
+                                <p className="text-secondary">{item.invoiceDate.toLocaleDateString()}</p>
                               </div>
                             </div>
                           </div>
                           <div className=" flex flex-col justify-center ">
                             <div>
                               <div className="text-end">
-                                <h2 className="text-sm text-white">1002.00</h2>
+                                <h2 className="text-sm text-white">{item.Total}.00</h2>
                               </div>
                               <div className="flex gap-2 text-[13px] items-center text-white">
                                 <h3 className="">DUE TODAY</h3>
