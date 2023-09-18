@@ -24,6 +24,7 @@ import { handleGetInvoices } from "@/utils/Invoice/getInvoices";
 import { IInvoice } from "../../../../../types/invoice/createinvoice";
 import DueDateComponent from "@/components/invoice/allInvoices/dueDateComponent";
 import { useParams } from "next/navigation";
+import { handleGetInoviceById } from "@/utils/Invoice/getInvoiceById";
 
 const getStarted = () => {
   const [myInvoices, setmyInvoices] = useState([]);
@@ -31,6 +32,7 @@ const getStarted = () => {
   const id = params.id;
   useEffect(() => {
     GetInvoices()
+    getMainInvoice(id as string)
   }, [myInvoices]);
 
 
@@ -46,8 +48,8 @@ const getStarted = () => {
 
 
 
-  const getMainInvoice=()=>{
-    handleGetInvoices()
+  const getMainInvoice=(id:string)=>{
+    handleGetInoviceById(id)
     .then(({ data }: any) => {
       setmyInvoices(data.invoices);
     })
