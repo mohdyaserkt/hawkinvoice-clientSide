@@ -28,6 +28,7 @@ import { handleGetInoviceById } from "@/utils/Invoice/getInvoiceById";
 
 const getStarted = () => {
   const [myInvoices, setmyInvoices] = useState([]);
+  const [mainInvoice, setmainInvoice] = useState<IInvoice>()
   const params = useParams();
   const id = params.id;
   useEffect(() => {
@@ -51,7 +52,7 @@ const getStarted = () => {
   const getMainInvoice=(id:string)=>{
     handleGetInoviceById(id)
     .then(({ data }: any) => {
-      setmyInvoices(data.invoices);
+      setmainInvoice(data.invoice as IInvoice);
     })
     .catch((err) => {
       console.log(err);
