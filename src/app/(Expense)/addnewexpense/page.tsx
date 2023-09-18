@@ -191,7 +191,7 @@ const getStarted = () => {
                         </select>
                       </div>
                     </div>
-                    <div className="flex gap-[119px]">
+                    <div className="flex gap-[93px]">
                       <p>Amount</p>
                       <div>
                         <input
@@ -207,7 +207,7 @@ const getStarted = () => {
                     </div>
                      focus:outline-none              </div> */}
 
-                    <div className="flex items-center gap-[60px]">
+                    <div className="flex items-center gap-[82px]">
                       <p>
                         Invoice#<span className="text-red-600">*</span>
                       </p>
@@ -219,7 +219,7 @@ const getStarted = () => {
                         />
                       </div>
                     </div>
-                    <div className="flex items-start gap-[71px]">
+                    <div className="flex items-start gap-[108px]">
                       <p>Notes</p>
                       <div className=" flex  w-80 ">
                         <textarea
