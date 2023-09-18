@@ -229,7 +229,7 @@ const getStarted = () => {
                       </div>
                     </div>
 
-                    <div className="flex gap-2 ml-3">
+                    <div className="flex gap-2 ml-36">
                       <button
                         className="bg-secondary py-2 px-3 rounded-md text-sm text-black"
                         type="submit"
