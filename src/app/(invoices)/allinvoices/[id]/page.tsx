@@ -36,6 +36,9 @@ const getStarted = () => {
     getMainInvoice(id as string)
   }, []);
 
+  console.log(mainInvoice,"thisis main");
+  
+
 
 
 
