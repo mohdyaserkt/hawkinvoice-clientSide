@@ -506,8 +506,8 @@ const getStarted = () => {
                           </dt>
                           <dd className="col-span-2 font-medium text-gray-800 dark:text-gray-200">
                           ₹{mainInvoice?.status == "paid"
-                              ? 0.00
-                              : mainInvoice?.Total}
+                              ? 0
+                              : mainInvoice?.Total}.00
                           </dd>
                         </dl>
                       </div>
