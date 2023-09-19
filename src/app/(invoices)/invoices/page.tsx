@@ -35,6 +35,7 @@ const getStarted = () => {
         alert(err);
       });
   }, []);
+console.log("myinvoices",myInvoices);
 
 
  
