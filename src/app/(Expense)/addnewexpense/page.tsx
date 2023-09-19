@@ -196,6 +196,7 @@ const getStarted = () => {
                       <p>Amount</p>
                       <div>
                         <input
+                          name="amount"
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
                         />
@@ -214,6 +215,7 @@ const getStarted = () => {
                       </p>
                       <div className="flex items-center">
                         <input
+                        name="invoiceNumber"
                           className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                           type="number"
                           placeholder="INR"
@@ -224,6 +226,7 @@ const getStarted = () => {
                       <p>Notes</p>
                       <div className=" flex  w-80 ">
                         <textarea
+                        name="notes"
                           placeholder="Description "
                           className="focus:outline-none rounded-md  text-xs w-64 text-black p-2"
                         ></textarea>
