@@ -21,51 +21,17 @@ import { handleCreateNewItem } from "@/utils/items/createNewItem";
 
 const getStarted = () => {
   const router = useRouter();
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.target as HTMLFormElement;
-    const [
-      TypeGoodsInput,
-      TypeServiceInput,
-      nameInput,
-      unitInput,
-      sellingPriceInput,
-      descriptionInput,
-    ] = Array.from(form.elements) as HTMLInputElement[];
+    const formData = new FormData(e.currentTarget);
+    let inputObject: { [key: string]: string | Number | object } = {};
 
-    const item = {
-      type:
-      TypeGoodsInput.value == "on" ? "goods" : "service",
-      name: nameInput.value,
-      unit: unitInput.value,
-      sellingPrice: parseInt(sellingPriceInput.value),
-      description: descriptionInput.value,
+    formData.forEach((value, key) => {
+      inputObject[key] = String(value);
+    });}
+
       
-    };
-    console.log(item);
-
-    handleCreateNewItem({
-      item,
-      setError,
-    })
-      .then((res: any) => {
-        if (res) {
-          console.log(res);
-          router?.push("/items");
-          alert(res);
-        }
-      })
-      .catch((err: ApiError) => {
-        console.log(err.message);
-        alert(err);
-      });
-  };
-  const [errors, setErrors] = useState<{
-    field: string;
-    errors: string[];
-  } | null>({ field: "", errors: [""] });
-  const setError = (field: string, errorMessages: string[]) =>
-    setErrors({ field, errors: errorMessages });
+  
   return (
     <>
       <div className="h-screen">
