@@ -144,7 +144,8 @@ const getStarted = () => {
     formData.forEach((value, key) => {
       inputObject[key] = String(value);
     });
-  
+    inputObject.invoiceDate=new Date(inputObject.invoiceDate as string)
+    inputObject.dueDate=new Date(inputObject.dueDate as string)
     inputObject.subTotal = subtotal;
     inputObject.Total = subtotal - discount + adjustment;
     inputObject.status = inputObject.recievedPayment ? "paid" : "pending";
