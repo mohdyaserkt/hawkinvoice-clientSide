@@ -15,7 +15,7 @@ const DueDateComponent: React.FC<DueDateComponentProps> = ({ dueDate }) => {
 
   return (
     <h3 className="">
-      {dueDate.toDateString() === today.toDateString()
+      {new Date(dueDate).toDateString() === today.toDateString()
         ? "Due Today"
         : dueDate < today
         ? `Overdue by ${Math.ceil(
