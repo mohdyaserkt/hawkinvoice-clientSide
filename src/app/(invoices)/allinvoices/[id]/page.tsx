@@ -28,50 +28,36 @@ import { handleGetInoviceById } from "@/utils/Invoice/getInvoiceById";
 
 const getStarted = () => {
   const [myInvoices, setmyInvoices] = useState([]);
-  const [mainInvoice, setmainInvoice] = useState<IInvoice>()
+  const [mainInvoice, setmainInvoice] = useState<IInvoice>();
   const params = useParams();
   const id = params.id;
   useEffect(() => {
-    GetInvoices()
-    getMainInvoice(id as string)
+    GetInvoices();
+    getMainInvoice(id as string);
   }, []);
 
-  console.log(mainInvoice,"thisis main");
-  
+  console.log(mainInvoice, "thisis main");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  const getMainInvoice=(id:string)=>{
+  const getMainInvoice = (id: string) => {
     handleGetInoviceById(id)
-    .then(({ data }: any) => {
-      setmainInvoice(data.invoice as IInvoice);
-    })
-    .catch((err) => {
-      console.log(err);
-      alert(err);
-    });
-  }
-  const GetInvoices=()=>{
+      .then(({ data }: any) => {
+        setmainInvoice(data.invoice as IInvoice);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+  };
+  const GetInvoices = () => {
     handleGetInvoices()
-    .then(({ data }: any) => {
-      setmyInvoices(data.invoices);
-    })
-    .catch((err) => {
-      console.log(err);
-      alert(err);
-    });
-  }
+      .then(({ data }: any) => {
+        setmyInvoices(data.invoices);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+  };
 
   const printableRef = useRef<HTMLDivElement | null>(null);
 
@@ -225,7 +211,7 @@ const getStarted = () => {
                   </div>
                 </div>
                 <div>
-                  {myInvoices.map((item:IInvoice, index) => (
+                  {myInvoices.map((item: IInvoice, index) => (
                     <div>
                       <div className="flex h-16 py-2 pe-1 ps-2 border-b">
                         <div>
@@ -238,17 +224,21 @@ const getStarted = () => {
                               <div className="flex gap-2 text-[13px] items-center">
                                 <p className="">{item.invoiceNumber}</p>
                                 <p>|</p>
-                                <p className="text-secondary">{formatDate(item.invoiceDate)}</p>
+                                <p className="text-secondary">
+                                  {formatDate(item.invoiceDate)}
+                                </p>
                               </div>
                             </div>
                           </div>
                           <div className=" flex flex-col justify-center ">
                             <div>
                               <div className="text-end">
-                                <h2 className="text-sm text-white">{item.Total}.00</h2>
+                                <h2 className="text-sm text-white">
+                                  {item.Total}.00
+                                </h2>
                               </div>
                               <div className="flex gap-2 text-[13px] items-center text-white">
-                                <DueDateComponent dueDate={item.dueDate}/>
+                                <DueDateComponent dueDate={item.dueDate} />
                                 <IoMailOutline className="text-secondary" />
                               </div>
                             </div>
@@ -376,8 +366,8 @@ const getStarted = () => {
                             Invoice number:
                           </dt>
                           <dd className="font-medium text-gray-800 dark:text-gray-200">
-                        {mainInvoice?.invoiceNumber}               
-                                   </dd>
+                            {mainInvoice?.invoiceNumber}
+                          </dd>
                         </dl>
 
                         <dl className="grid sm:flex gap-x-3 text-sm">
@@ -394,7 +384,11 @@ const getStarted = () => {
                             Due date:
                           </dt>
                           <dd className="font-medium text-gray-800 dark:text-gray-200">
-                            {formatDate(mainInvoice?.dueDate?mainInvoice.dueDate:new Date())}
+                            {formatDate(
+                              mainInvoice?.dueDate
+                                ? mainInvoice.dueDate
+                                : new Date()
+                            )}
                           </dd>
                         </dl>
 
@@ -415,7 +409,6 @@ const getStarted = () => {
                   {/* Table */}
                   <div className="mt-6 border border-gray-200 p-4 rounded-lg space-y-4 dark:border-gray-700">
                     <div className="hidden sm:grid sm:grid-cols-5">
-                      
                       <div className="sm:col-span-2 text-xs font-medium text-gray-500 uppercase">
                         Item
                       </div>
@@ -432,108 +425,48 @@ const getStarted = () => {
 
                     <div className="hidden sm:block border-b border-gray-200 dark:border-gray-700"></div>
 
-
-                    {mainInvoice?.itemDetails.map((item,index)=>(
-                      <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
-                      <div className="col-span-full sm:col-span-2">
-                        <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">
-                          Item
-                        </h5>
-                        <p className="font-medium text-gray-800 dark:text-gray-200">
-                          Design UX and UI
-                        </p>
-                      </div>
-                      <div>
-                        <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">
-                          Qty
-                        </h5>
-                        <p className="text-gray-800 dark:text-gray-200">1</p>
-                      </div>
-                      <div>
-                        <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">
-                          Rate
-                        </h5>
-                        <p className="text-gray-800 dark:text-gray-200">5</p>
-                      </div>
-                      <div>
-                        <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">
-                          Amount
-                        </h5>
-                        <p className="sm:text-right text-gray-800 dark:text-gray-200">
-                          $500
-                        </p>
-                      </div>
-                    </div>
-
+                    {mainInvoice?.itemDetails.map((item, index) => (
+                      <>
+                        <div
+                          key={item.id}
+                          className="grid grid-cols-3 sm:grid-cols-5 gap-2"
+                        >
+                          <div className="col-span-full sm:col-span-2">
+                            <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">
+                              Item
+                            </h5>
+                            <p className="font-medium text-gray-800 dark:text-gray-200">
+                              {item.itemName}
+                            </p>
+                          </div>
+                          <div>
+                            <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">
+                              Qty
+                            </h5>
+                            <p className="text-gray-800 dark:text-gray-200">
+                              {item.quantity}
+                            </p>
+                          </div>
+                          <div>
+                            <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">
+                              Rate
+                            </h5>
+                            <p className="text-gray-800 dark:text-gray-200">
+                              {item.rate}
+                            </p>
+                          </div>
+                          <div>
+                            <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">
+                              Amount
+                            </h5>
+                            <p className="sm:text-right text-gray-800 dark:text-gray-200">
+                              {item.quantity * item.rate}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="sm:hidden border-b border-gray-200 dark:border-gray-700"></div>
+                      </>
                     ))}
-
-                    
-
-                    <div className="sm:hidden border-b border-gray-200 dark:border-gray-700"></div>
-
-                    <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
-                      <div className="col-span-full sm:col-span-2">
-                        <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">
-                          Item
-                        </h5>
-                        <p className="font-medium text-gray-800 dark:text-gray-200">
-                          Web project
-                        </p>
-                      </div>
-                      <div>
-                        <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">
-                          Qty
-                        </h5>
-                        <p className="text-gray-800 dark:text-gray-200">1</p>
-                      </div>
-                      <div>
-                        <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">
-                          Rate
-                        </h5>
-                        <p className="text-gray-800 dark:text-gray-200">24</p>
-                      </div>
-                      <div>
-                        <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">
-                          Amount
-                        </h5>
-                        <p className="sm:text-right text-gray-800 dark:text-gray-200">
-                          $1250
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="sm:hidden border-b border-gray-200 dark:border-gray-700"></div>
-
-                    <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
-                      <div className="col-span-full sm:col-span-2">
-                        <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">
-                          Item
-                        </h5>
-                        <p className="font-medium text-gray-800 dark:text-gray-200">
-                          SEO
-                        </p>
-                      </div>
-                      <div>
-                        <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">
-                          Qty
-                        </h5>
-                        <p className="text-gray-800 dark:text-gray-200">1</p>
-                      </div>
-                      <div>
-                        <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">
-                          Rate
-                        </h5>
-                        <p className="text-gray-800 dark:text-gray-200">6</p>
-                      </div>
-                      <div>
-                        <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">
-                          Amount
-                        </h5>
-                        <p className="sm:text-right text-gray-800 dark:text-gray-200">
-                          $2000
-                        </p>
-                      </div>
-                    </div>
                   </div>
                   {/* End Table */}
 
@@ -545,21 +478,14 @@ const getStarted = () => {
                         <dl className="grid sm:grid-cols-5 gap-x-3 text-sm">
                           <dt className="col-span-3 text-gray-500">Subotal:</dt>
                           <dd className="col-span-2 font-medium text-gray-800 dark:text-gray-200">
-                            $2750.00
+                            {mainInvoice?.subTotal}
                           </dd>
                         </dl>
 
                         <dl className="grid sm:grid-cols-5 gap-x-3 text-sm">
                           <dt className="col-span-3 text-gray-500">Total:</dt>
                           <dd className="col-span-2 font-medium text-gray-800 dark:text-gray-200">
-                            $2750.00
-                          </dd>
-                        </dl>
-
-                        <dl className="grid sm:grid-cols-5 gap-x-3 text-sm">
-                          <dt className="col-span-3 text-gray-500">Tax:</dt>
-                          <dd className="col-span-2 font-medium text-gray-800 dark:text-gray-200">
-                            $39.00
+                            {mainInvoice?.Total}
                           </dd>
                         </dl>
 
@@ -568,7 +494,9 @@ const getStarted = () => {
                             Amount paid:
                           </dt>
                           <dd className="col-span-2 font-medium text-gray-800 dark:text-gray-200">
-                            $2789.00
+                            {mainInvoice?.status == "paid"
+                              ? mainInvoice?.Total
+                              : 0.0}
                           </dd>
                         </dl>
 
@@ -577,7 +505,9 @@ const getStarted = () => {
                             Due balance:
                           </dt>
                           <dd className="col-span-2 font-medium text-gray-800 dark:text-gray-200">
-                            $0.00
+                            {mainInvoice?.status == "paid"
+                              ? 0.00
+                              : mainInvoice?.Total}
                           </dd>
                         </dl>
                       </div>
