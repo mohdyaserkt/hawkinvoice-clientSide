@@ -24,7 +24,12 @@ import { IInvoice } from "../../../../types/invoice/createinvoice";
 
 
 const getStarted = () => {
-  const [myInvoices, setmyInvoices] = useState([]);
+
+
+  const [myInvoices, setmyInvoices] = useState<IInvoice[]>([]);
+
+
+
   useEffect(() => {
     handleGetInvoices()
       .then(({data}:any) => { 
@@ -35,7 +40,7 @@ const getStarted = () => {
         alert(err);
       });
   }, []);
-console.log("myinvoices",myInvoices);
+console.log("myinvoices44",myInvoices);
 
 
  
