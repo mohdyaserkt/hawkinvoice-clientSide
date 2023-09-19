@@ -1,7 +1,7 @@
 import { stringify } from "querystring";
 import axiosInstance from "../axios";
 
-export const getInvoices = async (): Promise<IUser | Error> => {
+export const getAllExpenses = async (): Promise<IUser | Error> => {
   console.log("reached");
 
   try {

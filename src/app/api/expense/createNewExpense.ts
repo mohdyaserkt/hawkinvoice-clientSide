@@ -2,7 +2,7 @@ import { IExpense } from "../../../../types/Expense/createNewExpense";
 import { IInvoice } from "../../../../types/invoice/createinvoice";
 import axiosInstance from "../axios";
 
-export const createNewInvoice = async (expense: IExpense): Promise<IUser | Error> => {
+export const createNewExpense = async (expense: IExpense): Promise<IUser | Error> => {
   console.log("reached");
 
   try {
