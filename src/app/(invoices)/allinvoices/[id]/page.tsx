@@ -34,7 +34,7 @@ const getStarted = () => {
   useEffect(() => {
     GetInvoices()
     getMainInvoice(id as string)
-  }, [myInvoices]);
+  }, []);
 
 
 
