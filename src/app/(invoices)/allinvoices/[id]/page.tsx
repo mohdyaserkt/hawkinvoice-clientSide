@@ -409,7 +409,7 @@ const getStarted = () => {
                     {mainInvoice?.itemDetails.map((item, index) => (
                       <div className="hidden sm:grid sm:grid-cols-5">
                         <div className="sm:col-span-2 text-xs font-medium text-gray-500 uppercase">
-                          Item
+                          {item.helo}
                         </div>
                         <div className="text-left text-xs font-medium text-gray-500 uppercase">
                           Qty
