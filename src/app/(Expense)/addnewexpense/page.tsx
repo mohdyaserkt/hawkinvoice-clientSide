@@ -164,7 +164,7 @@ const getStarted = () => {
                       
                       <div className="flex items-center">
                           <input
-                            name="expenseDate"
+                            name="date"
                             className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                             type="date"
                             defaultValue={
@@ -182,12 +182,13 @@ const getStarted = () => {
 
                       <div className=" flex items-center">
                         <select
+                        name="categoryName"
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2 bg-white"
                          
                         >
-                          <option value="">fires</option>
-                          <option value="">dskf</option>
-                          <option value="">dss</option>
+                          <option value="df">fires</option>
+                          <option value="ds">dskf</option>
+                          <option value="dss">dss</option>
                         </select>
                       </div>
                     </div>
