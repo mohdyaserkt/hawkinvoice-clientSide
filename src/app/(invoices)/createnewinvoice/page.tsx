@@ -31,48 +31,35 @@ import { handleGetItemsForInvoice } from "@/utils/Invoice/getItems";
 import { IInvoice, IItem } from "../../../../types/invoice/createinvoice";
 import { handleCreateNewInovice } from "@/utils/Invoice/createNewInvoice";
 
+
+
+
+
+
+
+
+
+
+
 const getStarted = () => {
-  const [myCustomers, setmyCustomers] = useState([
-    {
-      customerType: "business",
-      customerCompanyName: "company",
-      mobile: 7854215478,
-      firstName: "ms",
-      lastName: "suhail",
-      displayName: "my dispal",
-      workPhone: 7854215478,
-      email: "helo@gmail.com",
-      profile:
-        "https://cdn.create.vista.com/api/media/small/356209164/stock-vector-user-avatar-illustration-anonymous-sign",
-      createdDate: "2023-09-15T09:10:56.130Z",
-      id: "65041fa0f0b7234969047c71",
-    },
-    {
-      customerType: "business",
-      customerCompanyName: "mycompant",
-      mobile: 7854217854,
-      firstName: "firshtnmae",
-      lastName: "lastma",
-      displayName: "diplayname",
-      workPhone: 7854215478,
-      email: "helo@gmail.com",
-      profile:
-        "https://cdn.create.vista.com/api/media/small/356209164/stock-vector-user-avatar-illustration-anonymous-sign",
-      createdDate: "2023-09-15T09:28:17.839Z",
-      id: "650423b1f0b7234969047c75",
-    },
-  ]);
+  const [myCustomers, setmyCustomers] = useState<ICustomerData[]>([]);
 
   useEffect(() => {
-    // handleGetCustomersforinvoice()
-    //   .then(({ data }: any) => {
-    //     setmyCustomers(data.customers);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //     alert(err);
-    //   });
+    handleGetCustomersforinvoice()
+      .then(({ data }: any) => {
+        setmyCustomers(data.customers);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
   }, []);
+
+
+
+
+
+
 
   const [paymentMode, setpaymentMode] = useState(false);
   const router = useRouter();
@@ -92,6 +79,11 @@ const getStarted = () => {
   
 
   const discountType = useRef(null);
+
+
+
+
+
   useEffect(() => {
     const newsubTotal = items.reduce((accumulator, item) => {
       return accumulator + item.quantity * item.rate;
@@ -102,15 +94,32 @@ const getStarted = () => {
   console.log(items, "myitems");
   console.log(subtotal, "mysubtotal");
 
+
+
+
+
   const addRow = () => {
     setItems([...items, { quantity: 0, rate: 0, itemName: "", id: "" }]);
   };
+
+
+
+
+
+
   const addSelectedItem = (rate: number, itemName: string, id: string) => {
     setItems([
       ...items,
       { quantity: 1, rate: rate, itemName: itemName, id: id },
     ]);
   };
+
+
+
+
+
+
+
 
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement>,
@@ -121,6 +130,11 @@ const getStarted = () => {
     newItems[index][name] = value;
     setItems(newItems);
   };
+
+
+
+
+
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -168,6 +182,13 @@ const getStarted = () => {
       
   };
 
+
+
+
+
+
+
+
   const checkDiscount = (e: React.FocusEvent<HTMLInputElement>) => {
     const discount = e.target.value as unknown as number;
     const dsctype = (discountType?.current as unknown as HTMLInputElement)
@@ -179,9 +200,15 @@ const getStarted = () => {
       setdiscount(discountAmount);
     }
   };
+
+
+
+
+
+  
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedIndex = event.target.selectedIndex - 1;
-    setCustomerId(myCustomers[selectedIndex].id);
+    setCustomerId(myCustomers[selectedIndex].id as string);
     setcustomerEmail(myCustomers[selectedIndex].email);
     console.log("Selected Option Index:", selectedIndex);
   };

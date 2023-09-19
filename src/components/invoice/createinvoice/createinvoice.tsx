@@ -9,46 +9,18 @@ const Createinvoice = ({
   addSelectedItem
 }: any) => {
 
-  const [myItems, setmyItems] = useState([
-    {
-        "type": "goods",
-        "name": "new item",
-        "unit": "pcs",
-        "description": "This request has been blocked; the content must be served over HTTPS.",
-        "sellingPrice": 545,
-        "createdDate": "2023-09-15T14:13:23.114Z",
-        "id": "65046683eccf6732679866e6"
-    },
-    {
-      "type": "goods",
-      "name": "new item54",
-      "unit": "pcs",
-      "description": "This request has been blocked; the content must be served over HTTPS.",
-      "sellingPrice": 545,
-      "createdDate": "2023-09-15T14:13:23.114Z",
-      "id": "65046683eccf6732679866e6"
-  }, {
-    "type": "goods",
-    "name": "new 7",
-    "unit": "pcs",
-    "description": "This request has been blocked; the content must be served over HTTPS.",
-    "sellingPrice": 545,
-    "createdDate": "2023-09-15T14:13:23.114Z",
-    "id": "65046683eccf6732679866e6"
-},
-
-])
+  const [myItems, setmyItems] = useState([])
 
   useEffect(() => {
     
-      // handleGetItemsForInvoice()
-      // .then(({ data }: any) => {
-      //   setmyItems(data.items);
-      // })
-      // .catch((err) => {
-      //   console.log(err);
-      //   alert(err);
-      // });
+      handleGetItemsForInvoice()
+      .then(({ data }: any) => {
+        setmyItems(data.items);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
   }, []);
   console.log(myItems);
   
