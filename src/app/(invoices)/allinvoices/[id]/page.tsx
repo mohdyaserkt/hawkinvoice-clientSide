@@ -320,7 +320,7 @@ const getStarted = () => {
                               className="inline-flex items-center gap-x-1.5 text-blue-600 decoration-2 hover:underline font-medium"
                               href="#"
                             >
-                              sara@site.com
+                              {mainInvoice?.customerName}
                             </a>
                           </dd>
                         </dl>
@@ -373,8 +373,8 @@ const getStarted = () => {
                             Invoice number:
                           </dt>
                           <dd className="font-medium text-gray-800 dark:text-gray-200">
-                            ADUQ2189H1-0038
-                          </dd>
+                        {mainInvoice?.invoiceNumber}               
+                                   </dd>
                         </dl>
 
                         <dl className="grid sm:flex gap-x-3 text-sm">
@@ -382,7 +382,7 @@ const getStarted = () => {
                             Currency:
                           </dt>
                           <dd className="font-medium text-gray-800 dark:text-gray-200">
-                            USD - US Dollar
+                            INR - INDIAN RUPEE
                           </dd>
                         </dl>
 
@@ -391,7 +391,7 @@ const getStarted = () => {
                             Due date:
                           </dt>
                           <dd className="font-medium text-gray-800 dark:text-gray-200">
-                            10 Jan 2023
+                            {formatDate(mainInvoice?.dueDate?mainInvoice.dueDate:new Date())}
                           </dd>
                         </dl>
 
