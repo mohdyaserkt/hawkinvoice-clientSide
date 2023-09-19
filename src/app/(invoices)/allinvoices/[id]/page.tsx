@@ -28,34 +28,47 @@ import { handleGetInoviceById } from "@/utils/Invoice/getInvoiceById";
 
 const getStarted = () => {
   const [myInvoices, setmyInvoices] = useState([]);
-  const [mainInvoice, setmainInvoice] = useState<IInvoice>();
+  const [mainInvoice, setmainInvoice] = useState<IInvoice>()
   const params = useParams();
   const id = params.id;
   useEffect(() => {
-    GetInvoices();
-    getMainInvoice(id as string);
+    GetInvoices()
+    getMainInvoice(id as string)
   }, [myInvoices]);
 
-  const getMainInvoice = (id: string) => {
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const getMainInvoice=(id:string)=>{
     handleGetInoviceById(id)
-      .then(({ data }: any) => {
-        setmainInvoice(data.invoice as IInvoice);
-      })
-      .catch((err) => {
-        console.log(err);
-        alert(err);
-      });
-  };
-  const GetInvoices = () => {
+    .then(({ data }: any) => {
+      setmainInvoice(data.invoice as IInvoice);
+    })
+    .catch((err) => {
+      console.log(err);
+      alert(err);
+    });
+  }
+  const GetInvoices=()=>{
     handleGetInvoices()
-      .then(({ data }: any) => {
-        setmyInvoices(data.invoices);
-      })
-      .catch((err) => {
-        console.log(err);
-        alert(err);
-      });
-  };
+    .then(({ data }: any) => {
+      setmyInvoices(data.invoices);
+    })
+    .catch((err) => {
+      console.log(err);
+      alert(err);
+    });
+  }
 
   const printableRef = useRef<HTMLDivElement | null>(null);
 
@@ -209,7 +222,7 @@ const getStarted = () => {
                   </div>
                 </div>
                 <div>
-                  {myInvoices.map((item: IInvoice, index) => (
+                  {myInvoices.map((item:IInvoice, index) => (
                     <div>
                       <div className="flex h-16 py-2 pe-1 ps-2 border-b">
                         <div>
@@ -222,21 +235,17 @@ const getStarted = () => {
                               <div className="flex gap-2 text-[13px] items-center">
                                 <p className="">{item.invoiceNumber}</p>
                                 <p>|</p>
-                                <p className="text-secondary">
-                                  {formatDate(item.invoiceDate)}
-                                </p>
+                                <p className="text-secondary">{formatDate(item.invoiceDate)}</p>
                               </div>
                             </div>
                           </div>
                           <div className=" flex flex-col justify-center ">
                             <div>
                               <div className="text-end">
-                                <h2 className="text-sm text-white">
-                                  {item.Total}.00
-                                </h2>
+                                <h2 className="text-sm text-white">{item.Total}.00</h2>
                               </div>
                               <div className="flex gap-2 text-[13px] items-center text-white">
-                                <DueDateComponent dueDate={item.dueDate} />
+                                <DueDateComponent dueDate={item.dueDate}/>
                                 <IoMailOutline className="text-secondary" />
                               </div>
                             </div>
@@ -364,8 +373,8 @@ const getStarted = () => {
                             Invoice number:
                           </dt>
                           <dd className="font-medium text-gray-800 dark:text-gray-200">
-                            {mainInvoice?.invoiceNumber}
-                          </dd>
+                        {mainInvoice?.invoiceNumber}               
+                                   </dd>
                         </dl>
 
                         <dl className="grid sm:flex gap-x-3 text-sm">
@@ -382,11 +391,7 @@ const getStarted = () => {
                             Due date:
                           </dt>
                           <dd className="font-medium text-gray-800 dark:text-gray-200">
-                            {formatDate(
-                              mainInvoice?.dueDate
-                                ? mainInvoice.dueDate
-                                : new Date()
-                            )}
+                            {formatDate(mainInvoice?.dueDate?mainInvoice.dueDate:new Date())}
                           </dd>
                         </dl>
 
@@ -406,26 +411,27 @@ const getStarted = () => {
 
                   {/* Table */}
                   <div className="mt-6 border border-gray-200 p-4 rounded-lg space-y-4 dark:border-gray-700">
-                    {mainInvoice?.itemDetails.map((item, index) => (
-                      <div className="hidden sm:grid sm:grid-cols-5">
-                        <div className="sm:col-span-2 text-xs font-medium text-gray-500 uppercase">
-                          {item.itemName}
-                        </div>
-                        <div className="text-left text-xs font-medium text-gray-500 uppercase">
-                          {item.quantity}
-                        </div>
-                        <div className="text-left text-xs font-medium text-gray-500 uppercase">
-                          {item.rate}
-                        </div>
-                        <div className="text-right text-xs font-medium text-gray-500 uppercase">
-                          {item.quantity*item.rate}
-                        </div>
+                    <div className="hidden sm:grid sm:grid-cols-5">
+                      
+                      <div className="sm:col-span-2 text-xs font-medium text-gray-500 uppercase">
+                        Item
                       </div>
-                    ))}
+                      <div className="text-left text-xs font-medium text-gray-500 uppercase">
+                        Qty
+                      </div>
+                      <div className="text-left text-xs font-medium text-gray-500 uppercase">
+                        Rate
+                      </div>
+                      <div className="text-right text-xs font-medium text-gray-500 uppercase">
+                        Amount
+                      </div>
+                    </div>
 
                     <div className="hidden sm:block border-b border-gray-200 dark:border-gray-700"></div>
 
-                    <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
+
+                    {mainInvoice?.itemDetails.map((item,index)=>(
+                      <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
                       <div className="col-span-full sm:col-span-2">
                         <h5 className="sm:hidden text-xs font-medium text-gray-500 uppercase">
                           Item
@@ -455,6 +461,10 @@ const getStarted = () => {
                         </p>
                       </div>
                     </div>
+
+                    ))}
+
+                    
 
                     <div className="sm:hidden border-b border-gray-200 dark:border-gray-700"></div>
 
