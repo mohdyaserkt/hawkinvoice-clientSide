@@ -18,20 +18,46 @@ import {
 import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
+import { handleCreateNewExpense } from "@/utils/Expense/createNewExpense";
+import { IExpense } from "../../../../types/Expense/createNewExpense";
 
 const getStarted = () => {
   const router = useRouter();
+  const [errors, setErrors] = useState<{
+    field: string;
+    errors: string[];
+  } | null>({ field: "", errors: [""] });
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault();             
     const formData = new FormData(e.currentTarget);
     let inputObject: { [key: string]: string | Number | object } = {};
 
     formData.forEach((value, key) => {
       inputObject[key] = String(value);
-    });}
+    });
 
-      
-  
+    let expense = inputObject as unknown as IExpense;
+    handleCreateNewExpense({
+      expense,
+      setError,
+    })
+      .then((res: any) => {
+        if (res) {
+          console.log(res);
+          router?.push("/customers");
+          alert(res);
+        }
+      })
+      .catch((err: ApiError) => {
+        console.log(err.message);
+        alert(err);
+      });
+  };
+
+  const setError = (field: string, errorMessages: string[]) =>
+    setErrors({ field, errors: errorMessages });
+
   return (
     <>
       <div className="h-screen">
@@ -127,18 +153,15 @@ const getStarted = () => {
                   <div className="flex flex-col gap-7">
                     <div className="flex space-x-28 items-center">
                       <p>Date</p>
-                      
+
                       <div className="flex items-center">
-                          <input
-                            name="date"
-                            className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
-                            type="date"
-                            defaultValue={
-                              new Date().toISOString().split("T")[0]
-                            }
-                          />
-                        </div>
-                      
+                        <input
+                          name="date"
+                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
+                          type="date"
+                          defaultValue={new Date().toISOString().split("T")[0]}
+                        />
+                      </div>
                     </div>
 
                     <div className="flex items-center gap-[76px]">
@@ -148,9 +171,8 @@ const getStarted = () => {
 
                       <div className=" flex items-center">
                         <select
-                        name="categoryName"
+                          name="categoryName"
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2 bg-white"
-                         
                         >
                           <option value="df">fires</option>
                           <option value="ds">dskf</option>
@@ -181,7 +203,7 @@ const getStarted = () => {
                       </p>
                       <div className="flex items-center">
                         <input
-                        name="invoiceNumber"
+                          name="invoiceNumber"
                           className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                           type="number"
                           placeholder="INR"
@@ -192,7 +214,7 @@ const getStarted = () => {
                       <p>Notes</p>
                       <div className=" flex  w-80 ">
                         <textarea
-                        name="notes"
+                          name="notes"
                           placeholder="Description "
                           className="focus:outline-none rounded-md  text-xs w-64 text-black p-2"
                         ></textarea>

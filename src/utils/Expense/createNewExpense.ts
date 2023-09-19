@@ -6,7 +6,7 @@ import { handleCreateExpense } from "../../../types/Expense/createNewExpense";
 import { createNewExpense } from "@/app/api/expense/createNewExpense";
 
 
-export const handleCreateNewInovice = async ({
+export const handleCreateNewExpense = async ({
   expense,
 setError,
 }: handleCreateExpense): Promise<string | boolean | AxiosError> => {
