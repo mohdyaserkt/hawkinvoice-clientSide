@@ -20,7 +20,7 @@ import { IoMailOutline } from "react-icons/io5";
 import Link from "next/link";
 import { handleGetItems } from "@/utils/items/getItems";
 import { useEffect, useRef, useState } from "react";
-import { handleGetInvoices } from "@/utils/Invoice/getInvoices";
+import { formatDate, handleGetInvoices } from "@/utils/Invoice/getInvoices";
 import { IInvoice } from "../../../../../types/invoice/createinvoice";
 import DueDateComponent from "@/components/invoice/allInvoices/dueDateComponent";
 import { useParams } from "next/navigation";
@@ -235,7 +235,7 @@ const getStarted = () => {
                               <div className="flex gap-2 text-[13px] items-center">
                                 <p className="">{item.invoiceNumber}</p>
                                 <p>|</p>
-                                <p className="text-secondary">{item.invoiceDate.toLocaleDateString()}</p>
+                                <p className="text-secondary">{formatDate(item.invoiceDate)}</p>
                               </div>
                             </div>
                           </div>

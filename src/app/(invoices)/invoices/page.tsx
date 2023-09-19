@@ -19,7 +19,7 @@ import {
 import Link from "next/link";
 import { handleGetItems } from "@/utils/items/getItems";
 import { useEffect, useState } from "react";
-import { handleGetInvoices } from "@/utils/Invoice/getInvoices";
+import { formatDate, handleGetInvoices } from "@/utils/Invoice/getInvoices";
 import { IInvoice } from "../../../../types/invoice/createinvoice";
 
 
@@ -41,6 +41,8 @@ const getStarted = () => {
       });
   }, []);
 console.log("myinvoices44",myInvoices);
+
+
 
 
  
@@ -171,19 +173,20 @@ console.log("myinvoices44",myInvoices);
               <tbody className="text-white text-sm">
               {myInvoices.map((item: IInvoice) => (
                 <tr className="border-b border-white" key={item.id}>
-                 <td className="p-2 text-center">{item.invoiceDate.toLocaleDateString()}</td>
-                  <td className="p-2 text-center">{item.invoiceNumber}</td>
-                  <td className="p-2 text-center">₹ {item.orderNumber}</td>
+                 <td className="p-2 text-center">{formatDate(item.invoiceDate)}</td>
+                 <Link href={`/allinvoices/${item.id}`}><td className="p-2 text-center">{item.invoiceNumber}</td></Link>
+                  <td className="p-2 text-center">{item.orderNumber}</td>
                   <td className="p-2 text-center">{item.customerName}</td>
                   <td className="p-2 text-center">{item.status}</td>
-                  <td className="p-2 text-center">{item.invoiceDate.toLocaleDateString()}</td>
-                  <td className="p-2 text-center">{item.Total}</td>
-                  <td className="p-2 text-center">{item.status=="paid"?"0.00":item.Total}</td>
+                  <td className="p-2 text-center">{formatDate(item.invoiceDate)}</td>
+                  <td className="p-2 text-center">₹{item.Total}</td>
+                  <td className="p-2 text-center">₹{item.status=="paid"?"0.00":item.Total}</td>
                 </tr>))} 
                 <tr className="border-b border-white">
                   <td className="p-2 text-center">25/07/2023</td>
                   <td className="p-2 text-center">INV-000003</td>
                   <td className="p-2 text-center">256</td>
+                  <td className="p-2 text-center">customerName</td>
                   <td className="p-2 text-center">Paid</td>
                   <td className="p-2 text-center">25/07/2023</td>
                   <td className="p-2 text-center">₹23,450.00</td>
