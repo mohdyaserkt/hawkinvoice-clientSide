@@ -220,7 +220,7 @@ const getStarted = () => {
                         <div className="flex justify-between w-full ">
                           <div className="  flex flex-col justify-center text-white">
                             <div className="flex flex-col ">
-                              <h3 className="text-sm">{item.customerName}</h3>
+                            <Link href={`/allinvoices/${item.id}`}><h3 className="text-sm">{item.customerName}</h3></Link>
                               <div className="flex gap-2 text-[13px] items-center">
                                 <p className="">{item.invoiceNumber}</p>
                                 <p>|</p>
