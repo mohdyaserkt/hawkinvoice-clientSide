@@ -139,7 +139,7 @@ const getStarted = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    let inputObject: { [key: string]: string | Number | object } = {};
+    let inputObject: { [key: string]: string | Number | object|Date } = {};
 
     formData.forEach((value, key) => {
       inputObject[key] = String(value);
