@@ -409,16 +409,16 @@ const getStarted = () => {
                     {mainInvoice?.itemDetails.map((item, index) => (
                       <div className="hidden sm:grid sm:grid-cols-5">
                         <div className="sm:col-span-2 text-xs font-medium text-gray-500 uppercase">
-                          {item.helo}
+                          {item.itemName}
                         </div>
                         <div className="text-left text-xs font-medium text-gray-500 uppercase">
-                          Qty
+                          {item.quantity}
                         </div>
                         <div className="text-left text-xs font-medium text-gray-500 uppercase">
-                          Rate
+                          {item.rate}
                         </div>
                         <div className="text-right text-xs font-medium text-gray-500 uppercase">
-                          Amount
+                          {item.quantity*item.rate}
                         </div>
                       </div>
                     ))}
