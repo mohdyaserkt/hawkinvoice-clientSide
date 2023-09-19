@@ -478,14 +478,14 @@ const getStarted = () => {
                         <dl className="grid sm:grid-cols-5 gap-x-3 text-sm">
                           <dt className="col-span-3 text-gray-500">Subotal:</dt>
                           <dd className="col-span-2 font-medium text-gray-800 dark:text-gray-200">
-                            {mainInvoice?.subTotal}
+                          ₹{mainInvoice?.subTotal}
                           </dd>
                         </dl>
 
                         <dl className="grid sm:grid-cols-5 gap-x-3 text-sm">
                           <dt className="col-span-3 text-gray-500">Total:</dt>
                           <dd className="col-span-2 font-medium text-gray-800 dark:text-gray-200">
-                            {mainInvoice?.Total}
+                          ₹{mainInvoice?.Total}
                           </dd>
                         </dl>
 
@@ -494,7 +494,7 @@ const getStarted = () => {
                             Amount paid:
                           </dt>
                           <dd className="col-span-2 font-medium text-gray-800 dark:text-gray-200">
-                            {mainInvoice?.status == "paid"
+                          ₹{mainInvoice?.status == "paid"
                               ? mainInvoice?.Total
                               : 0.0}
                           </dd>
@@ -505,7 +505,7 @@ const getStarted = () => {
                             Due balance:
                           </dt>
                           <dd className="col-span-2 font-medium text-gray-800 dark:text-gray-200">
-                            {mainInvoice?.status == "paid"
+                          ₹{mainInvoice?.status == "paid"
                               ? 0.00
                               : mainInvoice?.Total}
                           </dd>
