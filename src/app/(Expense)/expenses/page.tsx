@@ -124,7 +124,7 @@ const getStarted = () => {
 
               <div className="flex space-x-2">
                 <div className="text-xs bg-secondary flex items-center text-white font-semibold px-3 py-2  rounded">
-                  <Link href="/createnewinvoice">
+                  <Link href="/addnewexpense">
                     <span className="mr-1">+</span> New
                   </Link>
                 </div>

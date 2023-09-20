@@ -45,7 +45,7 @@ const getStarted = () => {
       .then((res: any) => {
         if (res) {
           console.log(res);
-          router?.push("/customers");
+          router?.push("/expenses");
           alert(res);
         }
       })
