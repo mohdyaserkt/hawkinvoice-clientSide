@@ -18,7 +18,7 @@ import {
 import Link from "next/link";
 import { handleGetItems } from "@/utils/items/getItems";
 import { useEffect, useState } from "react";
-import { handleGetInvoices } from "@/utils/Invoice/getInvoices";
+import { formatDate, handleGetInvoices } from "@/utils/Invoice/getInvoices";
 import { IInvoice } from "../../../../types/invoice/createinvoice";
 import { handleGetExpenses } from "@/utils/Expense/getallExpenses";
 import { IExpense } from "../../../../types/Expense/createNewExpense";
@@ -157,7 +157,7 @@ const getStarted = () => {
                 {myExpenses.map((item: IExpense) => (
                   <tr className="border-b border-white" key={item.id}>
                     <td className="p-2 text-center">
-                      {item.date.toLocaleDateString()}
+                      {formatDate(item.date)}
                     </td>
                     <td className="p-2 text-center">{item.categoryName}</td>
                     <td className="p-2 text-center">₹ {item.invoiceNumber}</td>
