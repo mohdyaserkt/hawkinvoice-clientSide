@@ -18,7 +18,7 @@ import {
 } from "react-icons/ai";
 import { GoOrganization } from "react-icons/go";
 
-const getStarted = () => {
+const GetStarted = () => {
   const imageRef = useRef<HTMLInputElement>(null);
   return (
     <>
@@ -238,4 +238,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default GetStarted;

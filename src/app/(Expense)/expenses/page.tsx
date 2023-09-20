@@ -23,7 +23,7 @@ import { IInvoice } from "../../../../types/invoice/createinvoice";
 import { handleGetExpenses } from "@/utils/Expense/getallExpenses";
 import { IExpense } from "../../../../types/Expense/createNewExpense";
 
-const getStarted = () => {
+const GetStarted = () => {
   const [myExpenses, setmyExpenses] = useState([]);
   useEffect(() => {
     handleGetExpenses()
@@ -182,4 +182,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default GetStarted;

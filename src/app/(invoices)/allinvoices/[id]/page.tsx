@@ -26,7 +26,7 @@ import DueDateComponent from "@/components/invoice/allInvoices/dueDateComponent"
 import { useParams } from "next/navigation";
 import { handleGetInoviceById } from "@/utils/Invoice/getInvoiceById";
 
-const getStarted = () => {
+const GetStarted = () => {
   const [myInvoices, setmyInvoices] = useState([]);
   const [mainInvoice, setmainInvoice] = useState<IInvoice>();
   const params = useParams();
@@ -525,4 +525,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default GetStarted;

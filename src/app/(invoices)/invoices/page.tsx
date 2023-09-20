@@ -23,7 +23,7 @@ import { formatDate, handleGetInvoices } from "@/utils/Invoice/getInvoices";
 import { IInvoice } from "../../../../types/invoice/createinvoice";
 
 
-const getStarted = () => {
+const GetStarted = () => {
 
 
   const [myInvoices, setmyInvoices] = useState<IInvoice[]>([]);
@@ -201,4 +201,4 @@ console.log("myinvoices44",myInvoices);
   );
 };
 
-export default getStarted;
+export default GetStarted;

@@ -41,7 +41,7 @@ import { handleCreateNewInovice } from "@/utils/Invoice/createNewInvoice";
 
 
 
-const getStarted = () => {
+const GetStarted = () => {
   const [myCustomers, setmyCustomers] = useState<ICustomerData[]>([]);
 
   useEffect(() => {
@@ -623,4 +623,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default GetStarted;

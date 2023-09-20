@@ -20,7 +20,7 @@ import Link from "next/link";
 import { handleGetItems } from "@/utils/items/getItems";
 
 
-const getStarted = () => {
+const GetStarted = () => {
  
 
  
@@ -176,4 +176,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default GetStarted;

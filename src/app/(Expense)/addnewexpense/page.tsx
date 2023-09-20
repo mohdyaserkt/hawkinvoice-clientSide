@@ -21,7 +21,7 @@ import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import { handleCreateNewExpense } from "@/utils/Expense/createNewExpense";
 import { IExpense } from "../../../../types/Expense/createNewExpense";
 
-const getStarted = () => {
+const GetStarted = () => {
   const router = useRouter();
   const [errors, setErrors] = useState<{
     field: string;
@@ -246,4 +246,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default GetStarted;
