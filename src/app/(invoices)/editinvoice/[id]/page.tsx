@@ -28,6 +28,7 @@ import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import Createinvoice from "@/components/invoice/createinvoice/createinvoice";
 import { handleGetCustomersforinvoice } from "@/utils/Invoice/getCustomers";
 import { handleGetItemsForInvoice } from "@/utils/Invoice/getItems";
+
 import { handleCreateNewInovice } from "@/utils/Invoice/createNewInvoice";
 import { IInvoice, IItem } from "../../../../../types/invoice/createinvoice";
 
@@ -42,16 +43,22 @@ import { IInvoice, IItem } from "../../../../../types/invoice/createinvoice";
 
 
 const GetStarted = () => {
+
+
   const params = useParams();
   const id = params.id;
   const [myCustomers, setmyCustomers] = useState<ICustomerData[]>([]);
 
   useEffect(() => {
-    getCustomers()
+    handleGetCustomersforinvoice()
+      .then(({ data }: any) => {
+        setmyCustomers(data.customers);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
   }, []);
-
-
-
 
 
 
@@ -77,16 +84,7 @@ const GetStarted = () => {
   
 
   const discountType = useRef(null);
-const getCustomers=()=>{
-    handleGetCustomersforinvoice()
-    .then(({ data }: any) => {
-      setmyCustomers(data.customers);
-    })
-    .catch((err) => {
-      console.log(err);
-      alert(err);
-    });
-}
+
 
 
 
@@ -285,7 +283,7 @@ const getCustomers=()=>{
               <p className="text-sm text-white">Items</p>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
-              <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />   
+              <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Invoices</p>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
