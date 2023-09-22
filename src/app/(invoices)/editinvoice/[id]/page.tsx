@@ -48,19 +48,19 @@ const GetStarted = () => {
         alert(err);
       });
   }, []);
-
+  const [Invoice, setInvoice] = useState<IInvoice>();
   const [paymentMode, setpaymentMode] = useState(false);
   const router = useRouter();
   const slectRef = useRef<HTMLDivElement>(null);
   const [customerId, setCustomerId] = useState("");
   const [customerEmail, setcustomerEmail] = useState("");
-  const [items, setItems] = useState<IItem[]>([
-    { quantity: 0, rate: 0, itemName: "", id: "" },
-  ]);
+  let invoiceItems: IItem[] = Invoice?.itemDetails ? [...Invoice.itemDetails] : [];
+  const [items, setItems] = useState<IItem[]>(invoiceItems);
+
   const [subtotal, setsubTotal] = useState(0);
   const [discount, setdiscount] = useState(0);
   const [adjustment, setadjustment] = useState(0);
-  const [Invoice, setInvoice] = useState<IInvoice>();
+
   const [errors, setErrors] = useState<{
     field: string;
     errors: string[];
