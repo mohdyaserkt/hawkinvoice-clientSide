@@ -50,7 +50,7 @@ const GetStarted = () => {
       });
   }, []);
   const [Invoice, setInvoice] = useState<IInvoice>();
-  const [paymentMode, setpaymentMode] = useState(false);
+  const [paymentMode, setpaymentMode] = useState(Invoice?.paymentMode=="paid"?true:false);
   const router = useRouter();
   const slectRef = useRef<HTMLDivElement>(null);
   const [customerId, setCustomerId] = useState("");
@@ -60,7 +60,7 @@ const GetStarted = () => {
 
   const [subtotal, setsubTotal] = useState(Invoice?.subTotal||0);
   const [discount, setdiscount] = useState(Invoice?.discount||0);
-  const [adjustment, setadjustment] = useState(0);
+  const [adjustment, setadjustment] = useState(Invoice?.Adjustment?.adjustmentValue||0);
 
   const [errors, setErrors] = useState<{
     field: string;
