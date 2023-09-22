@@ -129,6 +129,7 @@ const GetStarted = () => {
       adjustmentValue: inputObject.adjustmentValue,
     };
     inputObject.itemDetails = [...items];
+    inputObject.id =Invoice?.id||"";
     delete inputObject.adjustment;
     delete inputObject.adjustmentValue;
     delete inputObject.discountType;
