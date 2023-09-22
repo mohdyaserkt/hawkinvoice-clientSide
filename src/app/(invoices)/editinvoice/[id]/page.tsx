@@ -560,6 +560,7 @@ const GetStarted = () => {
                         <select
                           name="paymentMode"
                           className="bg-transparent rounded-md p-2 border"
+                          value={Invoice?.paymentMode}
                         >
                           <option value="cash">cash</option>
                           <option value="onlinePayment">Online Payment</option>
