@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   LiaFileInvoiceDollarSolid,
   LiaFileInvoiceSolid,
@@ -29,6 +29,13 @@ const GetStarted = () => {
     field: string;
     errors: string[];
   } | null>({ field: "", errors: [""] });
+
+
+
+  useEffect(() => {
+    
+  }, [])
+  
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();             
