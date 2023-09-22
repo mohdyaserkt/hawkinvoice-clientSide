@@ -32,6 +32,7 @@ import { handleGetItemsForInvoice } from "@/utils/Invoice/getItems";
 import { handleCreateNewInovice } from "@/utils/Invoice/createNewInvoice";
 import { IInvoice, IItem } from "../../../../../types/invoice/createinvoice";
 import { handleGetInoviceById } from "@/utils/Invoice/getInvoiceById";
+import { formatDate } from "@/utils/Invoice/getInvoices";
 
 const GetStarted = () => {
   const params = useParams();
@@ -328,6 +329,7 @@ const GetStarted = () => {
                           name="invoiceNumber"
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
+                          defaultValue={Invoice?.invoiceNumber||''}
                         />
                       </div>
                     </div>
@@ -340,6 +342,7 @@ const GetStarted = () => {
                           name="orderNumber"
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
+                          defaultValue={Invoice?.orderNumber}
                         />
                       </div>
                     </div>
@@ -356,7 +359,7 @@ const GetStarted = () => {
                             className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                             type="date"
                             defaultValue={
-                              new Date().toISOString().split("T")[0]
+                             formatDate(Invoice?.invoiceDate||new Date())
                             }
                           />
                         </div>
@@ -369,10 +372,8 @@ const GetStarted = () => {
                             className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                             type="date"
                             defaultValue={
-                              new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
-                                .toISOString()
-                                .split("T")[0]
-                            }
+                              formatDate(Invoice?.dueDate||new Date())
+                             }
                           />
                         </div>
                       </div>
@@ -387,6 +388,7 @@ const GetStarted = () => {
                           name="salesPerson"
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
+                          defaultValue={Invoice?.salesPerson||''}
                         />
                       </div>
                     </div>
@@ -400,6 +402,7 @@ const GetStarted = () => {
                           name="subject"
                           className="focus:outline-none rounded-md w-[470px] h-8 text-xs text-black p-2 placeholder:text-gray-900"
                           type="text"
+                          defaultValue={Invoice?.subject||''}
                           placeholder="Let your customer know what this Invoice is for"
                         />
                       </div>
@@ -440,6 +443,7 @@ const GetStarted = () => {
                           <p className="text-xs">Customer Notes</p>
                           <textarea
                             name="customerNotes"
+                            defaultValue={Invoice?.customerNotes||''}
                             className="focus:outline-none bg-transparent border rounded-md w-[448px] h-20 p-3"
                           ></textarea>
                         </div>
@@ -448,6 +452,7 @@ const GetStarted = () => {
                           <textarea
                             name="termsAndConditions"
                             className="focus:outline-none bg-transparent border rounded-md w-[448px] h-20 p-3"
+                            defaultValue={Invoice?.termsAndConditions||''}
                             placeholder="Enter the terms and conditions of your business to be displayed in your transaction"
                           ></textarea>
                         </div>
