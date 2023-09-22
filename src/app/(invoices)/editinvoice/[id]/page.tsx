@@ -327,6 +327,7 @@ const GetStarted = () => {
                             name="customerName"
                             className=" bg-transparent border rounded-l-md w-[503px] h-8 px-3"
                             onChange={handleSelectChange}
+                            // value={}
                             required
                           >
                             <option hidden value="" className="">
@@ -337,7 +338,7 @@ const GetStarted = () => {
                                 key={item.id}
                                 value={item.displayName}
                                 className=""
-                                selected={id==item.id?true:false}
+                                // selected={id==item.id?true:false}
                               >
                                 {item.displayName}
                               </option>
