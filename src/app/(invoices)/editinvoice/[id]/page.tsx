@@ -174,7 +174,7 @@ const GetStarted = () => {
     setcustomerEmail(myCustomers[selectedIndex].email);
     console.log("Selected Option Index:", selectedIndex);
   };
-
+                      
   const setError = (field: string, errorMessages: string[]) =>
     setErrors({ field, errors: errorMessages });
 
@@ -281,7 +281,7 @@ const GetStarted = () => {
                             name="customerName"
                             className=" bg-transparent border rounded-l-md w-[503px] h-8 px-3"
                             onChange={handleSelectChange}
-                            // value={}
+                            value={Invoice?.customerName}
                             required
                           >
                             <option hidden value="" className="">
