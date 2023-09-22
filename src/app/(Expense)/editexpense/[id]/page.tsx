@@ -21,6 +21,7 @@ import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import { handleCreateNewExpense } from "@/utils/Expense/createNewExpense";
 import { IExpense } from "../../../../../types/Expense/createNewExpense";
 import { handleGetExpenseById } from "@/utils/Expense/getExpenseById";
+import { formatDate } from "@/utils/Invoice/getInvoices";
 
 const GetStarted = () => {
 
@@ -188,7 +189,8 @@ const [expense, setexpense] = useState<IExpense>()
                           name="date"
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="date"
-                          defaultValue={new Date().toISOString().split("T")[0]}
+                          
+                          defaultValue={formatDate(expense?.date||new Date())}
                         />
                       </div>
                     </div>
@@ -202,6 +204,7 @@ const [expense, setexpense] = useState<IExpense>()
                         <select
                           name="categoryName"
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2 bg-white"
+                          value={expense?.categoryName}
                         >
                           <option value="df">fires</option>
                           <option value="ds">dskf</option>
@@ -214,6 +217,7 @@ const [expense, setexpense] = useState<IExpense>()
                       <div>
                         <input
                           name="amount"
+                          defaultValue={expense?.amount}
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
                         />
@@ -232,6 +236,7 @@ const [expense, setexpense] = useState<IExpense>()
                       </p>
                       <div className="flex items-center">
                         <input
+                        defaultValue={expense?.invoiceNumber}
                           name="invoiceNumber"
                           className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                           type="number"
@@ -243,6 +248,7 @@ const [expense, setexpense] = useState<IExpense>()
                       <p>Notes</p>
                       <div className=" flex  w-80 ">
                         <textarea
+                        defaultValue={expense?.notes}
                           name="notes"
                           placeholder="Description "
                           className="focus:outline-none rounded-md  text-xs w-64 text-black p-2"
