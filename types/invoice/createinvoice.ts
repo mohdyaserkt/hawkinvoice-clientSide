@@ -21,7 +21,10 @@ export interface IInvoice {
   itemDetails: any[]; // You can define a more specific type for itemDetails
   subTotal: number;
   discount?: number;
-  Adjustment?: object;
+  Adjustment?:{
+    adjustment:string;
+    adjustmentValue:number;
+  };
   Total: number;
   customerNotes?: string;
   termsAndConditions?: string;

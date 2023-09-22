@@ -58,8 +58,8 @@ const GetStarted = () => {
   let invoiceItems: IItem[] = Invoice?.itemDetails ? [...Invoice.itemDetails] : [];
   const [items, setItems] = useState<IItem[]>(invoiceItems);
 
-  const [subtotal, setsubTotal] = useState(0);
-  const [discount, setdiscount] = useState(0);
+  const [subtotal, setsubTotal] = useState(Invoice?.subTotal||0);
+  const [discount, setdiscount] = useState(Invoice?.discount||0);
   const [adjustment, setadjustment] = useState(0);
 
   const [errors, setErrors] = useState<{
@@ -489,6 +489,7 @@ const GetStarted = () => {
                             <input
                               name="adjustment"
                               type="text"
+                              defaultValue={Invoice?.Adjustment?.adjustment}
                               required={adjustment > 0 ? true : false}
                               className="bg-transparent border h-8 rounded-md w-32 focus:outline-none"
                             />
