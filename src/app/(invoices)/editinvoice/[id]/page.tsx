@@ -22,7 +22,7 @@ import {
   AiOutlineUser,
   AiOutlineSearch,
 } from "react-icons/ai";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import Createinvoice from "@/components/invoice/createinvoice/createinvoice";
@@ -42,18 +42,16 @@ import { IInvoice, IItem } from "../../../../../types/invoice/createinvoice";
 
 
 const GetStarted = () => {
+  const params = useParams();
+  const id = params.id;
   const [myCustomers, setmyCustomers] = useState<ICustomerData[]>([]);
 
   useEffect(() => {
-    handleGetCustomersforinvoice()
-      .then(({ data }: any) => {
-        setmyCustomers(data.customers);
-      })
-      .catch((err) => {
-        console.log(err);
-        alert(err);
-      });
+    getCustomers()
   }, []);
+
+
+
 
 
 
@@ -79,7 +77,16 @@ const GetStarted = () => {
   
 
   const discountType = useRef(null);
-
+const getCustomers=()=>{
+    handleGetCustomersforinvoice()
+    .then(({ data }: any) => {
+      setmyCustomers(data.customers);
+    })
+    .catch((err) => {
+      console.log(err);
+      alert(err);
+    });
+}
 
 
 
