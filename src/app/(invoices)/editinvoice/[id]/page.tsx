@@ -337,6 +337,7 @@ const GetStarted = () => {
                                 key={item.id}
                                 value={item.displayName}
                                 className=""
+                                selected={id==item.id?true:false}
                               >
                                 {item.displayName}
                               </option>
