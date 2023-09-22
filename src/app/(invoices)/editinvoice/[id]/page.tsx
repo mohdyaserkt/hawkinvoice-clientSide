@@ -31,20 +31,9 @@ import { handleGetItemsForInvoice } from "@/utils/Invoice/getItems";
 
 import { handleCreateNewInovice } from "@/utils/Invoice/createNewInvoice";
 import { IInvoice, IItem } from "../../../../../types/invoice/createinvoice";
-
-
-
-
-
-
-
-
-
-
+import { handleGetInoviceById } from "@/utils/Invoice/getInvoiceById";
 
 const GetStarted = () => {
-
-
   const params = useParams();
   const id = params.id;
   const [myCustomers, setmyCustomers] = useState<ICustomerData[]>([]);
@@ -60,12 +49,6 @@ const GetStarted = () => {
       });
   }, []);
 
-
-
-
-
-
-
   const [paymentMode, setpaymentMode] = useState(false);
   const router = useRouter();
   const slectRef = useRef<HTMLDivElement>(null);
@@ -77,17 +60,24 @@ const GetStarted = () => {
   const [subtotal, setsubTotal] = useState(0);
   const [discount, setdiscount] = useState(0);
   const [adjustment, setadjustment] = useState(0);
+  const [Invoice, setInvoice] = useState<IInvoice>();
   const [errors, setErrors] = useState<{
     field: string;
     errors: string[];
   } | null>({ field: "", errors: [""] });
-  
 
   const discountType = useRef(null);
 
-
-
-
+  useEffect(() => {
+    handleGetInoviceById(id as string)
+      .then(({ data }: any) => {
+        setInvoice(data.invoice as IInvoice);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+  }, []);
 
   useEffect(() => {
     const newsubTotal = items.reduce((accumulator, item) => {
@@ -99,18 +89,9 @@ const GetStarted = () => {
   console.log(items, "myitems");
   console.log(subtotal, "mysubtotal");
 
-
-
-
-
   const addRow = () => {
     setItems([...items, { quantity: 0, rate: 0, itemName: "", id: "" }]);
   };
-
-
-
-
-
 
   const addSelectedItem = (rate: number, itemName: string, id: string) => {
     setItems([
@@ -118,13 +99,6 @@ const GetStarted = () => {
       { quantity: 1, rate: rate, itemName: itemName, id: id },
     ]);
   };
-
-
-
-
-
-
-
 
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement>,
@@ -136,20 +110,15 @@ const GetStarted = () => {
     setItems(newItems);
   };
 
-
-
-
-
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    let inputObject: { [key: string]: string | Number | object|Date } = {};
+    let inputObject: { [key: string]: string | Number | object | Date } = {};
 
     formData.forEach((value, key) => {
       inputObject[key] = String(value);
     });
-    inputObject.invoiceDate=new Date()
+    inputObject.invoiceDate = new Date();
     inputObject.subTotal = subtotal;
     inputObject.Total = subtotal - discount + adjustment;
     inputObject.status = inputObject.recievedPayment ? "paid" : "pending";
@@ -166,7 +135,6 @@ const GetStarted = () => {
     delete inputObject.quantity;
     delete inputObject.rate;
     delete inputObject.recievedPayment;
-    
 
     console.log(inputObject);
 
@@ -186,15 +154,7 @@ const GetStarted = () => {
         console.log(err.message);
         alert(err);
       });
-      
   };
-
-
-
-
-
-
-
 
   const checkDiscount = (e: React.FocusEvent<HTMLInputElement>) => {
     const discount = e.target.value as unknown as number;
@@ -208,22 +168,16 @@ const GetStarted = () => {
     }
   };
 
-
-
-
-
-  
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedIndex = event.target.selectedIndex - 1;
     setCustomerId(myCustomers[selectedIndex].id as string);
     setcustomerEmail(myCustomers[selectedIndex].email);
     console.log("Selected Option Index:", selectedIndex);
   };
-  
 
   const setError = (field: string, errorMessages: string[]) =>
     setErrors({ field, errors: errorMessages });
-  
+
   return (
     <>
       <div className="h-screen">
