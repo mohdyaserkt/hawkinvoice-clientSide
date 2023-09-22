@@ -15,13 +15,15 @@ import {
   AiOutlineUser,
   AiOutlineSearch,
 } from "react-icons/ai";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import { handleCreateNewExpense } from "@/utils/Expense/createNewExpense";
 import { IExpense } from "../../../../types/Expense/createNewExpense";
 
 const GetStarted = () => {
+  const params = useParams();
+  const id = params.id;
   const router = useRouter();
   const [errors, setErrors] = useState<{
     field: string;
