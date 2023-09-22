@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   LiaFileInvoiceDollarSolid,
   LiaFileInvoiceSolid,
@@ -15,18 +15,47 @@ import {
   AiOutlineUser,
   AiOutlineSearch,
 } from "react-icons/ai";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import { handleCreateNewExpense } from "@/utils/Expense/createNewExpense";
 import { IExpense } from "../../../../../types/Expense/createNewExpense";
+import { handleGetExpenseById } from "@/utils/Expense/getExpenseById";
 
 const GetStarted = () => {
+
+    const params = useParams();
+    const id = params.id;
   const router = useRouter();
   const [errors, setErrors] = useState<{
     field: string;
     errors: string[];
   } | null>({ field: "", errors: [""] });
+
+const [expense, setexpense] = useState<IExpense>()
+
+
+  useEffect(() => {
+    handleGetExpenseById(id as string)
+      .then(({ data }: any) => {
+        setexpense(data.expense as IExpense);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+  }, []);
+
+
+
+
+
+
+
+
+
+
+
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();             
