@@ -33,8 +33,8 @@ const GetStarted = () => {
     errors: string[];
   } | null>({ field: "", errors: [""] });
 
-  const [editexpense, setexpense] = useState<any>();
-  console.log(editexpense);
+  const [editexpense, setexpense] = useState<IExpense>();
+
 
   useEffect(() => {
     handleGetExpenseById(id as string)
@@ -47,7 +47,7 @@ const GetStarted = () => {
       });
   }, []);
 
-  console.log(editexpense, "editexp");
+  
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -57,7 +57,7 @@ const GetStarted = () => {
     formData.forEach((value, key) => {
       inputObject[key] = String(value);
     });
-    inputObject.id = editexpense?._id || "";
+    inputObject.id = editexpense?.id||'';
     let expense = inputObject as unknown as IExpense;
     handleEditExpense({
       expense,
