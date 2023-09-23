@@ -194,7 +194,9 @@ console.log(editexpense,"editexp");
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="date"
                           
-                          defaultValue={formatDate(editexpense?.date||new Date())}
+                          defaultValue={new Date(editexpense?.date||new Date())
+                            .toISOString()
+                            .split("T")[0]}
                         />
                       </div>
                     </div>
@@ -208,7 +210,7 @@ console.log(editexpense,"editexp");
                         <select
                           name="categoryName"
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2 bg-white"
-                          value={editexpense?.categoryName}
+                          defaultValue={editexpense?.categoryName}
                         >
                           <option value="df">fires</option>
                           <option value="ds">dskf</option>
@@ -244,7 +246,7 @@ console.log(editexpense,"editexp");
                           name="invoiceNumber"
                           className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                           type="number"
-                          placeholder="INR"
+                          placeholder=""
                         />
                       </div>
                     </div>
