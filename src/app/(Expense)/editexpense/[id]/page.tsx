@@ -34,7 +34,7 @@ const GetStarted = () => {
     errors: string[];
   } | null>({ field: "", errors: [""] });
 
-const [editexpense, setexpense] = useState<IExpense>()
+const [editexpense, setexpense] = useState<any>()
 console.log(editexpense);
 
 
@@ -70,7 +70,7 @@ console.log(editexpense,"editexp");
     formData.forEach((value, key) => {
       inputObject[key] = String(value);
     });
-    inputObject.id=editexpense?.id||''
+    inputObject.id=editexpense?._id||''
     let expense = inputObject as unknown as IExpense;
     handleEditExpense({
       expense,
