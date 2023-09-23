@@ -50,7 +50,7 @@ const GetStarted = () => {
         alert(err);
       });
   }, []);
-  const [Invoice, setInvoice] = useState<IInvoice>();
+  const [Invoice, setInvoice] = useState<any>();
   const [paymentMode, setpaymentMode] = useState(Invoice?.paymentMode=="paid"?true:false);
   const router = useRouter();
   const slectRef = useRef<HTMLDivElement>(null);
@@ -130,7 +130,7 @@ const GetStarted = () => {
       adjustmentValue: inputObject.adjustmentValue,
     };
     inputObject.itemDetails = [...items];
-    inputObject.id =Invoice?.id||"";
+    inputObject.id =Invoice?._id||"";
     delete inputObject.adjustment;
     delete inputObject.adjustmentValue;
     delete inputObject.discountType;
