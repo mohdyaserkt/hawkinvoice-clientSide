@@ -50,38 +50,7 @@ const GetStarted = () => {
         alert(err);
       });
   }, []);
-  const [Invoice, setInvoice] = useState<IInvoice>({
-    customerName: "John Doe",
-    customerId: "6507272e0664e4b2622eec72",
-    customerEmail: "john.doe@example.com",
-    invoiceNumber: "INV-2023-001",
-    orderNumber: "ORD-2023-001",
-    invoiceDate: new Date("2023-09-14T00:00:00.000Z"),
-    dueDate: new Date("2023-10-14T00:00:00.000Z"),
-    salesPerson: "Alice Smith",
-    subject: "Services Rendered",
-    itemDetails: [
-      {
-        quantity: 5,
-        rate: 5,
-        itemName: "String",
-        id: "650727ae0664e4b2622eec76",
-      },
-    ],
-    subTotal: 325,
-    discount: 0,
-    Adjustment: {
-      adjustment: "Additional Adjustment",
-      adjustmentValue: 10,
-    },
-    Total: 310,
-    customerNotes: "Please make the payment by the due date.",
-    termsAndConditions: "Payment must be made within 30 days.",
-    status: "Pending",
-    paymentMode: "Credit Card",
-    id: "650db35681fa416fe4c928fb",
-  }
-  );
+  const [Invoice, setInvoice] = useState<IInvoice>();
   const [paymentMode, setpaymentMode] = useState(Invoice?.paymentMode=="paid"?true:false);
   const router = useRouter();
   const slectRef = useRef<HTMLDivElement>(null);
@@ -392,7 +361,9 @@ const GetStarted = () => {
                             className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                             type="date"
                             defaultValue={
-                             formatDate(Invoice?.invoiceDate||new Date())
+                              new Date(Invoice?.invoiceDate||new Date())
+                              .toISOString()
+                              .split("T")[0]
                             }
                           />
                         </div>
@@ -404,9 +375,9 @@ const GetStarted = () => {
                             name="dueDate"
                             className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                             type="date"
-                            defaultValue={
-                              formatDate(Invoice?.dueDate)
-                             }
+                            defaultValue={new Date(Invoice?.dueDate||new Date())
+                            .toISOString()
+                            .split("T")[0]}
                           />
                         </div>
                       </div>
