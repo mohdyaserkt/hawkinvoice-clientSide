@@ -405,7 +405,7 @@ const GetStarted = () => {
                             className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                             type="date"
                             defaultValue={
-                              formatDate(Invoice?.dueDate||new Date())
+                              formatDate(Invoice?.dueDate)
                              }
                           />
                         </div>
