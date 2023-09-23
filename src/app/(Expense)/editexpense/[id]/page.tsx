@@ -33,15 +33,7 @@ const GetStarted = () => {
     errors: string[];
   } | null>({ field: "", errors: [""] });
 
-  const [editexpense, setexpense] = useState<any>({
-    
-    date: "2023-09-14T00:00:00.000Z",
-    categoryName: "Expense",
-    amount: 500,
-    invoiceNumber: 12345,
-    notes: "Expense for office supplies",
-    id: "650eaa2a5875fabf70000776",
-  });
+  const [editexpense, setexpense] = useState<any>();
   console.log(editexpense);
 
   useEffect(() => {
