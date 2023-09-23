@@ -59,7 +59,7 @@ const GetStarted = () => {
   const [customerId, setCustomerId] = useState("");
   const [customerEmail, setcustomerEmail] = useState("");
  
-  const [items, setItems] = useState<IItem[]>(Invoice.itemDetails);
+  const [items, setItems] = useState<IItem[]>([]);
 
   const [subtotal, setsubTotal] = useState(Invoice?.subTotal||0);
   const [discount, setdiscount] = useState(Invoice?.discount||0);
@@ -76,6 +76,7 @@ const GetStarted = () => {
     handleGetInoviceById(id as string)
       .then(({ data }: any) => {
         setInvoice(data.invoice as IInvoice);
+        setItems(Invoice.itemDetails)
       })
       .catch((err) => {
         console.log(err);
