@@ -58,8 +58,20 @@ const GetStarted = () => {
   const slectRef = useRef<HTMLDivElement>(null);
   const [customerId, setCustomerId] = useState("");
   const [customerEmail, setcustomerEmail] = useState("");
+
+   useEffect(() => {
+    handleGetInoviceById(id as string)
+      .then(({ data }: any) => {
+        setInvoice(data.invoice as IInvoice);
+       
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+  }, []);
  
-  const [items, setItems] = useState<IItem[]>([]);
+  const [items, setItems] = useState<IItem[]>(Invoice.itemDetails);
 
   const [subtotal, setsubTotal] = useState(Invoice?.subTotal||0);
   const [discount, setdiscount] = useState(Invoice?.discount||0);
@@ -72,17 +84,7 @@ const GetStarted = () => {
 
   const discountType = useRef(null);
 
-  useEffect(() => {
-    handleGetInoviceById(id as string)
-      .then(({ data }: any) => {
-        setInvoice(data.invoice as IInvoice);
-        setItems(Invoice.itemDetails)
-      })
-      .catch((err) => {
-        console.log(err);
-        alert(err);
-      });
-  }, []);
+ 
 
   useEffect(() => {
     const newsubTotal = items.reduce((accumulator, item) => {
