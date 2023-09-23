@@ -25,19 +25,24 @@ import { formatDate } from "@/utils/Invoice/getInvoices";
 import { handleEditExpense } from "@/utils/Expense/editExpense";
 
 const GetStarted = () => {
-
-    const params = useParams();
-    const id = params.id;
+  const params = useParams();
+  const id = params.id;
   const router = useRouter();
   const [errors, setErrors] = useState<{
     field: string;
     errors: string[];
   } | null>({ field: "", errors: [""] });
 
-const [editexpense, setexpense] = useState<any>()
-console.log(editexpense);
-
-
+  const [editexpense, setexpense] = useState<any>({
+    
+    date: "2023-09-14T00:00:00.000Z",
+    categoryName: "Expense",
+    amount: 500,
+    invoiceNumber: 12345,
+    notes: "Expense for office supplies",
+    id: "650eaa2a5875fabf70000776",
+  });
+  console.log(editexpense);
 
   useEffect(() => {
     handleGetExpenseById(id as string)
@@ -50,33 +55,23 @@ console.log(editexpense);
       });
   }, []);
 
-
-console.log(editexpense,"editexp");
-
-
-
-
-
-
-
-
-
+  console.log(editexpense, "editexp");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();             
+    e.preventDefault();
     const formData = new FormData(e.currentTarget);
     let inputObject: { [key: string]: string | Number | object } = {};
 
     formData.forEach((value, key) => {
       inputObject[key] = String(value);
     });
-    inputObject.id=editexpense?._id||''
+    inputObject.id = editexpense?._id || "";
     let expense = inputObject as unknown as IExpense;
     handleEditExpense({
       expense,
       setError,
     })
-    .then((res: any) => {
+      .then((res: any) => {
         if (res) {
           console.log(res);
           router?.push("/expenses");
@@ -193,10 +188,11 @@ console.log(editexpense,"editexp");
                           name="date"
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="date"
-                          
-                          defaultValue={new Date(editexpense?.date||new Date())
-                            .toISOString()
-                            .split("T")[0]}
+                          defaultValue={
+                            new Date(editexpense?.date || new Date())
+                              .toISOString()
+                              .split("T")[0]
+                          }
                         />
                       </div>
                     </div>
@@ -242,7 +238,7 @@ console.log(editexpense,"editexp");
                       </p>
                       <div className="flex items-center">
                         <input
-                        defaultValue={editexpense?.invoiceNumber}
+                          defaultValue={editexpense?.invoiceNumber}
                           name="invoiceNumber"
                           className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                           type="number"
@@ -254,7 +250,7 @@ console.log(editexpense,"editexp");
                       <p>Notes</p>
                       <div className=" flex  w-80 ">
                         <textarea
-                        defaultValue={editexpense?.notes}
+                          defaultValue={editexpense?.notes}
                           name="notes"
                           placeholder="Description "
                           className="focus:outline-none rounded-md  text-xs w-64 text-black p-2"
