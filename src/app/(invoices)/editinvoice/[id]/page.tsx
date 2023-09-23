@@ -51,13 +51,15 @@ const GetStarted = () => {
       });
   }, []);
   const [Invoice, setInvoice] = useState<any>();
+  console.log(Invoice,"myinv");
+  
   const [paymentMode, setpaymentMode] = useState(Invoice?.paymentMode=="paid"?true:false);
   const router = useRouter();
   const slectRef = useRef<HTMLDivElement>(null);
   const [customerId, setCustomerId] = useState("");
   const [customerEmail, setcustomerEmail] = useState("");
-  let invoiceItems: IItem[] = Invoice?.itemDetails ? [...Invoice.itemDetails] : [];
-  const [items, setItems] = useState<IItem[]>(invoiceItems);
+ 
+  const [items, setItems] = useState<IItem[]>(Invoice.itemDetails);
 
   const [subtotal, setsubTotal] = useState(Invoice?.subTotal||0);
   const [discount, setdiscount] = useState(Invoice?.discount||0);
