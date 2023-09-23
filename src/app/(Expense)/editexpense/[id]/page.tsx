@@ -35,6 +35,8 @@ const GetStarted = () => {
   } | null>({ field: "", errors: [""] });
 
 const [editexpense, setexpense] = useState<IExpense>()
+console.log(editexpense);
+
 
 
   useEffect(() => {
