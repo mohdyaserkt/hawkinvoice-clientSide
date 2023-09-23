@@ -58,12 +58,13 @@ const GetStarted = () => {
   const slectRef = useRef<HTMLDivElement>(null);
   const [customerId, setCustomerId] = useState("");
   const [customerEmail, setcustomerEmail] = useState("");
+   const [items, setItems] = useState<IItem[]>([]);
 
    useEffect(() => {
     handleGetInoviceById(id as string)
       .then(({ data }: any) => {
         setInvoice(data.invoice as IInvoice);
-       
+       setItems(Invoice?.itemDetails)
       })
       .catch((err) => {
         console.log(err);
@@ -71,7 +72,7 @@ const GetStarted = () => {
       });
   }, []);
  
-  const [items, setItems] = useState<IItem[]>(Invoice.itemDetails);
+ 
 
   const [subtotal, setsubTotal] = useState(Invoice?.subTotal||0);
   const [discount, setdiscount] = useState(Invoice?.discount||0);
