@@ -33,6 +33,7 @@ import { handleCreateNewInovice } from "@/utils/Invoice/createNewInvoice";
 import { IInvoice, IItem } from "../../../../../types/invoice/createinvoice";
 import { handleGetInoviceById } from "@/utils/Invoice/getInvoiceById";
 import { formatDate } from "@/utils/Invoice/getInvoices";
+import { handleEditInvoice } from "@/utils/Invoice/editInvoice";
 
 const GetStarted = () => {
   const params = useParams();
@@ -141,7 +142,7 @@ const GetStarted = () => {
     console.log(inputObject);
 
     let invoice = inputObject as unknown as IInvoice;
-    handleCreateNewInovice({
+    handleEditInvoice({
       invoice,
       setError,
     })

@@ -22,6 +22,7 @@ import { handleCreateNewExpense } from "@/utils/Expense/createNewExpense";
 import { IExpense } from "../../../../../types/Expense/createNewExpense";
 import { handleGetExpenseById } from "@/utils/Expense/getExpenseById";
 import { formatDate } from "@/utils/Invoice/getInvoices";
+import { handleEditExpense } from "@/utils/Expense/editExpense";
 
 const GetStarted = () => {
 
@@ -33,7 +34,7 @@ const GetStarted = () => {
     errors: string[];
   } | null>({ field: "", errors: [""] });
 
-const [expense, setexpense] = useState<IExpense>()
+const [editexpense, setexpense] = useState<IExpense>()
 
 
   useEffect(() => {
@@ -66,13 +67,13 @@ const [expense, setexpense] = useState<IExpense>()
     formData.forEach((value, key) => {
       inputObject[key] = String(value);
     });
-
+    inputObject.id=editexpense?.id||''
     let expense = inputObject as unknown as IExpense;
-    handleCreateNewExpense({
+    handleEditExpense({
       expense,
       setError,
     })
-      .then((res: any) => {
+    .then((res: any) => {
         if (res) {
           console.log(res);
           router?.push("/expenses");
@@ -190,7 +191,7 @@ const [expense, setexpense] = useState<IExpense>()
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="date"
                           
-                          defaultValue={formatDate(expense?.date||new Date())}
+                          defaultValue={formatDate(editexpense?.date||new Date())}
                         />
                       </div>
                     </div>
@@ -204,7 +205,7 @@ const [expense, setexpense] = useState<IExpense>()
                         <select
                           name="categoryName"
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2 bg-white"
-                          value={expense?.categoryName}
+                          value={editexpense?.categoryName}
                         >
                           <option value="df">fires</option>
                           <option value="ds">dskf</option>
@@ -217,7 +218,7 @@ const [expense, setexpense] = useState<IExpense>()
                       <div>
                         <input
                           name="amount"
-                          defaultValue={expense?.amount}
+                          defaultValue={editexpense?.amount}
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
                         />
@@ -236,7 +237,7 @@ const [expense, setexpense] = useState<IExpense>()
                       </p>
                       <div className="flex items-center">
                         <input
-                        defaultValue={expense?.invoiceNumber}
+                        defaultValue={editexpense?.invoiceNumber}
                           name="invoiceNumber"
                           className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                           type="number"
@@ -248,7 +249,7 @@ const [expense, setexpense] = useState<IExpense>()
                       <p>Notes</p>
                       <div className=" flex  w-80 ">
                         <textarea
-                        defaultValue={expense?.notes}
+                        defaultValue={editexpense?.notes}
                           name="notes"
                           placeholder="Description "
                           className="focus:outline-none rounded-md  text-xs w-64 text-black p-2"
