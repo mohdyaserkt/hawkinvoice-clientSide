@@ -505,6 +505,8 @@ const GetStarted = () => {
                       </div>
                     </div>
                   </div> */}
+
+                  
                 </div>
               </div>
             </div>
