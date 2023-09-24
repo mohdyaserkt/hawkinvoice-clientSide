@@ -664,6 +664,39 @@ const GetStarted = () => {
                         </tbody>
                       </table>
                     </div>
+                    <div>
+                      <div>
+                        <div>
+                          <p>Salesperson:</p>
+                          <p>Alfie Solomons</p>
+                        </div>
+                        <div>
+                          <p>Thanks for your business</p>
+                        </div>
+                      </div>
+                      <div>
+                        <div>
+                          <p>Subtotal:</p>
+                          <p>$154.25</p>
+                        </div>
+                        <div>
+                          <p>Discount:</p>
+                          <p>$00.00</p>
+                        </div>
+                        <div>
+                          <p>Tax:</p>
+                          <p>$50.00</p>
+                        </div>
+                        <div>
+                          <p>Total:</p>
+                          <p>$204.25</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div><p>Note:</p>
+                      <p>It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!</p></div>
+                    </div>
                   </div>
                 </div>
               </div>
