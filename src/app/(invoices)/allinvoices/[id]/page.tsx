@@ -507,14 +507,14 @@ const GetStarted = () => {
                     </div>
                   </div> */}
 
-                  <div className="bg-white rounded-xl p-8">
-                    <div className="flex justify-between">
-                      <div>
+                  <div className="bg-white rounded-xl w-[1035px] text-gray-900 p-8">
+                    <div className="flex justify-between border-b">
+                      <div className="mb-6">
                         <div className="flex items-center">
                           <Image
-                          className="rounded-xl"
+                            className="rounded-xl"
                             width={80}
-                            height={80  }
+                            height={80}
                             src={
                               "https://img.freepik.com/free-vector/abstract-logo-flame-shape_1043-44.jpg"
                             }
@@ -522,20 +522,24 @@ const GetStarted = () => {
                           ></Image>
                           <h2 className="text-2xl">sneat</h2>
                         </div>
-                        <div>
+                        <div className="text-[15px]">
                           <p>Office 149, 450 South Brand Brooklyn</p>
                           <p>San Diego County, CA 91905, USA</p>
                           <p>+1 (123) 456 7891, +44 (876) 543 2198</p>
                         </div>
                       </div>
-                      <div>
-                        <h1>Invoice #3492</h1>
-                        <p>Date Issues:25/08/2020</p>
-                        <p>Date Due:29/08/2020</p>
+                      <div className="flex flex-col gap-[6px]">
+                        <h1 className="font-semibold text-[22px]">
+                          Invoice #3492
+                        </h1>
+                        <div className="flex flex-col  text-[15px]">
+                          <p >Date Issues:25/08/2020</p>
+                          <p>Date Due:29/08/2020</p>
+                        </div>
                       </div>
                     </div>
 
-                    <div className="flex">
+                    <div className="flex justify-between">
                       <div>
                         <div>
                           <h1>Invoice To:</h1>
