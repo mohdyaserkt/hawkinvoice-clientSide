@@ -252,7 +252,7 @@ const GetStarted = () => {
                   ))}
                 </div>
               </div>
-              <div ref={printableRef} className="w-full">
+              <div ref={printableRef} className="w-full overflow-y-auto" style={{ maxHeight: "calc(100vh - 47px)" }}>
                 <div className="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto my-4 sm:my-10 flex justify-center items-center">
                   {/*<div className="mb-5 pb-5 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
                     <div>
