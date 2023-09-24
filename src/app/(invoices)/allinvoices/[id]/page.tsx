@@ -692,10 +692,10 @@ const GetStarted = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="border-t">
-                      <div className="flex gap-1 text-[15px] items-center ">
-                        <p>Note:</p>
-                        <p>
+                    <div className="border-t items-center">
+                      <div className="flex gap-1  items-center ">
+                        <p className="text-base">Note:</p>
+                        <p className="text-[14px]">
                           It was a pleasure working with you and your team. We
                           hope you will keep us in mind for future freelance
                           projects. Thank You!
