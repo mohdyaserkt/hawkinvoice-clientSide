@@ -25,6 +25,7 @@ import { IInvoice } from "../../../../../types/invoice/createinvoice";
 import DueDateComponent from "@/components/invoice/allInvoices/dueDateComponent";
 import { useParams } from "next/navigation";
 import { handleGetInoviceById } from "@/utils/Invoice/getInvoiceById";
+import Image from "next/image";
 
 const GetStarted = () => {
   const [myInvoices, setmyInvoices] = useState([]);
@@ -509,12 +510,42 @@ const GetStarted = () => {
                   <div>
                     <div>
                       <div>
-                        
+                        <Image
+                          src={
+                            "https://img.freepik.com/free-vector/abstract-logo-flame-shape_1043-44.jpg"
+                          }
+                          alt={"logo"}
+                        ></Image>
+                        <h2>sneat</h2>
                       </div>
-
+                      <div>
+                        <p>Office 149, 450 South Brand Brooklyn</p>
+                        <p>San Diego County, CA 91905, USA</p>
+                        <p>+1 (123) 456 7891, +44 (876) 543 2198</p>
+                      </div>
                     </div>
                     <div>
+                      <h1>Invoice #3492</h1>
+                      <p>Date Issues:25/08/2020</p>
+                      <p>Date Due:29/08/2020</p>
+                    </div>
+                  </div>
 
+                  <div>
+                    <div>
+                      <div>
+                        <h1>Invoice To:</h1>
+                      </div>
+                      <div>
+                        <p>Thomas shelby</p>
+                        <p>Shelby Company Limited</p>
+                        <p>Small Heath, B10 0HF, UK</p>
+                        <p>718-986-6062</p>
+                        <p>peakyFBlinders@gmail.com</p>
+                      </div>
+                    </div>
+                    <div>
+                      <div>h</div>
                     </div>
                   </div>
                 </div>
