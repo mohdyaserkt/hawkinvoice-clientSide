@@ -545,7 +545,31 @@ const GetStarted = () => {
                       </div>
                     </div>
                     <div>
-                      <div>h</div>
+                      <div>
+                        <h1>Bill To:</h1>
+                      </div>
+                      <div>
+                        <div>
+                          <p>Total Due:</p>
+                          <p>$12,110.55</p>
+                        </div>
+                        <div>
+                          <p>Bank name:</p>
+                          <p>American Bank</p>
+                        </div>
+                        <div>
+                          <p>Country:</p>
+                          <p>United States</p>
+                        </div>
+                        <div>
+                          <p>IBAN:</p>
+                          <p>ETD95476213874685</p>
+                        </div>
+                        <div>
+                          <p>SWIFT code:</p>
+                          <p>BR91905</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
