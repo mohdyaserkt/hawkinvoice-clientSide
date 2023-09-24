@@ -571,7 +571,6 @@ const GetStarted = () => {
                             <p>ETD95476213874685</p>
                             <p>BR91905</p>
                           </div>
-                          
                         </div>
                       </div>
                     </div>
@@ -668,9 +667,9 @@ const GetStarted = () => {
                         </tbody>
                       </table>
                     </div>
-                    <div className="flex">
+                    <div className="flex justify-between">
                       <div>
-                        <div>
+                        <div className="flex">
                           <p>Salesperson:</p>
                           <p>Alfie Solomons</p>
                         </div>
@@ -681,18 +680,14 @@ const GetStarted = () => {
                       <div>
                         <div>
                           <p>Subtotal:</p>
-                          <p>$154.25</p>
-                        </div>
-                        <div>
                           <p>Discount:</p>
-                          <p>$00.00</p>
-                        </div>
-                        <div>
                           <p>Tax:</p>
-                          <p>$50.00</p>
+                          <p>Total:</p>
                         </div>
                         <div>
-                          <p>Total:</p>
+                          <p>$154.25</p>
+                          <p>$00.00</p>
+                          <p>$50.00</p>
                           <p>$204.25</p>
                         </div>
                       </div>
