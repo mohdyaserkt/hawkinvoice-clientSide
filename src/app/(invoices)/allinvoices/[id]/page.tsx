@@ -667,8 +667,8 @@ const GetStarted = () => {
                         </tbody>
                       </table>
                     </div>
-                    <div className="flex justify-between">
-                      <div>
+                    <div className="flex justify-between my-8">
+                      <div className="text-[15px]">
                         <div className="flex">
                           <p>Salesperson:</p>
                           <p>Alfie Solomons</p>
@@ -677,14 +677,14 @@ const GetStarted = () => {
                           <p>Thanks for your business</p>
                         </div>
                       </div>
-                      <div>
-                        <div>
+                      <div className="flex items-center gap-10 ">
+                        <div className="flex flex-col gap-2 text-sm">
                           <p>Subtotal:</p>
                           <p>Discount:</p>
                           <p>Tax:</p>
                           <p>Total:</p>
                         </div>
-                        <div>
+                        <div className="flex flex-col gap-2 text-sm">
                           <p>$154.25</p>
                           <p>$00.00</p>
                           <p>$50.00</p>
