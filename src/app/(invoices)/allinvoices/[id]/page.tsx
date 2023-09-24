@@ -692,8 +692,8 @@ const GetStarted = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="border-b">
-                      <div>
+                    <div className="border-t">
+                      <div className="flex gap-1 text-[15px] items-center ">
                         <p>Note:</p>
                         <p>
                           It was a pleasure working with you and your team. We
