@@ -571,6 +571,99 @@ const GetStarted = () => {
                         </div>
                       </div>
                     </div>
+                    <div>
+                      <table className="min-w-full">
+                        <thead>
+                          <tr>
+                            <th className="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                              ITEM
+                            </th>
+                            <th className="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                              DESCRIPTION
+                            </th>
+                            <th className="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                              COST
+                            </th>
+                            <th className="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                              QTY
+                            </th>
+                            <th className="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                              PRICE
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody className="bg-white">
+                          <tr>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              Vuexy Admin Template
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              HTML Admin Template
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              $32
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              1
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              $32.00
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              Frest Admin Template
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              Angular Admin Template
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              $22
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              1
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              $22.00
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              Apex Admin Template
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              HTML Admin Template
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              $17
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              2
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              $34.00
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              Robust Admin Template
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              React Admin Template
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              $66
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              1
+                            </td>
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                              $66.00
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
