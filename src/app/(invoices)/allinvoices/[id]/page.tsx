@@ -539,12 +539,12 @@ const GetStarted = () => {
                       </div>
                     </div>
 
-                    <div className="flex justify-between">
-                      <div>
+                    <div className="flex justify-between my-6">
+                      <div className="flex flex-col gap-3">
                         <div>
-                          <h1>Invoice To:</h1>
+                          <h1 className="text-[15px]">Invoice To:</h1>
                         </div>
-                        <div>
+                        <div className="text-sm flex flex-col gap-1">
                           <p>Thomas shelby</p>
                           <p>Shelby Company Limited</p>
                           <p>Small Heath, B10 0HF, UK</p>
@@ -554,26 +554,26 @@ const GetStarted = () => {
                       </div>
                       <div>
                         <div>
-                          <h1>Bill To:</h1>
+                          <h1 className="text-[15px]">Bill To:</h1>
                         </div>
-                        <div>
-                          <div>
+                        <div className="text-sm">
+                          <div className="flex">
                             <p>Total Due:</p>
                             <p>$12,110.55</p>
                           </div>
-                          <div>
+                          <div className="flex">
                             <p>Bank name:</p>
                             <p>American Bank</p>
                           </div>
-                          <div>
+                          <div className="flex">
                             <p>Country:</p>
                             <p>United States</p>
                           </div>
-                          <div>
+                          <div className="flex">
                             <p>IBAN:</p>
                             <p>ETD95476213874685</p>
                           </div>
-                          <div>
+                          <div className="flex">
                             <p>SWIFT code:</p>
                             <p>BR91905</p>
                           </div>
