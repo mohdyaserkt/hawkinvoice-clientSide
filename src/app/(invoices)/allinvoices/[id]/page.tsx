@@ -533,13 +533,13 @@ const GetStarted = () => {
                           Invoice #3492
                         </h1>
                         <div className="flex flex-col  text-[15px]">
-                          <p >Date Issues:25/08/2020</p>
+                          <p>Date Issues:25/08/2020</p>
                           <p>Date Due:29/08/2020</p>
                         </div>
                       </div>
                     </div>
 
-                    <div className="flex justify-between my-6">
+                    <div className="flex gap-60 my-8">
                       <div className="flex flex-col gap-3">
                         <div>
                           <h1 className="text-[15px]">Invoice To:</h1>
@@ -552,37 +552,32 @@ const GetStarted = () => {
                           <p>peakyFBlinders@gmail.com</p>
                         </div>
                       </div>
-                      <div>
+                      <div className="flex flex-col gap-3">
                         <div>
                           <h1 className="text-[15px]">Bill To:</h1>
                         </div>
-                        <div className="text-sm">
-                          <div className="flex">
+                        <div className="text-sm flex gap-5">
+                          <div className="flex flex-col gap-1">
                             <p>Total Due:</p>
-                            <p>$12,110.55</p>
-                          </div>
-                          <div className="flex">
                             <p>Bank name:</p>
-                            <p>American Bank</p>
-                          </div>
-                          <div className="flex">
                             <p>Country:</p>
-                            <p>United States</p>
-                          </div>
-                          <div className="flex">
                             <p>IBAN:</p>
-                            <p>ETD95476213874685</p>
-                          </div>
-                          <div className="flex">
                             <p>SWIFT code:</p>
+                          </div>
+                          <div className="flex flex-col gap-1">
+                            <p>$12,110.55</p>
+                            <p>American Bank</p>
+                            <p>United States</p>
+                            <p>ETD95476213874685</p>
                             <p>BR91905</p>
                           </div>
+                          
                         </div>
                       </div>
                     </div>
                     <div>
                       <table className="min-w-full">
-                        <thead>
+                        <thead className="text-xs">
                           <tr>
                             <th className="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                               ITEM
@@ -601,7 +596,7 @@ const GetStarted = () => {
                             </th>
                           </tr>
                         </thead>
-                        <tbody className="bg-white">
+                        <tbody className="bg-white text-[15px]">
                           <tr>
                             <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                               Vuexy Admin Template
