@@ -511,6 +511,8 @@ const GetStarted = () => {
                     <div>
                       <div>
                         <Image
+                        width={20}
+                        height={20}
                           src={
                             "https://img.freepik.com/free-vector/abstract-logo-flame-shape_1043-44.jpg"
                           }
