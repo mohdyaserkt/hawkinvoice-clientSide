@@ -507,71 +507,72 @@ const GetStarted = () => {
                     </div>
                   </div> */}
 
-                  <div className="bg-white">
+                  <div className="bg-white rounded-xl p-8">
+                    <div className="flex justify-between">
+                      <div>
+                        <div className="flex items-center">
+                          <Image
+                          className="rounded-xl"
+                            width={80}
+                            height={80  }
+                            src={
+                              "https://img.freepik.com/free-vector/abstract-logo-flame-shape_1043-44.jpg"
+                            }
+                            alt={"logo"}
+                          ></Image>
+                          <h2 className="text-2xl">sneat</h2>
+                        </div>
+                        <div>
+                          <p>Office 149, 450 South Brand Brooklyn</p>
+                          <p>San Diego County, CA 91905, USA</p>
+                          <p>+1 (123) 456 7891, +44 (876) 543 2198</p>
+                        </div>
+                      </div>
+                      <div>
+                        <h1>Invoice #3492</h1>
+                        <p>Date Issues:25/08/2020</p>
+                        <p>Date Due:29/08/2020</p>
+                      </div>
+                    </div>
 
-                  <div>
-                    <div>
-                      <div>
-                        <Image
-                        width={30}
-                        height={30}
-                          src={
-                            "https://img.freepik.com/free-vector/abstract-logo-flame-shape_1043-44.jpg"
-                          }
-                          alt={"logo"}
-                        ></Image>
-                        <h2>sneat</h2>
-                      </div>
-                      <div>
-                        <p>Office 149, 450 South Brand Brooklyn</p>
-                        <p>San Diego County, CA 91905, USA</p>
-                        <p>+1 (123) 456 7891, +44 (876) 543 2198</p>
-                      </div>
-                    </div>
-                    <div>
-                      <h1>Invoice #3492</h1>
-                      <p>Date Issues:25/08/2020</p>
-                      <p>Date Due:29/08/2020</p>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div>
-                      <div>
-                        <h1>Invoice To:</h1>
-                      </div>
-                      <div>
-                        <p>Thomas shelby</p>
-                        <p>Shelby Company Limited</p>
-                        <p>Small Heath, B10 0HF, UK</p>
-                        <p>718-986-6062</p>
-                        <p>peakyFBlinders@gmail.com</p>
-                      </div>
-                    </div>
-                    <div>
-                      <div>
-                        <h1>Bill To:</h1>
-                      </div>
+                    <div className="flex">
                       <div>
                         <div>
-                          <p>Total Due:</p>
-                          <p>$12,110.55</p>
+                          <h1>Invoice To:</h1>
                         </div>
                         <div>
-                          <p>Bank name:</p>
-                          <p>American Bank</p>
+                          <p>Thomas shelby</p>
+                          <p>Shelby Company Limited</p>
+                          <p>Small Heath, B10 0HF, UK</p>
+                          <p>718-986-6062</p>
+                          <p>peakyFBlinders@gmail.com</p>
+                        </div>
+                      </div>
+                      <div>
+                        <div>
+                          <h1>Bill To:</h1>
                         </div>
                         <div>
-                          <p>Country:</p>
-                          <p>United States</p>
-                        </div>
-                        <div>
-                          <p>IBAN:</p>
-                          <p>ETD95476213874685</p>
-                        </div>
-                        <div>
-                          <p>SWIFT code:</p>
-                          <p>BR91905</p>
+                          <div>
+                            <p>Total Due:</p>
+                            <p>$12,110.55</p>
+                          </div>
+                          <div>
+                            <p>Bank name:</p>
+                            <p>American Bank</p>
+                          </div>
+                          <div>
+                            <p>Country:</p>
+                            <p>United States</p>
+                          </div>
+                          <div>
+                            <p>IBAN:</p>
+                            <p>ETD95476213874685</p>
+                          </div>
+                          <div>
+                            <p>SWIFT code:</p>
+                            <p>BR91905</p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -668,7 +669,7 @@ const GetStarted = () => {
                         </tbody>
                       </table>
                     </div>
-                    <div>
+                    <div className="flex">
                       <div>
                         <div>
                           <p>Salesperson:</p>
@@ -698,10 +699,15 @@ const GetStarted = () => {
                       </div>
                     </div>
                     <div>
-                      <div><p>Note:</p>
-                      <p>It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!</p></div>
+                      <div>
+                        <p>Note:</p>
+                        <p>
+                          It was a pleasure working with you and your team. We
+                          hope you will keep us in mind for future freelance
+                          projects. Thank You!
+                        </p>
+                      </div>
                     </div>
-                  </div>
                   </div>
                 </div>
               </div>
