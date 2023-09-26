@@ -252,13 +252,13 @@ const GetStarted = () => {
                   ))}
                 </div>
               </div>
-              <div ref={printableRef} className="w-full overflow-y-auto" style={{ maxHeight: "calc(100vh - 47px)" }}>
+              <div ref={printableRef} className="w-full overflow-y-auto" style={{ maxHeight: "calc(100vh - 47px)" }}>      
                 <div className="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto my-4 sm:my-10 flex justify-center items-center">
                   {/*<div className="mb-5 pb-5 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
                     <div>
                       <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">
                         Invoice
-                      </h2>
+                      </h2>   helooooooooooooooooooooooooooooooooooo
                     </div>
                     <div className="inline-flex gap-x-2">
                       <a
