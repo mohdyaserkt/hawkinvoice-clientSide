@@ -124,7 +124,7 @@ const getStarted = () => {
               </div>
             </div>
 
-            <div className="pt-7 pl-16">
+            <div className="pt-7 pl-16 flex flex-col gap-5">
               <div className="h-52 w-[998px] rounded-lg">
                 <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary"></div>
                 <div className="w-full h-[67px] bg-orange-500  border-b border-x"></div>
@@ -156,6 +156,12 @@ const getStarted = () => {
                   <p className="text-secondary text-xs">Above 45 days</p>
                   </div>
                 </div>
+              </div>
+
+
+
+              <div className="h-[363px] w-[998px] rounded-lg bg-yellow-300">
+
               </div>
             </div>
           </div>
