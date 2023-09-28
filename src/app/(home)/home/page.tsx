@@ -103,12 +103,12 @@ const getStarted = () => {
           </div>
           <div className="w-full">
             <div className="p-5 flex justify-between w-full border-r-[1px] border-b-[1px] ">
-              <div className="text-white">
+              <div className="text-white flex">
                 <div className="w-12 h-12">
-                  <Image width={49} height={49}  alt="organization Logo" className="object-cover" src={"https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=640&q=80"} />
+                  <Image width={50} height={50}  alt="organization Logo" className="object-cover" src={"https://cdn.w600.comps.canstockphoto.com/your-logo-here-placeholder-symbol-vector-eps-vector_csp84465644.jpg"} />
                 </div>
-                <div>
-                  <h2 className="text-lg">Hello, User Name</h2>
+                <div className="flex flex-col gap-1">
+                  <h2 className="">Hello, User Name</h2>
                   <p>Organization Name</p>
 
                 </div>
