@@ -105,20 +105,31 @@ const getStarted = () => {
             <div className="p-5 flex justify-between w-full border-r-[1px] border-b-[1px] ">
               <div className="text-white flex gap-3">
                 <div className="w-12 h-12">
-                  <Image width={50} height={50}  alt="organization Logo" className="object-cover rounded-lg" src={"https://cdn.w600.comps.canstockphoto.com/your-logo-here-placeholder-symbol-vector-eps-vector_csp84465644.jpg"} />
+                  <Image
+                    width={50}
+                    height={50}
+                    alt="organization Logo"
+                    className="object-cover rounded-lg"
+                    src={
+                      "https://cdn.w600.comps.canstockphoto.com/your-logo-here-placeholder-symbol-vector-eps-vector_csp84465644.jpg"
+                    }
+                  />
                 </div>
                 <div className="items-center">
                   <h2 className="text-lg">Hello, User Name</h2>
-                  <h2 className="text-[13px] text-secondary">Organization Name</h2>
-
+                  <h2 className="text-[13px] text-secondary">
+                    Organization Name
+                  </h2>
                 </div>
               </div>
             </div>
 
             <div className="pt-7 pl-16">
-              <div className="h-52 w-[998px]">
-                
+              <div className="h-52 w-[998px] rounded-lg">
+                <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary"></div>
+                <div className="w-full h-[67px] bg-orange-500  border-b border-x"></div>
 
+                <div className="w-full h-[92px] bg-red-900 rounded-b-lg border-b border-x"></div>
               </div>
             </div>
           </div>
