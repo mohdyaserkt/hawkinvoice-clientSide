@@ -18,6 +18,7 @@ import {
 import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
+import Image from "next/image";
 
 const getStarted = () => {
   const router = useRouter();
@@ -65,7 +66,7 @@ const getStarted = () => {
             </div>
           </div>
         </nav>
-        <div className="flex">
+        <div className="flex" style={{ height: "calc(100vh - 47px)" }}>
           <div className=" w-56 flex flex-col gap-3 py-3 px-2 border ">
             <div className="flex items-center  h-7 rounded-lg space-x-2">
               <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
@@ -103,16 +104,20 @@ const getStarted = () => {
           <div className="w-full">
             <div className="p-5 flex justify-between w-full border-r-[1px] border-b-[1px] ">
               <div className="text-white">
-                <h2 className="text-xl">New Item</h2>
+                <div>
+                  <Image className="w-12 h-12" alt="organization Logo" src={"https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=640&q=80"} />
+                </div>
+                <div>
+                  <h2 className="text-lg">Hello, User Name</h2>
+                  <p>Organization Name</p>
+
+                </div>
               </div>
             </div>
 
             <div className="pt-7 pl-16">
               <div>
-                <form
-                  
-                  className="text-[13px] text-white"
-                >
+                <form className="text-[13px] text-white">
                   <div className="flex flex-col gap-7">
                     <div className="flex space-x-28">
                       <p>Type</p>
@@ -121,7 +126,8 @@ const getStarted = () => {
                           <input
                             name="Type"
                             className="accent-secondary"
-                            type="radio" checked
+                            type="radio"
+                            checked
                           />
                           <p>Goods</p>
                         </div>
