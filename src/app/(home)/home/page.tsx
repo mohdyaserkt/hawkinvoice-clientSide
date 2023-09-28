@@ -103,13 +103,13 @@ const getStarted = () => {
           </div>
           <div className="w-full">
             <div className="p-5 flex justify-between w-full border-r-[1px] border-b-[1px] ">
-              <div className="text-white flex">
+              <div className="text-white flex gap-3">
                 <div className="w-12 h-12">
-                  <Image width={50} height={50}  alt="organization Logo" className="object-cover" src={"https://cdn.w600.comps.canstockphoto.com/your-logo-here-placeholder-symbol-vector-eps-vector_csp84465644.jpg"} />
+                  <Image width={50} height={50}  alt="organization Logo" className="object-cover rounded-lg" src={"https://cdn.w600.comps.canstockphoto.com/your-logo-here-placeholder-symbol-vector-eps-vector_csp84465644.jpg"} />
                 </div>
-                <div className="flex flex-col gap-1">
-                  <h2 className="">Hello, User Name</h2>
-                  <p>Organization Name</p>
+                <div className="items-center">
+                  <h2 className="text-lg">Hello, User Name</h2>
+                  <h2 className="text-[13px] text-secondary">Organization Name</h2>
 
                 </div>
               </div>
