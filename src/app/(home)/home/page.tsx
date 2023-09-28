@@ -116,6 +116,10 @@ const getStarted = () => {
             </div>
 
             <div className="pt-7 pl-16">
+              <div className="h-52 w-[998px]">
+                
+
+              </div>
             </div>
           </div>
         </div>
