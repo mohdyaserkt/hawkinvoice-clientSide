@@ -129,9 +129,9 @@ const getStarted = () => {
                 <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary"></div>
                 <div className="w-full h-[67px] bg-orange-500  border-b border-x"></div>
 
-                <div className="w-full h-[92px] bg-red-900 rounded-b-lg border-b border-x flex justify-between">
+                <div className="w-full h-[92px] bg-red-900 rounded-b-lg border-b border-x flex justify-between p-3">
                   <div>
-                    <p className="text-xs text-white">current</p>
+                    <p className="text-xs text-white">CURRENT</p>
                     <h3 className="text-white text-xl">₹0.00</h3>
                   </div>
                   <div>
@@ -139,7 +139,7 @@ const getStarted = () => {
                     <h3 className="text-white text-xl">₹0.00</h3>
                     <p className="text-secondary text-xs">1-15 Days</p>
                   </div>
-                  <div>
+                  <div className="">
                     <h3 className="text-white text-xl">₹0.00</h3>
                     <p className="text-secondary text-xs">16-30 Days</p>
                   </div>
