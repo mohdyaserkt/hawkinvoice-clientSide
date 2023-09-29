@@ -20,7 +20,7 @@ import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import Image from "next/image";
 import StackedProgressBar from "@/components/home/StackedProgressBar";
-import { CProgress, CProgressStacked } from '@coreui/react';
+
 
 const getStarted = () => {
   const progressData = [
@@ -136,11 +136,7 @@ const getStarted = () => {
               <div className="h-52 w-[998px] rounded-lg">
                 <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary"></div>
                 <div className="w-full h-[67px] bg-orange-500  border-b border-x">
-                  <CProgressStacked>
-                    <CProgress value={15} />
-                    <CProgress color="success" value={30} />
-                    <CProgress color="info" value={20} />
-                  </CProgressStacked>
+                
                 </div>
 
                 <div className="w-full h-[92px] rounded-b-lg border-b border-x flex justify-around p-3 items-center">
