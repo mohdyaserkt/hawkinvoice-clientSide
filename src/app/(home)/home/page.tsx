@@ -133,9 +133,9 @@ const getStarted = () => {
             <div className="pt-7 pl-16 flex flex-col gap-5">
               <div className="h-52 w-[998px] rounded-lg">
                 <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary"></div>
-                <div className="w-full h-[67px] bg-orange-500  border-b border-x">
-                  <div className="relative pt-1">
-                    <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-amber-200">
+                <div className="w-full h-[67px]  border-b border-x">
+                  <div className="relative pt-1 px-2">
+                    <div className="overflow-hidden h-3 mb-4 text-xs flex rounded bg-amber-200">
                       <div
                         style={{ width: "10%" }}
                         className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"
