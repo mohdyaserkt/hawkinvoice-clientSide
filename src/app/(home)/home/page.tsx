@@ -19,8 +19,6 @@ import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import Image from "next/image";
-import StackedProgressBar from "@/components/home/StackedProgressBar";
-
 
 const getStarted = () => {
   const progressData = [
@@ -136,7 +134,22 @@ const getStarted = () => {
               <div className="h-52 w-[998px] rounded-lg">
                 <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary"></div>
                 <div className="w-full h-[67px] bg-orange-500  border-b border-x">
-                
+                  <div className="relative pt-1">
+                    <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-amber-200">
+                      <div
+                        style={{ width: "10%" }}
+                        className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"
+                      ></div>
+                      <div
+                        style={{ width: "15%" }}
+                        className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-orange-500"
+                      ></div>
+                      <div
+                        style={{ width: "25%" }}
+                        className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-amber-500"
+                      ></div>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="w-full h-[92px] rounded-b-lg border-b border-x flex justify-around p-3 items-center">
