@@ -134,6 +134,7 @@ const getStarted = () => {
               <div className="h-52 w-[998px] rounded-lg">
                 <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary"></div>
                 <div className="w-full h-[67px]  border-b border-x">
+                  <p>Total Receivables ₹3,550.00</p>
                   <div className="relative pt-1 px-2">
                     <div className="overflow-hidden h-3 mb-4 text-xs flex rounded bg-amber-200">
                       <div
