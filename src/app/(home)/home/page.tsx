@@ -19,8 +19,17 @@ import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import Image from "next/image";
+import StackedProgressBar from "@/components/home/StackedProgressBar";
+
 
 const getStarted = () => {
+
+  const progressData = [
+    { color: 'blue', value: 40 },
+    { color: 'green', value: 30 },
+    { color: 'red', value: 20 },
+    { color: 'yellow', value: 10 },
+  ];
   const router = useRouter();
   return (
     <>
@@ -127,15 +136,17 @@ const getStarted = () => {
             <div className="pt-7 pl-16 flex flex-col gap-5">
               <div className="h-52 w-[998px] rounded-lg">
                 <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary"></div>
-                <div className="w-full h-[67px] bg-orange-500  border-b border-x"></div>
+                <div className="w-full h-[67px] bg-orange-500  border-b border-x">
+                <StackedProgressBar progressData={progressData} />
+                </div>
 
                 <div className="w-full h-[92px] rounded-b-lg border-b border-x flex justify-around p-3 items-center">
                   <div className="border-e pr-6">
-                  <div className="">
-                    <p className="text-xs text-white">CURRENT</p>
-                    <h3 className="text-white text-xl">₹0.00</h3>
+                    <div className="">
+                      <p className="text-xs text-white">CURRENT</p>
+                      <h3 className="text-white text-xl">₹0.00</h3>
+                    </div>
                   </div>
-                 </div>
                   <div>
                     <p className="text-xs text-white">OVERDUE</p>
                     <h3 className="text-white text-xl">₹0.00</h3>
@@ -145,24 +156,20 @@ const getStarted = () => {
                     <h3 className="text-white text-xl">₹0.00</h3>
                     <p className="text-secondary text-xs">16-30 Days</p>
                   </div>
-                  
+
                   <div>
                     <h3 className="text-white text-xl">₹0.00</h3>
                     <p className="text-secondary text-xs">Above 45 days</p>
                   </div>
-                
+
                   <div>
-                  <h3 className="text-white text-xl">₹0.00</h3>
-                  <p className="text-secondary text-xs">Above 45 days</p>
+                    <h3 className="text-white text-xl">₹0.00</h3>
+                    <p className="text-secondary text-xs">Above 45 days</p>
                   </div>
                 </div>
               </div>
 
-
-
-              <div className="h-[363px] w-[998px] rounded-lg bg-yellow-300">
-
-              </div>
+              <div className="h-[363px] w-[998px] rounded-lg bg-yellow-300"></div>
             </div>
           </div>
         </div>
