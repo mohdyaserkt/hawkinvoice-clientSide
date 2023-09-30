@@ -19,7 +19,8 @@ import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import Image from "next/image";
-import ApexCharts from 'apexcharts'
+        
+        
 
 const getStarted = () => {
   const progressData = [
