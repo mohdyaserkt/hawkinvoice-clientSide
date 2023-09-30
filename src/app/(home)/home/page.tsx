@@ -19,6 +19,7 @@ import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import Image from "next/image";
+import Example from "@/components/home/chart";
         
         
 
@@ -190,6 +191,7 @@ const getStarted = () => {
               <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary py"></div>
               <div>
                 <div>
+                <Example/>
 
                 </div>
                 <div>
