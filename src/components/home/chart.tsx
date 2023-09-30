@@ -1,75 +1,82 @@
 import React from 'react';
-import {
-  BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
-} from 'recharts';
+import { Bar } from 'react-chartjs-2';
 
-const data = [
-  {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: 'Page D',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: 'Page E',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: 'Page F',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: 'Page G',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
+import dynamic from 'next/dynamic'; // Dynamic import for the Chart.js library
+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
-const Example: React.FC = () => (
-  <ResponsiveContainer width="100%" height="100%">
-    <BarChart
-      width={500}
-      height={300}
-      data={data}
-      margin={{
-        top: 5,
-        right: 30,
-        left: 20,
-        bottom: 5,
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      <Bar dataKey="pv" fill="#8884d8" />
-      <Bar dataKey="uv" fill="#82ca9d" />
-    </BarChart>
-  </ResponsiveContainer>
-);
+const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top' as const,
+    },
+    title: {
+      display: true,
+      text: 'Chart.js Bar Chart',
+    },
+  },
+};
 
-export default Example;
+const data = {
+  labels,
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: [300, 450, 600, 350, 700, 250, 800],
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+    },
+    {
+      label: 'Dataset 2',
+      data: [200, 550, 400, 650, 300, 750, 500],
+      backgroundColor: 'rgba(53, 162, 235, 0.5)',
+    },
+    {
+      label: 'Dataset 3',
+      data: [600, 300, 750, 450, 550, 350, 800],
+      backgroundColor: 'rgba(75, 192, 192, 0.5)',
+    },
+    {
+      label: 'Dataset 4',
+      data: [450, 550, 300, 750, 500, 600, 350],
+      backgroundColor: 'rgba(255, 206, 86, 0.5)',
+    },
+    {
+      label: 'Dataset 5',
+      data: [700, 800, 350, 450, 300, 550, 600],
+      backgroundColor: 'rgba(54, 162, 235, 0.5)',
+    },
+    {
+      label: 'Dataset 6',
+      data: [250, 650, 600, 350, 700, 450, 300],
+      backgroundColor: 'rgba(153, 102, 255, 0.5)',
+    },
+    {
+      label: 'Dataset 7',
+      data: [800, 450, 550, 300, 600, 350, 750],
+      backgroundColor: 'rgba(255, 159, 64, 0.5)',
+    },
+    {
+      label: 'Dataset 8',
+      data: [500, 750, 300, 550, 600, 350, 450],
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+    },
+    {
+      label: 'Dataset 9',
+      data: [350, 600, 450, 300, 550, 750, 800],
+      backgroundColor: 'rgba(75, 192, 192, 0.5)',
+    },
+    {
+      label: 'Dataset 10',
+      data: [550, 300, 750, 450, 350, 600, 700],
+      backgroundColor: 'rgba(255, 206, 86, 0.5)',
+    },
+  ],
+};
+
+
+const BarChart = () => {
+    return <Bar options={options} data={data} />;
+  };
+  
+  export default BarChart;
+  
