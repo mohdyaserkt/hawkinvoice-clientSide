@@ -184,7 +184,7 @@ const getStarted = () => {
                 </div>
               </div>
 
-              <div className="h-[363px] w-[998px] rounded-lg bg-yellow-300">
+              <div className="h-[363px] w-[998px] rounded-lg border">
               <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary py"></div>
               <div>
                 <div>

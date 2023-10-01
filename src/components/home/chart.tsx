@@ -21,21 +21,38 @@ const ChartComponent: React.FC = () => {
 
   const options = {
     title: "Monthly Coffee Production by Country",
-    vAxis: { title: "Cups" },
-    hAxis: { title: "Month" },
+    vAxis: { 
+      title: "Cups",
+      textStyle: {
+        color: 'white', // Set vAxis text color to white
+      },
+    },
+    hAxis: {
+      title: "Month",
+      textStyle: {
+        color: 'white', // Set hAxis text color to white
+      },
+    },
+    titleTextStyle: {
+      color: 'white', // Set title text color to white
+    },
+    legend: {
+      textStyle: {
+        color: 'white', // Set legend text color to white
+      },
+    },
     seriesType: "bars",
     series: { 5: { type: "line" } },
-    backgroundColor: 'inherit'
+    backgroundColor: "#143230",
   };
 
   return (
     <Chart
       chartType="ComboChart"
       width="100%"
-      height="400px"
+      height="305px"
       data={data}
       options={options}
-      
     />
   );
 };
