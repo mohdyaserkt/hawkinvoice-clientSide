@@ -5,9 +5,9 @@ const ChartComponent: React.FC = () => {
   const data = [
     [
       "Month",
-      "Bolivia",
-      "Ecuador",
-      "Madagascar",
+      "TotalSales",
+      "TotalReceipts",
+      "TotalExpenses",
       "Papua New Guinea",
       "Rwanda",
       "Average",
@@ -21,20 +21,26 @@ const ChartComponent: React.FC = () => {
 
   const options = {
     title: "Monthly Coffee Production by Country",
-    vAxis: { 
+    vAxis: {
       title: "Cups",
+      titleTextStyle: {
+        color: 'white', // Set vAxis title text color to white
+      },
       textStyle: {
         color: 'white', // Set vAxis text color to white
       },
     },
     hAxis: {
       title: "Month",
+      titleTextStyle: {
+        color: 'white', // Set hAxis title text color to white
+      },
       textStyle: {
         color: 'white', // Set hAxis text color to white
       },
     },
     titleTextStyle: {
-      color: 'white', // Set title text color to white
+      color: 'white', // Set chart title text color to white
     },
     legend: {
       textStyle: {
@@ -49,7 +55,7 @@ const ChartComponent: React.FC = () => {
   return (
     <Chart
       chartType="ComboChart"
-      width="100%"
+      width="50%"
       height="305px"
       data={data}
       options={options}
