@@ -55,7 +55,7 @@ const ChartComponent: React.FC = () => {
   return (
     <Chart
       chartType="ComboChart"
-      width="50%"
+      width="95%"
       height="305px"
       data={data}
       options={options}
