@@ -19,6 +19,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import ChartComponent from "@/components/home/chart";
 import PieChart from "@/components/home/pichart";
+import ExpensePieChart from "@/components/home/pichart";
 
 const getStarted = () => {
   const router = useRouter();
@@ -219,7 +220,7 @@ const getStarted = () => {
               </div>
 
               <div className="mb-5 flex gap-5">
-                <div className="w-[515px] h-[433px] bg-yellow-600 rounded-lg border">
+                <div className="w-[515px] h-[433px]  rounded-lg border">
                   <div className="w-full h-[49px] bg-orange-300rounded-lg border-b rounded-t-lg bg-secondary py flex  items-center justify-between px-5">
                     <h1 className="text-base text-gray-800">
                       Your Top Expenses
@@ -234,7 +235,7 @@ const getStarted = () => {
                   </div>
 
                   <div className="w-full h-full">
-                  <PieChart/>
+                  <ExpensePieChart/>
                   </div>
                 </div>
 
