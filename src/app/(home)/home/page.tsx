@@ -243,40 +243,40 @@ const getStarted = () => {
                   <table className="w-full">
                         <thead className="text-secondary">
                           <tr >
-                            <th ></th>
-                            <th>SALES</th>
+                            <th></th>
+                            <th >SALES</th>
                             <th>RECEIPTS</th>
                             <th>DUE</th>
                             
                           </tr>
                         </thead>
-                        <tbody className="text-[#408DFB]">
-                          <tr>
-                            <td>Today</td>
+                        <tbody className="text-[#408DFB] text-center " >
+                          <tr className="mb-5">
+                            <td className="text-start">Today</td>
+                            <td >₹0.00</td>
+                            <td >₹0.00</td>
+                            <td >₹0.00</td>
+                          </tr>
+                          <tr className="mb-5">
+                            <td className="text-start">This Week</td>
                             <td>₹0.00</td>
                             <td>₹0.00</td>
                             <td>₹0.00</td>
                           </tr>
-                          <tr>
-                            <td>This Week</td>
+                          <tr className="mb-5">
+                            <td className="text-start">This Month</td>
                             <td>₹0.00</td>
                             <td>₹0.00</td>
                             <td>₹0.00</td>
                           </tr>
-                          <tr>
-                            <td>This Month</td>
+                          <tr className="mb-5">
+                            <td className="text-start">This Quarter</td>
                             <td>₹0.00</td>
                             <td>₹0.00</td>
                             <td>₹0.00</td>
                           </tr>
-                          <tr>
-                            <td>This Quarter</td>
-                            <td>₹0.00</td>
-                            <td>₹0.00</td>
-                            <td>₹0.00</td>
-                          </tr>
-                          <tr>
-                            <td>This Year</td>
+                          <tr className="mb-5">
+                            <td className="text-start">This Year</td>
                             <td>₹32,535.00</td>
                             <td>₹28,985.00</td>
                             <td>₹3,550.00</td>
