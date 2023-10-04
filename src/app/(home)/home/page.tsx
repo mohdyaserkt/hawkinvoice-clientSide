@@ -233,22 +233,24 @@ const getStarted = () => {
                   </div>
                 </div>
 
-                <div className="w-[515px] h-[433px] bg-yellow-600 rounded-lg border">
+                <div className="w-[515px] h-[433px]  rounded-lg border">
                   <div className="w-full h-[49px] bg-orange-300rounded-lg border-b rounded-t-lg bg-secondary py flex  items-center justify-between px-5">
                     <h1 className="text-base text-gray-800">
                       Sales, Receipts, and Dues
                     </h1>
                   </div>
-                  <div>
-                  <table>
-                        <thead>
-                          <tr>
+                  <div className="p-3">
+                  <table className="w-full">
+                        <thead className="text-secondary">
+                          <tr >
+                            <th ></th>
                             <th>SALES</th>
                             <th>RECEIPTS</th>
                             <th>DUE</th>
+                            
                           </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="text-[#408DFB]">
                           <tr>
                             <td>Today</td>
                             <td>₹0.00</td>
