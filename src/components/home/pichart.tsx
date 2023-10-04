@@ -17,6 +17,10 @@ const options = {
       color: "white",
     },
   },
+  chartArea: {
+    // leave room for y-axis labels
+    width: '100%'
+  },
 };
 
 const ExpensePieChart = () => (
