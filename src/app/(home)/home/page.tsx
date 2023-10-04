@@ -179,9 +179,15 @@ const getStarted = () => {
 
               <div className="h-[363px] w-[998px] rounded-lg border">
                 <div className="w-full h-[49px] bg-orange-300rounded-lg border-b rounded-t-lg bg-secondary py flex  items-center justify-between px-5">
-                  <h1 className="text-lg text-gray-800">Sales and Expenses</h1>
-                  <select name="" id="" className="bg-inherit">
-                    <option className="text-xs" value="">
+                  <h1 className="text-base text-gray-800">
+                    Sales and Expenses
+                  </h1>
+                  <select
+                    name=""
+                    id=""
+                    className="bg-inherit texts-sm text-gray-800"
+                  >
+                    <option className="text-gray-800 texts-sm" value="">
                       This Financial Year
                     </option>
                   </select>
@@ -211,12 +217,24 @@ const getStarted = () => {
                 </div>
               </div>
 
-
-
-
               <div>
-                <div className="w-[515px] h-[433px] bg-yellow-600">
+                <div className="w-[515px] h-[433px] bg-yellow-600 rounded-lg border">
+                  <div className="w-full h-[49px] bg-orange-300rounded-lg border-b rounded-t-lg bg-secondary py flex  items-center justify-between px-5">
+                    <h1 className="text-base text-gray-800">
+                      Your Top Expenses
+                    </h1>
+                    <select
+                      name=""
+                      id=""
+                      className="bg-inherit text-sm text-gray-800"
+                    >
+                      <option value="">This Month</option>
+                    </select>
+                  </div>
+                </div>
 
+                <div>
+                  {/* //forsecond */}
                 </div>
               </div>
             </div>
