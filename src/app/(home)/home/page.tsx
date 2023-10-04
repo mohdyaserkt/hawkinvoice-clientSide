@@ -215,7 +215,7 @@ const getStarted = () => {
 
 
               <div>
-                <div className="w-">
+                <div className="w-[515px] h-[433px]">
 
                 </div>
               </div>
