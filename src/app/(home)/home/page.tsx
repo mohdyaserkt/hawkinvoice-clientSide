@@ -186,13 +186,23 @@ const getStarted = () => {
 
               <div className="h-[363px] w-[998px] rounded-lg border">
               <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary py"></div>
-              <div>
-                <div>
+              <div className="flex items-center  justify-between">
+                <div className="w-full">
                 <ChartComponent/>
-
                 </div>
-                <div>
-
+                <div className="w-[200px] h-72 border-s text-white flex flex-col gap-4 justify-center items-center">
+                    <div  className="flex flex-col justify-end">
+                      <p className="text-[13px]">Total Sales</p>
+                      <h1 className="text-[19px]">₹25,450.00</h1>
+                    </div>
+                    <div  className="flex flex-col justify-end">
+                      <p className="text-[13px]">Total Receipts</p>
+                      <h1 className="text-[19px]">₹25,450.00</h1>
+                    </div>
+                    <div className="flex flex-col justify-end">
+                      <p className="text-[13px]" >Total Expenses</p>
+                      <h1 className="text-[19px]">₹5,050.00</h1>
+                    </div>
                 </div>
               </div>
               </div>
