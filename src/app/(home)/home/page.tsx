@@ -217,7 +217,7 @@ const getStarted = () => {
                 </div>
               </div>
 
-              <div>
+              <div className="mb-5 flex gap-5">
                 <div className="w-[515px] h-[433px] bg-yellow-600 rounded-lg border">
                   <div className="w-full h-[49px] bg-orange-300rounded-lg border-b rounded-t-lg bg-secondary py flex  items-center justify-between px-5">
                     <h1 className="text-base text-gray-800">
@@ -233,8 +233,13 @@ const getStarted = () => {
                   </div>
                 </div>
 
-                <div>
-                  {/* //forsecond */}
+                <div className="w-[515px] h-[433px] bg-yellow-600 rounded-lg border">
+                  <div className="w-full h-[49px] bg-orange-300rounded-lg border-b rounded-t-lg bg-secondary py flex  items-center justify-between px-5">
+                    <h1 className="text-base text-gray-800">
+                    Sales, Receipts, and Dues 
+                    </h1>
+  
+                  </div>
                 </div>
               </div>
             </div>
