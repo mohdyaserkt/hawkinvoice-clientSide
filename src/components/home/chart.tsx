@@ -3,7 +3,7 @@ import { Chart } from "react-google-charts";
 
 const ChartComponent: React.FC = () => {
   const data = [
-    ["Month", "Total Sales", "Total Receipts", "Total Expenses"],
+    ["Month", "TotalSales", "TotalReceipts", "TotalExpenses"],
     [{ v: "Apr2023", f:"Apr 2023" }, 32535, 28985, 24851],
     [{ v: "May2023", f:"May 2023" }, 0, 0, 0],
     [{ v: "Jun2023", f:"May 2023" }, 0, 0, 0],
