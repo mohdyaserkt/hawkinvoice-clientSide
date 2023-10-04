@@ -3,19 +3,19 @@ import { Chart } from "react-google-charts";
 
 const ChartComponent: React.FC = () => {
   const data = [
-    ["Month", "TotalSales", "TotalReceipts", "TotalExpenses"],
-    ["Apr2023", 32535, 28985, 24851],
-    ["May2023", 0, 0, 0],
-    ["Jun2023", 0, 0, 0],
-    ["Jul2023", 0, 0, 0],
-    ["Aug2023", 0, 0, 0],
-    ["Sep2023", 0, 0, 0],
-    ["Oct2023", 0, 0, 0],
-    ["Nov2023", 0, 0, 0],
-    ["Dec2023", 0, 0, 0],
-    ["Jan2024", 0, 0, 0],
-    ["Feb2024", 0, 0, 0],
-    ["Mar2024", 0, 0, 0],
+    ["Month", "Total Sales", "Total Receipts", "Total Expenses"],
+    [{ v: "Apr2023", f:"Apr 2023" }, 32535, 28985, 24851],
+    [{ v: "May2023", f:"May 2023" }, 0, 0, 0],
+    [{ v: "Jun2023", f:"May 2023" }, 0, 0, 0],
+    [{ v: "Jul2023", f:"May 2023" }, 0, 0, 0],
+    [{ v: "Aug2023", f:"May 2023" }, 0, 0, 0],
+    [{ v: "Sep2023", f:"May 2023" }, 0, 0, 0],
+    [{ v: "Oct2023", f:"May 2023" }, 0, 0, 0],
+    [{ v: "Nov2023", f:"May 2023" }, 0, 0, 0],
+    [{ v: "Dec2023", f:"May 2023" }, 0, 0, 0],
+    [{ v: "Jan2024", f:"May 2023" }, 0, 0, 0],
+    [{ v: "Feb2024", f:"May 2023" }, 0, 0, 0],
+    [{ v: "Mar2024", f:"May 2023" }, 0, 0, 0],
   ];
 
   const options = {
