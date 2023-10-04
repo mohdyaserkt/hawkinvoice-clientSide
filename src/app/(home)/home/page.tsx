@@ -236,9 +236,51 @@ const getStarted = () => {
                 <div className="w-[515px] h-[433px] bg-yellow-600 rounded-lg border">
                   <div className="w-full h-[49px] bg-orange-300rounded-lg border-b rounded-t-lg bg-secondary py flex  items-center justify-between px-5">
                     <h1 className="text-base text-gray-800">
-                    Sales, Receipts, and Dues 
+                      Sales, Receipts, and Dues
                     </h1>
-  
+                  </div>
+                  <div>
+                  <table>
+                        <thead>
+                          <tr>
+                            <th>SALES</th>
+                            <th>RECEIPTS</th>
+                            <th>DUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Today</td>
+                            <td>₹0.00</td>
+                            <td>₹0.00</td>
+                            <td>₹0.00</td>
+                          </tr>
+                          <tr>
+                            <td>This Week</td>
+                            <td>₹0.00</td>
+                            <td>₹0.00</td>
+                            <td>₹0.00</td>
+                          </tr>
+                          <tr>
+                            <td>This Month</td>
+                            <td>₹0.00</td>
+                            <td>₹0.00</td>
+                            <td>₹0.00</td>
+                          </tr>
+                          <tr>
+                            <td>This Quarter</td>
+                            <td>₹0.00</td>
+                            <td>₹0.00</td>
+                            <td>₹0.00</td>
+                          </tr>
+                          <tr>
+                            <td>This Year</td>
+                            <td>₹32,535.00</td>
+                            <td>₹28,985.00</td>
+                            <td>₹3,550.00</td>
+                          </tr>
+                        </tbody>
+                      </table>
                   </div>
                 </div>
               </div>
