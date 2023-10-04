@@ -18,6 +18,7 @@ import {
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import ChartComponent from "@/components/home/chart";
+import PieChart from "@/components/home/pichart";
 
 const getStarted = () => {
   const router = useRouter();
@@ -230,6 +231,10 @@ const getStarted = () => {
                     >
                       <option value="">This Month</option>
                     </select>
+                  </div>
+
+                  <div className="w-full h-full">
+                  <PieChart/>
                   </div>
                 </div>
 
