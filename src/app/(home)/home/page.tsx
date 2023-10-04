@@ -178,22 +178,27 @@ const getStarted = () => {
               </div>
 
               <div className="h-[363px] w-[998px] rounded-lg border">
-                <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary py"></div>
+                <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary py flex  items-center justify-between px-5">
+                  <h1 className="text-lg text-gray-800">Sales and Expenses</h1>
+                  <select name="" id="" className="bg-inherit">
+                    <option className="text-xs" value="">This Financial Year</option>
+                  </select>
+                </div>
                 <div className="flex items-center  justify-between">
                   <div className="w-full">
                     <ChartComponent />
                   </div>
                   <div className="w-[200px] h-72 border-s text-white flex flex-col gap-4 justify-center items-center">
                     <div className="flex flex-col justify-end">
-                      <p className="text-[13px]">Total Sales</p>
+                      <p className="text-[13px] text-[#2C8FF6]">Total Sales</p>
                       <h1 className="text-[19px]">₹25,450.00</h1>
                     </div>
                     <div className="flex flex-col justify-end">
-                      <p className="text-[13px]">Total Receipts</p>
+                      <p className="text-[13px] text-[#35BD7A]">Total Receipts</p>
                       <h1 className="text-[19px]">₹25,450.00</h1>
                     </div>
                     <div className="flex flex-col justify-end">
-                      <p className="text-[13px]">Total Expenses</p>
+                      <p className="text-[13px] text-[#F8612B]">Total Expenses</p>
                       <h1 className="text-[19px]">₹5,050.00</h1>
                     </div>
                   </div>
