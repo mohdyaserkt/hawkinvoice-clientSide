@@ -48,6 +48,11 @@ const ChartComponent: React.FC = () => {
     },
     seriesType: "bars",
     // series: { 2: { type: "line" } },
+    series: {
+      0: { color: "#2C8FF6" },    // Total Sales
+      1: { color: "#35BD7A" },  // Total Receipts
+      2: { color: "#F8612B" },   // Total Expenses
+    },
     backgroundColor: "#143230",
   };
 
