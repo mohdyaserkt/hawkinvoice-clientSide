@@ -19,14 +19,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import ChartComponent from "@/components/home/chart";
 
-
-
-
-        
-        
-
 const getStarted = () => {
-  
   const router = useRouter();
   return (
     <>
@@ -130,7 +123,7 @@ const getStarted = () => {
               </div>
             </div>
 
-            <div className="pt-7 pl-16 flex flex-col gap-5">
+            <div className="pt-7 pl-16 flex flex-col gap-11">
               <div className="h-52 w-[998px] rounded-lg">
                 <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary py"></div>
                 <div className="w-full h-[67px]  border-b border-x py-2">
@@ -185,26 +178,26 @@ const getStarted = () => {
               </div>
 
               <div className="h-[363px] w-[998px] rounded-lg border">
-              <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary py"></div>
-              <div className="flex items-center  justify-between">
-                <div className="w-full">
-                <ChartComponent/>
-                </div>
-                <div className="w-[200px] h-72 border-s text-white flex flex-col gap-4 justify-center items-center">
-                    <div  className="flex flex-col justify-end">
+                <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary py"></div>
+                <div className="flex items-center  justify-between">
+                  <div className="w-full">
+                    <ChartComponent />
+                  </div>
+                  <div className="w-[200px] h-72 border-s text-white flex flex-col gap-4 justify-center items-center">
+                    <div className="flex flex-col justify-end">
                       <p className="text-[13px]">Total Sales</p>
                       <h1 className="text-[19px]">₹25,450.00</h1>
                     </div>
-                    <div  className="flex flex-col justify-end">
+                    <div className="flex flex-col justify-end">
                       <p className="text-[13px]">Total Receipts</p>
                       <h1 className="text-[19px]">₹25,450.00</h1>
                     </div>
                     <div className="flex flex-col justify-end">
-                      <p className="text-[13px]" >Total Expenses</p>
+                      <p className="text-[13px]">Total Expenses</p>
                       <h1 className="text-[19px]">₹5,050.00</h1>
                     </div>
+                  </div>
                 </div>
-              </div>
               </div>
             </div>
           </div>
