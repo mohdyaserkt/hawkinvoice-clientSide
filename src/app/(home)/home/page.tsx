@@ -125,7 +125,7 @@ const getStarted = () => {
               </div>
             </div>
 
-            <div className="pt-7 pl-16 flex flex-col gap-11 overflow-y-auto border-b" style={{ maxHeight: "calc(100vh - 47px)" }}>
+            <div className="pt-7 pl-16 flex flex-col gap-11 overflow-y-auto border-b" style={{ maxHeight: "calc(100vh - 136px)" }}>
               <div className="h-52 w-[998px] rounded-lg">
                 <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary py"></div>
                 <div className="w-full h-[67px]  border-b border-x py-2">
