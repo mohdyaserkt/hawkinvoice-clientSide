@@ -239,50 +239,49 @@ const getStarted = () => {
                       Sales, Receipts, and Dues
                     </h1>
                   </div>
-                  <div className="p-3">
-                  <table className="w-full">
-                        <thead className="text-secondary">
-                          <tr >
-                            <th></th>
-                            <th >SALES</th>
-                            <th>RECEIPTS</th>
-                            <th>DUE</th>
-                            
-                          </tr>
-                        </thead>
-                        <tbody className="text-[#408DFB] text-center " >
-                          <tr className="mb-5">
-                            <td className="text-start">Today</td>
-                            <td >₹0.00</td>
-                            <td >₹0.00</td>
-                            <td >₹0.00</td>
-                          </tr>
-                          <tr className="mb-5">
-                            <td className="text-start">This Week</td>
-                            <td>₹0.00</td>
-                            <td>₹0.00</td>
-                            <td>₹0.00</td>
-                          </tr>
-                          <tr className="mb-5">
-                            <td className="text-start">This Month</td>
-                            <td>₹0.00</td>
-                            <td>₹0.00</td>
-                            <td>₹0.00</td>
-                          </tr>
-                          <tr className="mb-5">
-                            <td className="text-start">This Quarter</td>
-                            <td>₹0.00</td>
-                            <td>₹0.00</td>
-                            <td>₹0.00</td>
-                          </tr>
-                          <tr className="mb-5">
-                            <td className="text-start">This Year</td>
-                            <td>₹32,535.00</td>
-                            <td>₹28,985.00</td>
-                            <td>₹3,550.00</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                  <div className="p-3  flex items-center">
+                    <table className="w-full border-separate border-spacing-6">
+                      <thead className="text-secondary">
+                        <tr>
+                          <th></th>
+                          <th>SALES</th>
+                          <th>RECEIPTS</th>
+                          <th>DUE</th>
+                        </tr>
+                      </thead>
+                      <tbody className="text-[#408DFB] text-center ">
+                        <tr className="mb-5">
+                          <td className="text-start">Today</td>
+                          <td>₹0.00</td>
+                          <td>₹0.00</td>
+                          <td>₹0.00</td>
+                        </tr>
+                        <tr className="mb-5">
+                          <td className="text-start">This Week</td>
+                          <td>₹0.00</td>
+                          <td>₹0.00</td>
+                          <td>₹0.00</td>
+                        </tr>
+                        <tr className="mb-5">
+                          <td className="text-start">This Month</td>
+                          <td>₹0.00</td>
+                          <td>₹0.00</td>
+                          <td>₹0.00</td>
+                        </tr>
+                        <tr className="mb-5">
+                          <td className="text-start">This Quarter</td>
+                          <td>₹0.00</td>
+                          <td>₹0.00</td>
+                          <td>₹0.00</td>
+                        </tr>
+                        <tr className="mb-5">
+                          <td className="text-start">This Year</td>
+                          <td>₹32,535.00</td>
+                          <td>₹28,985.00</td>
+                          <td>₹3,550.00</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
