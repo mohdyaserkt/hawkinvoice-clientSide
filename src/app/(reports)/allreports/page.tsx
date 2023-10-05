@@ -15,11 +15,9 @@ import {
   AiOutlineUser,
   AiOutlineSearch,
 } from "react-icons/ai";
-
-
+import Link from "next/link";
 
 const getStarted = () => {
-
   return (
     <>
       <div className="h-screen">
@@ -102,8 +100,32 @@ const getStarted = () => {
           </div>
           <div className="w-full">
             <div className="p-5 flex justify-between w-full border-b border-e">
-              <div className="text-white"> 
+              <div className="text-white">
                 <h2 className="text-xl">Reports</h2>
+              </div>
+            </div>
+
+            <div className="w-full">
+              <div className="container mx-auto px-4">
+                <h1 className="text-4xl font-bold mt-10">Sales</h1>
+                <div className="flex flex-row mt-10 gap-10">
+                  <Link
+                    href="/sales-by-customer"
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                  >
+                    Sales by Customer
+                  </Link>
+                  <Link
+                    href="/sales-by-item"
+                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                  >
+                    Sales by Item
+                  </Link>
+                </div>
+                <div className="mt-10">
+                  <h2 className="text-3xl font-bold">250 (max) Hug</h2>
+                  <p className="mt-5">This is the best-selling item!</p>
+                </div>
               </div>
             </div>
           </div>
