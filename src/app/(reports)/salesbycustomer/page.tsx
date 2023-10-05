@@ -100,43 +100,39 @@ const getStarted = () => {
               <p className="text-sm text-white">Reports</p>
             </div>
           </div>
-          <div className="w-full flex flex-col gap-36">
+          <div className="w-full flex flex-col gap-24">
             <div className="p-5 flex justify-between w-full ">
               <div className="text-white">
                 <h2 className="text-xl">All Reports</h2>
               </div>
             </div>
 
-            <div className="w-full">
+            <div className="w-full flex flex-col gap-10">
               <div className="w-full text-white flex justify-center ">
                 <div className="text-center">
                   <h1 className="text-[17px] mb-1">organisation name</h1>
                   <h1 className="text-[22px]">Sales by Customer</h1>
                   <h1 className="text-[13px]">From 01/04/2023 To 31/03/2024</h1>
-                  
                 </div>
               </div>
 
-              <table className="w-full border-t border-white">
-              <thead className="bg-secondary text-xs font-normal">
-                <tr>
-                  <th className="border-b border-white p-2 text-center">
-                    Name
-                  </th>
-                  <th className="border-b border-white p-2 text-center">
-                  Description
-                  </th>
-                  <th className="border-b border-white p-2 text-center">
-                  Rate
-                  </th>
-                  <th className="border-b border-white p-2 text-center">
-                  Usage Unit
-                  </th>
-                 
-                </tr>
-              </thead>
-              <tbody className="text-white text-sm">
-              {/* {myCustomers.map((item: any) => (
+              <div className="w-full px-3">
+              <table className="w-full border-t border-x border-white">
+                <thead className="bg-secondary text-xs font-normal">
+                  <tr>
+                    <th className="border-b border-white p-2 text-center">
+                      Name
+                    </th>
+                    <th className="border-b border-white p-2 text-center">
+                      Invoice Count
+                    </th>
+                    <th className="border-b border-white p-2 text-center">
+                      Total Sales
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-white text-sm">
+                  {/* {myCustomers.map((item: any) => (
                 <tr className="border-b border-white" key={item.id}>
                   <td className="p-2 text-center">{item.name}</td>
                   <td className="p-2 text-center">{item.description}</td>
@@ -145,15 +141,44 @@ const getStarted = () => {
                   <Link href={`/edititem/${item.id}`}><td className="p-2 text-center">edit</td></Link>
 
                 </tr>))}  */}
-                <tr className="border-b border-white">
-                  <td className="p-2 text-center">sampleItem</td>
-                  <td className="p-2 text-center">sample Discription.ls</td>
-                  <td className="p-2 text-center">₹ 256</td>
-                  <td className="p-2 text-center">pcs</td>
-                </tr>
-              </tbody>
-            </table>
-
+                  <tr className="border-b border-white">
+                    <td className="p-2 text-center">sampleItem</td>
+                    <td className="p-2 text-center">12</td>
+                    <td className="p-2 text-center">₹ 256454</td>
+                  </tr>
+                  <tr className="border-b border-white">
+                    <td className="p-2 text-center">sampleItem</td>
+                    <td className="p-2 text-center">12</td>
+                    <td className="p-2 text-center">₹ 256454</td>
+                  </tr>
+                  <tr className="border-b border-white">
+                    <td className="p-2 text-center">sampleItem</td>
+                    <td className="p-2 text-center">12</td>
+                    <td className="p-2 text-center">₹ 256454</td>
+                  </tr>
+                  <tr className="border-b border-white">
+                    <td className="p-2 text-center">sampleItem</td>
+                    <td className="p-2 text-center">12</td>
+                    <td className="p-2 text-center">₹ 256454</td>
+                  </tr>
+                  <tr className="border-b border-white">
+                    <td className="p-2 text-center">sampleItem</td>
+                    <td className="p-2 text-center">12</td>
+                    <td className="p-2 text-center">₹ 256454</td>
+                  </tr>
+                  <tr className="border-b border-white">
+                    <td className="p-2 text-center">sampleItem</td>
+                    <td className="p-2 text-center">12</td>
+                    <td className="p-2 text-center">₹ 256454</td>
+                  </tr>
+                  <tr className="border-b border-white">
+                    <td className="p-2 text-center">sampleItem</td>
+                    <td className="p-2 text-center">12</td>
+                    <td className="p-2 text-center">₹ 256454</td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
             </div>
           </div>
         </div>
