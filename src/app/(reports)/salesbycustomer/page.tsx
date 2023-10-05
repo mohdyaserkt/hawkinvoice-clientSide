@@ -16,7 +16,7 @@ import {
   AiOutlineUser,
   AiOutlineSearch,
   AiOutlinePrinter,
-  AiOutlineDownload
+  AiOutlineDownload,
 } from "react-icons/ai";
 
 const getStarted = () => {
@@ -120,7 +120,7 @@ const getStarted = () => {
               </div>
             </div>
 
-            <div className="w-full flex flex-col gap-10">
+            <div className="w-full flex flex-col gap-10  h-screen overflow-y-auto" style={{ maxHeight: "calc(100vh - 217px)" }}>
               <div className="w-full text-white flex justify-center ">
                 <div className="text-center">
                   <h1 className="text-[17px] mb-1">organisation name</h1>
@@ -169,6 +169,47 @@ const getStarted = () => {
                       <td className="p-2 text-center">12</td>
                       <td className="p-2 text-center">₹ 256454</td>
                     </tr>
+                    <tr className="border-b border-white">
+                      <td className="p-2 text-center">sampleItem</td>
+                      <td className="p-2 text-center">12</td>
+                      <td className="p-2 text-center">₹ 256454</td>
+                    </tr>
+                    <tr className="border-b border-white">
+                      <td className="p-2 text-center">sampleItem</td>
+                      <td className="p-2 text-center">12</td>
+                      <td className="p-2 text-center">₹ 256454</td>
+                    </tr>
+                    <tr className="border-b border-white">
+                      <td className="p-2 text-center">sampleItem</td>
+                      <td className="p-2 text-center">12</td>
+                      <td className="p-2 text-center">₹ 256454</td>
+                    </tr>
+                    <tr className="border-b border-white">
+                      <td className="p-2 text-center">sampleItem</td>
+                      <td className="p-2 text-center">12</td>
+                      <td className="p-2 text-center">₹ 256454</td>
+                    </tr>
+                    <tr className="border-b border-white">
+                      <td className="p-2 text-center">sampleItem</td>
+                      <td className="p-2 text-center">12</td>
+                      <td className="p-2 text-center">₹ 256454</td>
+                    </tr>
+                    <tr className="border-b border-white">
+                      <td className="p-2 text-center">sampleItem</td>
+                      <td className="p-2 text-center">12</td>
+                      <td className="p-2 text-center">₹ 256454</td>
+                    </tr>
+                    <tr className="border-b border-white">
+                      <td className="p-2 text-center">sampleItem</td>
+                      <td className="p-2 text-center">12</td>
+                      <td className="p-2 text-center">₹ 256454</td>
+                    </tr>
+                    <tr className="border-b border-white">
+                      <td className="p-2 text-center">sampleItem</td>
+                      <td className="p-2 text-center">12</td>
+                      <td className="p-2 text-center">₹ 256454</td>
+                    </tr>
+                    
                     <tr className="border-b border-white">
                       <td className="p-2 text-center">sampleItem</td>
                       <td className="p-2 text-center">12</td>
