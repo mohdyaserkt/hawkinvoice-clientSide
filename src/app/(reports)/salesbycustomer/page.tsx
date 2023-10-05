@@ -100,7 +100,7 @@ const getStarted = () => {
               <p className="text-sm text-white">Reports</p>
             </div>
           </div>
-          <div className="w-full">
+          <div className="w-full flex flex-col gap-36">
             <div className="p-5 flex justify-between w-full ">
               <div className="text-white">
                 <h2 className="text-xl">All Reports</h2>
@@ -108,11 +108,11 @@ const getStarted = () => {
             </div>
 
             <div className="w-full">
-              <div className="w-full">
-                <div>
-                  <h1>organisation name</h1>
-                  <h1>Sales by Customer</h1>
-                  <h1>From 01/04/2023 To 31/03/2024</h1>
+              <div className="w-full text-white flex justify-center ">
+                <div className="text-center">
+                  <h1 className="text-[17px] mb-3">organisation name</h1>
+                  <h1 className="text-[22px]">Sales by Customer</h1>
+                  <h1 className="text-[13px]">From 01/04/2023 To 31/03/2024</h1>
                   
                 </div>
               </div>
