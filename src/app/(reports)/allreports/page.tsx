@@ -1,11 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   LiaFileInvoiceDollarSolid,
   LiaFileInvoiceSolid,
 } from "react-icons/lia";
 import { MdRefresh } from "react-icons/md";
-import { PiHandbag, PiCopySimple } from "react-icons/pi";
+import { PiHandbag } from "react-icons/pi";
 import { BsPlusSquareFill, BsFileEarmarkBarGraph } from "react-icons/bs";
 import { TbReceipt } from "react-icons/tb";
 import { SlOptions } from "react-icons/sl";
@@ -15,14 +15,25 @@ import {
   AiOutlineUser,
   AiOutlineSearch,
 } from "react-icons/ai";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
-import ChartComponent from "@/components/home/chart";
-import PieChart from "@/components/home/pichart";
-import ExpensePieChart from "@/components/home/pichart";
+
+import Link from "next/link";
+import { handleGetItems } from "@/utils/items/getItems";
+
 
 const getStarted = () => {
-  const router = useRouter();
+  const [myCustomers, setmyCustomers] = useState([]);
+  useEffect(() => {
+    handleGetItems()
+      .then(({data}:any) => { 
+        setmyCustomers(data.items)
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+  }, []);
+
+ 
   return (
     <>
       <div className="h-screen">
@@ -52,11 +63,12 @@ const getStarted = () => {
               <span className=" text-lg text-white ">|</span>
               <AiOutlineSetting className=" text-white" />
               <span className=" text-lg text-white ">|</span>
-              <select className="">
-                <option>Organization</option>
-                <option>Organization 2</option>
-                <option>Organization 3</option>
+              <select className="bg-blue-900 text-white focus:outline-none focus:ring focus:border-blue-300">
+                <option className="bg-blue-900">Organization</option>
+                <option className="bg-blue-900">Organization 2</option>
+                <option className="bg-blue-900">Organization 3</option>
               </select>
+
               <div className="pr-2">
                 <img
                   src="https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=900&t=st=1693152334~exp=1693152934~hmac=da365a4885d210047abff64bf790f521687c842a32793b5c0416be75b321f977"
@@ -67,17 +79,17 @@ const getStarted = () => {
             </div>
           </div>
         </nav>
-        <div className="flex" style={{ height: "calc(100vh - 47px)" }}>
+        <div className="flex">
           <div className=" w-56 flex flex-col gap-3 py-3 px-2 border ">
             <div className="flex items-center  h-7 rounded-lg space-x-2">
               <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Home</p>
             </div>
-            <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
+            <div className="flex items-center  h-7 rounded-lg space-x-2">
               <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Customers</p>
             </div>
-            <div className="flex items-center h-7 rounded-lg space-x-2">
+            <div className="flex items-center h-7 bg-secondary rounded-lg space-x-2">
               <PiHandbag className="w-4 h-4 ml-2 text-white " />
               <p className="text-sm text-white">Items</p>
             </div>
@@ -103,35 +115,56 @@ const getStarted = () => {
             </div>
           </div>
           <div className="w-full">
-            <div className="p-5 flex justify-between w-full border-r-[1px] border-b-[1px] ">
-              <div className="text-white flex gap-3">
-                <div className="w-12 h-12">
-                  <Image
-                    width={50}
-                    height={50}
-                    alt="organization Logo"
-                    className="object-cover rounded-lg"
-                    src={
-                      "https://cdn.w600.comps.canstockphoto.com/your-logo-here-placeholder-symbol-vector-eps-vector_csp84465644.jpg"
-                    }
-                  />
+            <div className="p-5 flex justify-between w-full">
+              <div className="text-white">
+                <h2 className="text-xl">All Items</h2>
+              </div>
+
+              <div className="flex space-x-2">
+                <div className="text-xs bg-secondary flex items-center text-white font-semibold px-3 py-2  rounded">
+                  <Link href='/addnewitem'><span className="mr-1">+</span> New</Link>
                 </div>
-                <div className="items-center">
-                  <h2 className="text-lg">Hello, User Name</h2>
-                  <h2 className="text-[13px] text-secondary">
-                    Organization Name
-                  </h2>
+                <div className="p-2 bg-white rounded">
+                  <SlOptions className="w-4 h-4 text-gray-800 " />
                 </div>
               </div>
             </div>
+            <table className="w-full border-t border-white">
+              <thead className="bg-secondary text-xs font-normal">
+                <tr>
+                  <th className="border-b border-white p-2 text-center">
+                    Name
+                  </th>
+                  <th className="border-b border-white p-2 text-center">
+                  Description
+                  </th>
+                  <th className="border-b border-white p-2 text-center">
+                  Rate
+                  </th>
+                  <th className="border-b border-white p-2 text-center">
+                  Usage Unit
+                  </th>
+                 
+                </tr>
+              </thead>
+              <tbody className="text-white text-sm">
+              {myCustomers.map((item: any) => (
+                <tr className="border-b border-white" key={item.id}>
+                  <td className="p-2 text-center">{item.name}</td>
+                  <td className="p-2 text-center">{item.description}</td>
+                  <td className="p-2 text-center">₹ {item.sellingPrice}</td>
+                  <td className="p-2 text-center">{item.unit}</td>
+                  <Link href={`/edititem/${item.id}`}><td className="p-2 text-center">edit</td></Link>
 
-            <div
-              className="pt-7 pl-16 flex flex-col gap-11 overflow-y-auto border-b"
-              style={{ maxHeight: "calc(100vh - 136px)" }}
-            >
-
-             
-            </div>
+                </tr>))} 
+                <tr className="border-b border-white">
+                  <td className="p-2 text-center">sampleItem</td>
+                  <td className="p-2 text-center">sample Discription.ls</td>
+                  <td className="p-2 text-center">₹ 256</td>
+                  <td className="p-2 text-center">pcs</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
