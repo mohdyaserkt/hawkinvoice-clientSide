@@ -16,24 +16,10 @@ import {
   AiOutlineSearch,
 } from "react-icons/ai";
 
-import Link from "next/link";
-import { handleGetItems } from "@/utils/items/getItems";
 
 
 const getStarted = () => {
-  const [myCustomers, setmyCustomers] = useState([]);
-  useEffect(() => {
-    handleGetItems()
-      .then(({data}:any) => { 
-        setmyCustomers(data.items)
-      })
-      .catch((err) => {
-        console.log(err);
-        alert(err);
-      });
-  }, []);
 
- 
   return (
     <>
       <div className="h-screen">
@@ -79,7 +65,7 @@ const getStarted = () => {
             </div>
           </div>
         </nav>
-        <div className="flex">
+        <div className="flex" style={{ height: "calc(100vh - 47px)" }}>
           <div className=" w-56 flex flex-col gap-3 py-3 px-2 border ">
             <div className="flex items-center  h-7 rounded-lg space-x-2">
               <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
@@ -115,56 +101,11 @@ const getStarted = () => {
             </div>
           </div>
           <div className="w-full">
-            <div className="p-5 flex justify-between w-full">
-              <div className="text-white">
-                <h2 className="text-xl">All Items</h2>
-              </div>
-
-              <div className="flex space-x-2">
-                <div className="text-xs bg-secondary flex items-center text-white font-semibold px-3 py-2  rounded">
-                  <Link href='/addnewitem'><span className="mr-1">+</span> New</Link>
-                </div>
-                <div className="p-2 bg-white rounded">
-                  <SlOptions className="w-4 h-4 text-gray-800 " />
-                </div>
+            <div className="p-5 flex justify-between w-full border-b border-e">
+              <div className="text-white"> 
+                <h2 className="text-xl">Reports</h2>
               </div>
             </div>
-            <table className="w-full border-t border-white">
-              <thead className="bg-secondary text-xs font-normal">
-                <tr>
-                  <th className="border-b border-white p-2 text-center">
-                    Name
-                  </th>
-                  <th className="border-b border-white p-2 text-center">
-                  Description
-                  </th>
-                  <th className="border-b border-white p-2 text-center">
-                  Rate
-                  </th>
-                  <th className="border-b border-white p-2 text-center">
-                  Usage Unit
-                  </th>
-                 
-                </tr>
-              </thead>
-              <tbody className="text-white text-sm">
-              {myCustomers.map((item: any) => (
-                <tr className="border-b border-white" key={item.id}>
-                  <td className="p-2 text-center">{item.name}</td>
-                  <td className="p-2 text-center">{item.description}</td>
-                  <td className="p-2 text-center">₹ {item.sellingPrice}</td>
-                  <td className="p-2 text-center">{item.unit}</td>
-                  <Link href={`/edititem/${item.id}`}><td className="p-2 text-center">edit</td></Link>
-
-                </tr>))} 
-                <tr className="border-b border-white">
-                  <td className="p-2 text-center">sampleItem</td>
-                  <td className="p-2 text-center">sample Discription.ls</td>
-                  <td className="p-2 text-center">₹ 256</td>
-                  <td className="p-2 text-center">pcs</td>
-                </tr>
-              </tbody>
-            </table>
           </div>
         </div>
       </div>
