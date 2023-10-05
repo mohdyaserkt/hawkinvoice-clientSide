@@ -110,12 +110,49 @@ const getStarted = () => {
             <div className="w-full">
               <div className="w-full text-white flex justify-center ">
                 <div className="text-center">
-                  <h1 className="text-[17px] mb-3">organisation name</h1>
+                  <h1 className="text-[17px] mb-1">organisation name</h1>
                   <h1 className="text-[22px]">Sales by Customer</h1>
                   <h1 className="text-[13px]">From 01/04/2023 To 31/03/2024</h1>
                   
                 </div>
               </div>
+
+              <table className="w-full border-t border-white">
+              <thead className="bg-secondary text-xs font-normal">
+                <tr>
+                  <th className="border-b border-white p-2 text-center">
+                    Name
+                  </th>
+                  <th className="border-b border-white p-2 text-center">
+                  Description
+                  </th>
+                  <th className="border-b border-white p-2 text-center">
+                  Rate
+                  </th>
+                  <th className="border-b border-white p-2 text-center">
+                  Usage Unit
+                  </th>
+                 
+                </tr>
+              </thead>
+              <tbody className="text-white text-sm">
+              {/* {myCustomers.map((item: any) => (
+                <tr className="border-b border-white" key={item.id}>
+                  <td className="p-2 text-center">{item.name}</td>
+                  <td className="p-2 text-center">{item.description}</td>
+                  <td className="p-2 text-center">₹ {item.sellingPrice}</td>
+                  <td className="p-2 text-center">{item.unit}</td>
+                  <Link href={`/edititem/${item.id}`}><td className="p-2 text-center">edit</td></Link>
+
+                </tr>))}  */}
+                <tr className="border-b border-white">
+                  <td className="p-2 text-center">sampleItem</td>
+                  <td className="p-2 text-center">sample Discription.ls</td>
+                  <td className="p-2 text-center">₹ 256</td>
+                  <td className="p-2 text-center">pcs</td>
+                </tr>
+              </tbody>
+            </table>
 
             </div>
           </div>
