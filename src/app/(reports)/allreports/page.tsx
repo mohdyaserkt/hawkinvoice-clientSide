@@ -110,12 +110,12 @@ const getStarted = () => {
                 <div className="text-white">
                   <div className="flex items-center">
                     <BiCart className="w-4 h-4 ml-2 text-white " />
-                    <h1 className="text-base text-white">Sales</h1>
+                    <h1 className="text-[17px] text-white">Sales</h1>
                   </div>
                   <div>
                     <ul>
-                        <li className="flex items-center border-b-2 border-secondary  border-dashed"><CiStar className=" text-secondary " />Sales by Customer</li>
-                        <li className="flex items-center"><CiStar className=" text-secondary "/>Sales by Item</li>
+                        <li className="flex gap-2 w-28 bg-slate-400 items-center border-b border-secondary  border-dashed"><CiStar className=" text-secondary w-6 h-6" />Sales by Customer</li>
+                        <li className="flex gap-2 items-center border-b border-secondary  border-dashed"><CiStar className=" text-secondary w-6 h-6"/>Sales by Item</li>
                     </ul>
                   </div>
                 </div>
