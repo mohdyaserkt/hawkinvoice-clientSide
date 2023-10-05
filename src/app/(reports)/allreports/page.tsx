@@ -9,7 +9,7 @@ import { PiHandbag } from "react-icons/pi";
 import { BsPlusSquareFill, BsFileEarmarkBarGraph } from "react-icons/bs";
 import { TbReceipt } from "react-icons/tb";
 import { BiCart } from "react-icons/bi";
-import { CiStar } from "react-icons/ci";    
+import { CiStar } from "react-icons/ci";
 import {
   AiOutlineSetting,
   AiOutlineHome,
@@ -105,22 +105,102 @@ const getStarted = () => {
               </div>
             </div>
 
-            <div className="w-full">
-              <div className="grid grid-cols-3 gap-4">
-                <div className="text-white">
-                  <div className="flex items-center">
-                    <BiCart className="w-4 h-4 ml-2 text-white " />
-                    <h1 className="text-[17px] text-white">Sales</h1>
+            <div className="w-full p-5">
+              <div className="grid grid-cols-3 gap-16">
+                <div className="text-white p-1 flex flex-col gap-2">
+                  <div className="flex items-center gap-1">
+                    <BiCart className="w-6 h-6 ml-2 text-white " />
+                    <h1 className="text-lg text-white">Sales</h1>
                   </div>
-                  <div>
+                  <div >
                     <ul>
-                        <li className="flex gap-2 w-28 bg-slate-400 items-center border-b border-secondary  border-dashed"><CiStar className=" text-secondary w-6 h-6" />Sales by Customer</li>
-                        <li className="flex gap-2 items-center border-b border-secondary  border-dashed"><CiStar className=" text-secondary w-6 h-6"/>Sales by Item</li>
+                      <li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                        <CiStar className=" text-secondary w-6 h-6" />
+                        Sales by Customer
+                      </li>
+                      <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                        <CiStar className=" text-secondary w-6 h-6" />
+                        Sales by Item
+                      </li>
                     </ul>
                   </div>
                 </div>
 
-                <div>09</div>
+                <div className="text-white p-1 flex flex-col gap-2">
+                  <div className="flex items-center gap-1">
+                    <BiCart className="w-6 h-6 ml-2 text-white " />
+                    <h1 className="text-lg text-white">Sales</h1>
+                  </div>
+                  <div >
+                    <ul>
+                      <li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                        <CiStar className=" text-secondary w-6 h-6" />
+                        Sales by Customer
+                      </li>
+                      <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                        <CiStar className=" text-secondary w-6 h-6" />
+                        Sales by Item
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="text-white p-1 flex flex-col gap-2">
+                  <div className="flex items-center gap-1">
+                    <BiCart className="w-6 h-6 ml-2 text-white " />
+                    <h1 className="text-lg text-white">Sales</h1>
+                  </div>
+                  <div >
+                    <ul>
+                      <li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                        <CiStar className=" text-secondary w-6 h-6" />
+                        Sales by Customer
+                      </li>
+                      <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                        <CiStar className=" text-secondary w-6 h-6" />
+                        Sales by Item
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="text-white p-1 flex flex-col gap-2">
+                  <div className="flex items-center gap-1">
+                    <BiCart className="w-6 h-6 ml-2 text-white " />
+                    <h1 className="text-lg text-white">Sales</h1>
+                  </div>
+                  <div >
+                    <ul>
+                      <li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                        <CiStar className=" text-secondary w-6 h-6" />
+                        Sales by Customer
+                      </li>
+                      <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                        <CiStar className=" text-secondary w-6 h-6" />
+                        Sales by Item
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="text-white p-1 flex flex-col gap-2">
+                  <div className="flex items-center gap-1">
+                    <BiCart className="w-6 h-6 ml-2 text-white " />
+                    <h1 className="text-lg text-white">Sales</h1>
+                  </div>
+                  <div >
+                    <ul>
+                      <li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                        <CiStar className=" text-secondary w-6 h-6" />
+                        Sales by Customer
+                      </li>
+                      <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                        <CiStar className=" text-secondary w-6 h-6" />
+                        Sales by Item
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
