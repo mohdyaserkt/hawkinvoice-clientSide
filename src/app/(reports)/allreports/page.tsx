@@ -7,7 +7,7 @@ import {
 import { MdRefresh } from "react-icons/md";
 import { PiHandbag } from "react-icons/pi";
 import { BsPlusSquareFill, BsFileEarmarkBarGraph } from "react-icons/bs";
-import { TbReceipt } from "react-icons/tb";
+import { TbReceipt, TbReportMoney } from "react-icons/tb";
 import { BiCart } from "react-icons/bi";
 import { CiStar } from "react-icons/ci";
 import {
@@ -112,7 +112,26 @@ const getStarted = () => {
                     <BiCart className="w-6 h-6 ml-2 text-white " />
                     <h1 className="text-lg text-white">Sales</h1>
                   </div>
-                  <div >
+                  <div>
+                    <ul>
+                      <li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                        <CiStar className=" text-secondary w-6 h-6" />
+                        Sales by Customer
+                      </li>
+                      <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                        <CiStar className=" text-secondary w-6 h-6" />
+                        Sales by Item
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="text-white p-1 flex flex-col gap-2">
+                  <div className="flex items-center gap-1">
+                    <TbReportMoney className="w-6 h-6 ml-2 text-white " />
+                    <h1 className="text-lg text-white">Sales</h1>
+                  </div>
+                  <div>
                     <ul>
                       <li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
                         <CiStar className=" text-secondary w-6 h-6" />
@@ -129,18 +148,48 @@ const getStarted = () => {
                 <div className="text-white p-1 flex flex-col gap-2">
                   <div className="flex items-center gap-1">
                     <BiCart className="w-6 h-6 ml-2 text-white " />
-                    <h1 className="text-lg text-white">Sales</h1>
+                    <h1 className="text-lg text-white">Receivables</h1>
                   </div>
-                  <div >
+                  <div>
                     <ul>
                       <li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
                         <CiStar className=" text-secondary w-6 h-6" />
-                        Sales by Customer
+                        Invoice Details
                       </li>
                       <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
                         <CiStar className=" text-secondary w-6 h-6" />
-                        Sales by Item
+                        Receivable Summary
                       </li>
+                      <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                        <CiStar className=" text-secondary w-6 h-6" />
+                        Receivable Details
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="text-white p-1 flex flex-col gap-2">
+                  <div className="flex items-center gap-1">
+                    <BiCart className="w-6 h-6 ml-2 text-white " />
+                    <h1 className="text-lg text-white">
+                      Purchases and Expenses
+                    </h1>
+                  </div>
+                  <div>
+                    <ul>
+                      <li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                        <CiStar className=" text-secondary w-6 h-6" />
+                        Expense Details
+                      </li>
+                      <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                        <CiStar className=" text-secondary w-6 h-6" />
+                        Expenses by Category
+                      </li>
+                      <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                        <CiStar className=" text-secondary w-6 h-6" />
+                        Mileage Expenses by Employee
+                      </li>
+                      
                     </ul>
                   </div>
                 </div>
@@ -150,45 +199,7 @@ const getStarted = () => {
                     <BiCart className="w-6 h-6 ml-2 text-white " />
                     <h1 className="text-lg text-white">Sales</h1>
                   </div>
-                  <div >
-                    <ul>
-                      <li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
-                        <CiStar className=" text-secondary w-6 h-6" />
-                        Sales by Customer
-                      </li>
-                      <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
-                        <CiStar className=" text-secondary w-6 h-6" />
-                        Sales by Item
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="text-white p-1 flex flex-col gap-2">
-                  <div className="flex items-center gap-1">
-                    <BiCart className="w-6 h-6 ml-2 text-white " />
-                    <h1 className="text-lg text-white">Sales</h1>
-                  </div>
-                  <div >
-                    <ul>
-                      <li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
-                        <CiStar className=" text-secondary w-6 h-6" />
-                        Sales by Customer
-                      </li>
-                      <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
-                        <CiStar className=" text-secondary w-6 h-6" />
-                        Sales by Item
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="text-white p-1 flex flex-col gap-2">
-                  <div className="flex items-center gap-1">
-                    <BiCart className="w-6 h-6 ml-2 text-white " />
-                    <h1 className="text-lg text-white">Sales</h1>
-                  </div>
-                  <div >
+                  <div>
                     <ul>
                       <li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
                         <CiStar className=" text-secondary w-6 h-6" />
