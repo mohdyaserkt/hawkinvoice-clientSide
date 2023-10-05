@@ -8,14 +8,14 @@ import { MdRefresh } from "react-icons/md";
 import { PiHandbag } from "react-icons/pi";
 import { BsPlusSquareFill, BsFileEarmarkBarGraph } from "react-icons/bs";
 import { TbReceipt } from "react-icons/tb";
-import { SlOptions } from "react-icons/sl";
+import { BiCart } from "react-icons/bi";
+import { CiStar } from "react-icons/ci";    
 import {
   AiOutlineSetting,
   AiOutlineHome,
   AiOutlineUser,
   AiOutlineSearch,
 } from "react-icons/ai";
-import Link from "next/link";
 
 const getStarted = () => {
   return (
@@ -99,33 +99,28 @@ const getStarted = () => {
             </div>
           </div>
           <div className="w-full">
-            <div className="p-5 flex justify-between w-full border-b border-e">
+            <div className="p-5 flex justify-between w-full ">
               <div className="text-white">
-                <h2 className="text-xl">Reports</h2>
+                <h2 className="text-xl">All Reports</h2>
               </div>
             </div>
 
             <div className="w-full">
-              <div className="container mx-auto px-4">
-                <h1 className="text-4xl font-bold mt-10">Sales</h1>
-                <div className="flex flex-row mt-10 gap-10">
-                  <Link
-                    href="/sales-by-customer"
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                  >
-                    Sales by Customer
-                  </Link>
-                  <Link
-                    href="/sales-by-item"
-                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                  >
-                    Sales by Item
-                  </Link>
+              <div className="grid grid-cols-3 gap-4">
+                <div className="text-white">
+                  <div className="flex items-center">
+                    <BiCart className="w-4 h-4 ml-2 text-white " />
+                    <h1 className="text-base text-white">Sales</h1>
+                  </div>
+                  <div>
+                    <ul>
+                        <li className="flex items-center border-b-2 border-secondary  border-dashed"><CiStar className=" text-secondary " />Sales by Customer</li>
+                        <li className="flex items-center"><CiStar className=" text-secondary "/>Sales by Item</li>
+                    </ul>
+                  </div>
                 </div>
-                <div className="mt-10">
-                  <h2 className="text-3xl font-bold">250 (max) Hug</h2>
-                  <p className="mt-5">This is the best-selling item!</p>
-                </div>
+
+                <div>09</div>
               </div>
             </div>
           </div>
