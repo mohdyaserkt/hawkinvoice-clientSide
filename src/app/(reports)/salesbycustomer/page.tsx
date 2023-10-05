@@ -75,7 +75,7 @@ const getStarted = () => {
               <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Customers</p>
             </div>
-            <div className="flex items-center h-7 bg-secondary rounded-lg space-x-2">
+            <div className="flex items-center h-7  rounded-lg space-x-2">
               <PiHandbag className="w-4 h-4 ml-2 text-white " />
               <p className="text-sm text-white">Items</p>
             </div>
@@ -95,7 +95,7 @@ const getStarted = () => {
               <TbReceipt className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Expenses</p>
             </div>
-            <div className="flex items-center h-7 rounded-lg space-x-2">
+            <div className="flex items-center h-7 bg-secondary rounded-lg space-x-2">
               <BsFileEarmarkBarGraph className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Reports</p>
             </div>
