@@ -139,7 +139,7 @@ const getStarted = () => {
               <div className="w-full text-white flex justify-center ">
                 <div className="text-center">
                   <h1 className="text-[17px] mb-1">organisation name</h1>
-                  <h1 className="text-[22px]">Sales by Customer</h1>
+                  <h1 className="text-[22px]">Sales by Item</h1>
                   <h1 className="text-[13px]">From 01/04/2023 To 31/03/2024</h1>
                 </div>
               </div>
@@ -173,10 +173,11 @@ const getStarted = () => {
 
                 </tr>))}  */}
                 {SalesByItem.map((item: any) => (
-                    <tr key={item.customerId}className="border-b border-white">
-                      <td className="p-2 text-center">{item.customerName}</td>
-                      <td className="p-2 text-center">{item.invoiceCount}</td>
-                      <td className="p-2 text-center">₹ {item.totalSales}</td>
+                    <tr key={item.itemId}className="border-b border-white">
+                      <td className="p-2 text-center">{item.itemName}</td>
+                      <td className="p-2 text-center">{item.totalQuantitySold}</td>
+                      <td className="p-2 text-center">₹ {item.totalAmountSold}</td>
+                      <td className="p-2 text-center">₹ {item.totalAmountSold/item.totalQuantitySold}</td>
                     </tr>
                    ))}
                     
