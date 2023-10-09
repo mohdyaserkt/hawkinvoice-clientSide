@@ -1,7 +1,7 @@
 import { createNewInvoice } from "@/app/api/invoice/createNewInvoice";
 import { AxiosError } from "axios";
 import "react-toastify/dist/ReactToastify.css";
-import { handleCreateInvoice } from "../../../types/invoice/createinvoice";
+import { IInvoice, handleCreateInvoice } from "../../../types/invoice/createinvoice";
 
 
 export const handleCreateNewInovice = async ({
@@ -16,7 +16,7 @@ setError,
   
 
   try {
-    const tenant = await createNewInvoice(invoice);
+    const tenant = await createNewInvoice(invoice as IInvoice);
     return Promise.resolve(tenant as any);
   } catch (error) {
     const err = error as AxiosError;
