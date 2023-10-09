@@ -18,6 +18,7 @@ import {
   AiOutlineUser,
   AiOutlineSearch,
 } from "react-icons/ai";
+import Link from "next/link";
 
 const getStarted = () => {
   return (
@@ -116,14 +117,14 @@ const getStarted = () => {
                   </div>
                   <div>
                     <ul>
-                      <li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                    <Link href={`/salesbycustomer`}><li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
                         <CiStar className=" text-secondary w-6 h-6" />
                         Sales by Customer
-                      </li>
-                      <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                      </li></Link>
+                      <Link href={`/salesbyitem`}><li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
                         <CiStar className=" text-secondary w-6 h-6" />
                         Sales by Item
-                      </li>
+                      </li></Link>
                     </ul>
                   </div>
                 </div>
@@ -135,18 +136,15 @@ const getStarted = () => {
                   </div>
                   <div>
                     <ul>
-                      <li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                      <Link href={`/invoicedetails`}><li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
                         <CiStar className=" text-secondary w-6 h-6" />
                         Invoice Details
-                      </li>
-                      <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                      </li></Link>
+                      <Link href={`/pendingsales`}> <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
                         <CiStar className=" text-secondary w-6 h-6" />
-                        Receivable Summary
-                      </li>
-                      <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
-                        <CiStar className=" text-secondary w-6 h-6" />
-                        Receivable Details
-                      </li>
+                        Pending Sales
+                      </li></Link>
+                      
                     </ul>
                   </div>
                 </div>
@@ -158,10 +156,10 @@ const getStarted = () => {
                   </div>
                   <div>
                     <ul>
-                      <li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                    <Link href={`/recievedpayments`}><li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
                         <CiStar className=" text-secondary w-6 h-6" />
                         Payments Received
-                      </li>
+                      </li></Link>
                     </ul>
                   </div>
                 </div>
@@ -175,18 +173,18 @@ const getStarted = () => {
                   </div>
                   <div>
                     <ul>
-                      <li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                    <Link href={`/expensedetails`}><li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
                         <CiStar className=" text-secondary w-6 h-6" />
                         Expense Details
-                      </li>
-                      <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                      </li></Link>
+                      <Link href={`/expensedetailsbyeachcategory`}><li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
                         <CiStar className=" text-secondary w-6 h-6" />
                         Expenses by Category
-                      </li>
-                      <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                      </li></Link>
+                      {/* <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
                         <CiStar className=" text-secondary w-6 h-6" />
                         Mileage Expenses by Employee
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
                 </div>

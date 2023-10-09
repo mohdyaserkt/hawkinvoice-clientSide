@@ -20,16 +20,15 @@ import {
 } from "react-icons/ai";
 
 import { formatDate } from "@/utils/Invoice/getInvoices";
-
-import { handleGetExpenseDetails } from "@/utils/reports/getExpenseDetails";
+import { handleGetExpenseByEachCategory } from "@/utils/reports/getexpensebyeachcategory";
 
 const getStarted = () => {
   const [expenseDetails, setexpenseDetails] = useState<any>([]);
 
   useEffect(() => {
-    handleGetExpenseDetails()
+    handleGetExpenseByEachCategory()
       .then(({ data }: any) => {
-        setexpenseDetails(data.expenseDetails);
+        setexpenseDetails(data.expenseByEachCategory);
       })
       .catch((err) => {
         console.log(err);
@@ -156,19 +155,13 @@ const getStarted = () => {
                         STATUS
                       </th>
                       <th className="border-b border-white p-2 text-center">
-                        DATE
-                      </th>
-                      <th className="border-b border-white p-2 text-center">
-                        INVOICE NUMBER
+                        EXPENSE COUNT
                       </th>
                       <th className="border-b border-white p-2 text-center">
                         CATEGORY NAME
                       </th>
                       <th className="border-b border-white p-2 text-center">
-                        AMOUNT
-                      </th>
-                      <th className="border-b border-white p-2 text-center">
-                        TOTAL
+                        TOTAL AMOUNT
                       </th>
                     </tr>
                   </thead>
@@ -190,18 +183,14 @@ const getStarted = () => {
                         <td className="p-2 text-center text-gray-600">
                           NON BILLABLE
                         </td>
-                        <td className="p-2 text-center">
-                          {formatDate(item.date)}
-                        </td>
-                        <td className="p-2 text-center">
-                           {item.invoiceNumber}
-                        </td>
+
+                        <td className="p-2 text-center">{item.expenseCount}</td>
 
                         <td className="p-2 text-center">
                           {formatDate(item.categoryName)}
                         </td>
                         <td className="p-2 text-center">
-                          ₹ {formatDate(item.amount)}
+                          ₹ {formatDate(item.totalAmount)}
                         </td>
                       </tr>
                     ))}
