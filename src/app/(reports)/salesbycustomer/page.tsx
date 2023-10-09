@@ -18,8 +18,23 @@ import {
   AiOutlinePrinter,
   AiOutlineDownload,
 } from "react-icons/ai";
+import { handleGetSalesByCustomer } from "@/utils/reports/getSalesByCustomer";
 
 const getStarted = () => {
+
+  const [SalesByCustomer, setSalesByCustomer] = useState<any>([]);
+
+
+  useEffect(() => {
+    handleGetSalesByCustomer()
+      .then(({data}:any) => { 
+        setSalesByCustomer(data.salesByCustomerData)
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+  }, []);
   return (
     <>
       <div className="h-screen">
