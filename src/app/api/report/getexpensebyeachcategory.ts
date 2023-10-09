@@ -1,11 +1,11 @@
 import { stringify } from "querystring";
 import axiosInstance from "../axios";
 
-export const getInvoiceDetails= async (): Promise<IUser | Error> => {
+export const getExpenseByEachCategory = async (): Promise<IUser | Error> => {
   console.log("reached");
 
   try {
-    const response = await axiosInstance.get(`/api/invoice/report/get-invoicedetails`);
+    const response = await axiosInstance.get(`/api/invoice/report/get-expensebyeachcategory`);
 
     return Promise.resolve(response as any);
   } catch (error) {
