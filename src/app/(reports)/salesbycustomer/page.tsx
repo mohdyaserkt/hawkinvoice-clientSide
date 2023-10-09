@@ -169,82 +169,14 @@ const getStarted = () => {
                   <Link href={`/edititem/${item.id}`}><td className="p-2 text-center">edit</td></Link>
 
                 </tr>))}  */}
-                    <tr className="border-b border-white">
-                      <td className="p-2 text-center">sampleItem</td>
-                      <td className="p-2 text-center">12</td>
-                      <td className="p-2 text-center">₹ 256454</td>
+                {SalesByCustomer.map((item: any) => (
+                    <tr key={item.customerId}className="border-b border-white">
+                      <td className="p-2 text-center">{item.customerName}</td>
+                      <td className="p-2 text-center">{item.invoiceCount}</td>
+                      <td className="p-2 text-center">₹ {item.totalSales}</td>
                     </tr>
-                    <tr className="border-b border-white">
-                      <td className="p-2 text-center">sampleItem</td>
-                      <td className="p-2 text-center">12</td>
-                      <td className="p-2 text-center">₹ 256454</td>
-                    </tr>
-                    <tr className="border-b border-white">
-                      <td className="p-2 text-center">sampleItem</td>
-                      <td className="p-2 text-center">12</td>
-                      <td className="p-2 text-center">₹ 256454</td>
-                    </tr>
-                    <tr className="border-b border-white">
-                      <td className="p-2 text-center">sampleItem</td>
-                      <td className="p-2 text-center">12</td>
-                      <td className="p-2 text-center">₹ 256454</td>
-                    </tr>
-                    <tr className="border-b border-white">
-                      <td className="p-2 text-center">sampleItem</td>
-                      <td className="p-2 text-center">12</td>
-                      <td className="p-2 text-center">₹ 256454</td>
-                    </tr>
-                    <tr className="border-b border-white">
-                      <td className="p-2 text-center">sampleItem</td>
-                      <td className="p-2 text-center">12</td>
-                      <td className="p-2 text-center">₹ 256454</td>
-                    </tr>
-                    <tr className="border-b border-white">
-                      <td className="p-2 text-center">sampleItem</td>
-                      <td className="p-2 text-center">12</td>
-                      <td className="p-2 text-center">₹ 256454</td>
-                    </tr>
-                    <tr className="border-b border-white">
-                      <td className="p-2 text-center">sampleItem</td>
-                      <td className="p-2 text-center">12</td>
-                      <td className="p-2 text-center">₹ 256454</td>
-                    </tr>
-                    <tr className="border-b border-white">
-                      <td className="p-2 text-center">sampleItem</td>
-                      <td className="p-2 text-center">12</td>
-                      <td className="p-2 text-center">₹ 256454</td>
-                    </tr>
-                    <tr className="border-b border-white">
-                      <td className="p-2 text-center">sampleItem</td>
-                      <td className="p-2 text-center">12</td>
-                      <td className="p-2 text-center">₹ 256454</td>
-                    </tr>
-                    <tr className="border-b border-white">
-                      <td className="p-2 text-center">sampleItem</td>
-                      <td className="p-2 text-center">12</td>
-                      <td className="p-2 text-center">₹ 256454</td>
-                    </tr>
+                   ))}
                     
-                    <tr className="border-b border-white">
-                      <td className="p-2 text-center">sampleItem</td>
-                      <td className="p-2 text-center">12</td>
-                      <td className="p-2 text-center">₹ 256454</td>
-                    </tr>
-                    <tr className="border-b border-white">
-                      <td className="p-2 text-center">sampleItem</td>
-                      <td className="p-2 text-center">12</td>
-                      <td className="p-2 text-center">₹ 256454</td>
-                    </tr>
-                    <tr className="border-b border-white">
-                      <td className="p-2 text-center">sampleItem</td>
-                      <td className="p-2 text-center">12</td>
-                      <td className="p-2 text-center">₹ 256454</td>
-                    </tr>
-                    <tr className="border-b border-white">
-                      <td className="p-2 text-center">sampleItem</td>
-                      <td className="p-2 text-center">12</td>
-                      <td className="p-2 text-center">₹ 256454</td>
-                    </tr>
                   </tbody>
                 </table>
               </div>
