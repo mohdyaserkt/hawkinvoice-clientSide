@@ -274,7 +274,7 @@ const GetStarted = () => {
 
 
                   
-                  {/*<div className="mb-5 pb-5 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
+                  <div className="mb-5 pb-5 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
                     <div>
                       <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">
                         Invoice
@@ -331,7 +331,7 @@ const GetStarted = () => {
                               className="inline-flex items-center gap-x-1.5 text-blue-600 decoration-2 hover:underline font-medium"
                               href="#"
                             >
-                              {mainInvoice?.customerName}
+                              {/* {mainInvoice?.customerName} */}
                             </a>
                           </dd>
                         </dl>
@@ -382,7 +382,7 @@ const GetStarted = () => {
                             Invoice number:
                           </dt>
                           <dd className="font-medium text-gray-800 dark:text-gray-200">
-                            {mainInvoice?.invoiceNumber}
+                            {/* {mainInvoice?.invoiceNumber} */}
                           </dd>
                         </dl>
 
@@ -400,11 +400,11 @@ const GetStarted = () => {
                             Due date:
                           </dt>
                           <dd className="font-medium text-gray-800 dark:text-gray-200">
-                            {formatDate(
+                            {/* {formatDate(
                               mainInvoice?.dueDate
                                 ? mainInvoice.dueDate
                                 : new Date()
-                            )}
+                            )} */}
                           </dd>
                         </dl>
 
@@ -525,7 +525,7 @@ const GetStarted = () => {
                         </dl>
                       </div>
                     </div>
-                  </div> */}
+                  </div>
 
 
 
@@ -551,7 +551,7 @@ const GetStarted = () => {
                             }
                             alt={"logo"}
                           ></Image>
-                          <h2 className="text-2xl">sneat</h2>
+                          <h2 className="text-2xl">Organisation Name</h2>
                         </div>
                         <div className="text-[15px]">
                           <p>Office 149, 450 South Brand Brooklyn</p>
@@ -561,11 +561,15 @@ const GetStarted = () => {
                       </div>
                       <div className="flex flex-col gap-[6px]">
                         <h1 className="font-semibold text-[22px]">
-                          Invoice #3492
+                          Invoice #{mainInvoice?.invoiceNumber}
                         </h1>
                         <div className="flex flex-col  text-[15px]">
                           <p>Date Issues:25/08/2020</p>
-                          <p>Date Due:29/08/2020</p>
+                          <p>Date Due: {formatDate(
+                              mainInvoice?.dueDate
+                                ? mainInvoice.dueDate
+                                : new Date()
+                            )}</p>
                         </div>
                       </div>
                     </div>
@@ -576,7 +580,7 @@ const GetStarted = () => {
                           <h1 className="text-[15px]">Invoice To:</h1>
                         </div>
                         <div className="text-sm flex flex-col gap-1">
-                          <p>Thomas shelby</p>
+                          <p>{mainInvoice?.customerName}</p>
                           <p>Shelby Company Limited</p>
                           <p>Small Heath, B10 0HF, UK</p>
                           <p>718-986-6062</p>
@@ -596,7 +600,11 @@ const GetStarted = () => {
                             <p>SWIFT code:</p>
                           </div>
                           <div className="flex flex-col gap-1">
-                            <p>$12,110.55</p>
+                            <p>₹
+                            {mainInvoice?.status == "paid"
+                              ? 0
+                              : mainInvoice?.Total}
+                            .00</p>
                             <p>American Bank</p>
                             <p>United States</p>
                             <p>ETD95476213874685</p>
@@ -612,9 +620,9 @@ const GetStarted = () => {
                             <th className="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                               ITEM
                             </th>
-                            <th className="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                            {/* <th className="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                               DESCRIPTION
-                            </th>
+                            </th> */}
                             <th className="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                               COST
                             </th>
@@ -627,23 +635,25 @@ const GetStarted = () => {
                           </tr>
                         </thead>
                         <tbody className="bg-white text-[15px]">
-                          <tr>
+
+                        {mainInvoice?.itemDetails.map((item, index) => (
+                          <tr key={item.id}>
                             <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                              Vuexy Admin Template
+                            {item.itemName}
                             </td>
-                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                            {/* <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                               HTML Admin Template
+                            </td> */}
+                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                            ₹{item.rate}
                             </td>
                             <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                              $32
+                            {item.quantity}
                             </td>
                             <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                              1
+                            ₹{item.quantity * item.rate}
                             </td>
-                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                              $32.00
-                            </td>
-                          </tr>
+                          </tr>))}
                           <tr>
                             <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                               Frest Admin Template
@@ -716,7 +726,7 @@ const GetStarted = () => {
                           <p>Total:</p>
                         </div>
                         <div className="flex flex-col gap-2 text-sm">
-                          <p>$154.25</p>
+                          <p> ₹{mainInvoice?.subTotal}</p>
                           <p>$00.00</p>
                           <p>$50.00</p>
                           <p>$204.25</p>
