@@ -31,16 +31,6 @@ import { handleGetItemsForInvoice } from "@/utils/Invoice/getItems";
 import { IInvoice, IItem } from "../../../../types/invoice/createinvoice";
 import { handleCreateNewInovice } from "@/utils/Invoice/createNewInvoice";
 
-
-
-
-
-
-
-
-
-
-
 const GetStarted = () => {
   const [myCustomers, setmyCustomers] = useState<ICustomerData[]>([]);
 
@@ -54,12 +44,6 @@ const GetStarted = () => {
         alert(err);
       });
   }, []);
-
-
-
-
-
-
 
   const [paymentMode, setpaymentMode] = useState(false);
   const router = useRouter();
@@ -76,13 +60,8 @@ const GetStarted = () => {
     field: string;
     errors: string[];
   } | null>({ field: "", errors: [""] });
-  
 
   const discountType = useRef(null);
-
-
-
-
 
   useEffect(() => {
     const newsubTotal = items.reduce((accumulator, item) => {
@@ -94,18 +73,9 @@ const GetStarted = () => {
   console.log(items, "myitems");
   console.log(subtotal, "mysubtotal");
 
-
-
-
-
   const addRow = () => {
     setItems([...items, { quantity: 0, rate: 0, itemName: "", id: "" }]);
   };
-
-
-
-
-
 
   const addSelectedItem = (rate: number, itemName: string, id: string) => {
     setItems([
@@ -113,13 +83,6 @@ const GetStarted = () => {
       { quantity: 1, rate: rate, itemName: itemName, id: id },
     ]);
   };
-
-
-
-
-
-
-
 
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement>,
@@ -131,20 +94,15 @@ const GetStarted = () => {
     setItems(newItems);
   };
 
-
-
-
-
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    let inputObject: { [key: string]: string | Number | object|Date } = {};
+    let inputObject: { [key: string]: string | Number | object | Date } = {};
 
     formData.forEach((value, key) => {
       inputObject[key] = String(value);
     });
-    inputObject.invoiceDate=new Date()
+    inputObject.invoiceDate = new Date();
     inputObject.subTotal = subtotal;
     inputObject.Total = subtotal - discount + adjustment;
     inputObject.status = inputObject.recievedPayment ? "paid" : "pending";
@@ -161,7 +119,6 @@ const GetStarted = () => {
     delete inputObject.quantity;
     delete inputObject.rate;
     delete inputObject.recievedPayment;
-    
 
     console.log(inputObject);
 
@@ -181,15 +138,7 @@ const GetStarted = () => {
         console.log(err.message);
         alert(err);
       });
-      
   };
-
-
-
-
-
-
-
 
   const checkDiscount = (e: React.FocusEvent<HTMLInputElement>) => {
     const discount = e.target.value as unknown as number;
@@ -203,22 +152,16 @@ const GetStarted = () => {
     }
   };
 
-
-
-
-
-  
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedIndex = event.target.selectedIndex - 1;
     setCustomerId(myCustomers[selectedIndex].id as string);
     setcustomerEmail(myCustomers[selectedIndex].email);
     console.log("Selected Option Index:", selectedIndex);
   };
-  
 
   const setError = (field: string, errorMessages: string[]) =>
     setErrors({ field, errors: errorMessages });
-  
+
   return (
     <>
       <div className="h-screen">
@@ -478,6 +421,7 @@ const GetStarted = () => {
                         <div className=" flex flex-col gap-1">
                           <p className="text-xs">Customer Notes</p>
                           <textarea
+                            defaultValue="Thanks for your business"
                             name="customerNotes"
                             className="focus:outline-none bg-transparent border rounded-md w-[448px] h-20 p-3"
                           ></textarea>
@@ -486,6 +430,9 @@ const GetStarted = () => {
                           <p className="text-xs">Terms and Conditions</p>
                           <textarea
                             name="termsAndConditions"
+                            defaultValue="It was a pleasure working with you and your team. We
+                                         hope you will keep us in mind for future freelance
+                                         projects. Thank You!"
                             className="focus:outline-none bg-transparent border rounded-md w-[448px] h-20 p-3"
                             placeholder="Enter the terms and conditions of your business to be displayed in your transaction"
                           ></textarea>
