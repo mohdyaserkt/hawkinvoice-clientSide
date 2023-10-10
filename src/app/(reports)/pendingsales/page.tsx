@@ -194,10 +194,10 @@ const getStarted = () => {
                         </td>
 
                         <td className="p-2 text-center">
-                          ₹ {formatDate(item.customerName)}
+                          ₹ {item.customerName}
                         </td>
                         <td className="p-2 text-center">
-                          ₹ {formatDate(item.Total)}
+                          ₹ {item.Total}
                         </td>
                       </tr>
                     ))}
