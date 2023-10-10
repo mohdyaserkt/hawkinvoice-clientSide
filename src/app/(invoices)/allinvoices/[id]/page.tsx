@@ -252,26 +252,58 @@ const GetStarted = () => {
                   ))}
                 </div>
               </div>
-              <div ref={printableRef} className="w-full overflow-y-auto" style={{ maxHeight: "calc(100vh - 47px)" }}>      
+
+              <div
+                
+                className="w-full overflow-y-auto"
+                style={{ maxHeight: "calc(100vh - 47px)" }}
+              >
+                <div className="flex justify-end items-center p-4  border-b h-[71px]">
+                  <div className="flex space-x-2">
+                    <div className="text-xs  flex items-center  px-3 py-2 h-8  gap-3">
+                      <a
+                        className="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
+                        href="#"
+                      >
+                        <svg
+                          className="w-4 h-4"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                          <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                        </svg>
+                        Invoice PDF
+                      </a>
+                      <a
+                        onClick={printDiv}
+                        className="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"
+                        href="#"
+                      >
+                        <svg
+                          className="w-4 h-4"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z" />
+                          <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" />
+                        </svg>
+                        Print
+                      </a>
+                    </div>
+                    <div className="p-2 bg-white rounded  h-8 ">
+                      <SlOptions className="w-4 h-4 text-gray-800 " />
+                    </div>
+                  </div>
+                </div>
                 <div className="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto my-4 sm:my-10 flex justify-center items-center">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/* 
+                  {/* 
 
                   
                   <div className="mb-5 pb-5 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
@@ -529,16 +561,7 @@ const GetStarted = () => {
 
  */}
 
-
-
-
-
-
-
-
-
-
-                  <div className="bg-white rounded-xl w-[1035px] text-gray-900 p-8">
+                  <div ref={printableRef} className="bg-white rounded-xl w-[1035px] text-gray-900 p-8">
                     <div className="flex justify-between border-b">
                       <div className="mb-6">
                         <div className="flex items-center">
@@ -564,16 +587,22 @@ const GetStarted = () => {
                           Invoice #{mainInvoice?.invoiceNumber}
                         </h1>
                         <div className="flex flex-col  text-[15px]">
-                          <p>Date Issues:{formatDate(
+                          <p>
+                            Date Issues:
+                            {formatDate(
                               mainInvoice?.invoiceDate
                                 ? mainInvoice.invoiceDate
                                 : new Date()
-                            )}</p>
-                          <p>Date Due: {formatDate(
+                            )}
+                          </p>
+                          <p>
+                            Date Due:{" "}
+                            {formatDate(
                               mainInvoice?.dueDate
                                 ? mainInvoice.dueDate
                                 : new Date()
-                            )}</p>
+                            )}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -604,11 +633,13 @@ const GetStarted = () => {
                             <p>SWIFT code:</p> */}
                           </div>
                           <div className="flex flex-col gap-1">
-                            <p>₹
-                            {mainInvoice?.status == "paid"
-                              ? 0
-                              : mainInvoice?.Total}
-                            .00</p>
+                            <p>
+                              ₹
+                              {mainInvoice?.status == "paid"
+                                ? 0
+                                : mainInvoice?.Total}
+                              .00
+                            </p>
                             {/* <p>American Bank</p>
                             <p>United States</p>
                             <p>ETD95476213874685</p>
@@ -639,25 +670,25 @@ const GetStarted = () => {
                           </tr>
                         </thead>
                         <tbody className="bg-white text-[15px]">
-
-                        {mainInvoice?.itemDetails.map((item, index) => (
-                          <tr key={item.id}>
-                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                            {item.itemName}
-                            </td>
-                            {/* <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                          {mainInvoice?.itemDetails.map((item, index) => (
+                            <tr key={item.id}>
+                              <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                {item.itemName}
+                              </td>
+                              {/* <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                               HTML Admin Template
                             </td> */}
-                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                            ₹{item.rate}
-                            </td>
-                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                            {item.quantity}
-                            </td>
-                            <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                            ₹{item.quantity * item.rate}
-                            </td>
-                          </tr>))}
+                              <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                ₹{item.rate}
+                              </td>
+                              <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                {item.quantity}
+                              </td>
+                              <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                ₹{item.quantity * item.rate}
+                              </td>
+                            </tr>
+                          ))}
                           {/* <tr>
                             <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                               Frest Admin Template
@@ -741,7 +772,7 @@ const GetStarted = () => {
                       <div className="flex gap-1  items-center mt-8 ">
                         <p className="text-base">Note:</p>
                         <p className="text-[14px]">
-                        ₹{mainInvoice?.termsAndConditions} Thank You!
+                          ₹{mainInvoice?.termsAndConditions} Thank You!
                         </p>
                       </div>
                     </div>
