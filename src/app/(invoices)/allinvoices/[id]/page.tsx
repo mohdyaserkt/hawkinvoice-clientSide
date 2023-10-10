@@ -271,7 +271,7 @@ const GetStarted = () => {
 
 
 
-
+{/* 
 
                   
                   <div className="mb-5 pb-5 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
@@ -331,7 +331,7 @@ const GetStarted = () => {
                               className="inline-flex items-center gap-x-1.5 text-blue-600 decoration-2 hover:underline font-medium"
                               href="#"
                             >
-                              {/* {mainInvoice?.customerName} */}
+                              {mainInvoice?.customerName}
                             </a>
                           </dd>
                         </dl>
@@ -382,7 +382,7 @@ const GetStarted = () => {
                             Invoice number:
                           </dt>
                           <dd className="font-medium text-gray-800 dark:text-gray-200">
-                            {/* {mainInvoice?.invoiceNumber} */}
+                            {mainInvoice?.invoiceNumber}
                           </dd>
                         </dl>
 
@@ -400,11 +400,11 @@ const GetStarted = () => {
                             Due date:
                           </dt>
                           <dd className="font-medium text-gray-800 dark:text-gray-200">
-                            {/* {formatDate(
+                            {formatDate(
                               mainInvoice?.dueDate
                                 ? mainInvoice.dueDate
                                 : new Date()
-                            )} */}
+                            )}
                           </dd>
                         </dl>
 
@@ -527,7 +527,7 @@ const GetStarted = () => {
                     </div>
                   </div>
 
-
+ */}
 
 
 
@@ -564,7 +564,11 @@ const GetStarted = () => {
                           Invoice #{mainInvoice?.invoiceNumber}
                         </h1>
                         <div className="flex flex-col  text-[15px]">
-                          <p>Date Issues:25/08/2020</p>
+                          <p>Date Issues:{formatDate(
+                              mainInvoice?.invoiceDate
+                                ? mainInvoice.invoiceDate
+                                : new Date()
+                            )}</p>
                           <p>Date Due: {formatDate(
                               mainInvoice?.dueDate
                                 ? mainInvoice.dueDate
@@ -584,7 +588,7 @@ const GetStarted = () => {
                           <p>Shelby Company Limited</p>
                           <p>Small Heath, B10 0HF, UK</p>
                           <p>718-986-6062</p>
-                          <p>peakyFBlinders@gmail.com</p>
+                          <p>{mainInvoice?.customerEmail}</p>
                         </div>
                       </div>
                       <div className="flex flex-col gap-3">
@@ -594,10 +598,10 @@ const GetStarted = () => {
                         <div className="text-sm flex gap-5">
                           <div className="flex flex-col gap-1">
                             <p>Total Due:</p>
-                            <p>Bank name:</p>
+                            {/* <p>Bank name:</p>
                             <p>Country:</p>
                             <p>IBAN:</p>
-                            <p>SWIFT code:</p>
+                            <p>SWIFT code:</p> */}
                           </div>
                           <div className="flex flex-col gap-1">
                             <p>₹
@@ -605,10 +609,10 @@ const GetStarted = () => {
                               ? 0
                               : mainInvoice?.Total}
                             .00</p>
-                            <p>American Bank</p>
+                            {/* <p>American Bank</p>
                             <p>United States</p>
                             <p>ETD95476213874685</p>
-                            <p>BR91905</p>
+                            <p>BR91905</p> */}
                           </div>
                         </div>
                       </div>
@@ -654,7 +658,7 @@ const GetStarted = () => {
                             ₹{item.quantity * item.rate}
                             </td>
                           </tr>))}
-                          <tr>
+                          {/* <tr>
                             <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                               Frest Admin Template
                             </td>
@@ -704,7 +708,7 @@ const GetStarted = () => {
                             <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                               $66.00
                             </td>
-                          </tr>
+                          </tr> */}
                         </tbody>
                       </table>
                     </div>
@@ -712,24 +716,24 @@ const GetStarted = () => {
                       <div className="text-[15px] flex flex-col gap-2">
                         <div className="flex gap-1">
                           <p>Salesperson:</p>
-                          <p>Alfie Solomons</p>
+                          <p>{mainInvoice?.salesPerson}</p>
                         </div>
                         <div>
-                          <p>Thanks for your business</p>
+                          <p>{mainInvoice?.customerNotes}</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-10 mr-[51px]">
                         <div className="flex flex-col gap-2 text-sm">
                           <p>Subtotal:</p>
                           <p>Discount:</p>
-                          <p>Tax:</p>
+                          {/* <p>Tax:</p> */}
                           <p>Total:</p>
                         </div>
                         <div className="flex flex-col gap-2 text-sm">
                           <p> ₹{mainInvoice?.subTotal}</p>
-                          <p>$00.00</p>
-                          <p>$50.00</p>
-                          <p>$204.25</p>
+                          <p>₹{mainInvoice?.discount}</p>
+                          {/* <p>$50.00</p> */}
+                          <p>₹{mainInvoice?.Total}</p>
                         </div>
                       </div>
                     </div>
@@ -737,9 +741,7 @@ const GetStarted = () => {
                       <div className="flex gap-1  items-center mt-8 ">
                         <p className="text-base">Note:</p>
                         <p className="text-[14px]">
-                          It was a pleasure working with you and your team. We
-                          hope you will keep us in mind for future freelance
-                          projects. Thank You!
+                        ₹{mainInvoice?.termsAndConditions} Thank You!
                         </p>
                       </div>
                     </div>
