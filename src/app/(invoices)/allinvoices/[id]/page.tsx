@@ -89,6 +89,9 @@ const GetStarted = () => {
       // };
     }
   };
+
+
+  
   return (
     <>
       <div className="h-screen">
