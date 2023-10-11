@@ -16,34 +16,32 @@ const ChartComponent: React.FC = () => {
       });
   }, []);
 
-
+console.log(chartData);
 
 
   const currentDate = new Date();
-const currentYear = currentDate.getFullYear();
-const isBeforeApril1 = currentDate.getMonth() < 3 || (currentDate.getMonth() === 3 && currentDate.getDate() < 1);
+  const currentMonth = currentDate.getMonth() + 1; // Months are 0-based
 
-const months = [];
+  // Determine the current financial year
+  let financialYear;
+  if (currentMonth >= 4) {
+    financialYear = currentDate.getFullYear();
+  } else {
+    financialYear = currentDate.getFullYear() - 1;
+  }
 
-if (isBeforeApril1) {
-  // If current date is before April 1, use previous year's April to current year's March
-  for (let i = currentYear - 1; i <= currentYear; i++) {
-    for (let month = 4; month <= 12; month++) {
-      // Get the month name abbreviation (e.g., Oct)
-      const monthName = new Date(i, month - 1, 1).toLocaleString('default', { month: 'short' });
-      months.push(`${monthName}${i}`);
-    }
+  const months = [];
+
+  // Generate month names for the financial year
+  for (let month = 4; month <= 15; month++) {
+    const year = month <= 12 ? financialYear : financialYear + 1;
+    const adjustedMonth = month <= 12 ? month : month - 12;
+    const monthDate = new Date(year, adjustedMonth - 1, 1);
+    const monthName = monthDate.toLocaleString('default', { month: 'short' }) + year;
+    months.push(monthName);
   }
-} else {
-  // If the current date is on or after April 1, use the current year's April to next year's March
-  for (let i = currentYear; i <= currentYear + 1; i++) {
-    for (let month = 4; month <= 12; month++) {
-      // Get the month name abbreviation (e.g., Oct)
-      const monthName = new Date(i, month - 1, 1).toLocaleString('default', { month: 'short' });
-      months.push(`${monthName}${i}`);
-    }
-  }
-}
+
+
 
 
 const data = [["Month", " ", "", ""]];
@@ -131,15 +129,15 @@ months.forEach(month => {
       <div className="w-[200px] h-72 border-s text-white flex flex-col gap-4 justify-center items-center">
         <div className="flex flex-col justify-end">
           <p className="text-[13px] text-[#2C8FF6]">Total Sales</p>
-          <h1 className="text-[19px]">₹{chartData?.totalSales?.totalSum||0}.00</h1>
+          <h1 className="text-[19px]">₹{chartData?.totalSales[0]?.totalSum||0}.00</h1>
         </div>
         <div className="flex flex-col justify-end">
           <p className="text-[13px] text-[#35BD7A]">Total Receipts</p>
-          <h1 className="text-[19px]">₹{chartData?.totalReceipts?.totalSum||0}.00</h1>
+          <h1 className="text-[19px]">₹{chartData?.totalReceipts[0]?.totalSum||0}.00</h1>
         </div>
         <div className="flex flex-col justify-end">
           <p className="text-[13px] text-[#F8612B]">Total Expenses</p>
-          <h1 className="text-[19px]">₹{chartData?.totalExpenses?.totalSum||0}.00</h1>
+          <h1 className="text-[19px]">₹{chartData?.totalExpenses[0]?.totalSum||0}.00</h1>
         </div>
       </div>
     </div>
