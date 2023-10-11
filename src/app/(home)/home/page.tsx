@@ -27,8 +27,8 @@ const Home = () => {
   const router = useRouter();
 
 
-  const [allRecievables, setallRecievables] = useState<any>([]);
-  const [salesTable, setsalesTable] = useState<any>([]);
+  const [allRecievables, setallRecievables] = useState<any>();
+  const [salesTable, setsalesTable] = useState<any>();
    
 
   useEffect(() => {
@@ -171,7 +171,7 @@ const Home = () => {
                 <div className="w-full h-[67px]  border-b border-x py-2">
                   <div className="relative pt-1 px-2 flex flex-col gap-1">
                     <p className="text-[10px] text-secondary">
-                      Total Receivables ₹3,550.00
+                      Total Receivables ₹{allRecievables?.allrecievables[0]?.totalSum?allRecievables?.allrecievables[0]?.totalSum:0}.00
                     </p>
                     <div className="overflow-hidden h-3 mb-4 text-xs flex rounded bg-amber-200">
                       <div
@@ -194,26 +194,26 @@ const Home = () => {
                   <div className="border-e pr-6">
                     <div className="">
                       <p className="text-xs text-white">CURRENT</p>
-                      <h3 className="text-white text-xl">₹0.00</h3>
+                      <h3 className="text-white text-xl">₹{allRecievables?.allrecievables[0]?.totalSum?allRecievables?.allrecievables[0]?.totalSum:0}.00</h3>
                     </div>
                   </div>
                   <div>
                     <p className="text-xs text-white">OVERDUE</p>
-                    <h3 className="text-white text-xl">₹0.00</h3>
+                    <h3 className="text-white text-xl">₹{allRecievables?.overdueOneToFifteenDays?allRecievables?.overdueOneToFifteenDays:0}.00</h3>
                     <p className="text-secondary text-xs">1-15 Days</p>
                   </div>
                   <div className="">
-                    <h3 className="text-white text-xl">₹0.00</h3>
+                    <h3 className="text-white text-xl">₹{allRecievables?.overdueSixteenToThirtyDays?allRecievables?.overdueSixteenToThirtyDays:0}.00</h3>
                     <p className="text-secondary text-xs">16-30 Days</p>
                   </div>
 
                   <div>
-                    <h3 className="text-white text-xl">₹0.00</h3>
-                    <p className="text-secondary text-xs">Above 45 days</p>
+                    <h3 className="text-white text-xl">₹{allRecievables?.overdueThirtyOneToFortyFiveDays?allRecievables?.overdueThirtyOneToFortyFiveDays:0}.00</h3>
+                    <p className="text-secondary text-xs">31-45 days</p>
                   </div>
 
                   <div>
-                    <h3 className="text-white text-xl">₹0.00</h3>
+                    <h3 className="text-white text-xl">₹{allRecievables?.overdueAboveFortyFiveDays?allRecievables?.overdueAboveFortyFiveDays:0}.00</h3>
                     <p className="text-secondary text-xs">Above 45 days</p>
                   </div>
                 </div>
