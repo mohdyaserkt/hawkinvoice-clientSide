@@ -298,7 +298,7 @@ const Home = () => {
                       <tbody className="text-[#408DFB] text-center ">
                         <tr className="mb-5">
                           <td className="text-start">Today</td>
-                          <td>₹0.00</td>
+                          <td>₹{salesTable.todaysData.totalSales||0}.00</td>
                           <td>₹0.00</td>
                           <td>₹0.00</td>
                         </tr>
