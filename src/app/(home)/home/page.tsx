@@ -171,7 +171,7 @@ const Home = () => {
                 <div className="w-full h-[67px]  border-b border-x py-2">
                   <div className="relative pt-1 px-2 flex flex-col gap-1">
                     <p className="text-[10px] text-secondary">
-                      Total Receivables ₹{allRecievables?.allrecievables[0]?.totalSum?allRecievables?.allrecievables[0]?.totalSum:0}.00
+                      Total Receivables ₹{allRecievables?.allrecievables[0]?.totalSum||0}.00
                     </p>
                     <div className="overflow-hidden h-3 mb-4 text-xs flex rounded bg-amber-200">
                       <div
