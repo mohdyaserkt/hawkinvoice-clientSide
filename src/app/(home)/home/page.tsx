@@ -298,33 +298,33 @@ const Home = () => {
                       <tbody className="text-[#408DFB] text-center ">
                         <tr className="mb-5">
                           <td className="text-start">Today</td>
-                          <td>₹{salesTable?.todaysData?.totalSales||0}.00</td>
-                          <td>₹{salesTable?.todaysData?.totalReciepts||0}.00</td>
-                          <td>₹{salesTable?.todaysData?.totalDues||0}.00</td>
+                          <td>₹{salesTable?.todaysData?.totalSales||0.00}</td>
+                          <td>₹{salesTable?.todaysData?.totalReciepts||0.00}</td>
+                          <td>₹{salesTable?.todaysData?.totalDues||0.00}</td>
                         </tr>
                         <tr className="mb-5">
                           <td className="text-start">This Week</td>
-                          <td>₹{salesTable?.thisWeekData?.totalSales||0}.00</td>
-                          <td>₹{salesTable?.thisWeekData?.totalReciepts||0}.00</td>
-                          <td>₹{salesTable?.thisWeekData?.totalDues||0}.00</td>
+                          <td>₹{salesTable?.thisWeekData?.totalSales||0.00}</td>
+                          <td>₹{salesTable?.thisWeekData?.totalReciepts||0.00}</td>
+                          <td>₹{salesTable?.thisWeekData?.totalDues||0.00}</td>
                         </tr>
                         <tr className="mb-5">
                           <td className="text-start">This Month</td>
-                          <td>₹{salesTable?.thisMonthData?.totalSales||0}.00</td>
-                          <td>₹{salesTable?.thisMonthData?.totalReciepts||0}.00</td>
-                          <td>₹{salesTable?.thisMonthData?.totalDues||0}.00</td>
+                          <td>₹{salesTable?.thisMonthData?.totalSales||0.00}</td>
+                          <td>₹{salesTable?.thisMonthData?.totalReciepts||0.00}</td>
+                          <td>₹{salesTable?.thisMonthData?.totalDues||0.00}</td>
                         </tr>
                         <tr className="mb-5">
                           <td className="text-start">This Quarter</td>
-                          <td>₹{salesTable?.thisQuarterData?.totalSales||0}.00</td>
-                          <td>₹{salesTable?.thisQuarterData?.totalReciepts||0}.00</td>
-                          <td>₹{salesTable?.thisQuarterData?.totalDues||0}.00</td>
+                          <td>₹{salesTable?.thisQuarterData?.totalSales||0.00}</td>
+                          <td>₹{salesTable?.thisQuarterData?.totalReciepts||0.00}</td>
+                          <td>₹{salesTable?.thisQuarterData?.totalDues||0.00}</td>
                         </tr>
                         <tr className="mb-5">
                           <td className="text-start">This Year</td>
-                          <td>₹{salesTable?.thisYearData?.totalSales||0}.00</td>
-                          <td>₹{salesTable?.thisYearData?.totalReciepts||0}.00</td>
-                          <td>₹{salesTable?.thisYearData?.totalDues||0}.00</td>
+                          <td>₹{salesTable?.thisYearData?.totalSales||0.00}</td>
+                          <td>₹{salesTable?.thisYearData?.totalReciepts||0.00}</td>
+                          <td>₹{salesTable?.thisYearData?.totalDues||0.00}</td>
                         </tr>
                       </tbody>
                     </table>
