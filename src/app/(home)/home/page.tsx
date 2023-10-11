@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   LiaFileInvoiceDollarSolid,
   LiaFileInvoiceSolid,
@@ -20,9 +20,49 @@ import Image from "next/image";
 import ChartComponent from "@/components/home/chart";
 import PieChart from "@/components/home/pichart";
 import ExpensePieChart from "@/components/home/pichart";
+import { handleGetAllRecievables } from "@/utils/home/getAllRecievable";
+import { handleGetSalesTableData } from "@/utils/home/getSalesTableData";
 
-const getStarted = () => {
+const Home = () => {
   const router = useRouter();
+
+
+  const [allRecievables, setallRecievables] = useState<any>([]);
+  const [salesTable, setsalesTable] = useState<any>([]);
+   
+
+  useEffect(() => {
+    getData()
+
+  }, []);
+
+
+
+
+  const getData=()=>{
+
+    handleGetAllRecievables()
+      .then(({ data }: any) => {
+        setallRecievables(data.allRecievables);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+
+
+
+      handleGetSalesTableData()
+      .then(({ data }: any) => {
+        setsalesTable(data.tableData);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+
+
+  }
   return (
     <>
       <div className="h-screen">
@@ -301,4 +341,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default Home;
