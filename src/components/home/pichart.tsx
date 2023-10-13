@@ -12,6 +12,11 @@ const ExpensePieChart = () => {
   ]);
 
   const [expenseData, setexpenseData] = useState<any[]>([]);
+
+
+
+
+  
   const options = {
     // title: "Expense Breakdown",
     backgroundColor: "#143230",
