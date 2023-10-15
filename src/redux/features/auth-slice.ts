@@ -1,37 +1,59 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import type { RootState } from '../store'
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import type { RootState } from "../store";
 
 // Define a type for the slice state
-export interface CounterState {
-  value: number
+export interface authState {
+  value: {
+    email: string; 
+    id: string;
+    isGoogle: boolean;
+    password: string; 
+    profile: string; 
+    status: boolean; 
+    verified: boolean; 
+  };
 }
 
 // Define the initial state using that type
-const initialState: CounterState = {
-  value: 0
-}
+const initialState: authState = {
+  value: {
+    email: "",
+    id: "",
+    isGoogle: false,
+    password: "",
+    profile: "",
+    status: true,
+    verified: true,
+  },
+};
 
-export const counterSlice = createSlice({
-  name: 'counter',
+export const authSlice = createSlice({
+  name: "auth",
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-    increment: state => {
-      state.value += 1
+    logOut: (state) => {
+      return initialState;
     },
-    decrement: state => {
-      state.value -= 1
+    logIn: (state, action: PayloadAction<string | boolean>) => {
+      return {
+        value: {
+          email: typeof action.payload === "string" ? action.payload : state.value.email,
+          id: typeof action.payload === "string" ? action.payload : state.value.id,
+          isGoogle: typeof action.payload === "boolean" ? action.payload : state.value.isGoogle,
+          password: typeof action.payload === "string" ? action.payload : state.value.password,
+          profile: typeof action.payload === "string" ? action.payload : state.value.profile,
+          status: typeof action.payload === "boolean" ? action.payload : state.value.status,
+          verified: typeof action.payload === "boolean" ? action.payload : state.value.verified,
+        },
+      };
     },
-    // Use the PayloadAction type to declare the contents of `action.payload`
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload
-    }
-  }
-})
+  },
+});
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
+export const { logOut, logIn } = authSlice.actions; // Fix action names
 
 // Other code such as selectors can use the imported `RootState` type
-export const selectCount = (state: RootState) => state.counter.value
+export const selectAuth = (state: RootState) => state.auth.value; // Adjust the selector
 
-export default counterSlice.reducer
+export default authSlice.reducer;
