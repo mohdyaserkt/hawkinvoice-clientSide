@@ -21,6 +21,11 @@ const manageOrganisation = () => {
       });
   }, []);
 
+  const saveOrganisation=(item: any)=>{
+console.log(item);
+
+  }
+
   return (
     <div className="h-auto">
       <nav></nav>
