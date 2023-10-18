@@ -12,6 +12,8 @@ const manageOrganisation = () => {
     handleGetMyOrganizations()
       .then(({data}:any) => {
         setmyOrganizations(data.tenants)
+        console.log(data.tenants,"all organisations...");
+        
       })
       .catch((err) => {
         console.log(err);
