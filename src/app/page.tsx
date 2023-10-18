@@ -10,7 +10,7 @@ export default function Home() {
 
   let data = useAppSelector((state) => state.authReducer.value);
 
-  let email = "check@gmail.com";
+  let email = "check@sdfsdfs.com";
 
   console.log(data, "my data   knkjk");
   return (
