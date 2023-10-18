@@ -33,8 +33,9 @@ export default function login() {
         if (data) {
           console.log(data.AccessToken);
           const {email,id,isGoogle,password,profile,status,verified}=data.user
+          const AccessToken=data.AccessToken
         
-           dispatch(logIn({email,id,isGoogle,password,profile,status,verified }))
+           dispatch(logIn({email,id,isGoogle,password,profile,status,verified,AccessToken}))
           localStorage.setItem("user", JSON.stringify(data.user));
           localStorage.setItem("AccessToken", JSON.stringify(data.AccessToken));
 

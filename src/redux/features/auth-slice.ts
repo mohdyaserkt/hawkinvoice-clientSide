@@ -9,6 +9,7 @@ export interface authState {
   profile: string;
   status: boolean;
   verified: boolean;
+  AccessToken:string
 }
 
 export interface InitialState {
@@ -24,6 +25,7 @@ const initialState: InitialState = {
     profile: "",
     status: true,
     verified: true,
+    AccessToken:""
   },
 };
 
