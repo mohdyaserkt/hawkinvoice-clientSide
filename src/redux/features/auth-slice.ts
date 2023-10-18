@@ -60,6 +60,6 @@ export const authSlice = createSlice({
 export const { logOut, logIn } = authSlice.actions; // Fix action names
 
 // Other code such as selectors can use the imported `RootState` type
-export const selectAuth = (state: RootState) => state.auth.value; // Adjust the selector
+// export const selectAuth = (state: RootState) => state.auth.value; // Adjust the selector
 
 export default authSlice.reducer;
