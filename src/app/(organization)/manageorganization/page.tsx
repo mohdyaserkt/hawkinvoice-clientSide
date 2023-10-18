@@ -4,8 +4,11 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { save_Org } from "@/redux/features/org-slice";
 
 const manageOrganisation = () => {
+  const dispatch = useDispatch();
   const router = useRouter();
   const [myOrganizations, setmyOrganizations] = useState([]);
   useEffect(() => {
@@ -23,6 +26,7 @@ const manageOrganisation = () => {
 
   const saveOrganisation=(item: ICompanyData)=>{
 console.log(item);
+dispatch(save_Org(item))
 
   }
 
