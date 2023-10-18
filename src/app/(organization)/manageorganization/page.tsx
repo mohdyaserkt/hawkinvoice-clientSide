@@ -21,7 +21,7 @@ const manageOrganisation = () => {
       });
   }, []);
 
-  const saveOrganisation=(item: any)=>{
+  const saveOrganisation=(item: ICompanyData)=>{
 console.log(item);
 
   }

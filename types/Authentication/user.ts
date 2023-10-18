@@ -35,3 +35,15 @@ interface IhandleSignup1 {
   
 }
 
+interface ICompanyData {
+  NoOfEmployees: string;
+  annualRevenue: string;
+  businessName: string;
+  createdDate: string;
+  email: string;
+  id: string;
+  phoneNumber: number;
+  profile: string;
+  typeOfBusiness: string;
+  userId: string;
+}
