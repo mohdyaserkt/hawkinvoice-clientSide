@@ -39,7 +39,7 @@ interface ICompanyData {
   NoOfEmployees: string;
   annualRevenue: string;
   businessName: string;
-  createdDate: string;
+  createdDate: Date;
   email: string;
   id: string;
   phoneNumber: number;

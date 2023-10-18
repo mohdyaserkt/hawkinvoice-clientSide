@@ -3,6 +3,7 @@ import { TypedUseSelectorHook, useSelector } from 'react-redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // You can choose the storage engine
 import authReducer from './features/auth-slice';
+import orgReducer from './features/org-slice';
 
 // Define a persistConfig for Redux Persist
 const persistConfig = {
@@ -12,12 +13,15 @@ const persistConfig = {
 };
 
 // Create a persisted reducer using persistReducer
-const persistedReducer = persistReducer(persistConfig, authReducer);
+const persistedAuthReducer = persistReducer(persistConfig, authReducer);
+const persistedOrgReducer = persistReducer(persistConfig, orgReducer);
 
 // Create your Redux store with the persisted reducer
 export const store = configureStore({
   reducer: {
-    authReducer: persistedReducer, // Use the persisted reducer
+    authReducer: persistedAuthReducer, // Use the persisted reducer
+    orgReducer: persistedOrgReducer,
+
   },
 });
 

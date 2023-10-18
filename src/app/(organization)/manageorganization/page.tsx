@@ -79,7 +79,7 @@ console.log(item);
                     <h1 className="text-base text-white">{item.businessName}</h1>
                     <div className="flex justify-center">
                     {/* <Link href={`http://${item.businessName}.hawkinvoice.com/customers`}> */}
-                      <button onClick={()=>{localStorage.setItem("currentOrganization", JSON.stringify(item.id)); router.push('/customers')}} className=" border-[1px] border-blue-500 text-blue-500 text-xs p-2  rounded">
+                      <button onClick={()=>{localStorage.setItem("currentOrganization", JSON.stringify(item.id));saveOrganisation(item); router.push('/customers')}} className=" border-[1px] border-blue-500 text-blue-500 text-xs p-2  rounded">
                         Go to Organization
                       </button>
                       {/* </Link> */}
