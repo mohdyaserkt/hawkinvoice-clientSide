@@ -7,10 +7,13 @@ import { ApiError } from "next/dist/server/api-utils";
 import { handleLogin } from "@/utils/Authentication/handleLogin";
 import { useState } from "react";
 import { json } from "stream/consumers";
+import { useDispatch } from "react-redux";
+import { logIn } from "@/redux/features/auth-slice";
 
 
 export default function login() {
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const [loginState, setLoginState] = HandleForm({ email: "", password: "" });
   let email = loginState.email as string;
@@ -29,9 +32,9 @@ export default function login() {
       .then(({ data }: any) => {
         if (data) {
           console.log(data.AccessToken);
-
+          const {email,id,isGoogle,password,profile,status,verified}=data.user
         
-  
+           dispatch(logIn({email,id,isGoogle,password,profile,status,verified }))
           localStorage.setItem("user", JSON.stringify(data.user));
           localStorage.setItem("AccessToken", JSON.stringify(data.AccessToken));
 
