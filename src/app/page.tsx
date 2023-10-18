@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import { logIn } from "@/redux/features/auth-slice";
 import { useDispatch } from "react-redux";
@@ -11,7 +12,7 @@ export default function Home() {
   const data = useAppSelector((state) => state.authReducer.value);
 
   // Define the email
-  const email = "check@gmail.com";
+  const email = "check@sdfsfsdddddddddddddddd.com";
 
   console.log(data, "my data");
 
