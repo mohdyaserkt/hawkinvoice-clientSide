@@ -64,7 +64,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <div className=" px-28 flex items-center gap-[213px] pt-[118px] ">
+      <div className=" px-28 flex items-center gap-[294px] pt-[118px] ">
         <div className="flex flex-col gap-8">
           <div className=" flex flex-col gap-[38px]">
             <h1 className={`${roboto.className} text-white font-extrabold text-7xl `}>
@@ -82,10 +82,10 @@ export default function Home() {
           </div>
           <div className="flex gap-5">
             <div className="w-[190px] h-[50px] bg-secondary rounded-full font-bold flex items-center justify-center  text-sm">
-              Schedule a demo
+            Create New account
             </div>
             <div className="w-[190px] h-[50px] bg-white rounded-full font-bold flex items-center justify-center  text-sm">
-              View pricing
+              Login Your Account
             </div>
           </div>
 
