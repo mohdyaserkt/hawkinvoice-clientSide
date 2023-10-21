@@ -18,6 +18,7 @@ import {
 import "./page.module.css";
 import Link from "next/link";
 import { handleGetCustomers } from "@/utils/Customers/getCustomers";
+import { useAppSelector } from "@/redux/store";
 
 const getStarted = () => {
   const [myCustomers, setmyCustomers] = useState([]);
@@ -33,7 +34,8 @@ const getStarted = () => {
   }, []);
 
 
-  
+  const data = useAppSelector((state) => state.orgReducer.value);
+console.log("dorgdata ... ",data);
 
  
   return (
