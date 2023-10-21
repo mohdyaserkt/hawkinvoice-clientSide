@@ -44,26 +44,28 @@ export default function Home() {
 
   return (
     <div className="w-screen h-screen">
-      <nav className="w-full">
+      <nav className="w-full flex justify-between items-center px-28 py-7">
         <div>
-          <h1 className="text-white">hawkInvoice</h1>
+          <h1 className="text-white text-3xl font-semibold">HawkInvoice</h1>
         </div>
-        <div>
-          <Link href="/login">Login</Link>
-          <div>Create New account</div>
+        <div className="flex gap-5  items-center">
+          <Link href="/login" className="text-sm text-white">Login</Link>
+          <div className="w-52 h-12 bg-secondary rounded-full flex items-center justify-center font-semibold text-sm">Create New account</div>
         </div>
       </nav>
 
-      <div className="w-full h-full ">
+      <div className="w-full h-full px-28 flex ">
         <div>
-          <h1>Revolutionize, Your Finances.</h1>
-          <p>
+          <div className=" flex flex-col gap-[38px]">
+          <h1 className="text-white font-bold text-7xl">Revolutionize,<br />Your Finances.</h1>
+          <p className="text-white text-xl max-w-[50rem] text-start">
             "Streamline Your Finances with Our All-in-One Online Invoicing
-            SoftwareDiscover the power of our cutting-edge online invoicing
+            Software Discover the power of our cutting-edge online invoicing
             software, designed to revolutionize your business finances. Simplify
             expense management, streamline Accounts Payable, and upgrade your
             invoicing process today!"
           </p>
+          </div>
           <div>
             <div>Schedule a demo</div>
             <div>View pricing</div>
