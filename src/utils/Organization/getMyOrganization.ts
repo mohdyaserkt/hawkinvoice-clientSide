@@ -2,12 +2,12 @@ import { AxiosError } from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import { createNewOrganization } from "@/app/api/organization/createNewOrganization";
 import { getMyOrganizations } from "@/app/api/organization/getMyOrganizations";
+import { useAppSelector } from "@/redux/store";
 
 export const handleGetMyOrganizations = async (): Promise<
   string | boolean | AxiosError
 > => {
-  const user = JSON.parse(localStorage.getItem("user") as string);
-  const id = user.id;
+  const id = useAppSelector((state) => state.authReducer.value.id);
 
   try {
     const tenant = await getMyOrganizations(id);
