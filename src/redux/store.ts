@@ -6,15 +6,20 @@ import authReducer from './features/auth-slice';
 import orgReducer from './features/org-slice';
 
 // Define a persistConfig for Redux Persist
-const persistConfig = {
+const persistConfigauthReducer = {
   key: 'root', // Key for storage
+  storage, // The storage engine to use (localStorage, AsyncStorage, etc.)
+  // Other options like transforms, blacklist, whitelist, etc.
+};
+const persistConfigorgReducer = {
+  key: 'root1', // Key for storage
   storage, // The storage engine to use (localStorage, AsyncStorage, etc.)
   // Other options like transforms, blacklist, whitelist, etc.
 };
 
 // Create a persisted reducer using persistReducer
-const persistedAuthReducer = persistReducer(persistConfig, authReducer);
-const persistedOrgReducer = persistReducer(persistConfig, orgReducer);
+const persistedAuthReducer = persistReducer(persistConfigauthReducer, authReducer);
+const persistedOrgReducer = persistReducer(persistConfigorgReducer, orgReducer);
 
 // Create your Redux store with the persisted reducer
 export const store = configureStore({
