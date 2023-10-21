@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosInstance } from "axios";
 const axiosInstance: AxiosInstance = axios.create({
-  baseURL: "https://hai.hawkinvoice.com",
+  baseURL: "https://server.hawkinvoice.online",
 });
 
 axiosInstance.interceptors.request.use(
