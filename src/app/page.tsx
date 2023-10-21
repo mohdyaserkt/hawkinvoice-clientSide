@@ -4,6 +4,8 @@ import { logIn } from "@/redux/features/auth-slice";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "@/redux/store";
 import { FcGoogle } from "react-icons/fc";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -42,10 +44,38 @@ export default function Home() {
 
   return (
     <div className="w-screen h-screen">
-      <nav></nav>
-      {/* When the element is clicked, dispatch the logIn action with email as payload */}
-      <div className="flex h-full justify-center items-center text-secondary text-6xl">
-        HOME PAGE
+      <nav className="w-full">
+        <div>
+          <h1 className="text-white">hawkInvoice</h1>
+        </div>
+        <div>
+          <Link href="/login">Login</Link>
+          <div>Create New account</div>
+        </div>
+      </nav>
+
+      <div className="w-full h-full ">
+        <div>
+          <h1>Revolutionize, Your Finances.</h1>
+          <p>
+            "Streamline Your Finances with Our All-in-One Online Invoicing
+            SoftwareDiscover the power of our cutting-edge online invoicing
+            software, designed to revolutionize your business finances. Simplify
+            expense management, streamline Accounts Payable, and upgrade your
+            invoicing process today!"
+          </p>
+          <div>
+            <div>Schedule a demo</div>
+            <div>View pricing</div>
+          </div>
+
+          <div>
+          © 2023 Cloudflare, Inc.
+          </div>
+        </div>
+        <div>
+          <Image src={""} alt={"home page image"} ></Image>
+        </div>
       </div>
     </div>
   );
