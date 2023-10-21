@@ -49,34 +49,49 @@ export default function Home() {
           <h1 className="text-white text-3xl font-semibold">HawkInvoice</h1>
         </div>
         <div className="flex gap-5  items-center">
-          <Link href="/login" className="text-sm text-white">Login</Link>
-          <div className="w-52 h-12 bg-secondary rounded-full flex items-center justify-center font-semibold text-sm">Create New account</div>
+          <Link href="/login" className="text-sm text-white">
+            Login
+          </Link>
+          <div className="w-52 h-12 bg-secondary rounded-full flex items-center justify-center font-semibold text-sm">
+            Create New account
+          </div>
         </div>
       </nav>
 
-      <div className="w-full h-full px-28 flex ">
-        <div>
+      <div className=" px-28 flex items-center justify-between ">
+        <div className="flex flex-col gap-8">
           <div className=" flex flex-col gap-[38px]">
-          <h1 className="text-white font-bold text-7xl">Revolutionize,<br />Your Finances.</h1>
-          <p className="text-white text-xl max-w-[50rem] text-start">
-            "Streamline Your Finances with Our All-in-One Online Invoicing
-            Software Discover the power of our cutting-edge online invoicing
-            software, designed to revolutionize your business finances. Simplify
-            expense management, streamline Accounts Payable, and upgrade your
-            invoicing process today!"
-          </p>
+            <h1 className="text-white font-bold text-7xl">
+              Revolutionize,
+              <br />
+              Your Finances.
+            </h1>
+            <p className="text-white text-xl max-w-[50rem] text-start">
+              "Streamline Your Finances with Our All-in-One Online Invoicing
+              Software Discover the power of our cutting-edge online invoicing
+              software, designed to revolutionize your business finances.
+              Simplify expense management, streamline Accounts Payable, and
+              upgrade your invoicing process today!"
+            </p>
           </div>
-          <div>
-            <div>Schedule a demo</div>
-            <div>View pricing</div>
+          <div className="flex gap-5">
+            <div className="w-[190px] h-[50px] bg-secondary rounded-full font-bold flex items-center justify-center  text-sm">
+              Schedule a demo
+            </div>
+            <div className="w-[190px] h-[50px] bg-white rounded-full font-bold flex items-center justify-center  text-sm">
+              View pricing
+            </div>
           </div>
 
-          <div>
-          © 2023 Cloudflare, Inc.
-          </div>
+          {/* <div>© 2023 Cloudflare, Inc.</div> */}
         </div>
         <div>
-          <Image src={"/3992746_Mesa de trabajo 1_Mesa de trabajo 1.png"}  width={120} height={100} alt={"home page image"} ></Image>
+          <Image
+            src={"/3992746_Mesa de trabajo 1_Mesa de trabajo 1.png"}
+            width={515}
+            height={515}
+            alt={"home page image"}
+          ></Image>
         </div>
       </div>
     </div>
