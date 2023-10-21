@@ -60,7 +60,7 @@ export default function Home() {
             Login
           </Link>
           <div className="w-52 h-12 bg-secondary rounded-full flex items-center justify-center font-semibold text-sm">
-            Create New account
+          <Link href="/signup">Create New account</Link>
           </div>
         </div>
       </nav>
@@ -83,14 +83,14 @@ export default function Home() {
           </div>
           <div className="flex gap-5">
             <div className="w-[190px] h-[50px] bg-secondary rounded-full font-bold flex items-center justify-center  text-sm">
-            Create New account
+            <Link href="/signup">Create New account</Link>
             </div>
             <div className="w-[190px] h-[50px] bg-white rounded-full font-bold flex items-center justify-center  text-sm">
-              Login Your Account
+            <Link href="/login">Login Your Account</Link>
             </div>
           </div>
 
-          <div><AiOutlineSafetyCertificate /></div>
+          <div className="flex gap-2 items-center "><AiOutlineSafetyCertificate className="text-secondary h-5 w-5" /> <span className="text-white font-bold">PCI DSS Level 1, SOC 2 and ISO 27001 certified</span> </div>
         </div>
         <div>
           <Image
