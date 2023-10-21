@@ -74,7 +74,7 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <Image src={""} alt={"home page image"} ></Image>
+          <Image src={"/3992746_Mesa de trabajo 1_Mesa de trabajo 1.png"}  width={120} height={100} alt={"home page image"} ></Image>
         </div>
       </div>
     </div>
