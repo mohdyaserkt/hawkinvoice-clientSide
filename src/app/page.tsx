@@ -89,11 +89,11 @@ export default function Home() {
             </div>
           </div>
 
-          {/* <div>© 2023 Cloudflare, Inc.</div> */}
+          <div>© 2023 Cloudflare, Inc.</div>
         </div>
         <div>
           <Image
-            src={"/3992746_Mesa de trabajo 1_Mesa de trabajo 1.png"}
+            src={"/home_Mesa de trabajo 1.svg"}
             width={515}
             height={515}
             alt={"home page image"}
