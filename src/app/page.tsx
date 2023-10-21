@@ -7,6 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import Image from "next/image";
 import { Roboto } from "next/font/google";
+import { AiOutlineSafetyCertificate } from "react-icons/ai";
  const roboto = Roboto({
     subsets: ["latin"],
     weight: "700",
@@ -89,7 +90,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div>© 2023 Cloudflare, Inc.</div>
+          <div><AiOutlineSafetyCertificate /></div>
         </div>
         <div>
           <Image
