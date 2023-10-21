@@ -58,7 +58,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <div className=" px-28 flex items-center justify-between ">
+      <div className=" px-28 flex items-center gap-10 ">
         <div className="flex flex-col gap-8">
           <div className=" flex flex-col gap-[38px]">
             <h1 className="text-white font-bold text-7xl">
