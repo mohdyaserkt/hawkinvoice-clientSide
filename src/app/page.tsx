@@ -6,8 +6,14 @@ import { useAppSelector } from "@/redux/store";
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import Image from "next/image";
-
+import { Roboto } from "next/font/google";
+ const roboto = Roboto({
+    subsets: ["latin"],
+    weight: "700",
+  });
 export default function Home() {
+
+ 
   const dispatch = useDispatch();
 
   // Use useAppSelector to get data from your Redux store
@@ -58,15 +64,15 @@ export default function Home() {
         </div>
       </nav>
 
-      <div className=" px-28 flex items-center gap-10 ">
+      <div className=" px-28 flex items-center gap-[213px] pt-[118px] ">
         <div className="flex flex-col gap-8">
           <div className=" flex flex-col gap-[38px]">
-            <h1 className="text-white font-bold text-7xl">
+            <h1 className={`${roboto.className} text-white font-extrabold text-7xl `}>
               Revolutionize,
               <br />
               Your Finances.
             </h1>
-            <p className="text-white text-xl max-w-[50rem] text-start">
+            <p className="text-white text-lg max-w-[45rem] text-start">
               "Streamline Your Finances with Our All-in-One Online Invoicing
               Software Discover the power of our cutting-edge online invoicing
               software, designed to revolutionize your business finances.
