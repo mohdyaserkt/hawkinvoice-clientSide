@@ -27,6 +27,14 @@ const ExpensePieChart = () => {
     ["Expense Type", "Percentage"],
   ]);
 
+  const nulldata = [
+    ["Expense Type", "Percentage"],
+    ["Labor", 40.44],
+    ["Travel Expense", 20.12],
+    ["Rent Expense", 20.12],
+    ["Materials", 19.32],
+  ];
+
   const [expenseData, setexpenseData] = useState<any[]>([]);
 
   useEffect(() => {
