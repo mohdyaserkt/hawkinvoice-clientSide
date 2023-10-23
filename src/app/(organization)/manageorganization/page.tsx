@@ -12,9 +12,11 @@ const manageOrganisation = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const [myOrganizations, setmyOrganizations] = useState([]);
-  const currentOrganization = useAppSelector(
-      (state) => state.authReducer.value.email
+  const username = useAppSelector(
+      (state) => state.authReducer.value.email.split('@')
     );
+   
+    
   useEffect(() => {
     handleGetMyOrganizations()
       .then(({ data }: any) => {
@@ -38,7 +40,7 @@ const manageOrganisation = () => {
       <div className="flex h-full   justify-center mt-56 ">
         <div className=" w-6/12">
           <div className="mb-6">
-            <h1 className="text-white text-lg mb-3">Hi, User Name!</h1>
+            <h1 className="text-white text-lg mb-3">Hi, {username[0]}</h1>
             <div className="relative">
               <div className="flex justify-between">
                 <div>
@@ -132,7 +134,7 @@ const manageOrganisation = () => {
             {
               myOrganizations.length==0&&<div>
               <div>
-                <div className="flex w-full border-[2px] border-white border-dashed  rounded-lg p-6">
+                <div className="flex w-full border-[1px] border-white border-dashed  rounded-lg p-6">
                   <div className="w-2/12 h-32 mr-6 bg-white rounded flex justify-center items-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

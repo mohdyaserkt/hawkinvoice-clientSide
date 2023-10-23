@@ -4,13 +4,16 @@ import HandleForm from "@/utils/handleFormState";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
+import { useAppSelector } from "@/redux/store";
 
 const getStarted = () => {
   const [organizationState, setorganizationState] = HandleForm({
     businessName: "",
     typeOfbusiness: "",
   });
-
+  const username = useAppSelector(
+    (state) => state.authReducer.value.email.split('@')
+  );
   console.log(organizationState);
   const router = useRouter();
 
@@ -80,7 +83,7 @@ const getStarted = () => {
             <div className=" p-10 flex flex-col gap-10">
               <div className="flex flex-col gap-2">
                 <h1 className="font-semibold text-xl text-white">
-                  Welcome aboard, User Name!
+                  Welcome aboard, {username[0]}
                 </h1>
                 <p className="text-xs text-gray-400 ">
                   Enter your organization details to get started with brand name{" "}
@@ -149,7 +152,7 @@ const getStarted = () => {
                 <button className="text-xs border  rounded-md border-secondary text-secondary w-36 p-2">
                   Get Started
                 </button>
-                <button className="text-xs border  rounded-md border-red-700 text-red-700 w-16 py-2 p-2">
+                <button className="text-xs border  rounded-md border-blue-500 text-blue-500 w-16 py-2 p-2">
                   Cancel
                 </button>
               </div>
