@@ -20,13 +20,14 @@ import Link from "next/link";
 import { handleGetCustomers } from "@/utils/Customers/getCustomers";
 import { useAppSelector } from "@/redux/store";
 import DefaultModal from "@/components/common/modal";
+import { IoIosWarning } from "react-icons/io";
 
 const getStarted = () => {
   const [myCustomers, setmyCustomers] = useState([]);
   useEffect(() => {
     handleGetCustomers()
-      .then(({data}:any) => { 
-        setmyCustomers(data.customers)
+      .then(({ data }: any) => {
+        setmyCustomers(data.customers);
       })
       .catch((err) => {
         console.log(err);
@@ -34,11 +35,9 @@ const getStarted = () => {
       });
   }, []);
 
-
   const data = useAppSelector((state) => state.orgReducer.value);
-console.log("dorgdata ... ",data);
+  console.log("dorgdata ... ", data);
 
- 
   return (
     <>
       <div className="h-screen">
@@ -86,41 +85,56 @@ console.log("dorgdata ... ",data);
         </nav>
         <div className="flex" style={{ height: "calc(100vh - 47px)" }}>
           <div className=" w-56 flex flex-col gap-3 py-3 px-2 border ">
-            <div className="flex items-center  h-7 rounded-lg space-x-2">
-              <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Home</p>
-            </div>
-            <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
-              <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Customers</p>
-            </div>
+            <Link href={"/home"}>
+              <div className="flex items-center  h-7 rounded-lg space-x-2">
+                <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
+                <p className="text-sm text-white">Home</p>
+              </div>
+            </Link>
+            <Link href={"/customers"}>
+              <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
+                <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
+                <p className="text-sm text-white">Customers</p>
+              </div>
+            </Link>
             <Link href="/items">
-            <div className="flex items-center h-7 rounded-lg space-x-2">
-              <PiHandbag className="w-4 h-4 ml-2 text-white " />
-              <p className="text-sm text-white">Items</p>
-            </div></Link>
-            <div className="flex items-center h-7 rounded-lg space-x-2">
-              <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Invoices</p>
-            </div>
-            <div className="flex items-center h-7 rounded-lg space-x-2">
-              <img
-                src="/recievedpayments.svg"
-                alt=""
-                className="w-4 h-4 ml-2 text-white"
-              />
-              <p className="text-sm text-white">Payments Recieved</p>
-            </div>
-            <div className="flex items-center h-7 rounded-lg space-x-2">
-              <TbReceipt className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Expenses</p>
-            </div>
-            <div className="flex items-center h-7 rounded-lg space-x-2">
-              <BsFileEarmarkBarGraph className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Reports</p>
-            </div>
+              <div className="flex items-center h-7 rounded-lg space-x-2">
+                <PiHandbag className="w-4 h-4 ml-2 text-white " />
+                <Link href={"/items"}>
+                  <p className="text-sm text-white">Items</p>
+                </Link>
+              </div>
+            </Link>
+            <Link href={"/invoices"}>
+              <div className="flex items-center h-7 rounded-lg space-x-2">
+                <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
+                <p className="text-sm text-white">Invoices</p>
+              </div>
+            </Link>
+            <Link href={"/expenses"}>
+              <div className="flex items-center h-7 rounded-lg space-x-2">
+                <img
+                  src="/recievedpayments.svg"
+                  alt=""
+                  className="w-4 h-4 ml-2 text-white"
+                />
+                <p className="text-sm text-white">Payments Recieved</p>
+              </div>
+            </Link>
+            <Link href={"/expenses"}>
+              <div className="flex items-center h-7 rounded-lg space-x-2">
+                <TbReceipt className="w-4 h-4 ml-2 text-white" />
+                <p className="text-sm text-white">Expenses</p>
+              </div>
+            </Link>
+            <Link href={"/allreports"}>
+              <div className="flex items-center h-7 rounded-lg space-x-2">
+                <BsFileEarmarkBarGraph className="w-4 h-4 ml-2 text-white" />
+                <p className="text-sm text-white">Reports</p>
+              </div>
+            </Link>
           </div>
-          <div className="w-full">
+          <div className="w-full flex flex-col items-center">
             <div className="p-5 flex justify-between w-full">
               <div className="text-white">
                 <h2 className="text-xl">All Customers</h2>
@@ -128,7 +142,9 @@ console.log("dorgdata ... ",data);
 
               <div className="flex space-x-2">
                 <div className="text-xs bg-secondary flex items-center text-white font-semibold px-3 py-2  rounded">
-                  <Link href='/addnewcustomer'><span className="mr-1">+</span> New</Link>
+                  <Link href="/addnewcustomer">
+                    <span className="mr-1">+</span> New
+                  </Link>
                 </div>
                 <div className="p-2 bg-white rounded">
                   <SlOptions className="w-4 h-4 text-gray-800 " />
@@ -156,15 +172,20 @@ console.log("dorgdata ... ",data);
                 </tr>
               </thead>
               <tbody className="text-white text-sm">
-              {myCustomers.map((item: any) => (
-                <tr className="border-b border-white" key={item.id}>
-                  <td className="p-2 text-center">{item.displayName}</td>
-                  <td className="p-2 text-center">{item.customerCompanyName}</td>
-                  <td className="p-2 text-center">{item.email}</td>
-                  <td className="p-2 text-center">{item.workPhone}</td>
-                  <td className="p-2 text-center">₹0.00</td>
-                  <Link href={`/editcustomer/${item.id}`}><td className="p-2 text-center">edit</td></Link>
-                </tr>))} 
+                {myCustomers.map((item: any) => (
+                  <tr className="border-b border-white" key={item.id}>
+                    <td className="p-2 text-center">{item.displayName}</td>
+                    <td className="p-2 text-center">
+                      {item.customerCompanyName}
+                    </td>
+                    <td className="p-2 text-center">{item.email}</td>
+                    <td className="p-2 text-center">{item.workPhone}</td>
+                    <td className="p-2 text-center">₹0.00</td>
+                    <Link href={`/editcustomer/${item.id}`}>
+                      <td className="p-2 text-center">edit</td>
+                    </Link>
+                  </tr>
+                ))}
                 {/* <tr className="border-b border-white">
                   <td className="p-2 text-center">jlo</td>
                   <td className="p-2 text-center">helo@ha.ls</td>
@@ -174,8 +195,34 @@ console.log("dorgdata ... ",data);
                 </tr> */}
               </tbody>
             </table>
-            
-           
+
+            <div className="flex w-3/5 border-[1px] border-white border-dashed  rounded-lg p-6 mt-10">
+              <div className="w-full justify-center flex flex-col gap-8 ">
+                <div className="w-full flex items-center justify-center">
+                  <IoIosWarning className="text-yellow-400 w-10 h-10" />
+                  <h1 className="text-base text-blue-500  text-center  ">
+                    Currently, your organization doesn't have any customers, so
+                    it's essential to create a customers to drive future growth
+                    and progress.
+                  </h1>
+                  <IoIosWarning className="text-yellow-400 w-10 h-10" />
+                </div>
+                <div className="w-full flex justify-center items-center ">
+                  <Link
+                    href={"/addnewcustomer"}
+                    // onClick={() => router.push("/addorganization")}
+                    className=" bg-secondary rounded w-36 h-8 px-3 text-xs"
+                  >
+                    <button
+                      // onClick={() => router.push("/addorganization")}
+                      className=" bg-secondary rounded w-36 h-8 px-3 text-xs"
+                    >
+                      + New Customer
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
