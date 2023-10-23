@@ -23,6 +23,7 @@ import ExpensePieChart from "@/components/home/pichart";
 import { handleGetAllRecievables } from "@/utils/home/getAllRecievable";
 import { handleGetSalesTableData } from "@/utils/home/getSalesTableData";
 import { useAppSelector } from "@/redux/store";
+import Link from "next/link";
 
 const Home = () => {
   const router = useRouter();
@@ -85,7 +86,7 @@ const Home = () => {
             <div className="flex items-center space-x-2">
               <BsPlusSquareFill className="bg-black text-secondary" />
               <span className=" text-lg text-white ">|</span>
-              <AiOutlineSetting className=" text-white" />
+              <Link href={'/orgprofile'}><AiOutlineSetting className=" text-white" /></Link>
               <span className=" text-lg text-white ">|</span>
               <select className="">
                 <option>Organization</option>
@@ -104,21 +105,21 @@ const Home = () => {
         </nav>
         <div className="flex" style={{ height: "calc(100vh - 47px)" }}>
           <div className=" w-56 flex flex-col gap-3 py-3 px-2 border ">
-            <div className="flex items-center  h-7 rounded-lg space-x-2">
+            <div className="flex items-center bg-secondary  h-7 rounded-lg space-x-2">
               <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Home</p>
+              <Link href={'/home'}><p className="text-sm text-white">Home</p></Link>
             </div>
-            <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
+            <div className="flex items-center  h-7 rounded-lg space-x-2">
               <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Customers</p>
+              <Link href={'/customers'}><p className="text-sm text-white">Customers</p></Link>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <PiHandbag className="w-4 h-4 ml-2 text-white " />
-              <p className="text-sm text-white">Items</p>
+              <Link href={'/items'}><p className="text-sm text-white">Items</p></Link>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Invoices</p>
+              <Link href={'/invoices'}><p className="text-sm text-white">Invoices</p></Link>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <img
@@ -126,15 +127,15 @@ const Home = () => {
                 alt=""
                 className="w-4 h-4 ml-2 text-white"
               />
-              <p className="text-sm text-white">Payments Recieved</p>
+              <Link href={'/home'}><p className="text-sm text-white">Payments Recieved</p></Link>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <TbReceipt className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Expenses</p>
+              <Link href={'/expenses'}><p className="text-sm text-white">Expenses</p></Link>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <BsFileEarmarkBarGraph className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Reports</p>
+              <Link href={'/allreports'}><p className="text-sm text-white">Reports</p></Link>
             </div>
           </div>
           <div className="w-full">
