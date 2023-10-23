@@ -91,7 +91,7 @@ console.log("myinvoices44",myInvoices);
             </div>
           </div>
         </nav>
-        <div className="flex">
+        <div className="flex" style={{ height: "calc(100vh - 47px)" }}>
           <div className=" w-56 flex flex-col gap-3 py-3 px-2 border ">
             <Link href={"/home"}>
               <div className="flex items-center  h-7 rounded-lg space-x-2">
