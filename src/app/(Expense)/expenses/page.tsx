@@ -183,7 +183,7 @@ const GetStarted = () => {
                 
               </tbody>
             </table>
-            {myExpenses.length==0 && <WarningMessage href="/addnewcustomer" warningWord="Customer"/>}
+            {myExpenses.length==0 && <WarningMessage href="/addnewexpense" warningWord="Expense"/>}
           </div>
         </div>
       </div>
