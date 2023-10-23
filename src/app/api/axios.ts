@@ -17,6 +17,7 @@ axiosInstance.interceptors.request.use(
       if (AccessToken) {
         config.headers["Authorization"] = `Bearer ${AccessToken}`;
       }
+      console.log("this is my current acess id ", AccessToken);
 
       const currentOrganization = state.orgReducer.value.id;
 

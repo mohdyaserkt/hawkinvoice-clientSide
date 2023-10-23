@@ -17,6 +17,8 @@ export const handleCreateNewOrganization = async ({
 }: handleCreateNewOrganization): Promise<string | boolean | AxiosError> => {
   const email = state.authReducer.value.email;
   const userId = state.authReducer.value.id;
+  console.log(email,userId,"this are the data for the create new teanants");
+  
 
   try {
     const tenant = await createNewOrganization({
