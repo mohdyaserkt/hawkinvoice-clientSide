@@ -7,16 +7,16 @@ import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { save_Org } from "@/redux/features/org-slice";
 import { useAppSelector } from "@/redux/store";
+import { IoIosWarning } from "react-icons/io";
 
 const manageOrganisation = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const [myOrganizations, setmyOrganizations] = useState([]);
-  const username = useAppSelector(
-      (state) => state.authReducer.value.email.split('@')
-    );
-   
-    
+  const username = useAppSelector((state) =>
+    state.authReducer.value.email.split("@")
+  );
+
   useEffect(() => {
     handleGetMyOrganizations()
       .then(({ data }: any) => {
@@ -131,39 +131,49 @@ const manageOrganisation = () => {
               </div>
             ))}
 
-            {
-              myOrganizations.length==0&&<div>
+            {myOrganizations.length == 0 && (
               <div>
-                <div className="flex w-full border-[1px] border-white border-dashed  rounded-lg p-6">
-                  <div className="w-2/12 h-32 mr-6 bg-white rounded flex justify-center items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      className="w-3/5 h-3/5 text-slate-600"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"
-                      />
-                    </svg>
-                  </div>
-                  <div className="w-full flex items-center justify-center">
-                    <h1 className="text-base text-blue-500  text-center">
-                      {" "}
-                      &#9888; Currently, you don't have any organization
-                      established, so it's essential to create one to further
-                      movements!!!&#9888;
-                    </h1>
+                <div>
+                  <div className="flex w-full border-[1px] border-white border-dashed  rounded-lg p-6">
+                    <div className="w-2/12 h-32 mr-6 bg-white rounded flex justify-center items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="w-3/5 h-3/5 text-slate-600"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"
+                        />
+                      </svg>
+                    </div>
+                    <div className="w-full justify-center flex flex-col gap-8 ">
+                      <div className="w-full flex items-center justify-center">
+                        <IoIosWarning className="text-yellow-400 w-10 h-10" />
+                        <h1 className="text-base text-blue-500  text-center  ">
+                          Currently, you don't have any organization
+                          established, so it's essential to create one to
+                          further movements!!!
+                        </h1>
+                        <IoIosWarning className="text-yellow-400 w-10 h-10" />
+                      </div>
+                      <div className="w-full flex justify-center items-center ">
+                        <button
+                          onClick={() => router.push("/addorganization")}
+                          className=" bg-secondary rounded w-36 h-8 px-3 text-xs"
+                        >
+                          + New Organization
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            }
-            
+            )}
           </div>
         </div>
       </div>
