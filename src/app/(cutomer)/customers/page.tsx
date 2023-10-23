@@ -19,8 +19,7 @@ import "./page.module.css";
 import Link from "next/link";
 import { handleGetCustomers } from "@/utils/Customers/getCustomers";
 import { useAppSelector } from "@/redux/store";
-import DefaultModal from "@/components/common/modal";
-import { IoIosWarning } from "react-icons/io";
+import WarningMessage from "@/components/common/warningMessage";
 
 const getStarted = () => {
   const [myCustomers, setmyCustomers] = useState([]);
@@ -65,7 +64,9 @@ const getStarted = () => {
             <div className="flex items-center space-x-2">
               <BsPlusSquareFill className="bg-black text-secondary" />
               <span className=" text-lg text-white ">|</span>
-              <Link href={'/orgprofile'}><AiOutlineSetting className=" text-white" /></Link>
+              <Link href={"/orgprofile"}>
+                <AiOutlineSetting className=" text-white" />
+              </Link>
               <span className=" text-lg text-white ">|</span>
               <select className="bg-blue-900 text-white focus:outline-none focus:ring focus:border-blue-300">
                 <option className="bg-blue-900">Organization</option>
@@ -195,34 +196,9 @@ const getStarted = () => {
                 </tr> */}
               </tbody>
             </table>
-
-            <div className="flex w-3/5 border-[1px] border-white border-dashed  rounded-lg p-6 mt-10">
-              <div className="w-full justify-center flex flex-col gap-8 ">
-                <div className="w-full flex items-center justify-center">
-                  <IoIosWarning className="text-yellow-400 w-10 h-10" />
-                  <h1 className="text-base text-blue-500  text-center  ">
-                    Currently, your organization doesn't have any customers, so
-                    it's essential to create a customers to drive future growth
-                    and progress.
-                  </h1>
-                  <IoIosWarning className="text-yellow-400 w-10 h-10" />
-                </div>
-                <div className="w-full flex justify-center items-center ">
-                  <Link
-                    href={"/addnewcustomer"}
-                    // onClick={() => router.push("/addorganization")}
-                    className=" bg-secondary rounded w-36 h-8 px-3 text-xs"
-                  >
-                    <button
-                      // onClick={() => router.push("/addorganization")}
-                      className=" bg-secondary rounded w-36 h-8 px-3 text-xs"
-                    >
-                      + New Customer
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </div>
+            
+                {myCustomers.length==1 && <WarningMessage href="/addnewcustomer" warningWord="Customer"/>}
+            
           </div>
         </div>
       </div>
