@@ -17,6 +17,7 @@ import {
   AiOutlineSearch,
 } from "react-icons/ai";
 import { GoOrganization } from "react-icons/go";
+import Link from "next/link";
 
 const GetStarted = () => {
   const imageRef = useRef<HTMLInputElement>(null);

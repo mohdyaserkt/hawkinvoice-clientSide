@@ -21,6 +21,7 @@ import {
 
 import { formatDate } from "@/utils/Invoice/getInvoices";
 import { handleGetPendingSalesDetails } from "@/utils/reports/getPendingSalesDetails";
+import Link from "next/link";
 
 const getStarted = () => {
   const [pendingSales, setpendingSales] = useState<any>([]);

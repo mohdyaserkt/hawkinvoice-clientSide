@@ -22,6 +22,7 @@ import {
 import { formatDate } from "@/utils/Invoice/getInvoices";
 import { handleGetPendingSalesDetails } from "@/utils/reports/getPendingSalesDetails";
 import { handleGetRecievedPayments } from "@/utils/reports/getRecievedPayments";
+import Link from "next/link";
 
 const getStarted = () => {
   const [recievedpayments, setRecievedpayments] = useState<any>([]);
