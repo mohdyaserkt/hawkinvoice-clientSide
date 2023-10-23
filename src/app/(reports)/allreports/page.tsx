@@ -48,7 +48,9 @@ const getStarted = () => {
             <div className="flex items-center space-x-2">
               <BsPlusSquareFill className="bg-black text-secondary" />
               <span className=" text-lg text-white ">|</span>
-              <Link href={'/orgprofile'}><AiOutlineSetting className=" text-white" /></Link>
+              <Link href={"/orgprofile"}>
+                <AiOutlineSetting className=" text-white" />
+              </Link>
               <span className=" text-lg text-white ">|</span>
               <select className="bg-blue-900 text-white focus:outline-none focus:ring focus:border-blue-300">
                 <option className="bg-blue-900">Organization</option>
@@ -80,10 +82,12 @@ const getStarted = () => {
                 <p className="text-sm text-white">Customers</p>
               </div>
             </Link>
-            <div className="flex items-center h-7 bg-secondary rounded-lg space-x-2">
-              <PiHandbag className="w-4 h-4 ml-2 text-white " />
-              <p className="text-sm text-white">Items</p>
-            </div>
+            <Link href={"/items"}>
+              <div className="flex items-center h-7  rounded-lg space-x-2">
+                <PiHandbag className="w-4 h-4 ml-2 text-white " />
+                <p className="text-sm text-white">Items</p>
+              </div>
+            </Link>
             <Link href={"/invoices"}>
               <div className="flex items-center h-7 rounded-lg space-x-2">
                 <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
@@ -107,7 +111,7 @@ const getStarted = () => {
               </div>
             </Link>
             <Link href={"/allreports"}>
-              <div className="flex items-center h-7 rounded-lg space-x-2">
+              <div className="flex items-center h-7 bg-secondary rounded-lg space-x-2">
                 <BsFileEarmarkBarGraph className="w-4 h-4 ml-2 text-white" />
                 <p className="text-sm text-white">Reports</p>
               </div>
@@ -129,14 +133,18 @@ const getStarted = () => {
                   </div>
                   <div>
                     <ul>
-                    <Link href={`/salesbycustomer`}><li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
-                        <CiStar className=" text-secondary w-6 h-6" />
-                        Sales by Customer
-                      </li></Link>
-                      <Link href={`/salesbyitem`}><li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
-                        <CiStar className=" text-secondary w-6 h-6" />
-                        Sales by Item
-                      </li></Link>
+                      <Link href={`/salesbycustomer`}>
+                        <li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                          <CiStar className=" text-secondary w-6 h-6" />
+                          Sales by Customer
+                        </li>
+                      </Link>
+                      <Link href={`/salesbyitem`}>
+                        <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                          <CiStar className=" text-secondary w-6 h-6" />
+                          Sales by Item
+                        </li>
+                      </Link>
                     </ul>
                   </div>
                 </div>
@@ -148,15 +156,19 @@ const getStarted = () => {
                   </div>
                   <div>
                     <ul>
-                      <Link href={`/invoicedetails`}><li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
-                        <CiStar className=" text-secondary w-6 h-6" />
-                        Invoice Details
-                      </li></Link>
-                      <Link href={`/pendingsales`}> <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
-                        <CiStar className=" text-secondary w-6 h-6" />
-                        Pending Sales
-                      </li></Link>
-                      
+                      <Link href={`/invoicedetails`}>
+                        <li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                          <CiStar className=" text-secondary w-6 h-6" />
+                          Invoice Details
+                        </li>
+                      </Link>
+                      <Link href={`/pendingsales`}>
+                        {" "}
+                        <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                          <CiStar className=" text-secondary w-6 h-6" />
+                          Pending Sales
+                        </li>
+                      </Link>
                     </ul>
                   </div>
                 </div>
@@ -168,10 +180,12 @@ const getStarted = () => {
                   </div>
                   <div>
                     <ul>
-                    <Link href={`/recievedpayments`}><li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
-                        <CiStar className=" text-secondary w-6 h-6" />
-                        Payments Received
-                      </li></Link>
+                      <Link href={`/recievedpayments`}>
+                        <li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                          <CiStar className=" text-secondary w-6 h-6" />
+                          Payments Received
+                        </li>
+                      </Link>
                     </ul>
                   </div>
                 </div>
@@ -185,14 +199,18 @@ const getStarted = () => {
                   </div>
                   <div>
                     <ul>
-                    <Link href={`/expensedetails`}><li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
-                        <CiStar className=" text-secondary w-6 h-6" />
-                        Expense Details
-                      </li></Link>
-                      <Link href={`/expensedetailsbyeachcategory`}><li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
-                        <CiStar className=" text-secondary w-6 h-6" />
-                        Expenses by Category
-                      </li></Link>
+                      <Link href={`/expensedetails`}>
+                        <li className="flex gap-2 w-[230px] text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                          <CiStar className=" text-secondary w-6 h-6" />
+                          Expense Details
+                        </li>
+                      </Link>
+                      <Link href={`/expensedetailsbyeachcategory`}>
+                        <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
+                          <CiStar className=" text-secondary w-6 h-6" />
+                          Expenses by Category
+                        </li>
+                      </Link>
                       {/* <li className="flex gap-2 w-[230px]  text-[13px] items-center border-b border-secondary  border-dashed p-2">
                         <CiStar className=" text-secondary w-6 h-6" />
                         Mileage Expenses by Employee
