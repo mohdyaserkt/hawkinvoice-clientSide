@@ -6,11 +6,15 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { save_Org } from "@/redux/features/org-slice";
+import { useAppSelector } from "@/redux/store";
 
 const manageOrganisation = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const [myOrganizations, setmyOrganizations] = useState([]);
+  const currentOrganization = useAppSelector(
+      (state) => state.authReducer.value.email
+    );
   useEffect(() => {
     handleGetMyOrganizations()
       .then(({ data }: any) => {
@@ -124,9 +128,11 @@ const manageOrganisation = () => {
                 </div>
               </div>
             ))}
-            <div>
+
+            {
+              myOrganizations.length==0&&<div>
               <div>
-                <div className="flex w-full border-[1px] border-white border-dashed rounded-lg p-6">
+                <div className="flex w-full border-[2px] border-white border-dashed  rounded-lg p-6">
                   <div className="w-2/12 h-32 mr-6 bg-white rounded flex justify-center items-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -144,7 +150,7 @@ const manageOrganisation = () => {
                     </svg>
                   </div>
                   <div className="w-full flex items-center justify-center">
-                    <h1 className="text-base text-blue-500 text-center">
+                    <h1 className="text-base text-blue-500  text-center">
                       {" "}
                       &#9888; Currently, you don't have any organization
                       established, so it's essential to create one to further
@@ -154,6 +160,8 @@ const manageOrganisation = () => {
                 </div>
               </div>
             </div>
+            }
+            
           </div>
         </div>
       </div>
