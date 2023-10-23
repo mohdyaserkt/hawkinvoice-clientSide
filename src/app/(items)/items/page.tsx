@@ -18,14 +18,15 @@ import {
 
 import Link from "next/link";
 import { handleGetItems } from "@/utils/items/getItems";
+import WarningMessage from "@/components/common/warningMessage";
 
 
 const getStarted = () => {
-  const [myCustomers, setmyCustomers] = useState([]);
+  const [myItems, setmyItems] = useState([]);
   useEffect(() => {
     handleGetItems()
       .then(({data}:any) => { 
-        setmyCustomers(data.items)
+        setmyItems(data.items)
       })
       .catch((err) => {
         console.log(err);
@@ -126,7 +127,7 @@ const getStarted = () => {
               </div>
             </Link>
           </div>
-          <div className="w-full">
+          <div className="w-full flex flex-col items-center">
             <div className="p-5 flex justify-between w-full">
               <div className="text-white">
                 <h2 className="text-xl">All Items</h2>
@@ -160,7 +161,7 @@ const getStarted = () => {
                 </tr>
               </thead>
               <tbody className="text-white text-sm">
-              {myCustomers.map((item: any) => (
+              {myItems.map((item: any) => (
                 <tr className="border-b border-white" key={item.id}>
                   <td className="p-2 text-center">{item.name}</td>
                   <td className="p-2 text-center">{item.description}</td>
@@ -169,14 +170,11 @@ const getStarted = () => {
                   <Link href={`/edititem/${item.id}`}><td className="p-2 text-center">edit</td></Link>
 
                 </tr>))} 
-                <tr className="border-b border-white">
-                  <td className="p-2 text-center">sampleItem</td>
-                  <td className="p-2 text-center">sample Discription.ls</td>
-                  <td className="p-2 text-center">₹ 256</td>
-                  <td className="p-2 text-center">pcs</td>
-                </tr>
+                
               </tbody>
             </table>
+            {myItems.length==0 && <WarningMessage href="/addnewitem" warningWord="Item"/>}
+            
           </div>
         </div>
       </div>

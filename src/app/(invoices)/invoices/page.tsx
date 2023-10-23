@@ -21,6 +21,7 @@ import { handleGetItems } from "@/utils/items/getItems";
 import { useEffect, useState } from "react";
 import { formatDate, handleGetInvoices } from "@/utils/Invoice/getInvoices";
 import { IInvoice } from "../../../../types/invoice/createinvoice";
+import WarningMessage from "@/components/common/warningMessage";
 
 
 const GetStarted = () => {
@@ -142,7 +143,7 @@ console.log("myinvoices44",myInvoices);
               </div>
             </Link>
           </div>
-          <div className="w-full">
+          <div className="w-full flex flex-col items-center">
             <div className="p-5 flex justify-between w-full">
               <div className="text-white">
                 <h2 className="text-xl">All Invoices</h2>
@@ -198,18 +199,11 @@ console.log("myinvoices44",myInvoices);
                   <td className="p-2 text-center">₹{item.Total}</td>
                   <td className="p-2 text-center">₹{item.status=="paid"?"0.00":item.Total}</td>
                 </tr>))} 
-                <tr className="border-b border-white">
-                  <td className="p-2 text-center">25/07/2023</td>
-                  <td className="p-2 text-center">INV-000003</td>
-                  <td className="p-2 text-center">256</td>
-                  <td className="p-2 text-center">customerName</td>
-                  <td className="p-2 text-center">Paid</td>
-                  <td className="p-2 text-center">25/07/2023</td>
-                  <td className="p-2 text-center">₹23,450.00</td>
-                  <td className="p-2 text-center">₹0.00</td>
-                </tr>
+                
               </tbody>
             </table>
+            {myInvoices.length==0 && <WarningMessage href="/createnewinvoice" warningWord="Invoice"/>}
+            
           </div>
         </div>
       </div>
