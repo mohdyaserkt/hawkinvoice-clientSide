@@ -82,26 +82,34 @@ const getStarted = () => {
               <PiHandbag className="w-4 h-4 ml-2 text-white " />
               <p className="text-sm text-white">Items</p>
             </div>
-            <div className="flex items-center h-7 rounded-lg space-x-2">
-              <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Invoices</p>
-            </div>
-            <div className="flex items-center h-7 rounded-lg space-x-2">
-              <img
-                src="/recievedpayments.svg"
-                alt=""
-                className="w-4 h-4 ml-2 text-white"
-              />
-              <p className="text-sm text-white">Payments Recieved</p>
-            </div>
-            <div className="flex items-center h-7 rounded-lg space-x-2">
-              <TbReceipt className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Expenses</p>
-            </div>
-            <div className="flex items-center h-7 rounded-lg space-x-2">
-              <BsFileEarmarkBarGraph className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Reports</p>
-            </div>
+            <Link href={"/invoices"}>
+              <div className="flex items-center h-7 rounded-lg space-x-2">
+                <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
+                <p className="text-sm text-white">Invoices</p>
+              </div>
+            </Link>
+            <Link href={"/paymentsrecieved"}>
+              <div className="flex items-center h-7 rounded-lg space-x-2">
+                <img
+                  src="/recievedpayments.svg"
+                  alt=""
+                  className="w-4 h-4 ml-2 text-white"
+                />
+                <p className="text-sm text-white">Payments Recieved</p>
+              </div>
+            </Link>
+            <Link href={"/expenses"}>
+              <div className="flex items-center h-7 rounded-lg space-x-2">
+                <TbReceipt className="w-4 h-4 ml-2 text-white" />
+                <p className="text-sm text-white">Expenses</p>
+              </div>
+            </Link>
+            <Link href={"/allreports"}>
+              <div className="flex items-center h-7 rounded-lg space-x-2">
+                <BsFileEarmarkBarGraph className="w-4 h-4 ml-2 text-white" />
+                <p className="text-sm text-white">Reports</p>
+              </div>
+            </Link>
           </div>
           <div className="w-full">
             <div className="p-5 flex justify-between w-full ">
