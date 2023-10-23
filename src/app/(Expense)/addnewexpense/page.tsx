@@ -20,6 +20,7 @@ import { ApiError } from "next/dist/server/api-utils";
 import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import { handleCreateNewExpense } from "@/utils/Expense/createNewExpense";
 import { IExpense } from "../../../../types/Expense/createNewExpense";
+import Link from "next/link";
 
 const GetStarted = () => {
   const params = useParams();
@@ -94,7 +95,7 @@ const GetStarted = () => {
             <div className="flex items-center space-x-2">
               <BsPlusSquareFill className="bg-black text-secondary" />
               <span className=" text-lg text-white ">|</span>
-              <AiOutlineSetting className=" text-white" />
+              <Link href={'/orgprofile'}><AiOutlineSetting className=" text-white" /></Link>
               <span className=" text-lg text-white ">|</span>
               <select className="">
                 <option>Organization</option>

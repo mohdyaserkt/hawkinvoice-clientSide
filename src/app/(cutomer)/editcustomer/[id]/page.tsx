@@ -19,6 +19,7 @@ import { useParams, useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { handleEditCustomer } from "@/utils/Customers/editCustomer";
 import { handleGetSingleCustomer } from "@/utils/Customers/getSingleCustomer";
+import Link from "next/link";
 
 const getStarted = () => {
   const params = useParams();
@@ -161,7 +162,7 @@ const getStarted = () => {
             <div className="flex items-center space-x-2">
               <BsPlusSquareFill className="bg-black text-secondary" />
               <span className=" text-lg text-white ">|</span>
-              <AiOutlineSetting className=" text-white" />
+              <Link href={'/orgprofile'}><AiOutlineSetting className=" text-white" /></Link>
               <span className=" text-lg text-white ">|</span>
               <select className="">
                 <option>Organization</option>

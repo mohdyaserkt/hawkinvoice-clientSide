@@ -34,6 +34,7 @@ import { IInvoice, IItem } from "../../../../../types/invoice/createinvoice";
 import { handleGetInoviceById } from "@/utils/Invoice/getInvoiceById";
 import { formatDate } from "@/utils/Invoice/getInvoices";
 import { handleEditInvoice } from "@/utils/Invoice/editInvoice";
+import Link from "next/link";
 
 const GetStarted = () => {
   const params = useParams();
@@ -214,7 +215,7 @@ const GetStarted = () => {
             <div className="flex items-center space-x-2">
               <BsPlusSquareFill className="bg-black text-secondary" />
               <span className=" text-lg text-white ">|</span>
-              <AiOutlineSetting className=" text-white" />
+              <Link href={'/orgprofile'}><AiOutlineSetting className=" text-white" /></Link>
               <span className=" text-lg text-white ">|</span>
               <select className="">
                 <option>Organization</option>

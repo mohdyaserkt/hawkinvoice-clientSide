@@ -119,7 +119,7 @@ const GetStarted = () => {
             <div className="flex items-center space-x-2">
               <BsPlusSquareFill className="bg-black text-secondary" />
               <span className=" text-lg text-white ">|</span>
-              <AiOutlineSetting className=" text-white" />
+              <Link href={'/orgprofile'}><AiOutlineSetting className=" text-white" /></Link>
               <span className=" text-lg text-white ">|</span>
               <select className="bg-blue-900 text-white focus:outline-none focus:ring focus:border-blue-300">
                 <option className="bg-blue-900">Organization</option>
