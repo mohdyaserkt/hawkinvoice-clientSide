@@ -83,7 +83,7 @@ console.log("dorgdata ... ",data);
             </div>
           </div>
         </nav>
-        <div className="flex">
+        <div className="flex" style={{ height: "calc(100vh - 47px)" }}>
           <div className=" w-56 flex flex-col gap-3 py-3 px-2 border ">
             <div className="flex items-center  h-7 rounded-lg space-x-2">
               <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
@@ -164,15 +164,19 @@ console.log("dorgdata ... ",data);
                   <td className="p-2 text-center">₹0.00</td>
                   <Link href={`/editcustomer/${item.id}`}><td className="p-2 text-center">edit</td></Link>
                 </tr>))} 
-                <tr className="border-b border-white">
+                {/* <tr className="border-b border-white">
                   <td className="p-2 text-center">jlo</td>
                   <td className="p-2 text-center">helo@ha.ls</td>
                   <td className="p-2 text-center">123456987</td>
                   <td className="p-2 text-center">₹0.00</td>
                   <td className="p-2 text-center">₹0.00</td>
-                </tr>
+                </tr> */}
               </tbody>
             </table>
+            <div className="w-full h-full justify-center items-center">
+ helo
+            </div>
+           
           </div>
         </div>
       </div>
