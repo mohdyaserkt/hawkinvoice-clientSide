@@ -139,19 +139,19 @@ console.log("dorgdata ... ",data);
               <thead className="bg-secondary text-xs font-normal">
                 <tr>
                   <th className="border-b border-white p-2 text-center">
-                    Name
+                    NAME
                   </th>
                   <th className="border-b border-white p-2 text-center">
-                    Company Name
+                    COMPANY NAME
                   </th>
                   <th className="border-b border-white p-2 text-center">
-                    Email
+                    EMAIL
                   </th>
                   <th className="border-b border-white p-2 text-center">
-                    Work Phone
+                    WORK PHONE
                   </th>
                   <th className="border-b border-white  p-2 text-center">
-                    Receivables (BCY)
+                    RECIEVABLES
                   </th>
                 </tr>
               </thead>
@@ -174,9 +174,7 @@ console.log("dorgdata ... ",data);
                 </tr> */}
               </tbody>
             </table>
-            <div className="w-full h-full justify-center items-center">
-            <DefaultModal></DefaultModal>
-            </div>
+            
            
           </div>
         </div>
