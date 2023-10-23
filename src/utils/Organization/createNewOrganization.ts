@@ -1,7 +1,10 @@
 import { AxiosError } from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import { createNewOrganization } from "@/app/api/organization/createNewOrganization";
-import { useAppSelector } from "@/redux/store";
+import { store } from "@/redux/store";
+import persistStore from "redux-persist/es/persistStore";
+const persistor = persistStore(store);
+const state = store.getState();
 
 export const handleCreateNewOrganization = async ({
   NoOfemployes,
@@ -12,8 +15,8 @@ export const handleCreateNewOrganization = async ({
   organizationAddress,
   setError,
 }: handleCreateNewOrganization): Promise<string | boolean | AxiosError> => {
-  const email = useAppSelector((state) => state.authReducer.value.email);
-  const userId = useAppSelector((state) => state.authReducer.value.id);
+  const email = state.authReducer.value.email;
+  const userId = state.authReducer.value.id;
 
   try {
     const tenant = await createNewOrganization({
