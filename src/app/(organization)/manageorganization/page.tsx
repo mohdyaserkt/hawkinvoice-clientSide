@@ -145,7 +145,7 @@ const manageOrganisation = () => {
                 </div>
                 <div className="w-full flex items-center justify-center">
                   
-                    <h1 className="text-base text-gray-400">FirstOrganisation</h1>
+                    <h1 className="text-base text-blue-400 text-center">Currently, you don't have any organization established, so it's essential to create one to further movements!!!</h1>
                    
                   
                  
