@@ -94,7 +94,7 @@ const manageOrganisation = () => {
                                 JSON.stringify(item.id)
                               );
                               saveOrganisation(item);
-                              router.push("/customers");
+                              router.push("/home");
                             }}
                             className=" border-[1px] border-blue-500 text-blue-500 text-xs p-2  rounded"
                           >
