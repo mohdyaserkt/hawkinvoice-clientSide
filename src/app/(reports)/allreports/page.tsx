@@ -68,10 +68,12 @@ const getStarted = () => {
         </nav>
         <div className="flex" style={{ height: "calc(100vh - 47px)" }}>
           <div className=" w-56 flex flex-col gap-3 py-3 px-2 border ">
-            <div className="flex items-center  h-7 rounded-lg space-x-2">
-              <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Home</p>
-            </div>
+            <Link href={"/home"}>
+              <div className="flex items-center  h-7 rounded-lg space-x-2">
+                <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
+                <p className="text-sm text-white">Home</p>
+              </div>
+            </Link>
             <div className="flex items-center  h-7 rounded-lg space-x-2">
               <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Customers</p>
