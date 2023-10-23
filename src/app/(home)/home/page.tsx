@@ -22,10 +22,16 @@ import PieChart from "@/components/home/pichart";
 import ExpensePieChart from "@/components/home/pichart";
 import { handleGetAllRecievables } from "@/utils/home/getAllRecievable";
 import { handleGetSalesTableData } from "@/utils/home/getSalesTableData";
+import { useAppSelector } from "@/redux/store";
 
 const Home = () => {
   const router = useRouter();
-
+  const username = useAppSelector((state) =>
+    state.authReducer.value.email.split("@")
+  );
+  const orgname = useAppSelector((state) =>
+  state.orgReducer.value.businessName
+);
   const [allRecievables, setallRecievables] = useState<any>();
   const [salesTable, setsalesTable] = useState<any>();
 
@@ -146,9 +152,9 @@ const Home = () => {
                   />
                 </div>
                 <div className="items-center">
-                  <h2 className="text-lg">Hello, User Name</h2>
+                  <h2 className="text-lg">Hello, {username[0]||'User Name'}</h2>
                   <h2 className="text-[13px] text-secondary">
-                    Organization Name
+                    {orgname||'Organization Name'}
                   </h2>
                 </div>
               </div>
@@ -159,7 +165,21 @@ const Home = () => {
               style={{ maxHeight: "calc(100vh - 136px)" }}
             >
               <div className="h-52 w-[998px] rounded-lg">
-                <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary py"></div>
+                <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary py flex  items-center justify-between px-5">
+                <h1 className="text-base text-gray-800">
+                    Sales and Expenses
+                  </h1>
+                  <select
+                    name=""
+                    id=""
+                    className="bg-inherit texts-sm text-gray-800"
+                  >
+                    <option className="text-gray-800 texts-sm" value="">
+                      This Financial Year
+                    </option>
+                  </select>
+                  
+                </div>
                 <div className="w-full h-[67px]  border-b border-x py-2">
                   <div className="relative pt-1 px-2 flex flex-col gap-1">
                     <p className="text-[10px] text-secondary">
