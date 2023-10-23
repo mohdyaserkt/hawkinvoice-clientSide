@@ -52,32 +52,34 @@ const GetStarted = () => {
       });
   }, []);
   const [Invoice, setInvoice] = useState<any>();
-  console.log(Invoice,"myinv");
-  
-  const [paymentMode, setpaymentMode] = useState(Invoice?.paymentMode=="paid"?true:false);
+  console.log(Invoice, "myinv");
+
+  const [paymentMode, setpaymentMode] = useState(
+    Invoice?.paymentMode == "paid" ? true : false
+  );
   const router = useRouter();
   const slectRef = useRef<HTMLDivElement>(null);
   const [customerId, setCustomerId] = useState("");
   const [customerEmail, setcustomerEmail] = useState("");
-   const [items, setItems] = useState<IItem[]>([]);
+  const [items, setItems] = useState<IItem[]>([]);
 
-   useEffect(() => {
+  useEffect(() => {
     handleGetInoviceById(id as string)
       .then(({ data }: any) => {
         setInvoice(data.invoice as IInvoice);
-       setItems(Invoice?.itemDetails)
+        setItems(Invoice?.itemDetails);
       })
       .catch((err) => {
         console.log(err);
         alert(err);
       });
   }, []);
- 
- 
 
-  const [subtotal, setsubTotal] = useState(Invoice?.subTotal||0);
-  const [discount, setdiscount] = useState(Invoice?.discount||0);
-  const [adjustment, setadjustment] = useState(Invoice?.Adjustment?.adjustmentValue||0);
+  const [subtotal, setsubTotal] = useState(Invoice?.subTotal || 0);
+  const [discount, setdiscount] = useState(Invoice?.discount || 0);
+  const [adjustment, setadjustment] = useState(
+    Invoice?.Adjustment?.adjustmentValue || 0
+  );
 
   const [errors, setErrors] = useState<{
     field: string;
@@ -85,8 +87,6 @@ const GetStarted = () => {
   } | null>({ field: "", errors: [""] });
 
   const discountType = useRef(null);
-
- 
 
   useEffect(() => {
     const newsubTotal = items.reduce((accumulator, item) => {
@@ -137,7 +137,7 @@ const GetStarted = () => {
       adjustmentValue: inputObject.adjustmentValue,
     };
     inputObject.itemDetails = [...items];
-    inputObject.id =Invoice?._id||"";
+    inputObject.id = Invoice?._id || "";
     delete inputObject.adjustment;
     delete inputObject.adjustmentValue;
     delete inputObject.discountType;
@@ -184,7 +184,7 @@ const GetStarted = () => {
     setcustomerEmail(myCustomers[selectedIndex].email);
     console.log("Selected Option Index:", selectedIndex);
   };
-                      
+
   const setError = (field: string, errorMessages: string[]) =>
     setErrors({ field, errors: errorMessages });
 
@@ -215,7 +215,9 @@ const GetStarted = () => {
             <div className="flex items-center space-x-2">
               <BsPlusSquareFill className="bg-black text-secondary" />
               <span className=" text-lg text-white ">|</span>
-              <Link href={'/orgprofile'}><AiOutlineSetting className=" text-white" /></Link>
+              <Link href={"/orgprofile"}>
+                <AiOutlineSetting className=" text-white" />
+              </Link>
               <span className=" text-lg text-white ">|</span>
               <select className="">
                 <option>Organization</option>
@@ -240,20 +242,21 @@ const GetStarted = () => {
                 <p className="text-sm text-white">Home</p>
               </div>
             </Link>
-            <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
-              <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Customers</p>
-            </div>
-             <Link href="/items">
+            <Link href={"/customers"}>
+              <div className="flex items-center  h-7 rounded-lg space-x-2">
+                <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
+                <p className="text-sm text-white">Customers</p>
+              </div>
+            </Link>
+            <Link href="/items">
               <div className="flex items-center h-7 rounded-lg space-x-2">
                 <PiHandbag className="w-4 h-4 ml-2 text-white " />
-                <Link href={"/items"}>
-                  <p className="text-sm text-white">Items</p>
-                </Link>
+
+                <p className="text-sm text-white">Items</p>
               </div>
             </Link>
             <Link href={"/invoices"}>
-              <div className="flex items-center h-7 rounded-lg space-x-2">
+              <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
                 <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
                 <p className="text-sm text-white">Invoices</p>
               </div>
@@ -352,7 +355,7 @@ const GetStarted = () => {
                           name="invoiceNumber"
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
-                          defaultValue={Invoice?.invoiceNumber||''}
+                          defaultValue={Invoice?.invoiceNumber || ""}
                         />
                       </div>
                     </div>
@@ -382,9 +385,9 @@ const GetStarted = () => {
                             className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                             type="date"
                             defaultValue={
-                              new Date(Invoice?.invoiceDate||new Date())
-                              .toISOString()
-                              .split("T")[0]
+                              new Date(Invoice?.invoiceDate || new Date())
+                                .toISOString()
+                                .split("T")[0]
                             }
                           />
                         </div>
@@ -396,9 +399,11 @@ const GetStarted = () => {
                             name="dueDate"
                             className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                             type="date"
-                            defaultValue={new Date(Invoice?.dueDate||new Date())
-                            .toISOString()
-                            .split("T")[0]}
+                            defaultValue={
+                              new Date(Invoice?.dueDate || new Date())
+                                .toISOString()
+                                .split("T")[0]
+                            }
                           />
                         </div>
                       </div>
@@ -413,7 +418,7 @@ const GetStarted = () => {
                           name="salesPerson"
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
-                          defaultValue={Invoice?.salesPerson||''}
+                          defaultValue={Invoice?.salesPerson || ""}
                         />
                       </div>
                     </div>
@@ -427,7 +432,7 @@ const GetStarted = () => {
                           name="subject"
                           className="focus:outline-none rounded-md w-[470px] h-8 text-xs text-black p-2 placeholder:text-gray-900"
                           type="text"
-                          defaultValue={Invoice?.subject||''}
+                          defaultValue={Invoice?.subject || ""}
                           placeholder="Let your customer know what this Invoice is for"
                         />
                       </div>
@@ -468,7 +473,7 @@ const GetStarted = () => {
                           <p className="text-xs">Customer Notes</p>
                           <textarea
                             name="customerNotes"
-                            defaultValue={Invoice?.customerNotes||''}
+                            defaultValue={Invoice?.customerNotes || ""}
                             className="focus:outline-none bg-transparent border rounded-md w-[448px] h-20 p-3"
                           ></textarea>
                         </div>
@@ -477,7 +482,7 @@ const GetStarted = () => {
                           <textarea
                             name="termsAndConditions"
                             className="focus:outline-none bg-transparent border rounded-md w-[448px] h-20 p-3"
-                            defaultValue={Invoice?.termsAndConditions||''}
+                            defaultValue={Invoice?.termsAndConditions || ""}
                             placeholder="Enter the terms and conditions of your business to be displayed in your transaction"
                           ></textarea>
                         </div>

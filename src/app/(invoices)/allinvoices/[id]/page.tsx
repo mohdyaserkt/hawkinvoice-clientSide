@@ -148,22 +148,26 @@ const GetStarted = () => {
                 <p className="text-sm text-white">Home</p>
               </div>
             </Link>
-            <div className="flex items-center  h-7 rounded-lg space-x-2">
-              <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Customers</p>
-            </div>
+            <Link href={"/customers"}>
+              <div className="flex items-center  h-7 rounded-lg space-x-2">
+                <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
+                <p className="text-sm text-white">Customers</p>
+              </div>
+            </Link>
              <Link href="/items">
               <div className="flex items-center h-7 rounded-lg space-x-2">
                 <PiHandbag className="w-4 h-4 ml-2 text-white " />
-                <Link href={"/items"}>
+                
                   <p className="text-sm text-white">Items</p>
-                </Link>
+               
               </div>
             </Link>
-            <div className="flex items-center h-7  bg-secondary rounded-lg space-x-2">
-              <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Invoices</p>
-            </div>
+            <Link href={"/invoices"}>
+              <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
+                <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
+                <p className="text-sm text-white">Invoices</p>
+              </div>
+            </Link>
             <Link href={"/paymentsrecieved"}>
               <div className="flex items-center h-7 rounded-lg space-x-2">
                 <img

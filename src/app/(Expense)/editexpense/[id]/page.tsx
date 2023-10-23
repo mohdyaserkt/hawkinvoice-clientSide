@@ -132,10 +132,12 @@ const GetStarted = () => {
                 <p className="text-sm text-white">Home</p>
               </div>
             </Link>
-            <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
-              <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Customers</p>
-            </div>
+           <Link href={"/customers"}>
+              <div className="flex items-center  h-7 rounded-lg space-x-2">
+                <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
+                <p className="text-sm text-white">Customers</p>
+              </div>
+            </Link>
              <Link href="/items">
               <div className="flex items-center h-7 rounded-lg space-x-2">
                 <PiHandbag className="w-4 h-4 ml-2 text-white " />
@@ -161,7 +163,7 @@ const GetStarted = () => {
               </div>
             </Link>
             <Link href={"/expenses"}>
-              <div className="flex items-center h-7 rounded-lg space-x-2">
+              <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
                 <TbReceipt className="w-4 h-4 ml-2 text-white" />
                 <p className="text-sm text-white">Expenses</p>
               </div>

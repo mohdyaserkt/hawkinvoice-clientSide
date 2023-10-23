@@ -26,18 +26,14 @@ const getStarted = () => {
   const id = params.id;
   const router = useRouter();
 
-
-
-
-
-  const [currentCustomer, setcurrentCustomer] = useState<ICustomerData>()
+  const [currentCustomer, setcurrentCustomer] = useState<ICustomerData>();
 
   useEffect(() => {
     handleGetSingleCustomer(id as string)
-      .then(({data}:any) => { 
+      .then(({ data }: any) => {
         console.log(data.customer);
-        
-        setcurrentCustomer(data.customer as ICustomerData)
+
+        setcurrentCustomer(data.customer as ICustomerData);
       })
       .catch((err) => {
         console.log(err);
@@ -73,7 +69,7 @@ const getStarted = () => {
     ] = Array.from(form.elements) as HTMLInputElement[];
 
     const customer = {
-      id:id as string,
+      id: id as string,
       customerType:
         custumerTypeBusinessInput.value == "on" ? "business" : "individual",
       salutation: salutationInput.value,
@@ -103,11 +99,9 @@ const getStarted = () => {
     };
     console.log(customer);
 
-
-
     handleEditCustomer({
       customer,
-      setError
+      setError,
 
       // businessName: organizationState.businessName as string,
       // typeOfbusiness: organizationState.typeOfbusiness as string,
@@ -118,16 +112,11 @@ const getStarted = () => {
           router?.push("/customers");
           alert(res);
         }
-      })  
+      })
       .catch((err: ApiError) => {
         console.log(err.message);
         alert(err);
       });
-
-
-
-
-
   };
   const [errors, setErrors] = useState<{
     field: string;
@@ -162,7 +151,9 @@ const getStarted = () => {
             <div className="flex items-center space-x-2">
               <BsPlusSquareFill className="bg-black text-secondary" />
               <span className=" text-lg text-white ">|</span>
-              <Link href={'/orgprofile'}><AiOutlineSetting className=" text-white" /></Link>
+              <Link href={"/orgprofile"}>
+                <AiOutlineSetting className=" text-white" />
+              </Link>
               <span className=" text-lg text-white ">|</span>
               <select className="">
                 <option>Organization</option>
@@ -187,16 +178,17 @@ const getStarted = () => {
                 <p className="text-sm text-white">Home</p>
               </div>
             </Link>
-            <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
-              <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Customers</p>
-            </div>
-             <Link href="/items">
+            <Link href={"/customers"}>
+              <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
+                <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
+                <p className="text-sm text-white">Customers</p>
+              </div>
+            </Link>
+            <Link href="/items">
               <div className="flex items-center h-7 rounded-lg space-x-2">
                 <PiHandbag className="w-4 h-4 ml-2 text-white " />
-                <Link href={"/items"}>
-                  <p className="text-sm text-white">Items</p>
-                </Link>
+
+                <p className="text-sm text-white">Items</p>
               </div>
             </Link>
             <Link href={"/invoices"}>
@@ -250,7 +242,6 @@ const getStarted = () => {
                             name="Customer Type"
                             className="accent-secondary"
                             type="radio"
-                            
                           />
                           <p>Business</p>
                         </div>
@@ -271,7 +262,6 @@ const getStarted = () => {
                           className="focus:outline-none text-black rounded-md w-32 h-8 text-xs p-2"
                           placeholder={currentCustomer?.salutaion as string}
                           type="text"
-                          
                         />
                         <input
                           className="focus:outline-none text-black rounded-md w-32 h-8 text-xs p-2"
@@ -290,7 +280,9 @@ const getStarted = () => {
                       <div className=" flex items-center">
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
-                          placeholder={currentCustomer?.customerCompanyName as string}
+                          placeholder={
+                            currentCustomer?.customerCompanyName as string
+                          }
                           type="text"
                         />
                       </div>
@@ -331,12 +323,16 @@ const getStarted = () => {
                       <div className=" flex justify-between w-80 h-8 gap-1">
                         <input
                           className="focus:outline-none rounded-md h-8 text-xs w-36 text-black p-2"
-                          placeholder={currentCustomer?.workPhone as unknown as string}
+                          placeholder={
+                            currentCustomer?.workPhone as unknown as string
+                          }
                           type="tel"
                         />
                         <input
                           className="focus:outline-none rounded-md h-8 text-xs w-36 text-black p-2"
-                          placeholder={currentCustomer?.mobile as unknown as string}
+                          placeholder={
+                            currentCustomer?.mobile as unknown as string
+                          }
                           type="tel"
                         />
                       </div>

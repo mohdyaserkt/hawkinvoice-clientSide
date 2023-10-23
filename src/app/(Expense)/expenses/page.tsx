@@ -63,7 +63,9 @@ const GetStarted = () => {
             <div className="flex items-center space-x-2">
               <BsPlusSquareFill className="bg-black text-secondary" />
               <span className=" text-lg text-white ">|</span>
-              <Link href={'/orgprofile'}><AiOutlineSetting className=" text-white" /></Link>
+              <Link href={"/orgprofile"}>
+                <AiOutlineSetting className=" text-white" />
+              </Link>
               <span className=" text-lg text-white ">|</span>
               <select className="bg-blue-900 text-white focus:outline-none focus:ring focus:border-blue-300">
                 <option className="bg-blue-900">Organization</option>
@@ -89,22 +91,24 @@ const GetStarted = () => {
                 <p className="text-sm text-white">Home</p>
               </div>
             </Link>
-            <div className="flex items-center  h-7 rounded-lg space-x-2">
-              <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Customers</p>
-            </div>
-             <Link href="/items">
-              <div className="flex items-center h-7 rounded-lg space-x-2">
-                <PiHandbag className="w-4 h-4 ml-2 text-white " />
-                <Link href={"/items"}>
-                  <p className="text-sm text-white">Items</p>
-                </Link>
+            <Link href={"/customers"}>
+              <div className="flex items-center  h-7 rounded-lg space-x-2">
+                <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
+                <p className="text-sm text-white">Customers</p>
               </div>
             </Link>
-            <div className="flex items-center h-7  bg-secondary rounded-lg space-x-2">
-              <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
-              <p className="text-sm text-white">Invoices</p>
-            </div>
+            <Link href="/items">
+              <div className="flex items-center h-7 rounded-lg space-x-2">
+                <PiHandbag className="w-4 h-4 ml-2 text-white " />
+                <p className="text-sm text-white">Items</p>
+              </div>
+            </Link>
+            <Link href={"/invoices"}>
+              <div className="flex items-center h-7 rounded-lg space-x-2">
+                <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
+                <p className="text-sm text-white">Invoices</p>
+              </div>
+            </Link>
             <Link href={"/paymentsrecieved"}>
               <div className="flex items-center h-7 rounded-lg space-x-2">
                 <img
@@ -116,7 +120,7 @@ const GetStarted = () => {
               </div>
             </Link>
             <Link href={"/expenses"}>
-              <div className="flex items-center h-7 rounded-lg space-x-2">
+              <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
                 <TbReceipt className="w-4 h-4 ml-2 text-white" />
                 <p className="text-sm text-white">Expenses</p>
               </div>
@@ -155,7 +159,7 @@ const GetStarted = () => {
                     Expense Account{" "}
                   </th>
                   <th className="border-b border-white p-2 text-center">
-                  REFERENCE#
+                    REFERENCE#
                   </th>
                   <th className="border-b border-white p-2 text-center">
                     Status
@@ -168,14 +172,11 @@ const GetStarted = () => {
               <tbody className="text-white text-sm">
                 {myExpenses.map((item: IExpense) => (
                   <tr className="border-b border-white" key={item.id}>
-                    <td className="p-2 text-center">
-                      {formatDate(item.date)}
-                    </td>
+                    <td className="p-2 text-center">{formatDate(item.date)}</td>
                     <td className="p-2 text-center">{item.categoryName}</td>
                     <td className="p-2 text-center">₹ {item.invoiceNumber}</td>
                     <td className="p-2 text-center">NON BILLABLE</td>
                     <td className="p-2 text-center">{item.amount}</td>
-                    
                   </tr>
                 ))}
                 <tr className="border-b border-white">
