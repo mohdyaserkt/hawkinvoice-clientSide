@@ -19,6 +19,7 @@ import "./page.module.css";
 import Link from "next/link";
 import { handleGetCustomers } from "@/utils/Customers/getCustomers";
 import { useAppSelector } from "@/redux/store";
+import DefaultModal from "@/components/common/modal";
 
 const getStarted = () => {
   const [myCustomers, setmyCustomers] = useState([]);
@@ -174,7 +175,7 @@ console.log("dorgdata ... ",data);
               </tbody>
             </table>
             <div className="w-full h-full justify-center items-center">
- helo
+            <DefaultModal></DefaultModal>
             </div>
            
           </div>
