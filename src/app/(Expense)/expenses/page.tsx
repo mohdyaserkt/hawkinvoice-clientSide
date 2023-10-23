@@ -22,6 +22,7 @@ import { formatDate, handleGetInvoices } from "@/utils/Invoice/getInvoices";
 import { IInvoice } from "../../../../types/invoice/createinvoice";
 import { handleGetExpenses } from "@/utils/Expense/getallExpenses";
 import { IExpense } from "../../../../types/Expense/createNewExpense";
+import WarningMessage from "@/components/common/warningMessage";
 
 const GetStarted = () => {
   const [myExpenses, setmyExpenses] = useState([]);
@@ -132,7 +133,7 @@ const GetStarted = () => {
               </div>
             </Link>
           </div>
-          <div className="w-full">
+          <div className="w-full flex flex-col items-center">
             <div className="p-5 flex justify-between w-full">
               <div className="text-white">
                 <h2 className="text-xl">All Invoices</h2>
@@ -179,15 +180,10 @@ const GetStarted = () => {
                     <td className="p-2 text-center">{item.amount}</td>
                   </tr>
                 ))}
-                <tr className="border-b border-white">
-                  <td className="p-2 text-center">25/07/2023</td>
-                  <td className="p-2 text-center">Labor</td>
-                  <td className="p-2 text-center">INV-00-78</td>
-                  <td className="p-2 text-center">NON BILLABLE</td>
-                  <td className="p-2 text-center">₹23,450.00</td>
-                </tr>
+                
               </tbody>
             </table>
+            {myExpenses.length==0 && <WarningMessage href="/addnewcustomer" warningWord="Customer"/>}
           </div>
         </div>
       </div>
