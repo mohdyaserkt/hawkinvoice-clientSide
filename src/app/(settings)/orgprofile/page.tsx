@@ -142,10 +142,14 @@ const GetStarted = () => {
                         <p className="text-white text-sm">Industry</p>
                       </div>
                       <div className="flex items-center">
-                        <input
+                        <select
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
-                          type="text"
-                        />
+                          
+                        >
+                          <option value="">Freelancing</option>
+                          <option value="">For-profit Busciness</option>
+                          <option value="">Freelancing</option>
+                        </select>
                       </div>
                     </div>
                     <div className="flex gap-[191px] items-center">
