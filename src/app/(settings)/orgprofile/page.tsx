@@ -140,32 +140,30 @@ const GetStarted = () => {
                       </div>
                       <div
                         onClick={() => imageRef.current?.click()}
-                        className="bg-white w-[250px] h-20 flex justify-center items-center rounded cursor-pointer object-cover"
+                        className={`bg-white w-[250px] h-20 flex justify-center items-center rounded cursor-pointer ${
+                          selectedFile ? "object-contain" : ""
+                        }`}
                       >
-                        
-                          {selectedFile ? (
-                            <Image
-                              width={140}
-                              height={40}
-                              src={selectedFile}
-                              alt="Selected Image"
-                              className="object-cover"
-                            />
-                          ) : (
-                            <div className="flex items-center gap-2">
-                              <FiUpload />
-                              <p className="text-xs">Upload your logo</p>{" "}
-                              {/* Corrected text */}
-                              </div>
-                          )}
-                       
+                        {selectedFile ? (
+                          <Image
+                            width={80}
+                            height={80}
+                            src={selectedFile} // Use imagePreview, which is the created URL
+                            alt="Selected Image"
+                          />
+                        ) : (
+                          <div className="flex items-center gap-2">
+                            <FiUpload />
+                            <p className="text-xs">Upload your logo</p>
+                          </div>
+                        )}
+
                         <input
                           ref={imageRef}
                           className="hidden"
                           type="file"
                           accept="image/*"
                           onChange={handleFileChange}
-                          // onChange={this.handleFileUpload}
                         />
                       </div>
                     </div>
