@@ -38,6 +38,12 @@ const [orgAddress, setorgAddress] = useState<OrganizationAddress>()
       });
   }, []);
   console.log(orgAddress);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  console.log(selectedFile,"myllllvalllll");
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files ? event.target.files[0] : null;
+    setSelectedFile(file);
+  };
   
 
   return (
@@ -139,6 +145,7 @@ const [orgAddress, setorgAddress] = useState<OrganizationAddress>()
                           className="hidden"
                           type="file"
                           accept="image/*"
+                          onChange={handleFileChange}
                           // onChange={this.handleFileUpload}
                         />
                       </div>
