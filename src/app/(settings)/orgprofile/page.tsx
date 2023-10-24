@@ -147,8 +147,8 @@ const GetStarted = () => {
                           
                         >
                           <option value="">Freelancing</option>
-                          <option value="">For-profit Busciness</option>
-                          <option value="">Freelancing</option>
+                          <option value="">For-profit Business</option>
+                          <option value="">NGO</option>
                         </select>
                       </div>
                     </div>
@@ -156,11 +156,15 @@ const GetStarted = () => {
                       <div>
                         <p className="text-white text-sm">Business Type</p>
                       </div>
-                      <div className="flex items-center">
-                        <input
+                      <div className="flex items-center"> 
+                      <select
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
-                          type="text"
-                        />
+                          
+                        >
+                          <option value="Freelancing">Freelancing</option>
+                          <option value="For-profit Business">For-profit Business</option>
+                          <option value="NGO">NGO</option>
+                        </select>
                       </div>
                     </div>
                     <div className="flex gap-[164px] items-center">
