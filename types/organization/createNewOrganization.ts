@@ -34,3 +34,15 @@ interface IOrganizationData{
     zipCode: Number;
   }
   }
+
+  interface OrganizationAddress {
+    id: string;
+    organizationAddress: {
+      address: string;
+      apt: string;
+      city: string;
+      state: string;
+      zipCode: string;
+    };
+  }
+  

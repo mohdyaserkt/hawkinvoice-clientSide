@@ -26,7 +26,7 @@ const GetStarted = () => {
   const { businessName, typeOfBusiness, profile,id } = useAppSelector(
     (state) => state.orgReducer.value
   );
-const [orgAddress, setorgAddress] = useState()
+const [orgAddress, setorgAddress] = useState<OrganizationAddress>()
   useEffect(() => {
     handleGetOrganizationsAddress()
       .then(({ data }: any) => {
@@ -36,7 +36,7 @@ const [orgAddress, setorgAddress] = useState()
         console.log(err);
         alert(err);
       });
-  }, [orgAddress]);
+  }, []);
   console.log(orgAddress);
   
 
@@ -214,8 +214,7 @@ const [orgAddress, setorgAddress] = useState()
                             placeholder="Address"
                             name="address"
                             id="address"
-                            // value={organizationState.address}
-                            // onChange={setorganizationState}
+                            defaultValue={orgAddress?.organizationAddress?.address}
                           />
                         </div>
                         <div>
@@ -224,6 +223,7 @@ const [orgAddress, setorgAddress] = useState()
                             placeholder="Apt, suite, etc. (Optional)"
                             name="apt"
                             id="apt"
+                            defaultValue={orgAddress?.organizationAddress?.apt}
                             // value={organizationState.apt}
                             // onChange={setorganizationState}
                           />
@@ -235,6 +235,7 @@ const [orgAddress, setorgAddress] = useState()
                             placeholder="City"
                             name="city"
                             id="state"
+                            defaultValue={orgAddress?.organizationAddress?.city}
                             // value={organizationState.city}
                             // onChange={setorganizationState}
                           />
@@ -247,6 +248,8 @@ const [orgAddress, setorgAddress] = useState()
                               placeholder="State"
                               name="state"
                               id="state"
+                            defaultValue={orgAddress?.organizationAddress?.state}
+
                               // value={organizationState.state}
                               // onChange={setorganizationState}
                             />
@@ -258,6 +261,8 @@ const [orgAddress, setorgAddress] = useState()
                               id="zipCode"
                               className="w-full h-8 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-xs text-blue-gray-700 outline-none placeholder:text-black"
                               placeholder="Zip code"
+                            defaultValue={orgAddress?.organizationAddress?.zipCode}
+
                               // value={organizationState.zipCode}
                               // onChange={setorganizationState}
                             />
