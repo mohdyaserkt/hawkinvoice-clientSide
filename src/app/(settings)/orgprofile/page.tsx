@@ -18,9 +18,12 @@ import {
 } from "react-icons/ai";
 import { GoOrganization } from "react-icons/go";
 import Link from "next/link";
+import { useAppSelector } from "@/redux/store";
 
 const GetStarted = () => {
   const imageRef = useRef<HTMLInputElement>(null);
+  const {businessName, typeOfBusiness,profile,} = useAppSelector((state) => state.orgReducer.value);
+
   return (
     <>
       <div className="h-screen">
