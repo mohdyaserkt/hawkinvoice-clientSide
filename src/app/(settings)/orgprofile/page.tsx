@@ -140,13 +140,13 @@ const GetStarted = () => {
                       </div>
                       <div
                         onClick={() => imageRef.current?.click()}
-                        className="bg-white w-[250px] h-20 flex justify-center items-center rounded cursor-pointer"
+                        className="bg-white w-[250px] h-20 flex justify-center items-center rounded cursor-pointer object-cover"
                       >
                         
                           {selectedFile ? (
                             <Image
-                              width={250}
-                              height={80}
+                              width={200}
+                              height={40}
                               src={selectedFile}
                               alt="Selected Image"
                               className="object-cover"
