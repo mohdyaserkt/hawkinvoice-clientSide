@@ -19,12 +19,26 @@ import {
 import { GoOrganization } from "react-icons/go";
 import Link from "next/link";
 import { useAppSelector } from "@/redux/store";
+import { handleGetOrganizationsAddress } from "@/utils/Organization/getOrganizationAddress";
 
 const GetStarted = () => {
   const imageRef = useRef<HTMLInputElement>(null);
   const { businessName, typeOfBusiness, profile,id } = useAppSelector(
     (state) => state.orgReducer.value
   );
+const [orgAddress, setorgAddress] = useState()
+  useEffect(() => {
+    handleGetOrganizationsAddress()
+      .then(({ data }: any) => {
+        setorgAddress(data.organizationAddress);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+  }, [orgAddress]);
+  console.log(orgAddress);
+  
 
   return (
     <>
