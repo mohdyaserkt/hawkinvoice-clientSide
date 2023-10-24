@@ -22,6 +22,7 @@ import { handleGetSalesByItem } from "@/utils/reports/getSalesByItem";
 import { formatDate } from "@/utils/Invoice/getInvoices";
 import { handleGetInvoiceDetails } from "@/utils/reports/getInvoiceDetails";
 import Link from "next/link";
+import EmptyDataReport from "@/components/common/EmptyReportData";
 
 const getStarted = () => {
 
@@ -160,7 +161,7 @@ const getStarted = () => {
                 </div>
               </div>
 
-              <div className="w-full px-3">
+              <div className="w-full px-3 flex flex-col items-center">
                 <table className="w-full border-t border-x border-white">
                   <thead className="bg-secondary text-xs font-normal">
                     <tr>
@@ -211,6 +212,8 @@ const getStarted = () => {
                     
                   </tbody>
                 </table>
+
+                {invoices.length==0 && <EmptyDataReport />}
               </div>
             </div>
           </div>

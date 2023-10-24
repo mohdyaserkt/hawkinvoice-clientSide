@@ -20,6 +20,7 @@ import {
 } from "react-icons/ai";
 import { handleGetSalesByCustomer } from "@/utils/reports/getSalesByCustomer";
 import Link from "next/link";
+import EmptyDataReport from "@/components/common/EmptyReportData";
 
 const getStarted = () => {
 
@@ -158,7 +159,7 @@ const getStarted = () => {
                 </div>
               </div>
 
-              <div className="w-full px-3">
+              <div className="w-full px-3 flex flex-col items-center">
                 <table className="w-full border-t border-x border-white">
                   <thead className="bg-secondary text-xs font-normal">
                     <tr>
@@ -193,6 +194,8 @@ const getStarted = () => {
                     
                   </tbody>
                 </table>
+                {SalesByCustomer.length==0 && <EmptyDataReport />}
+
               </div>
             </div>
           </div>

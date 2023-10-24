@@ -23,6 +23,7 @@ import { formatDate } from "@/utils/Invoice/getInvoices";
 import { handleGetPendingSalesDetails } from "@/utils/reports/getPendingSalesDetails";
 import { handleGetRecievedPayments } from "@/utils/reports/getRecievedPayments";
 import Link from "next/link";
+import EmptyDataReport from "@/components/common/EmptyReportData";
 
 const getStarted = () => {
   const [recievedpayments, setRecievedpayments] = useState<any>([]);
@@ -162,7 +163,7 @@ const getStarted = () => {
                 </div>
               </div>
 
-              <div className="w-full px-3">
+              <div className="w-full px-3 flex flex-col items-center">
                 <table className="w-full border-t border-x border-white">
                   <thead className="bg-secondary text-xs font-normal">
                     <tr>
@@ -224,6 +225,8 @@ const getStarted = () => {
                     ))}
                   </tbody>
                 </table>
+                {recievedpayments.length==0 && <EmptyDataReport />}
+                
               </div>
             </div>
           </div>
