@@ -20,13 +20,14 @@ import { GoOrganization } from "react-icons/go";
 import Link from "next/link";
 import { useAppSelector } from "@/redux/store";
 import { handleGetOrganizationsAddress } from "@/utils/Organization/getOrganizationAddress";
+import Image from "next/image";
 
 const GetStarted = () => {
   const imageRef = useRef<HTMLInputElement>(null);
-  const { businessName, typeOfBusiness, profile,id } = useAppSelector(
+  const { businessName, typeOfBusiness, profile, id } = useAppSelector(
     (state) => state.orgReducer.value
   );
-const [orgAddress, setorgAddress] = useState<OrganizationAddress>()
+  const [orgAddress, setorgAddress] = useState<OrganizationAddress>();
   useEffect(() => {
     handleGetOrganizationsAddress()
       .then(({ data }: any) => {
@@ -38,13 +39,17 @@ const [orgAddress, setorgAddress] = useState<OrganizationAddress>()
       });
   }, []);
   console.log(orgAddress);
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  console.log(selectedFile,"myllllvalllll");
+  const [selectedFile, setSelectedFile] = useState<string | null>(null);
+  console.log(selectedFile, "myllllvalllll");
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files ? event.target.files[0] : null;
-    setSelectedFile(file);
+    if (file) {
+      const fileURL = URL.createObjectURL(file);
+      setSelectedFile(fileURL);
+    } else {
+      setSelectedFile(null);
+    }
   };
-  
 
   return (
     <>
@@ -83,9 +88,11 @@ const [orgAddress, setorgAddress] = useState<OrganizationAddress>()
                 <option>Organization 3</option>
               </select>
               <div className="pr-2">
-                <img
+                <Image
                   src="https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=900&t=st=1693152334~exp=1693152934~hmac=da365a4885d210047abff64bf790f521687c842a32793b5c0416be75b321f977"
                   alt="Your Alt Text"
+                  width={32}
+                  height={32}
                   className="rounded-full w-8   h-8   "
                 />
               </div>
@@ -136,9 +143,20 @@ const [orgAddress, setorgAddress] = useState<OrganizationAddress>()
                         className="bg-white w-[250px] h-20 flex justify-center items-center rounded cursor-pointer"
                       >
                         <div className="flex items-center gap-2">
-                          <FiUpload />
-
-                          <p className="text-xs">Upload lour logo</p>
+                          {selectedFile ? (
+                            <Image
+                              width={250}
+                              height={80}
+                              src={selectedFile}
+                              alt="Selected Image"
+                            />
+                          ) : (
+                            <>
+                              <FiUpload />
+                              <p className="text-xs">Upload your logo</p>{" "}
+                              {/* Corrected text */}
+                            </>
+                          )}
                         </div>
                         <input
                           ref={imageRef}
@@ -221,7 +239,9 @@ const [orgAddress, setorgAddress] = useState<OrganizationAddress>()
                             placeholder="Address"
                             name="address"
                             id="address"
-                            defaultValue={orgAddress?.organizationAddress?.address}
+                            defaultValue={
+                              orgAddress?.organizationAddress?.address
+                            }
                           />
                         </div>
                         <div>
@@ -255,7 +275,9 @@ const [orgAddress, setorgAddress] = useState<OrganizationAddress>()
                               placeholder="State"
                               name="state"
                               id="state"
-                            defaultValue={orgAddress?.organizationAddress?.state}
+                              defaultValue={
+                                orgAddress?.organizationAddress?.state
+                              }
 
                               // value={organizationState.state}
                               // onChange={setorganizationState}
@@ -268,7 +290,9 @@ const [orgAddress, setorgAddress] = useState<OrganizationAddress>()
                               id="zipCode"
                               className="w-full h-8 bg-white border border-gray-300 border-opacity-25 rounded-md px-3 py-2.5 font-sans text-xs text-blue-gray-700 outline-none placeholder:text-black"
                               placeholder="Zip code"
-                            defaultValue={orgAddress?.organizationAddress?.zipCode}
+                              defaultValue={
+                                orgAddress?.organizationAddress?.zipCode
+                              }
 
                               // value={organizationState.zipCode}
                               // onChange={setorganizationState}
