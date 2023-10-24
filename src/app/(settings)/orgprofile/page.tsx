@@ -22,7 +22,9 @@ import { useAppSelector } from "@/redux/store";
 
 const GetStarted = () => {
   const imageRef = useRef<HTMLInputElement>(null);
-  const {businessName, typeOfBusiness,profile,} = useAppSelector((state) => state.orgReducer.value);
+  const { businessName, typeOfBusiness, profile,id } = useAppSelector(
+    (state) => state.orgReducer.value
+  );
 
   return (
     <>
@@ -51,7 +53,9 @@ const GetStarted = () => {
             <div className="flex items-center space-x-2">
               <BsPlusSquareFill className="bg-black text-secondary" />
               <span className=" text-lg text-white ">|</span>
-              <Link href={'/orgprofile'}><AiOutlineSetting className=" text-white" /></Link>
+              <Link href={"/orgprofile"}>
+                <AiOutlineSetting className=" text-white" />
+              </Link>
               <span className=" text-lg text-white ">|</span>
               <select className="">
                 <option>Organization</option>
@@ -69,7 +73,10 @@ const GetStarted = () => {
           </div>
         </nav>
         <div className="flex" style={{ height: "calc(100vh - 47px)" }}>
-          <div style={{ height: 'calc(100vh - 47px)' }} className=" w-56    flex flex-col gap-3 py-3 px-2 border ">
+          <div
+            style={{ height: "calc(100vh - 47px)" }}
+            className=" w-56    flex flex-col gap-3 py-3 px-2 border "
+          >
             <div className="flex items-center p-2">
               <h1 className="text-white text-[23px]">Settings</h1>
             </div>
@@ -91,7 +98,7 @@ const GetStarted = () => {
               <div className="text-white">
                 <h2 className="text-xl flex items-center">
                   Organization Profile |{" "}
-                  <span className="text-[15px] ml-2"> ID: 60022809358</span>
+                  <span className="text-[15px] ml-2"> ID: {id}</span>
                 </h2>
               </div>
             </div>
@@ -105,7 +112,7 @@ const GetStarted = () => {
                         <p className="text-white text-sm">Your Logo</p>
                       </div>
                       <div
-                        onClick={() => imageRef.current?.click()} 
+                        onClick={() => imageRef.current?.click()}
                         className="bg-white w-[250px] h-20 flex justify-center items-center rounded cursor-pointer"
                       >
                         <div className="flex items-center gap-2">
@@ -142,13 +149,17 @@ const GetStarted = () => {
                         <p className="text-white text-sm">Industry</p>
                       </div>
                       <div className="flex items-center">
-                        <select
-                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
-                          
-                        >
-                          <option value="">Freelancing</option>
-                          <option value="">For-profit Business</option>
-                          <option value="">NGO</option>
+                        <select className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2">
+                          <option value="agriculture">Agriculture</option>
+                          <option value="construction">Construction</option>
+                          <option value="technology">Technology</option>
+                          <option value="healthcare">Healthcare</option>
+                          <option value="finance">Finance</option>
+                          <option value="manufacturing">Manufacturing</option>
+                          <option value="retail">Retail</option>
+                          <option value="education">Education</option>
+                          <option value="entertainment">Entertainment</option>
+                          <option value="transportation">Transportation</option>
                         </select>
                       </div>
                     </div>
@@ -156,13 +167,12 @@ const GetStarted = () => {
                       <div>
                         <p className="text-white text-sm">Business Type</p>
                       </div>
-                      <div className="flex items-center"> 
-                      <select
-                          className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
-                          
-                        >
+                      <div className="flex items-center">
+                        <select className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2">
                           <option value="Freelancing">Freelancing</option>
-                          <option value="For-profit Business">For-profit Business</option>
+                          <option value="For-profit Business">
+                            For-profit Business
+                          </option>
                           <option value="NGO">NGO</option>
                         </select>
                       </div>
@@ -175,7 +185,7 @@ const GetStarted = () => {
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
-                          defaultValue={'INDIA'}
+                          defaultValue={"INDIA"}
                         />
                       </div>
                     </div>
