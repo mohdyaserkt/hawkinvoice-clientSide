@@ -145,7 +145,7 @@ const GetStarted = () => {
                         
                           {selectedFile ? (
                             <Image
-                              width={200}
+                              width={140}
                               height={40}
                               src={selectedFile}
                               alt="Selected Image"
