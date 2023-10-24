@@ -173,7 +173,7 @@ const GetStarted = () => {
                     </div>
                     <div className="flex gap-[164px] ">
                       <div>
-                        <p className="text-white text-sm">Business Location</p>
+                        <p className="text-white text-sm">Business Address</p>
                       </div>
                       <div className="flex flex-col gap-4 w-1/3 ">
                         <div>
