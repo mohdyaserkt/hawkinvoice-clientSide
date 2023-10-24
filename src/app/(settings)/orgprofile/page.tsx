@@ -133,6 +133,7 @@ const GetStarted = () => {
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
+                          defaultValue={businessName}
                         />
                       </div>
                     </div>
@@ -166,6 +167,7 @@ const GetStarted = () => {
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
+                          defaultValue={'INDIA'}
                         />
                       </div>
                     </div>
