@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { useAppSelector } from "@/redux/store";
 
-const getStarted = () => {
+const Addorganization = () => {
   const [organizationState, setorganizationState] = HandleForm({
     businessName: "",
     typeOfbusiness: "",
@@ -165,4 +165,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default Addorganization;

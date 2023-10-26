@@ -9,7 +9,7 @@ import { save_Org } from "@/redux/features/org-slice";
 import { useAppSelector } from "@/redux/store";
 import { IoIosWarning } from "react-icons/io";
 
-const manageOrganisation = () => {
+const ManageOrganisation = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const [myOrganizations, setmyOrganizations] = useState([]);
@@ -181,4 +181,4 @@ const manageOrganisation = () => {
   );
 };
 
-export default manageOrganisation;
+export default ManageOrganisation;

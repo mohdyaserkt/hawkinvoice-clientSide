@@ -21,8 +21,9 @@ import { handleCreateNewItem } from "@/utils/items/createNewItem";
 import { handleEditItem } from "@/utils/items/editItem";
 import { handleGetSingleItem } from "@/utils/items/getSingleItem";
 import Link from "next/link";
+import Image from "next/image";
 
-const getStarted = () => {
+const Edititem = () => {
   const params = useParams();
   const id = params.id;
   const router = useRouter();
@@ -126,9 +127,11 @@ const getStarted = () => {
                 <option>Organization 3</option>
               </select>
               <div className="pr-2">
-                <img
+                <Image
+                width={32}
+                height={32}
                   src="https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=900&t=st=1693152334~exp=1693152934~hmac=da365a4885d210047abff64bf790f521687c842a32793b5c0416be75b321f977"
-                  alt="Your Alt Text"
+                  alt="logo"
                   className="rounded-full w-8   h-8   "
                 />
               </div>
@@ -165,9 +168,11 @@ const getStarted = () => {
             </Link>
             <Link href={"/paymentsrecieved"}>
               <div className="flex items-center h-7 rounded-lg space-x-2">
-                <img
+                <Image
+                width={16}
+                height={16}
                   src="/recievedpayments.svg"
-                  alt=""
+                  alt="logo"
                   className="w-4 h-4 ml-2 text-white"
                 />
                 <p className="text-sm text-white">Payments Recieved</p>
@@ -302,4 +307,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default Edititem;

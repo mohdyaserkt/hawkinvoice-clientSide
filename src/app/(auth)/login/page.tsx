@@ -11,7 +11,7 @@ import { useDispatch } from "react-redux";
 import { logIn } from "@/redux/features/auth-slice";
 
 
-export default function login() {
+export default function Login() {
   const router = useRouter();
   const dispatch = useDispatch();
 

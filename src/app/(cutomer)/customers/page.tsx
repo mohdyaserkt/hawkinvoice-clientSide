@@ -20,8 +20,9 @@ import Link from "next/link";
 import { handleGetCustomers } from "@/utils/Customers/getCustomers";
 import { useAppSelector } from "@/redux/store";
 import WarningMessage from "@/components/common/warningMessage";
+import Image from "next/image";
 
-const getStarted = () => {
+const Customers = () => {
   const [myCustomers, setmyCustomers] = useState([]);
   useEffect(() => {
     handleGetCustomers()
@@ -75,7 +76,9 @@ const getStarted = () => {
               </select>
 
               <div className="pr-2">
-                <img
+                <Image
+                width={32}
+                height={32}
                   src="https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=900&t=st=1693152334~exp=1693152934~hmac=da365a4885d210047abff64bf790f521687c842a32793b5c0416be75b321f977"
                   alt="Your Alt Text"
                   className="rounded-full w-8   h-8   "
@@ -114,7 +117,9 @@ const getStarted = () => {
             </Link>
             <Link href={"/expenses"}>
               <div className="flex items-center h-7 rounded-lg space-x-2">
-                <img
+                <Image
+                width={16}
+                height={16}
                   src="/recievedpayments.svg"
                   alt=""
                   className="w-4 h-4 ml-2 text-white"
@@ -206,4 +211,4 @@ const getStarted = () => {
   );
 };
 
-export default getStarted;
+export default Customers;
