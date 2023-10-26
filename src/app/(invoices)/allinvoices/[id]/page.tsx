@@ -89,9 +89,6 @@ const GetStarted = () => {
       // };
     }
   };
-
-
-  
   return (
     <>
       <div className="h-screen">
@@ -119,7 +116,7 @@ const GetStarted = () => {
             <div className="flex items-center space-x-2">
               <BsPlusSquareFill className="bg-black text-secondary" />
               <span className=" text-lg text-white ">|</span>
-              <Link href={'/orgprofile'}><AiOutlineSetting className=" text-white" /></Link>
+              <AiOutlineSetting className=" text-white" />
               <span className=" text-lg text-white ">|</span>
               <select className="bg-blue-900 text-white focus:outline-none focus:ring focus:border-blue-300">
                 <option className="bg-blue-900">Organization</option>
@@ -129,71 +126,51 @@ const GetStarted = () => {
 
               <div className="pr-2">
                 <Image
-                width={32}
-                height={32}
                   src="https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=900&t=st=1693152334~exp=1693152934~hmac=da365a4885d210047abff64bf790f521687c842a32793b5c0416be75b321f977"
-                  alt="logo"
+                  alt="Your Alt Text"
                   className="rounded-full w-8   h-8   "
                 />
               </div>
             </div>
           </div>
         </nav>
-        <div className="flex" style={{ height: "calc(100vh - 47px)" }}>
+        <div className="flex">
           <div
             style={{ height: "calc(100vh - 47px)" }}
             className=" w-56 flex flex-col gap-3 py-3 px-2 border "
           >
-            <Link href={"/home"}>
-              <div className="flex items-center  h-7 rounded-lg space-x-2">
-                <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
-                <p className="text-sm text-white">Home</p>
-              </div>
-            </Link>
-            <Link href={"/customers"}>
-              <div className="flex items-center  h-7 rounded-lg space-x-2">
-                <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
-                <p className="text-sm text-white">Customers</p>
-              </div>
-            </Link>
-             <Link href="/items">
-              <div className="flex items-center h-7 rounded-lg space-x-2">
-                <PiHandbag className="w-4 h-4 ml-2 text-white " />
-                
-                  <p className="text-sm text-white">Items</p>
-               
-              </div>
-            </Link>
-            <Link href={"/invoices"}>
-              <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
-                <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
-                <p className="text-sm text-white">Invoices</p>
-              </div>
-            </Link>
-            <Link href={"/paymentsrecieved"}>
-              <div className="flex items-center h-7 rounded-lg space-x-2">
-                <Image
-                width={16}
-                height={16}
-                  src="/recievedpayments.svg"
-                  alt="logo"
-                  className="w-4 h-4 ml-2 text-white"
-                />
-                <p className="text-sm text-white">Payments Recieved</p>
-              </div>
-            </Link>
-            <Link href={"/expenses"}>
-              <div className="flex items-center h-7 rounded-lg space-x-2">
-                <TbReceipt className="w-4 h-4 ml-2 text-white" />
-                <p className="text-sm text-white">Expenses</p>
-              </div>
-            </Link>
-            <Link href={"/allreports"}>
-              <div className="flex items-center h-7 rounded-lg space-x-2">
-                <BsFileEarmarkBarGraph className="w-4 h-4 ml-2 text-white" />
-                <p className="text-sm text-white">Reports</p>
-              </div>
-            </Link>
+            <div className="flex items-center  h-7 rounded-lg space-x-2">
+              <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
+              <p className="text-sm text-white">Home</p>
+            </div>
+            <div className="flex items-center  h-7 rounded-lg space-x-2">
+              <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
+              <p className="text-sm text-white">Customers</p>
+            </div>
+            <div className="flex items-center h-7 rounded-lg space-x-2">
+              <PiHandbag className="w-4 h-4 ml-2 text-white " />
+              <p className="text-sm text-white">Items</p>
+            </div>
+            <div className="flex items-center h-7  bg-secondary rounded-lg space-x-2">
+              <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
+              <p className="text-sm text-white">Invoices</p>
+            </div>
+            <div className="flex items-center h-7 rounded-lg space-x-2">
+              <Image
+                src="/recievedpayments.svg"
+                alt=""
+                className="w-4 h-4 ml-2 text-white"
+              />
+              <p className="text-sm text-white">Payments Recieved</p>
+            </div>
+            <div className="flex items-center h-7 rounded-lg space-x-2">
+              <TbReceipt className="w-4 h-4 ml-2 text-white" />
+              <p className="text-sm text-white">Expenses</p>
+            </div>
+            <div className="flex items-center h-7 rounded-lg space-x-2">
+              <BsFileEarmarkBarGraph className="w-4 h-4 ml-2 text-white" />
+              <p className="text-sm text-white">Reports</p>
+            </div>
           </div>
           <div className="w-full">
             {/* <div className="p-5 flex justify-between w-full">   
@@ -276,65 +253,15 @@ const GetStarted = () => {
                 </div>
               </div>
 
-              <div
-                
-                className="w-full overflow-y-auto"
-                style={{ maxHeight: "calc(100vh - 47px)" }}
-              >
-                <div className="flex justify-end items-center p-4  border-b h-[71px]">
-                  <div className="flex space-x-2">
-                    <div className="text-xs  flex items-center  px-3 py-2 h-8  gap-3">
-                      <a
-                        className="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
-                        href="#"
-                      >
-                        <svg
-                          className="w-4 h-4"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          fill="currentColor"
-                          viewBox="0 0 16 16"
-                        >
-                          <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
-                          <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
-                        </svg>
-                        Invoice PDF
-                      </a>
-                      <a
-                        onClick={printDiv}
-                        className="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"
-                        href="#"
-                      >
-                        <svg
-                          className="w-4 h-4"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          fill="currentColor"
-                          viewBox="0 0 16 16"
-                        >
-                          <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z" />
-                          <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" />
-                        </svg>
-                        Print
-                      </a>
-                    </div>
-                    <div className="p-2 bg-white rounded  h-8 ">
-                      <SlOptions className="w-4 h-4 text-gray-800 " />
-                    </div>
-                  </div>
-                </div>
-                <div className="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto my-4 sm:my-10 flex justify-center items-center">
-                  {/* 
-
-                  
+              {/* <div ref={printableRef} className="w-full">
+                <div className="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto my-4 sm:my-10">
                   <div className="mb-5 pb-5 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
                     <div>
                       <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">
                         Invoice
-                      </h2>   helooooooooooooooooooooooooooooooooooo
+                      </h2>
                     </div>
+
                     <div className="inline-flex gap-x-2">
                       <a
                         className="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
@@ -430,6 +357,7 @@ const GetStarted = () => {
                         </dl>
                       </div>
                     </div>
+
                     <div>
                       <div className="grid space-y-3">
                         <dl className="grid sm:flex gap-x-3 text-sm">
@@ -581,9 +509,59 @@ const GetStarted = () => {
                       </div>
                     </div>
                   </div>
+                </div>
+              </div> */}
 
- */}
-
+              <div
+              
+                className="w-full overflow-y-auto"
+                style={{ maxHeight: "calc(100vh - 47px)" }}
+              >
+                 <div className="flex justify-end items-center p-4  border-b h-[71px]">
+                  <div className="flex space-x-2">
+                    <div className="text-xs  flex items-center  px-3 py-2 h-8  gap-3">
+                      <a
+                        className="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
+                        href="#"
+                      >
+                        <svg
+                          className="w-4 h-4"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                          <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                        </svg>
+                        Invoice PDF
+                      </a>
+                      <a
+                        onClick={printDiv}
+                        className="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"
+                        href="#"
+                      >
+                        <svg
+                          className="w-4 h-4"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z" />
+                          <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" />
+                        </svg>
+                        Print
+                      </a>
+                    </div>
+                    <div className="p-2 bg-white rounded  h-8 ">
+                      <SlOptions className="w-4 h-4 text-gray-800 " />
+                    </div>
+                  </div>
+                </div>
+                <div className="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto my-4 sm:my-10 flex justify-center items-center">
                   <div ref={printableRef} className="bg-white rounded-xl w-[1035px] text-gray-900 p-8">
                     <div className="flex justify-between border-b">
                       <div className="mb-6">
@@ -795,7 +773,7 @@ const GetStarted = () => {
                       <div className="flex gap-1  items-center mt-8 ">
                         <p className="text-base">Note:</p>
                         <p className="text-[14px]">
-                          ₹{mainInvoice?.termsAndConditions} Thank You!
+                          ₹{mainInvoice?.termsAndConditions}
                         </p>
                       </div>
                     </div>
