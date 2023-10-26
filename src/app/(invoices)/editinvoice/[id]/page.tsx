@@ -74,7 +74,7 @@ const GetStarted = () => {
         console.log(err);
         alert(err);
       });
-  }, []);
+  }, [id]);
 
   const [subtotal, setsubTotal] = useState(Invoice?.subTotal || 0);
   const [discount, setdiscount] = useState(Invoice?.discount || 0);

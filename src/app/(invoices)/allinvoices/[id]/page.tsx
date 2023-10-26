@@ -35,7 +35,7 @@ const GetStarted = () => {
   useEffect(() => {
     GetInvoices();
     getMainInvoice(id as string);
-  }, []);
+  }, [id]);
 
   console.log(mainInvoice, "thisis main");
 
