@@ -10,7 +10,6 @@ import { json } from "stream/consumers";
 import { useDispatch } from "react-redux";
 import { logIn } from "@/redux/features/auth-slice";
 
-
 export default function Login() {
   const router = useRouter();
   const dispatch = useDispatch();
@@ -19,7 +18,7 @@ export default function Login() {
   let email = loginState.email as string;
   let password = loginState.password as string;
   console.log(loginState);
-  const handleLoginForm = async(event: React.FormEvent<HTMLFormElement>) => {
+  const handleLoginForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("dsfsd");
 
@@ -32,10 +31,22 @@ export default function Login() {
       .then(({ data }: any) => {
         if (data) {
           console.log(data.AccessToken);
-          const {email,id,isGoogle,password,profile,status,verified}=data.user
-          const AccessToken=data.AccessToken
-        
-           dispatch(logIn({email,id,isGoogle,password,profile,status,verified,AccessToken}))
+          const { email, id, isGoogle, password, profile, status, verified } =
+            data.user;
+          const AccessToken = data.AccessToken;
+
+          dispatch(
+            logIn({
+              email,
+              id,
+              isGoogle,
+              password,
+              profile,
+              status,
+              verified,
+              AccessToken,
+            })
+          );
           localStorage.setItem("user", JSON.stringify(data.user));
           localStorage.setItem("AccessToken", JSON.stringify(data.AccessToken));
 
@@ -47,21 +58,18 @@ export default function Login() {
         alert(err);
       });
 
-    
-    
     // let res= await signIn("credentials", {
-    //   email,    
+    //   email,
     //   password,
     //   redirect:false,
     //   callbackUrl: `${window.location.origin}/manageorganization`,
-    // }) 
+    // })
     // if(res?.error){
     //   alert(res.error)
     // }
-    // console.log(res); 
-    
+    // console.log(res);
+
     // console.log(res,"rew");
-     
   };
   const [errors, setErrors] = useState<{
     field: string;
@@ -82,10 +90,7 @@ export default function Login() {
                 </div>
                 <br />
                 <button className="mt-8 border-2 border-black rounded-lg w-[22.375rem] h-[3rem] flex justify-center items-center">
-                  <div
-                    className="text-base inline-flex items-center gap-3"
-                    
-                  >
+                  <div className="text-base inline-flex items-center gap-3">
                     <FcGoogle size={25} />
                     continue with Google
                   </div>
@@ -150,20 +155,25 @@ export default function Login() {
                   </div>
                 </label>
                 <label className="mt-px sm:text-xs md:text-sm cursor-pointer select-none font-light text-gray-950">
-                  I agree to join swift invoice's mailing list
+                  I agree to join swift invoice&apos;s mailing list
                 </label>
               </div>
 
-              <button type="submit" className="border-2 border-black rounded-lg w-[22.375rem] h-[3rem] bg-black text-white font-semibold">
+              <button
+                type="submit"
+                className="border-2 border-black rounded-lg w-[22.375rem] h-[3rem] bg-black text-white font-semibold"
+              >
                 Login account
               </button>
               <div className="text-xs text-center text-gray-600 my-5">
                 <span>
-                  By clicking "Create account" or "Continue with Google",
+                  By clicking <strong>&ldquo;Create account&rdquo;</strong> or{" "}
+                  <strong>&ldquo;Continue with Google&rdquo;</strong>,
                   <br /> you agree to the{" "}
-                  <span className="text-blue-600  cursor-pointer">
-                    Privacy Policy
-                  </span>
+                  <a href="#" className="text-blue-600 cursor-pointer">
+                    &ldquo;Privacy Policy&rdquo;
+                  </a>
+                  .
                 </span>
               </div>
 

@@ -40,7 +40,7 @@ const Editcustomer = () => {
         console.log(err);
         alert(err);
       });
-  }, []);
+  }, [id]);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;

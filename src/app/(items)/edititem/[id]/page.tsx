@@ -41,7 +41,7 @@ const Edititem = () => {
         console.log(err);
         alert(err);
       });
-  }, []);
+  }, [id]);
 
 
 

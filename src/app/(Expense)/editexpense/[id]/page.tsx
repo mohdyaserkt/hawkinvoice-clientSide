@@ -47,7 +47,7 @@ const GetStarted = () => {
         console.log(err);
         alert(err);
       });
-  }, []);
+  }, [id]);
 
   
 

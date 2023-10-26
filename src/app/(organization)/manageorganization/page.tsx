@@ -154,11 +154,12 @@ const ManageOrganisation = () => {
                     <div className="w-full justify-center flex flex-col gap-8 ">
                       <div className="w-full flex items-center justify-center">
                         <IoIosWarning className="text-yellow-400 w-10 h-10" />
-                        <h1 className="text-base text-blue-500  text-center  ">
-                          Currently, you don't have any organization
-                          established, so it's essential to create one to
+                        <h1 className="text-base text-blue-500 text-center">
+                          Currently, you don&apos;t have any organization
+                          established, so it&apos;s essential to create one to
                           further movements!!!
                         </h1>
+
                         <IoIosWarning className="text-yellow-400 w-10 h-10" />
                       </div>
                       <div className="w-full flex justify-center items-center ">

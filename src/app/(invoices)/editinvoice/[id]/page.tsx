@@ -51,7 +51,7 @@ const GetStarted = () => {
         console.log(err);
         alert(err);
       });
-  }, []);
+  }, [id]);
   const [Invoice, setInvoice] = useState<any>();
   console.log(Invoice, "myinv");
 
