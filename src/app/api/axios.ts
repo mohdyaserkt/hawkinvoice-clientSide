@@ -6,7 +6,7 @@ const persistor = persistStore(store);
 const state = store.getState();
 
 const axiosInstance: AxiosInstance = axios.create({
-  baseURL: "https://server.hawkinvoice.online",
+  baseURL: "https://hai.hawkinvoice.com",
 });
 
 axiosInstance.interceptors.request.use(
@@ -15,7 +15,7 @@ axiosInstance.interceptors.request.use(
     if (User) {
       const AccessToken = User;
       if (AccessToken) {
-        config.headers["Authorization"] = `Bearer ${AccessToken}`;
+        config.headers["authorization"] = `Bearer ${AccessToken}`;
       }
       console.log("this is my current acess id ", AccessToken);
 
