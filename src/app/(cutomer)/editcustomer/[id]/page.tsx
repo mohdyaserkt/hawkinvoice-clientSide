@@ -355,7 +355,7 @@ const Editcustomer = () => {
                         <div>
                           <input
                             className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
-                            defaultValue=""
+                            defaultValue={currentCustomer?.billingAddress?.attention as string}
                             type="text"
                           />
                         </div>
@@ -365,7 +365,8 @@ const Editcustomer = () => {
                         <div>
                           <input
                             className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
-                            defaultValue=""
+                            defaultValue={currentCustomer?.billingAddress?.region as string}
+                            
                             type="text"
                           />
                         </div>
@@ -375,10 +376,14 @@ const Editcustomer = () => {
                         <div className="flex flex-col gap-4">
                           <textarea
                             placeholder="street 1"
+                            defaultValue={currentCustomer?.billingAddress?.street1 as string}
+                            
                             className="rounded-md  text-xs w-64 text-black p-2"
                           ></textarea>
                           <textarea
                             placeholder="street 2"
+                            defaultValue={currentCustomer?.billingAddress?.street2 as string}
+
                             className="rounded-md  text-xs w-64 text-black p-2"
                           ></textarea>
                         </div>
@@ -389,6 +394,8 @@ const Editcustomer = () => {
                           <input
                             className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
+                            defaultValue={currentCustomer?.billingAddress?.city as string}
+
                             type="text"
                           />
                         </div>
@@ -399,6 +406,8 @@ const Editcustomer = () => {
                           <input
                             className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
+                            defaultValue={currentCustomer?.billingAddress?.state as string}
+
                             type="text"
                           />
                         </div>
@@ -422,6 +431,8 @@ const Editcustomer = () => {
                           <input
                             className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
+                            defaultValue={currentCustomer?.shippingAddress?.attention as string}
+
                             type="text"
                           />
                         </div>
@@ -432,6 +443,8 @@ const Editcustomer = () => {
                           <input
                             className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
+                            defaultValue={currentCustomer?.shippingAddress?.region as string}
+
                             type="text"
                           />
                         </div>
@@ -441,10 +454,14 @@ const Editcustomer = () => {
                         <div className="flex flex-col gap-4">
                           <textarea
                             placeholder="street 1"
+                            defaultValue={currentCustomer?.shippingAddress?.street1 as string}
+
                             className="rounded-md  text-xs w-64 text-black p-2"
                           ></textarea>
                           <textarea
                             placeholder="street 2"
+                            defaultValue={currentCustomer?.shippingAddress?.street2 as string}
+
                             className="rounded-md  text-xs w-64 text-black p-2"
                           ></textarea>
                         </div>
@@ -455,6 +472,8 @@ const Editcustomer = () => {
                           <input
                             className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
+                            defaultValue={currentCustomer?.shippingAddress?.city as string}
+
                             type="text"
                           />
                         </div>
@@ -465,6 +484,8 @@ const Editcustomer = () => {
                           <input
                             className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
                             placeholder=""
+                            defaultValue={currentCustomer?.shippingAddress?.state as string}
+
                             type="text"
                           />
                         </div>
