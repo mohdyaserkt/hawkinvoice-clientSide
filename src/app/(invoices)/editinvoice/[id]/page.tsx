@@ -36,6 +36,7 @@ import { formatDate } from "@/utils/Invoice/getInvoices";
 import { handleEditInvoice } from "@/utils/Invoice/editInvoice";
 import Link from "next/link";
 import Image from "next/image";
+import { json } from "stream/consumers";
 
 const GetStarted = () => {
   const params = useParams();
@@ -55,20 +56,22 @@ const GetStarted = () => {
   const [Invoice, setInvoice] = useState<any>();
   console.log(Invoice, "myinv");
 
-  const [paymentMode, setpaymentMode] = useState(
-    Invoice?.paymentMode == "paid" ? true : false
-  );
   const router = useRouter();
   const slectRef = useRef<HTMLDivElement>(null);
   const [customerId, setCustomerId] = useState("");
   const [customerEmail, setcustomerEmail] = useState("");
   const [items, setItems] = useState<IItem[]>([]);
+  const [paymentMode, setpaymentMode] = useState(false);
 
   useEffect(() => {
     handleGetInoviceById(id as string)
       .then(({ data }: any) => {
         setInvoice(data.invoice as IInvoice);
-        setItems(Invoice?.itemDetails);
+        console.log(data.invoice.itemDetails, "my itemlast");
+        setItems(data?.invoice?.itemDetails);
+        setpaymentMode(data?.invoice?.status == "paid" ? true : false)
+        setcustomerEmail(data?.invoice?.customerEmail)
+        setCustomerId(data?.invoice?.customerId)
       })
       .catch((err) => {
         console.log(err);
@@ -81,6 +84,8 @@ const GetStarted = () => {
   const [adjustment, setadjustment] = useState(
     Invoice?.Adjustment?.adjustmentValue || 0
   );
+ 
+
 
   const [errors, setErrors] = useState<{
     field: string;
@@ -158,6 +163,7 @@ const GetStarted = () => {
         if (res) {
           console.log(res);
           router?.push("/invoices");
+          console.log(res,"helo")
           alert(res);
         }
       })
@@ -227,8 +233,8 @@ const GetStarted = () => {
               </select>
               <div className="pr-2">
                 <Image
-                width={32}
-                height={32}
+                  width={32}
+                  height={32}
                   src="https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=900&t=st=1693152334~exp=1693152934~hmac=da365a4885d210047abff64bf790f521687c842a32793b5c0416be75b321f977"
                   alt="logo"
                   className="rounded-full w-8   h-8   "
@@ -267,8 +273,8 @@ const GetStarted = () => {
             <Link href={"/paymentsrecieved"}>
               <div className="flex items-center h-7 rounded-lg space-x-2">
                 <Image
-                width={16}
-                height={16}
+                  width={16}
+                  height={16}
                   src="/recievedpayments.svg"
                   alt="logo"
                   className="w-4 h-4 ml-2 text-white"
@@ -453,7 +459,7 @@ const GetStarted = () => {
                           </tr>
                         </thead>
                         <tbody className="border text-xs">
-                          {items.map((item, index) => (
+                          {items?.map((item, index) => (
                             <Createinvoice
                               item={item}
                               handleInputChange={handleInputChange}

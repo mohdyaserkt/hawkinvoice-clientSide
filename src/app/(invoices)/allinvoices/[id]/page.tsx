@@ -26,8 +26,14 @@ import DueDateComponent from "@/components/invoice/allInvoices/dueDateComponent"
 import { useParams } from "next/navigation";
 import { handleGetInoviceById } from "@/utils/Invoice/getInvoiceById";
 import Image from "next/image";
+import { useAppSelector } from "@/redux/store";
+import { useRouter } from 'next/navigation';
 
 const GetStarted = () => {
+  const orgname = useAppSelector((state) =>
+  state.orgReducer.value.businessName
+);
+const router=useRouter()
   const [myInvoices, setmyInvoices] = useState([]);
   const [mainInvoice, setmainInvoice] = useState<IInvoice>();
   const params = useParams();
@@ -118,14 +124,16 @@ const GetStarted = () => {
               <span className=" text-lg text-white ">|</span>
               <AiOutlineSetting className=" text-white" />
               <span className=" text-lg text-white ">|</span>
-              <select className="bg-blue-900 text-white focus:outline-none focus:ring focus:border-blue-300">
-                <option className="bg-blue-900">Organization</option>
-                <option className="bg-blue-900">Organization 2</option>
-                <option className="bg-blue-900">Organization 3</option>
+              <select className="bg-primary text-white focus:outline-none focus:ring focus:border-blue-300">
+                <option className="bg-primary">{orgname}</option>
+                <option onClick={()=>router.push('/manageorganization')} className="bg-primary">Switch</option>
+               
               </select>
 
               <div className="pr-2">
                 <Image
+                width={32}
+                height={32}
                   src="https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=900&t=st=1693152334~exp=1693152934~hmac=da365a4885d210047abff64bf790f521687c842a32793b5c0416be75b321f977"
                   alt="Your Alt Text"
                   className="rounded-full w-8   h-8   "
@@ -336,7 +344,7 @@ const GetStarted = () => {
                             }
                             alt={"logo"}
                           ></Image>
-                          <h2 className="text-2xl">Organisation Name</h2>
+                          <h2 className="text-2xl">{orgname}</h2>
                         </div>
                         <div className="text-[15px]">
                           <p>Office 149, 450 South Brand Brooklyn</p>

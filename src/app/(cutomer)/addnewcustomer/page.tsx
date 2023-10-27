@@ -265,6 +265,7 @@ const Addnewcustomer = () => {
                         <input
                           className="focus:outline-none text-black rounded-md w-32 h-8 text-xs p-2"
                           placeholder="Salutation"
+                          defaultValue={'MR'}
                           type="text"
                         />
                         <input

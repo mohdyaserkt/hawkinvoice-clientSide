@@ -196,7 +196,7 @@ console.log("myinvoices44",myInvoices);
               {myInvoices.map((item: IInvoice) => (
                 <tr className="border-b border-white" key={item.id}>
                  <td className="p-2 text-center">{formatDate(item.invoiceDate)}</td>
-                 <Link href={`/allinvoices/${item.id}`}><td className="p-2 text-center">{item.invoiceNumber}</td></Link>
+                 <td className="p-2 text-center"><Link href={`/allinvoices/${item.id}`}>{item.invoiceNumber}</Link></td>
                   <td className="p-2 text-center">{item.orderNumber}</td>
                   <td className="p-2 text-center">{item.customerName}</td>
                   <td className="p-2 text-center">{item.status}</td>

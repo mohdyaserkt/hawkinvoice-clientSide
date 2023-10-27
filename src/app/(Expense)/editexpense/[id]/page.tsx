@@ -37,7 +37,6 @@ const GetStarted = () => {
 
   const [editexpense, setexpense] = useState<IExpense>();
 
-
   useEffect(() => {
     handleGetExpenseById(id as string)
       .then(({ data }: any) => {
@@ -49,8 +48,6 @@ const GetStarted = () => {
       });
   }, [id]);
 
-  
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -59,7 +56,7 @@ const GetStarted = () => {
     formData.forEach((value, key) => {
       inputObject[key] = String(value);
     });
-    inputObject.id = editexpense?.id||'';
+    inputObject.id = editexpense?.id || "";
     let expense = inputObject as unknown as IExpense;
     handleEditExpense({
       expense,
@@ -108,7 +105,9 @@ const GetStarted = () => {
             <div className="flex items-center space-x-2">
               <BsPlusSquareFill className="bg-black text-secondary" />
               <span className=" text-lg text-white ">|</span>
-              <Link href={'/orgprofile'}><AiOutlineSetting className=" text-white" /></Link>
+              <Link href={"/orgprofile"}>
+                <AiOutlineSetting className=" text-white" />
+              </Link>
               <span className=" text-lg text-white ">|</span>
               <select className="">
                 <option>Organization</option>
@@ -117,8 +116,8 @@ const GetStarted = () => {
               </select>
               <div className="pr-2">
                 <Image
-                width={32}
-                height={32}
+                  width={32}
+                  height={32}
                   src="https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=900&t=st=1693152334~exp=1693152934~hmac=da365a4885d210047abff64bf790f521687c842a32793b5c0416be75b321f977"
                   alt="Your Alt Text"
                   className="rounded-full w-8   h-8   "
@@ -135,13 +134,13 @@ const GetStarted = () => {
                 <p className="text-sm text-white">Home</p>
               </div>
             </Link>
-           <Link href={"/customers"}>
+            <Link href={"/customers"}>
               <div className="flex items-center  h-7 rounded-lg space-x-2">
                 <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
                 <p className="text-sm text-white">Customers</p>
               </div>
             </Link>
-             <Link href="/items">
+            <Link href="/items">
               <div className="flex items-center h-7 rounded-lg space-x-2">
                 <PiHandbag className="w-4 h-4 ml-2 text-white " />
                 <Link href={"/items"}>
@@ -158,8 +157,8 @@ const GetStarted = () => {
             <Link href={"/paymentsrecieved"}>
               <div className="flex items-center h-7 rounded-lg space-x-2">
                 <Image
-                width={16}
-                height={16}
+                  width={16}
+                  height={16}
                   src="/recievedpayments.svg"
                   alt="logo"
                   className="w-4 h-4 ml-2 text-white"
@@ -222,9 +221,34 @@ const GetStarted = () => {
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2 bg-white"
                           defaultValue={editexpense?.categoryName}
                         >
-                          <option value="df">fires</option>
-                          <option value="ds">dskf</option>
-                          <option value="dss">dss</option>
+                          <option value="Automobile Expense">
+                            Automobile Expense
+                          </option>
+                          <option value="Consultant Expense">
+                            Consultant Expense
+                          </option>
+                          <option value="Contract Assets">
+                            Contract Assets
+                          </option>
+                          <option value="Credit Card Charges">
+                            Credit Card Charges
+                          </option>
+                          <option value="Depreciation And Amortisation">
+                            Depreciation And Amortisation
+                          </option>
+                          <option value="Depreciation Expense">
+                            Depreciation Expense
+                          </option>
+                          <option value="IT and Internet Expenses">
+                            IT and Internet Expenses
+                          </option>
+                          <option value="Job Costing">Job Costing</option>
+                          <option value="Labor">Labor</option>
+                          <option value="Materials">Materials</option>
+                          <option value="Subcontractor">Subcontractor</option>
+                          <option value="Advertising And Marketing">
+                            Advertising And Marketing
+                          </option>
                         </select>
                       </div>
                     </div>

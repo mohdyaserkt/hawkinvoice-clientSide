@@ -142,7 +142,7 @@ const Editcustomer = () => {
                 <div className="mr-[10px]">
                   <input
                     type="text"
-                    placeholder="Search in Customers(/)"
+                    // placeholder="Search in Customers(/)"
                     className="bg-transparent text-black border-none focus:outline-none placeholder-black text-xs"
                   />
                 </div>
@@ -247,6 +247,7 @@ const Editcustomer = () => {
                             name="Customer Type"
                             className="accent-secondary"
                             type="radio"
+                            checked
                           />
                           <p>Business</p>
                         </div>
@@ -255,6 +256,7 @@ const Editcustomer = () => {
                             name="Customer Type"
                             className="accent-secondary"
                             type="radio"
+                            
                           />
                           <p>Individual</p>
                         </div>
@@ -265,17 +267,17 @@ const Editcustomer = () => {
                       <div className="flex items-center gap-2">
                         <input
                           className="focus:outline-none text-black rounded-md w-32 h-8 text-xs p-2"
-                          placeholder={currentCustomer?.salutaion as string}
+                          defaultValue={"MR"}
                           type="text"
                         />
                         <input
                           className="focus:outline-none text-black rounded-md w-32 h-8 text-xs p-2"
-                          placeholder={currentCustomer?.firstName as string}
+                          defaultValue={currentCustomer?.firstName as string}
                           type="text"
                         />
                         <input
                           className="focus:outline-none text-black rounded-md w-32 h-8 text-xs p-2"
-                          placeholder={currentCustomer?.lastName as string}
+                          defaultValue={currentCustomer?.lastName as string}
                           type="text"
                         />
                       </div>
@@ -285,7 +287,7 @@ const Editcustomer = () => {
                       <div className=" flex items-center">
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
-                          placeholder={
+                          defaultValue={
                             currentCustomer?.customerCompanyName as string
                           }
                           type="text"
@@ -301,7 +303,7 @@ const Editcustomer = () => {
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
-                          placeholder={currentCustomer?.displayName as string}
+                          defaultValue={currentCustomer?.displayName as string}
                         />
                       </div>
                     </div>
@@ -319,7 +321,7 @@ const Editcustomer = () => {
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="email"
-                          placeholder={currentCustomer?.email as string}
+                          defaultValue={currentCustomer?.email as string}
                         />
                       </div>
                     </div>
@@ -328,14 +330,14 @@ const Editcustomer = () => {
                       <div className=" flex justify-between w-80 h-8 gap-1">
                         <input
                           className="focus:outline-none rounded-md h-8 text-xs w-36 text-black p-2"
-                          placeholder={
+                          defaultValue={
                             currentCustomer?.workPhone as unknown as string
                           }
                           type="tel"
                         />
                         <input
                           className="focus:outline-none rounded-md h-8 text-xs w-36 text-black p-2"
-                          placeholder={
+                          defaultValue={
                             currentCustomer?.mobile as unknown as string
                           }
                           type="tel"
@@ -353,7 +355,7 @@ const Editcustomer = () => {
                         <div>
                           <input
                             className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
-                            placeholder=""
+                            defaultValue=""
                             type="text"
                           />
                         </div>
@@ -363,7 +365,7 @@ const Editcustomer = () => {
                         <div>
                           <input
                             className="focus:outline-none rounded-md h-8 text-xs w-64 text-black p-2"
-                            placeholder=""
+                            defaultValue=""
                             type="text"
                           />
                         </div>

@@ -200,9 +200,34 @@ const AddnewExpense = () => {
                           name="categoryName"
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2 bg-white"
                         >
-                          <option value="df">fires</option>
-                          <option value="ds">dskf</option>
-                          <option value="dss">dss</option>
+                         <option value="Automobile Expense">
+                            Automobile Expense
+                          </option>
+                          <option value="Consultant Expense">
+                            Consultant Expense
+                          </option>
+                          <option value="Contract Assets">
+                            Contract Assets
+                          </option>
+                          <option value="Credit Card Charges">
+                            Credit Card Charges
+                          </option>
+                          <option value="Depreciation And Amortisation">
+                            Depreciation And Amortisation
+                          </option>
+                          <option value="Depreciation Expense">
+                            Depreciation Expense
+                          </option>
+                          <option value="IT and Internet Expenses">
+                            IT and Internet Expenses
+                          </option>
+                          <option value="Job Costing">Job Costing</option>
+                          <option value="Labor">Labor</option>
+                          <option value="Materials">Materials</option>
+                          <option value="Subcontractor">Subcontractor</option>
+                          <option value="Advertising And Marketing">
+                            Advertising And Marketing
+                          </option>
                         </select>
                       </div>
                     </div>
