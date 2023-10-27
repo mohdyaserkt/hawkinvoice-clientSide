@@ -6,7 +6,7 @@ const persistor = persistStore(store);
 const state = store.getState();
 
 const axiosInstance: AxiosInstance = axios.create({
-  baseURL: "https://hai.hawkinvoice.com",
+  baseURL: "https://server.hawkinvoice.online",
 });
 
 axiosInstance.interceptors.request.use(
