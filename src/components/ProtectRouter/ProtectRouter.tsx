@@ -17,10 +17,10 @@ const ProtectedRouter:React.FC<UserProtectedRouterProps> = ({ children}): any =>
 
     const router=useRouter()
     const username = useAppSelector((state) =>
-    state.authReducer.value.email.split("@")
+    state.authReducer.value.email
   );
     
     console.log(username,"prottectd rout user");
-    return username ? children:router.push('/login')
+    return username.length>1 ? children:router.push('/login')
 }
 export default ProtectedRouter
