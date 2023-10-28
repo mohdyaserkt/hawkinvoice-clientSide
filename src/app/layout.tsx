@@ -2,7 +2,6 @@ import ReduxProvider from "@/redux/provider";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
-import ProtectedRouter from "@/components/ProtectRouter/ProtectRouter";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -24,9 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.className} bg-primary `}>
         <div>
-          <ProtectedRouter>
-            <ReduxProvider>{children}</ReduxProvider>
-          </ProtectedRouter>
+          <ReduxProvider>{children}</ReduxProvider>
         </div>
       </body>
     </html>
