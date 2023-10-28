@@ -52,13 +52,13 @@ export default function Signup() {
                   Signup up for hawkinvoice
                 </div>
                 <br />
-                <button className="mt-8 border-2 border-black rounded-lg w-[22.375rem] h-[3rem] flex justify-center items-center">
+                {/* <button className="mt-8 border-2 border-black rounded-lg w-[22.375rem] h-[3rem] flex justify-center items-center">
                   <div className="text-base inline-flex items-center gap-3">
                     <FcGoogle size={25} />
                     continue with Google
                   </div>
                 </button>
-                <span className="text-gray-600 my-5">or</span>
+                <span className="text-gray-600 my-5">or</span> */}
               </div>
               <div></div>
 

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   LiaFileInvoiceDollarSolid,
   LiaFileInvoiceSolid,
@@ -24,6 +24,7 @@ import { handleGetExpenseByEachCategory } from "@/utils/reports/getexpensebyeach
 import Link from "next/link";
 import EmptyDataReport from "@/components/common/EmptyReportData";
 import Image from "next/image";
+import { downloadExcel } from "react-export-table-to-excel";
 
 const Expensedetailsbycategory = () => {
   const [expenseDetails, setexpenseDetails] = useState<any>([]);
@@ -38,6 +39,56 @@ const Expensedetailsbycategory = () => {
         alert(err);
       });
   }, []);
+
+
+
+  const printableRef = useRef<HTMLDivElement | null>(null);
+
+
+  const printDiv = () => {
+    const content = printableRef.current;
+
+    if (content) {
+      const printWindow = window.open("", "", "");
+
+      // Write the content of the target div into the new window
+      printWindow?.document.open();
+      printWindow?.document.write(`
+        <html>
+          <head>
+            <title>data</title>
+          </head>
+          <body>
+    ${content.innerHTML}
+        </body>
+
+        </html>
+      `);
+      printWindow?.document.close();
+
+      // Trigger the print operation in the new window
+      printWindow?.print();
+      // printWindow?.onafterprint = function () {
+      //   printWindow?.close(); // Close the new window after printing
+      // };
+    }
+  };
+
+
+
+
+  const header = ["expenseCount", "totalAmount", "categoryName"];
+  const handleDownloadExcel= ()=> {
+    downloadExcel({
+      fileName: "react-export-table-to-excel -> downloadExcel method",
+      sheet: "react-export-table-to-excel",
+      tablePayload: {
+        header,
+        // accept two different data structures
+        body: expenseDetails,
+      },
+    });
+  }
   return (
     <>
       <div className="h-screen">
@@ -145,17 +196,18 @@ const Expensedetailsbycategory = () => {
               </div>
               <div className="flex items-center gap-3">
                 <div className="flex gap-1 border rounded-md text-secondary border-secondary p-1">
-                  <p>Print</p>
+                  <p onClick={printDiv}>Print</p>
                   <AiOutlinePrinter className="w-6 h-6 text-secondary " />
                 </div>
                 <div className="flex gap-1 border rounded-md text-secondary border-secondary p-1">
-                  <p>Download</p>
+                  <p onClick={handleDownloadExcel}>Download</p>
                   <AiOutlineDownload className="w-6 h-6 text-secondary " />
                 </div>
               </div>
             </div>
 
             <div
+            ref={printableRef}
               className="w-full flex flex-col gap-10  h-screen overflow-y-auto"
               style={{ maxHeight: "calc(100vh - 217px)" }}
             >
