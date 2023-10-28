@@ -324,6 +324,13 @@ const router=useRouter()
                         </svg>
                         Print
                       </a>
+                      <a
+                        onClick={()=>router.push(`/editinvoice/${id}`)}
+                        className="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"
+                        href="#"
+                      >
+                        Edit
+                      </a>
                     </div>
                     <div className="p-2 bg-white rounded  h-8 ">
                       <SlOptions className="w-4 h-4 text-gray-800 " />
@@ -347,9 +354,9 @@ const router=useRouter()
                           <h2 className="text-2xl">{orgname}</h2>
                         </div>
                         <div className="text-[15px]">
-                          <p>Office 149, 450 South Brand Brooklyn</p>
-                          <p>San Diego County, CA 91905, USA</p>
-                          <p>+1 (123) 456 7891, +44 (876) 543 2198</p>
+                          <p>my address</p>
+                          <p>helo, City, state,676306</p>
+                          <p>+91 875432198,+91 875432198</p>
                         </div>
                       </div>
                       <div className="flex flex-col gap-[6px]">
@@ -384,9 +391,9 @@ const router=useRouter()
                         </div>
                         <div className="text-sm flex flex-col gap-1">
                           <p>{mainInvoice?.customerName}</p>
-                          <p>Shelby Company Limited</p>
-                          <p>Small Heath, B10 0HF, UK</p>
-                          <p>718-986-6062</p>
+                          <p>street 1, street 2</p>
+                          <p>city, state 0HF</p>
+                          <p>+91 718-986-6062</p>
                           <p>{mainInvoice?.customerEmail}</p>
                         </div>
                       </div>

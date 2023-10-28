@@ -330,6 +330,7 @@ const GetStarted = () => {
                       <div className="flex items-center">
                         <input
                           name="invoiceNumber"
+                          defaultValue={'INV-00001'}
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
                         />
@@ -342,6 +343,7 @@ const GetStarted = () => {
                       <div className="flex items-center">
                         <input
                           name="orderNumber"
+                          defaultValue={1}
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
                         />

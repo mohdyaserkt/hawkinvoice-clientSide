@@ -30,9 +30,9 @@ const Home = () => {
   const username = useAppSelector((state) =>
     state.authReducer.value.email.split("@")
   );
-  const orgname = useAppSelector((state) =>
-  state.orgReducer.value.businessName
-);
+  const orgname = useAppSelector(
+    (state) => state.orgReducer.value.businessName
+  );
   const [allRecievables, setallRecievables] = useState<any>();
   const [salesTable, setsalesTable] = useState<any>();
 
@@ -86,7 +86,9 @@ const Home = () => {
             <div className="flex items-center space-x-2">
               <BsPlusSquareFill className="bg-black text-secondary" />
               <span className=" text-lg text-white ">|</span>
-              <Link href={'/orgprofile'}><AiOutlineSetting className=" text-white" /></Link>
+              <Link href={"/orgprofile"}>
+                <AiOutlineSetting className=" text-white" />
+              </Link>
               <span className=" text-lg text-white ">|</span>
               <select className="">
                 <option>Organization</option>
@@ -95,8 +97,8 @@ const Home = () => {
               </select>
               <div className="pr-2">
                 <Image
-                width={32}
-                height={32}
+                  width={32}
+                  height={32}
                   src="https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=900&t=st=1693152334~exp=1693152934~hmac=da365a4885d210047abff64bf790f521687c842a32793b5c0416be75b321f977"
                   alt="logo"
                   className="rounded-full w-8   h-8   "
@@ -109,37 +111,51 @@ const Home = () => {
           <div className=" w-56 flex flex-col gap-3 py-3 px-2 border ">
             <div className="flex items-center bg-secondary  h-7 rounded-lg space-x-2">
               <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
-              <Link href={'/home'}><p className="text-sm text-white">Home</p></Link>
+              <Link href={"/home"}>
+                <p className="text-sm text-white">Home</p>
+              </Link>
             </div>
             <div className="flex items-center  h-7 rounded-lg space-x-2">
               <AiOutlineUser className="w-4 h-4 ml-2 text-white" />
-              <Link href={'/customers'}><p className="text-sm text-white">Customers</p></Link>
+              <Link href={"/customers"}>
+                <p className="text-sm text-white">Customers</p>
+              </Link>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <PiHandbag className="w-4 h-4 ml-2 text-white " />
-              <Link href={'/items'}><p className="text-sm text-white">Items</p></Link>
+              <Link href={"/items"}>
+                <p className="text-sm text-white">Items</p>
+              </Link>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
-              <Link href={'/invoices'}><p className="text-sm text-white">Invoices</p></Link>
+              <Link href={"/invoices"}>
+                <p className="text-sm text-white">Invoices</p>
+              </Link>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <Image
-              width={16}
-              height={16}
+                width={16}
+                height={16}
                 src="/recievedpayments.svg"
                 alt=""
                 className="w-4 h-4 ml-2 text-white"
               />
-              <Link href={'/home'}><p className="text-sm text-white">Payments Recieved</p></Link>
+              <Link href={"/home"}>
+                <p className="text-sm text-white">Payments Recieved</p>
+              </Link>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <TbReceipt className="w-4 h-4 ml-2 text-white" />
-              <Link href={'/expenses'}><p className="text-sm text-white">Expenses</p></Link>
+              <Link href={"/expenses"}>
+                <p className="text-sm text-white">Expenses</p>
+              </Link>
             </div>
             <div className="flex items-center h-7 rounded-lg space-x-2">
               <BsFileEarmarkBarGraph className="w-4 h-4 ml-2 text-white" />
-              <Link href={'/allreports'}><p className="text-sm text-white">Reports</p></Link>
+              <Link href={"/allreports"}>
+                <p className="text-sm text-white">Reports</p>
+              </Link>
             </div>
           </div>
           <div className="w-full">
@@ -149,17 +165,19 @@ const Home = () => {
                   <Image
                     width={50}
                     height={50}
-                    alt="organization Logo"
+                    alt="Logo"
                     className="object-cover rounded-lg"
                     src={
-                      "https://cdn.w600.comps.canstockphoto.com/your-logo-here-placeholder-symbol-vector-eps-vector_csp84465644.jpg"
+                      "https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=900&t=st=1693152334~exp=1693152934~hmac=da365a4885d210047abff64bf790f521687c842a32793b5c0416be75b321f977"
                     }
                   />
                 </div>
                 <div className="items-center">
-                  <h2 className="text-lg">Hello, {username[0]||'User Name'}</h2>
+                  <h2 className="text-lg">
+                    Hello, {username[0] || "User Name"}
+                  </h2>
                   <h2 className="text-[13px] text-secondary">
-                    {orgname||'Organization Name'}
+                    {orgname || "Organization Name"}
                   </h2>
                 </div>
               </div>
@@ -171,7 +189,7 @@ const Home = () => {
             >
               <div className="h-52 w-[998px] rounded-lg">
                 <div className="w-full h-[49px] bg-orange-300rounded-lg border rounded-t-lg bg-secondary py flex  items-center justify-between px-5">
-                <h1 className="text-base text-gray-800">
+                  <h1 className="text-base text-gray-800">
                     Sales and Expenses
                   </h1>
                   <select
@@ -183,7 +201,6 @@ const Home = () => {
                       This Financial Year
                     </option>
                   </select>
-                  
                 </div>
                 <div className="w-full h-[67px]  border-b border-x py-2">
                   <div className="relative pt-1 px-2 flex flex-col gap-1">
@@ -314,12 +331,12 @@ const Home = () => {
                         <tr className="mb-5">
                           <td className="text-start">This Week</td>
                           <td>
-                            ₹{salesTable?.thisWeekData?.totalSales || 0.0}
+                            ₹{salesTable?.thisMonthData?.totalSales || 0.0}
                           </td>
                           <td>
-                            ₹{salesTable?.thisWeekData?.totalReceipts || 0.0}
+                            ₹{salesTable?.thisMonthData?.totalReceipts || 0.0}
                           </td>
-                          <td>₹{salesTable?.thisWeekData?.totalDues || 0.0}</td>
+                          <td>₹{salesTable?.thisMonthData?.totalDues || 0.0}</td>
                         </tr>
                         <tr className="mb-5">
                           <td className="text-start">This Month</td>
