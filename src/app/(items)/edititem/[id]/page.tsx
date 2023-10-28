@@ -237,7 +237,7 @@ const Edititem = () => {
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
-                          placeholder={currentitem?.name}
+                          defaultValue={currentitem?.name}
                         />
                       </div>
                     </div>
@@ -247,7 +247,7 @@ const Edititem = () => {
                         <input
                           className="focus:outline-none rounded-md w-80 h-8 text-xs text-black p-2"
                           type="text"
-                          placeholder={currentitem?.unit}
+                          defaultValue={currentitem?.unit}
                         />
                       </div>
                     </div>
@@ -267,7 +267,7 @@ const Edititem = () => {
                           className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                           type="number"
                          
-                          placeholder={currentitem?.sellingPrice as unknown as string}
+                          defaultValue={currentitem?.sellingPrice as unknown as string}
                         />
                       </div>
                     </div>
@@ -277,7 +277,7 @@ const Edititem = () => {
                         <textarea
                          
                           className="focus:outline-none rounded-md  text-xs w-64 text-black p-2"
-                          placeholder={currentitem?.description}
+                          defaultValue={currentitem?.description}
                         ></textarea>
                       </div>
                     </div>

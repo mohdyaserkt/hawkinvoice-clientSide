@@ -166,7 +166,7 @@ const AddnewExpense = () => {
           <div className="w-full">
             <div className="p-5 flex justify-between w-full border-r-[1px] border-b-[1px] ">
               <div className="text-white">
-                <h2 className="text-xl">New Item</h2>
+                <h2 className="text-xl">New Expense</h2>
               </div>
             </div>
 
@@ -257,7 +257,7 @@ const AddnewExpense = () => {
                           name="invoiceNumber"
                           className="focus:outline-none rounded-md w-40 h-8 text-xs text-black p-2"
                           type="text"
-                          placeholder="INR"
+                          defaultValue={'INV-00001'}
                         />
                       </div>
                     </div>
@@ -266,7 +266,7 @@ const AddnewExpense = () => {
                       <div className=" flex  w-80 ">
                         <textarea
                           name="notes"
-                          placeholder="Description "
+                          placeholder="Notes"
                           className="focus:outline-none rounded-md  text-xs w-64 text-black p-2"
                         ></textarea>
                       </div>

@@ -290,7 +290,7 @@ const GetStarted = () => {
                         <textarea
                           defaultValue={editexpense?.notes}
                           name="notes"
-                          placeholder="Description "
+                          placeholder="Notes"
                           className="focus:outline-none rounded-md  text-xs w-64 text-black p-2"
                         ></textarea>
                       </div>
