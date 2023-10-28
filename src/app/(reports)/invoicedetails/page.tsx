@@ -164,7 +164,7 @@ const Invoicedetails = () => {
                   <AiOutlinePrinter className="w-6 h-6 text-secondary " />
                 </div>
                 <div className="flex gap-1 border rounded-md text-secondary border-secondary p-1">
-                  <p>Download</p>
+                  <p onClick={handleDownloadExcel}>Download</p>
                   <AiOutlineDownload className="w-6 h-6 text-secondary " />
                 </div>
               </div>
