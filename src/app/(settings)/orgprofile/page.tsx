@@ -21,6 +21,10 @@ import Link from "next/link";
 import { useAppSelector } from "@/redux/store";
 import { handleGetOrganizationsAddress } from "@/utils/Organization/getOrganizationAddress";
 import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { logOut } from "@/redux/features/auth-slice";
+import { useRouter } from "next/navigation";
+
 
 const GetStarted = () => {
   const imageRef = useRef<HTMLInputElement>(null);
@@ -50,6 +54,15 @@ const GetStarted = () => {
       setSelectedFile(null);
     }
   };
+  const router=useRouter()
+  const dispatch = useDispatch();
+  const logOutButton=()=>{
+    dispatch(logOut())
+    localStorage.clear()
+    router.push('/')
+    
+   
+  }
 
   return (
     <>
@@ -111,13 +124,13 @@ const GetStarted = () => {
               <GoOrganization className="w-4 h-4 ml-2 text-gray-800" />
               <p className="text-sm text-gray-800">Organization Profile</p>
             </div>
-            <div className="flex items-center  h-7 rounded-lg space-x-2">
+            {/* <div className="flex items-center  h-7 rounded-lg space-x-2">
               <FiUsers className="w-4 h-4 ml-2 text-white" />
               <p className="text-sm text-white">Users & Roles</p>
-            </div>
-            <div className="flex items-center h-7 rounded-lg space-x-2">
+            </div> */}
+            <div onClick={logOutButton} className="flex bg-red-600 items-center h-7 rounded-lg space-x-2">
               <IoColorPaletteOutline className="w-4 h-4 ml-2 text-white " />
-              <p className="text-sm text-white">Templates</p>
+              <p className="text-sm text-white">LogOut</p>
             </div>
           </div>
           <div className="w-full">

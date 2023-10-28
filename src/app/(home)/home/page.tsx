@@ -141,7 +141,7 @@ const Home = () => {
                 alt=""
                 className="w-4 h-4 ml-2 text-white"
               />
-              <Link href={"/home"}>
+              <Link href={"/paymentsrecieved"}>
                 <p className="text-sm text-white">Payments Recieved</p>
               </Link>
             </div>
