@@ -24,7 +24,7 @@ import { handleGetInvoiceDetails } from "@/utils/reports/getInvoiceDetails";
 import Link from "next/link";
 import EmptyDataReport from "@/components/common/EmptyReportData";
 import Image from "next/image";
-
+import { downloadExcel } from "react-export-table-to-excel";
 const Invoicedetails = () => {
 
   const [invoices, setInvoices] = useState<any>([]);
@@ -40,6 +40,19 @@ const Invoicedetails = () => {
         alert(err);
       });
   }, []);
+
+  const header = ["customerName", "invoiceNumber", "orderNumber","invoiceDate","dueDate","Total","status"];
+  const handleDownloadExcel= ()=> {
+    downloadExcel({
+      fileName: "react-export-table-to-excel -> downloadExcel method",
+      sheet: "react-export-table-to-excel",
+      tablePayload: {
+        header,
+        // accept two different data structures
+        body: invoices,
+      },
+    });
+  }
   return (
     <>
       <div className="h-screen">
@@ -147,7 +160,7 @@ const Invoicedetails = () => {
               </div>
               <div className="flex items-center gap-3">
                 <div className="flex gap-1 border rounded-md text-secondary border-secondary p-1">
-                  <p>Print</p>
+                  <p onClick={()=>window.print()}>Print</p>
                   <AiOutlinePrinter className="w-6 h-6 text-secondary " />
                 </div>
                 <div className="flex gap-1 border rounded-md text-secondary border-secondary p-1">
@@ -207,10 +220,10 @@ const Invoicedetails = () => {
                     <tr key={index as unknown as string}className="border-b border-white">
                       <td className="p-2 text-center">{item.status}</td>
                       <td className="p-2 text-center">{formatDate(item.invoiceDate)}</td>
-                      <td className="p-2 text-center">₹ {item.invoiceNumber}</td>
-                      <td className="p-2 text-center">₹ {item.orderNumber}</td>
-                      <td className="p-2 text-center">₹ {formatDate(item.dueDate)}</td>
-                      <td className="p-2 text-center">₹ {item.customerName}</td>
+                      <td className="p-2 text-center"> {item.invoiceNumber}</td>
+                      <td className="p-2 text-center"> {item.orderNumber}</td>
+                      <td className="p-2 text-center"> {formatDate(item.dueDate)}</td>
+                      <td className="p-2 text-center">{item.customerName}</td>
                       <td className="p-2 text-center">₹ {item.Total}</td>
                     </tr>
                    ))}

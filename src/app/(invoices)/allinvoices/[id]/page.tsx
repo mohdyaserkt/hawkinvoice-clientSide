@@ -14,7 +14,7 @@ import {
   AiOutlineUser,
   AiOutlineSearch,
 } from "react-icons/ai";
-
+import { jsPDF } from "jspdf";
 import { IoMailOutline } from "react-icons/io5";
 
 import Link from "next/link";
@@ -27,13 +27,13 @@ import { useParams } from "next/navigation";
 import { handleGetInoviceById } from "@/utils/Invoice/getInvoiceById";
 import Image from "next/image";
 import { useAppSelector } from "@/redux/store";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
 const GetStarted = () => {
-  const orgname = useAppSelector((state) =>
-  state.orgReducer.value.businessName
-);
-const router=useRouter()
+  const orgname = useAppSelector(
+    (state) => state.orgReducer.value.businessName
+  );
+  const router = useRouter();
   const [myInvoices, setmyInvoices] = useState([]);
   const [mainInvoice, setmainInvoice] = useState<IInvoice>();
   const params = useParams();
@@ -68,22 +68,45 @@ const router=useRouter()
 
   const printableRef = useRef<HTMLDivElement | null>(null);
 
+  const downloadPDF = () => {
+   
+
+    const report = new jsPDF("portrait", "pt", "a4");
+    report.setFontSize(22);
+    report.setTextColor(255, 0, 0);
+    // report.text(20, 20, "invoice");
+
+    report.setFontSize(16);
+    report.setTextColor(0, 255, 0);
+    // report.text(20, 30, "This is some normal sized text underneath.");
+
+    const reportElement = document.querySelector("#report") as HTMLElement;
+
+    if (reportElement) {
+      report.html(reportElement).then(() => {
+        report.save("report.pdf");
+      });
+    } else {
+      console.error('Element with ID "report" not found.');
+    }
+  };
   const printDiv = () => {
     const content = printableRef.current;
 
     if (content) {
-      const printWindow = window.open("", "", "width=600,height=600");
+      const printWindow = window.open("", "", "");
 
       // Write the content of the target div into the new window
       printWindow?.document.open();
       printWindow?.document.write(`
         <html>
           <head>
-            <title>Print</title>
+            <title>Invoice</title>
           </head>
           <body>
-            ${content.innerHTML}
-          </body>
+    ${content.innerHTML}
+        </body>
+
         </html>
       `);
       printWindow?.document.close();
@@ -126,14 +149,18 @@ const router=useRouter()
               <span className=" text-lg text-white ">|</span>
               <select className="bg-primary text-white focus:outline-none focus:ring focus:border-blue-300">
                 <option className="bg-primary">{orgname}</option>
-                <option onClick={()=>router.push('/manageorganization')} className="bg-primary">Switch</option>
-               
+                <option
+                  onClick={() => router.push("/manageorganization")}
+                  className="bg-primary"
+                >
+                  Switch
+                </option>
               </select>
 
               <div className="pr-2">
                 <Image
-                width={32}
-                height={32}
+                  width={32}
+                  height={32}
                   src="https://img.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg?w=900&t=st=1693152334~exp=1693152934~hmac=da365a4885d210047abff64bf790f521687c842a32793b5c0416be75b321f977"
                   alt="Your Alt Text"
                   className="rounded-full w-8   h-8   "
@@ -147,7 +174,7 @@ const router=useRouter()
             style={{ height: "calc(100vh - 47px)" }}
             className=" w-56 flex flex-col gap-3 py-3 px-2 border "
           >
-             <Link href={"/home"}>
+            <Link href={"/home"}>
               <div className="flex items-center  h-7 rounded-lg space-x-2">
                 <AiOutlineHome className="w-4 h-4 ml-2 text-white" />
                 <p className="text-sm text-white">Home</p>
@@ -159,12 +186,11 @@ const router=useRouter()
                 <p className="text-sm text-white">Customers</p>
               </div>
             </Link>
-             <Link href="/items">
+            <Link href="/items">
               <div className="flex items-center h-7 rounded-lg space-x-2">
                 <PiHandbag className="w-4 h-4 ml-2 text-white " />
-                
-                  <p className="text-sm text-white">Items</p>
-               
+
+                <p className="text-sm text-white">Items</p>
               </div>
             </Link>
             <Link href={"/invoices"}>
@@ -176,8 +202,8 @@ const router=useRouter()
             <Link href={"/paymentsrecieved"}>
               <div className="flex items-center h-7 rounded-lg space-x-2">
                 <Image
-                width={16}
-                height={16}
+                  width={16}
+                  height={16}
                   src="/recievedpayments.svg"
                   alt="logo"
                   className="w-4 h-4 ml-2 text-white"
@@ -279,17 +305,15 @@ const router=useRouter()
                 </div>
               </div>
 
-              
-
               <div
-              
                 className="w-full overflow-y-auto"
                 style={{ maxHeight: "calc(100vh - 47px)" }}
               >
-                 <div className="flex justify-end items-center p-4  border-b h-[71px]">
+                <div className="flex justify-end items-center p-4  border-b h-[71px]">
                   <div className="flex space-x-2">
                     <div className="text-xs  flex items-center  px-3 py-2 h-8  gap-3">
                       <a
+                        onClick={downloadPDF}
                         className="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
                         href="#"
                       >
@@ -325,7 +349,7 @@ const router=useRouter()
                         Print
                       </a>
                       <a
-                        onClick={()=>router.push(`/editinvoice/${id}`)}
+                        onClick={() => router.push(`/editinvoice/${id}`)}
                         className="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"
                         href="#"
                       >
@@ -338,7 +362,11 @@ const router=useRouter()
                   </div>
                 </div>
                 <div className="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto my-4 sm:my-10 flex justify-center items-center">
-                  <div ref={printableRef} className="bg-white rounded-xl w-[1035px] text-gray-900 p-8">
+                  <div
+                    id="report"
+                    ref={printableRef}
+                    className="bg-white rounded-xl w-[1035px] text-gray-900 p-8"
+                  >
                     <div className="flex justify-between border-b">
                       <div className="mb-6">
                         <div className="flex items-center">
@@ -539,7 +567,7 @@ const router=useRouter()
                         </div>
                         <div className="flex flex-col gap-2 text-sm">
                           <p> ₹{mainInvoice?.subTotal}</p>
-                          <p>₹{mainInvoice?.discount}</p>
+                          <p>₹{mainInvoice?.discount || 0}</p>
                           {/* <p>$50.00</p> */}
                           <p>₹{mainInvoice?.Total}</p>
                         </div>
