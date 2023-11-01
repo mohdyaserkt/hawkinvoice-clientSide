@@ -34,7 +34,7 @@ export default function Login() {
           const { email, id, isGoogle, password, profile, status, verified } =
             data.user;
           const AccessToken = data.AccessToken;
-
+          localStorage.setItem("AccessToken", JSON.stringify(data.AccessToken));
           dispatch(
             logIn({
               email,

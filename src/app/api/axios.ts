@@ -11,7 +11,8 @@ const axiosInstance: AxiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   (config) => {
-    const User = state.authReducer.value.AccessToken;
+    // const User = state.authReducer.value.AccessToken;
+    const User = JSON.parse(localStorage.getItem("AccessToken") as string);
     if (User) {
       const AccessToken = User;
       if (AccessToken) {
