@@ -9,6 +9,7 @@ import { useState } from "react";
 import { json } from "stream/consumers";
 import { useDispatch } from "react-redux";
 import { logIn } from "@/redux/features/auth-slice";
+import { toast } from "react-toastify";
 
 export default function Login() {
   const router = useRouter();
@@ -53,9 +54,11 @@ export default function Login() {
           router?.push("/manageorganization");
         }
       })
-      .catch((err: ApiError) => {
+      .catch((err: CustomError) => {
         console.log(err.message);
-        alert(err);
+        toast.error(err.response?.data?.error, {
+          position: toast.POSITION.TOP_RIGHT
+        });
       });
 
     // let res= await signIn("credentials", {

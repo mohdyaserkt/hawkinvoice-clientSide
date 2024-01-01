@@ -20,6 +20,7 @@ import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import Link from "next/link";
 import Image from "next/image";
+import { toast } from "react-toastify";
 
 const Addnewcustomer = () => {
   const billingRef = useRef<HTMLDivElement | null>(null);
@@ -112,11 +113,16 @@ const Addnewcustomer = () => {
           console.log(res);
           router?.push("/customers");
           alert(res);
+          toast.success("customer Added Successfully", {
+            position: toast.POSITION.TOP_RIGHT
+          });
         }
       })
-      .catch((err: ApiError) => {
+      .catch((err: CustomError) => {
         console.log(err.message);
-        alert(err);
+        toast.error(err.response?.data?.error, {
+          position: toast.POSITION.TOP_RIGHT
+        });
       });
   };
   const [errors, setErrors] = useState<{

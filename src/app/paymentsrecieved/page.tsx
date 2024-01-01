@@ -109,13 +109,13 @@ const GetStarted = () => {
               </div>
             </Link>
             <Link href={"/invoices"}>
-              <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
+              <div className="flex items-center  h-7 rounded-lg space-x-2">
                 <LiaFileInvoiceSolid className="w-4 h-4 ml-2 text-white" />
                 <p className="text-sm text-white">Invoices</p>
               </div>
             </Link>
             <Link href={"/paymentsrecieved"}>
-              <div className="flex items-center h-7 rounded-lg space-x-2">
+              <div className="flex items-center bg-secondary h-7 rounded-lg space-x-2">
                 <Image
                   width={16}
                   height={16}

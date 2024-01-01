@@ -8,6 +8,7 @@ import { handleSignup } from "@/utils/Authentication/handlesignup";
 import { ApiError } from "next/dist/server/api-utils";
 import { useDispatch } from "react-redux";
 import { logIn } from "@/redux/features/auth-slice";
+import { toast } from "react-toastify";
 
 export default function Signup() {
   const router = useRouter();
@@ -18,19 +19,13 @@ export default function Signup() {
     event.preventDefault();
     console.log("dsfsd");
 
-    handleSignup({
+    let signup=handleSignup({
       setError,
 
       email: signupState.email as string,
       password: signupState.password as string,
     })
-      // .then((res) => {
-      //   if (res) {
-      //     console.log(res);
-      //     router?.push("/login");
-      //     alert(res);
-      //   }
-      // })
+      
       .then(({ data }: any) => {
         if (data) {
           console.log(data.AccessToken);
@@ -52,14 +47,28 @@ export default function Signup() {
           );
           // localStorage.setItem("user", JSON.stringify(data.user));
           // localStorage.setItem("AccessToken", JSON.stringify(data.AccessToken));
-          alert("Account is Created Sucessfully");
+          // alert("Account is Created Sucessfully");
+          toast.success("Account Registration Successful", {
+            position: toast.POSITION.TOP_RIGHT
+          });
           router?.push("/getstarted");
         }
       })
-      .catch((err: ApiError) => {
-        console.log(err.message);
-        alert(err);
+      .catch((err: any) => {
+        console.log(err);
+        toast.error(err.response.data.error, {
+          position: toast.POSITION.TOP_RIGHT
+        });
+
       });
+
+      toast.promise(
+        signup,
+        {
+          pending: 'Your Accounting is Registering',
+          error: 'Account Registration is Failed'
+        }
+    )
   };
   const [errors, setErrors] = useState<{
     field: string;
