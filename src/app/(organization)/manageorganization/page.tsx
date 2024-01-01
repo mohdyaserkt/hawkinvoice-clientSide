@@ -89,10 +89,10 @@ const ManageOrganisation = () => {
                           {/* <Link href={`http://${item.businessName}.hawkinvoice.com/customers`}> */}
                           <button
                             onClick={() => {
-                              localStorage.setItem(
-                                "currentOrganization",
-                                JSON.stringify(item.id)
-                              );
+                              // localStorage.setItem(
+                              //   "currentOrganization",
+                              //   JSON.stringify(item.id)
+                              // );
                               saveOrganisation(item);
                               router.push("/home");
                             }}

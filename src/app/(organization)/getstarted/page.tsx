@@ -1,4 +1,5 @@
 "use client";
+import { useAppSelector } from "@/redux/store";
 import { handleCreateNewOrganization } from "@/utils/Organization/createNewOrganization";
 import HandleForm from "@/utils/handleFormState";
 import { ApiError } from "next/dist/server/api-utils";
@@ -8,6 +9,11 @@ import React, { useState } from "react";
 const Getstarted = () => {
   const router = useRouter();
   const [isChecked, setIsChecked] = useState(false);
+  const AccessToken = useAppSelector((state) =>
+  state.authReducer.value.AccessToken
+);
+
+console.log('thisis mh token',AccessToken);
 
   const [organizationState, setorganizationState] = HandleForm({
     businessName: "",
@@ -75,7 +81,8 @@ const Getstarted = () => {
                 <h1 className="text-white text-3xl">
                   Tell us about your business
                 </h1>
-                <button>
+                
+                {AccessToken&&<button>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -90,7 +97,7 @@ const Getstarted = () => {
                     stroke-linejoin="round"
                     d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
                   />
-                </svg></button>
+                </svg></button>}
               </div>
               <div className="mb-9">
                 <p className="text-white sm:text-sm text-base">

@@ -47,10 +47,10 @@ export default function Login() {
               AccessToken,
             })
           );
-          localStorage.setItem("user", JSON.stringify(data.user));
-          localStorage.setItem("AccessToken", JSON.stringify(data.AccessToken));
+          // localStorage.setItem("user", JSON.stringify(data.user));
+          // localStorage.setItem("AccessToken", JSON.stringify(data.AccessToken));
 
-          router?.push("/getstarted");
+          router?.push("/manageorganization");
         }
       })
       .catch((err: ApiError) => {

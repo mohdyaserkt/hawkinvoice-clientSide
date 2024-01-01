@@ -6,9 +6,12 @@ import HandleForm from "@/utils/handleFormState";
 import { useState } from "react";
 import { handleSignup } from "@/utils/Authentication/handlesignup";
 import { ApiError } from "next/dist/server/api-utils";
+import { useDispatch } from "react-redux";
+import { logIn } from "@/redux/features/auth-slice";
 
 export default function Signup() {
   const router = useRouter();
+  const dispatch = useDispatch();
   const [signupState, setSignupState] = HandleForm({ email: "", password: "" });
   console.log(signupState);
   const handleSignupForm = (event: React.FormEvent<HTMLFormElement>) => {
@@ -21,11 +24,36 @@ export default function Signup() {
       email: signupState.email as string,
       password: signupState.password as string,
     })
-      .then((res) => {
-        if (res) {
-          console.log(res);
-          router?.push("/login");
-          alert(res);
+      // .then((res) => {
+      //   if (res) {
+      //     console.log(res);
+      //     router?.push("/login");
+      //     alert(res);
+      //   }
+      // })
+      .then(({ data }: any) => {
+        if (data) {
+          console.log(data.AccessToken);
+          const { email, id, isGoogle, password, profile, status, verified } =
+            data.user;
+          const AccessToken = data.AccessToken;
+          // localStorage.setItem("AccessToken", JSON.stringify(data.AccessToken));
+          dispatch(
+            logIn({
+              email,
+              id,
+              isGoogle,
+              password,
+              profile,
+              status,
+              verified,
+              AccessToken,
+            })
+          );
+          // localStorage.setItem("user", JSON.stringify(data.user));
+          // localStorage.setItem("AccessToken", JSON.stringify(data.AccessToken));
+          alert("Account is Created Sucessfully");
+          router?.push("/getstarted");
         }
       })
       .catch((err: ApiError) => {
