@@ -1,31 +1,30 @@
-"use client";
-import Image from "next/image";
-import { FcGoogle } from "react-icons/fc";
-import { useRouter } from "next/navigation";
-import HandleForm from "@/utils/handleFormState";
-import { useState } from "react";
-import { handleSignup } from "@/utils/Authentication/handlesignup";
-import { ApiError } from "next/dist/server/api-utils";
-import { useDispatch } from "react-redux";
-import { logIn } from "@/redux/features/auth-slice";
-import { toast } from "react-toastify";
+'use client';
+import Image from 'next/image';
+import { FcGoogle } from 'react-icons/fc';
+import { useRouter } from 'next/navigation';
+import HandleForm from '@/utils/handleFormState';
+import { useState } from 'react';
+import { handleSignup } from '@/utils/Authentication/handlesignup';
+import { ApiError } from 'next/dist/server/api-utils';
+import { useDispatch } from 'react-redux';
+import { logIn } from '@/redux/features/auth-slice';
+import { toast } from 'react-toastify';
 
 export default function Signup() {
   const router = useRouter();
   const dispatch = useDispatch();
-  const [signupState, setSignupState] = HandleForm({ email: "", password: "" });
+  const [signupState, setSignupState] = HandleForm({ email: '', password: '' });
   console.log(signupState);
   const handleSignupForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("dsfsd");
+    console.log('dsfsd');
 
-    let signup=handleSignup({
+    let signup = handleSignup({
       setError,
 
       email: signupState.email as string,
       password: signupState.password as string,
     })
-      
       .then(({ data }: any) => {
         if (data) {
           console.log(data.AccessToken);
@@ -48,32 +47,28 @@ export default function Signup() {
           // localStorage.setItem("user", JSON.stringify(data.user));
           // localStorage.setItem("AccessToken", JSON.stringify(data.AccessToken));
           // alert("Account is Created Sucessfully");
-          toast.success("Account Registration Successful", {
-            position: toast.POSITION.TOP_RIGHT
+          toast.success('Account Registration Successful', {
+            position: toast.POSITION.TOP_RIGHT,
           });
-          router?.push("/getstarted");
+          router?.push('/getstarted');
         }
       })
       .catch((err: any) => {
         console.log(err);
         toast.error(err.response.data.error, {
-          position: toast.POSITION.TOP_RIGHT
+          position: toast.POSITION.TOP_RIGHT,
         });
-
       });
 
-      toast.promise(
-        signup,
-        {
-          pending: 'Your Accounting is Registering',
-          error: 'Account Registration is Failed'
-        }
-    )
+    toast.promise(signup, {
+      pending: 'Your Accounting is Registering',
+      error: 'Account Registration is Failed',
+    });
   };
   const [errors, setErrors] = useState<{
     field: string;
     errors: string[];
-  } | null>({ field: "", errors: [""] });
+  } | null>({ field: '', errors: [''] });
   const setError = (field: string, errorMessages: string[]) =>
     setErrors({ field, errors: errorMessages });
 
@@ -101,6 +96,9 @@ export default function Signup() {
 
               <div className="relative h-10  min-w-[200px]">
                 <input
+                   required
+                   pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                   title="Invalid Email"
                   className="rounded-lg w-[22.375rem] h-[3rem]  peer   border  border-black border-t-transparent bg-transparent px-3 py-2.5  text-sm  text-black outline outline-1 transition-all placeholder-shown:border placeholder-shown:border-black placeholder-shown:border-t-black focus:border-2 focus:border-black focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                   placeholder=" "
                   name="email"
@@ -114,6 +112,9 @@ export default function Signup() {
               </div>
               <div className=" relative h-10  min-w-[200px] mt-7">
                 <input
+                   required
+                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                   title="At least 8 characters,One uppercase letterOne lowercase letterOne digit One special character"
                   className="  rounded-lg w-[22.375rem] h-[3rem]  peer   border  border-black border-t-transparent bg-transparent px-3 py-2.5  text-sm  text-black outline outline-1 transition-all placeholder-shown:border placeholder-shown:border-black placeholder-shown:border-t-black focus:border-2 focus:border-black focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                   placeholder=" "
                   name="password"
@@ -167,7 +168,7 @@ export default function Signup() {
                 <span>
                   By clicking &ldquo;Create account&rdquo; or &ldquo;Continue
                   with Google&rdquo;,
-                  <br /> you agree to the{" "}
+                  <br /> you agree to the{' '}
                   <span className="text-blue-600 cursor-pointer">
                     Privacy Policy
                   </span>
@@ -175,9 +176,9 @@ export default function Signup() {
               </div>
 
               <div className="text-gray-700">
-                already have an account?{" "}
+                already have an account?{' '}
                 <a
-                  onClick={() => router?.push("/login")}
+                  onClick={() => router?.push('/login')}
                   className="text-blue-600  cursor-pointer"
                 >
                   Log in

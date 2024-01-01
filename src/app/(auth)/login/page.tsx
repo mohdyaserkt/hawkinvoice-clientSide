@@ -1,27 +1,27 @@
-"use client";
-import Image from "next/image";
-import { FcGoogle } from "react-icons/fc";
-import { useRouter } from "next/navigation";
-import HandleForm from "@/utils/handleFormState";
-import { ApiError } from "next/dist/server/api-utils";
-import { handleLogin } from "@/utils/Authentication/handleLogin";
-import { useState } from "react";
-import { json } from "stream/consumers";
-import { useDispatch } from "react-redux";
-import { logIn } from "@/redux/features/auth-slice";
-import { toast } from "react-toastify";
+'use client';
+import Image from 'next/image';
+import { FcGoogle } from 'react-icons/fc';
+import { useRouter } from 'next/navigation';
+import HandleForm from '@/utils/handleFormState';
+import { ApiError } from 'next/dist/server/api-utils';
+import { handleLogin } from '@/utils/Authentication/handleLogin';
+import { useState } from 'react';
+import { json } from 'stream/consumers';
+import { useDispatch } from 'react-redux';
+import { logIn } from '@/redux/features/auth-slice';
+import { toast } from 'react-toastify';
 
 export default function Login() {
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const [loginState, setLoginState] = HandleForm({ email: "", password: "" });
+  const [loginState, setLoginState] = HandleForm({ email: '', password: '' });
   let email = loginState.email as string;
   let password = loginState.password as string;
   console.log(loginState);
   const handleLoginForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("dsfsd");
+    console.log('dsfsd');
 
     handleLogin({
       setError,
@@ -35,7 +35,7 @@ export default function Login() {
           const { email, id, isGoogle, password, profile, status, verified } =
             data.user;
           const AccessToken = data.AccessToken;
-          localStorage.setItem("AccessToken", JSON.stringify(data.AccessToken));
+          localStorage.setItem('AccessToken', JSON.stringify(data.AccessToken));
           dispatch(
             logIn({
               email,
@@ -50,14 +50,16 @@ export default function Login() {
           );
           // localStorage.setItem("user", JSON.stringify(data.user));
           // localStorage.setItem("AccessToken", JSON.stringify(data.AccessToken));
-
-          router?.push("/manageorganization");
+          toast.success('You have logined Successfully', {
+            position: toast.POSITION.TOP_RIGHT,
+          });
+          router?.push('/manageorganization');
         }
       })
       .catch((err: CustomError) => {
         console.log(err.message);
         toast.error(err.response?.data?.error, {
-          position: toast.POSITION.TOP_RIGHT
+          position: toast.POSITION.TOP_RIGHT,
         });
       });
 
@@ -77,7 +79,7 @@ export default function Login() {
   const [errors, setErrors] = useState<{
     field: string;
     errors: string[];
-  } | null>({ field: "", errors: [""] });
+  } | null>({ field: '', errors: [''] });
   const setError = (field: string, errorMessages: string[]) =>
     setErrors({ field, errors: errorMessages });
   return (
@@ -104,24 +106,31 @@ export default function Login() {
 
               <div className="relative h-10  min-w-[200px]">
                 <input
-                  className="rounded-lg w-[22.375rem] h-[3rem]  peer   border  border-black border-t-transparent bg-transparent px-3 py-2.5  text-sm  text-black outline outline-1 transition-all placeholder-shown:border placeholder-shown:border-black placeholder-shown:border-t-black focus:border-2 focus:border-black focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                  required
+                  pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                  title="Invalid Email"
+                  className="rounded-lg w-[22.375rem] h-[3rem] peer border border-black border-t-transparent bg-transparent px-3 py-2.5 text-sm text-black outline outline-1 transition-all placeholder-shown:border placeholder-shown:border-black placeholder-shown:border-t-black focus:border-2 focus:border-black focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                   placeholder=" "
                   name="email"
                   id="email"
                   value={loginState.email}
                   onChange={setLoginState}
                 />
+
                 <label className="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-black before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-black after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-gray-600 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-600 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-black peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-black peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-gray-600">
                   Email
                 </label>
               </div>
               <div className=" relative h-10  min-w-[200px] mt-7">
                 <input
+                  required
+                  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                  title="At least 8 characters,One uppercase letterOne lowercase letterOne digit One special character"
                   className="  rounded-lg w-[22.375rem] h-[3rem]  peer   border  border-black border-t-transparent bg-transparent px-3 py-2.5  text-sm  text-black outline outline-1 transition-all placeholder-shown:border placeholder-shown:border-black placeholder-shown:border-t-black focus:border-2 focus:border-black focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                   placeholder=" "
                   name="password"
                   id="password"
-                  value={loginState.password}
+                  // value={loginState.password}
                   onChange={setLoginState}
                 />
                 <label className="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-black before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-black after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-gray-600 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-600 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-black peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-black peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-gray-600">
@@ -170,9 +179,9 @@ export default function Login() {
               </button>
               <div className="text-xs text-center text-gray-600 my-5">
                 <span>
-                  By clicking <strong>&ldquo;Create account&rdquo;</strong> or{" "}
+                  By clicking <strong>&ldquo;Create account&rdquo;</strong> or{' '}
                   <strong>&ldquo;Continue with Google&rdquo;</strong>,
-                  <br /> you agree to the{" "}
+                  <br /> you agree to the{' '}
                   <a href="#" className="text-blue-600 cursor-pointer">
                     &ldquo;Privacy Policy&rdquo;
                   </a>
@@ -181,9 +190,9 @@ export default function Login() {
               </div>
 
               <div className="text-gray-700">
-                No account?{" "}
+                No account?{' '}
                 <a
-                  onClick={() => router?.push("/signup")}
+                  onClick={() => router?.push('/signup')}
                   className="text-blue-600  cursor-pointer"
                 >
                   Create one
