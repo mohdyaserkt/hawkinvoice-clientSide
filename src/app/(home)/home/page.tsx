@@ -237,7 +237,7 @@ const Home = () => {
                   <div>
                     <p className="text-xs text-white">OVERDUE</p>
                     <h3 className="text-white text-xl">
-                      ₹{allRecievables?.overdueOneToFifteenDays || 0}.00
+                      ₹{allRecievables?.overdueSixteenToThirtyDays || 0}.00
                     </h3>
                     <p className="text-secondary text-xs">1-15 Days</p>
                   </div>

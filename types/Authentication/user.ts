@@ -16,7 +16,7 @@ interface IUser {
 interface IhandleSignup {
   email: string;
   password: string;
-  setError: (field: string, errors: string[]) => void;
+  setError?: (field: string, errors: string[]) => void;
 }
 
 interface IhandleSignup1 {

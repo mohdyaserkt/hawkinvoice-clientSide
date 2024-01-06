@@ -5,11 +5,12 @@ import { getMyOrganizations } from "@/app/api/organization/getMyOrganizations";
 import persistStore from "redux-persist/es/persistStore";
 import { store } from "@/redux/store";
 const persistor = persistStore(store);
-const state = store.getState();
+
 
 export const handleGetMyOrganizations = async (): Promise<
   string | boolean | AxiosError
 > => {
+  const state = store.getState();
   const id = state.authReducer.value.id;
 
   try {

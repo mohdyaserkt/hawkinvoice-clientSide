@@ -1,26 +1,30 @@
-"use client"
+'use client';
 import { useAppSelector } from '@/redux/store';
 import { useRouter } from 'next/navigation';
-import React, { Children } from 'react'
-
-
-
-
-
+import React, { Children } from 'react';
 
 interface UserProtectedRouterProps {
-    children: React.ReactNode
+  children: React.ReactNode;
 }
 
+const ProtectedRouter: React.FC<UserProtectedRouterProps> = ({
+  children,
+}): any => {
+  let data: string[] = [];
 
-const ProtectedRouter:React.FC<UserProtectedRouterProps> = ({ children}): any => {
+  const router = useRouter();
 
-    const router=useRouter()
-    const username = useAppSelector((state) =>
-    state.authReducer.value.email
-  );
-    
-    console.log(username,"prottectd rout user");
-    return username.length>1 ? children:router.push('/login')
-}
-export default ProtectedRouter
+  data[0] = useAppSelector((state) => state.authReducer.value.email) as string;
+  data[1] = useAppSelector((state) => state.orgReducer.value.id) as string;
+
+  console.log(data, 'prottectd rout user');
+
+  if (!data[0]) {
+    return router.push('/login');
+  } else if (data[0] && !data[1]) {
+    return router.push('/manageorganization');
+  } else if (data[0] && data[1]) {
+    return children;
+  }
+};
+export default ProtectedRouter;

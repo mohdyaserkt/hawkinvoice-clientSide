@@ -24,6 +24,7 @@ import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { logOut } from "@/redux/features/auth-slice";
 import { useRouter } from "next/navigation";
+import { signOut } from "next-auth/react";
 
 
 const GetStarted = () => {
@@ -60,6 +61,7 @@ const GetStarted = () => {
     dispatch(logOut())
     localStorage.clear()
     router.push('/')
+    signOut()
     
    
   }

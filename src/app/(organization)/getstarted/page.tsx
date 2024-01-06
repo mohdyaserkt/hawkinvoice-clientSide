@@ -5,6 +5,7 @@ import HandleForm from "@/utils/handleFormState";
 import { ApiError } from "next/dist/server/api-utils";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const Getstarted = () => {
   const router = useRouter();
@@ -53,13 +54,19 @@ console.log('thisis mh token',AccessToken);
       .then((res: any) => {
         if (res) {
           console.log(res);
+          toast.success('Organization Created  Successfully', {
+            position: toast.POSITION.TOP_RIGHT,
+          });
           router?.push("/manageorganization");
-          alert(res);
+          
         }
       })
-      .catch((err: ApiError) => {
+      .catch((err: CustomError) => {
+        toast.error(err.response?.data?.error, {
+          position: toast.POSITION.TOP_RIGHT,
+        });
         console.log(err.message);
-        alert(err);
+
       });
   };
   const [errors, setErrors] = useState<{

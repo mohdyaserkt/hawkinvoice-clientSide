@@ -9,10 +9,14 @@ import { ApiError } from 'next/dist/server/api-utils';
 import { useDispatch } from 'react-redux';
 import { logIn } from '@/redux/features/auth-slice';
 import { toast } from 'react-toastify';
+import { signIn, useSession } from 'next-auth/react';
 
 export default function Signup() {
   const router = useRouter();
   const dispatch = useDispatch();
+  const { data: session } = useSession();
+  console.log(session, "myssesssion");
+
   const [signupState, setSignupState] = HandleForm({ email: '', password: '' });
   console.log(signupState);
   const handleSignupForm = (event: React.FormEvent<HTMLFormElement>) => {
@@ -20,8 +24,6 @@ export default function Signup() {
     console.log('dsfsd');
 
     let signup = handleSignup({
-      setError,
-
       email: signupState.email as string,
       password: signupState.password as string,
     })
@@ -65,12 +67,6 @@ export default function Signup() {
       error: 'Account Registration is Failed',
     });
   };
-  const [errors, setErrors] = useState<{
-    field: string;
-    errors: string[];
-  } | null>({ field: '', errors: [''] });
-  const setError = (field: string, errorMessages: string[]) =>
-    setErrors({ field, errors: errorMessages });
 
   return (
     <>
@@ -84,21 +80,28 @@ export default function Signup() {
                   Signup up for hawkinvoice
                 </div>
                 <br />
-                <button className="mt-8 border-2 border-white rounded-lg w-[22.375rem] h-[3rem] flex justify-center items-center">
-                  <div className="text-base inline-flex items-center gap-3">
-                    {/* <FcGoogle size={25} />
-                    continue with Google */}
+                <button className="mt-8 border-2 border-black rounded-lg w-[22.375rem] h-[3rem] flex justify-center items-center">
+                  <div   onClick={(event)=>{
+                    event.preventDefault();
+                     signIn("google1", {
+
+                    redirect: false,
+                    callbackUrl: `${window.location.origin}/getstarted`,
+                    helo:"helo"
+                  })}} className="text-base inline-flex items-center gap-3">
+                    <FcGoogle size={25} />
+                    continue with Google
                   </div>
                 </button>
-                <span className="text-white my-5 ">or</span>
+                <span className="text-black my-5 ">or</span>
               </div>
               <div></div>
 
               <div className="relative h-10  min-w-[200px]">
                 <input
-                   required
-                   pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
-                   title="Invalid Email"
+                  required
+                  pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                  title="Invalid Email"
                   className="rounded-lg w-[22.375rem] h-[3rem]  peer   border  border-black border-t-transparent bg-transparent px-3 py-2.5  text-sm  text-black outline outline-1 transition-all placeholder-shown:border placeholder-shown:border-black placeholder-shown:border-t-black focus:border-2 focus:border-black focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                   placeholder=" "
                   name="email"
@@ -112,9 +115,9 @@ export default function Signup() {
               </div>
               <div className=" relative h-10  min-w-[200px] mt-7">
                 <input
-                   required
-                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
-                   title="At least 8 characters,One uppercase letterOne lowercase letterOne digit One special character"
+                  required
+                  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                  title="At least 8 characters,One uppercase letterOne lowercase letterOne digit One special character"
                   className="  rounded-lg w-[22.375rem] h-[3rem]  peer   border  border-black border-t-transparent bg-transparent px-3 py-2.5  text-sm  text-black outline outline-1 transition-all placeholder-shown:border placeholder-shown:border-black placeholder-shown:border-t-black focus:border-2 focus:border-black focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                   placeholder=" "
                   name="password"

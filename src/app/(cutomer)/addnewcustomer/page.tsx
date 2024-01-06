@@ -112,7 +112,7 @@ const Addnewcustomer = () => {
         if (res) {
           console.log(res);
           router?.push("/customers");
-          alert(res);
+          // alert(res);
           toast.success("customer Added Successfully", {
             position: toast.POSITION.TOP_RIGHT
           });

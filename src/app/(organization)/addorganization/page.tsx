@@ -32,7 +32,7 @@ const Addorganization = () => {
         if (res) {
           console.log(res);
           router?.push("/manageorganization");
-          alert(res);
+          // alert(res);
         }
       })
       .catch((err: ApiError) => {

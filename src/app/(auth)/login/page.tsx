@@ -10,6 +10,7 @@ import { json } from 'stream/consumers';
 import { useDispatch } from 'react-redux';
 import { logIn } from '@/redux/features/auth-slice';
 import { toast } from 'react-toastify';
+import { signIn } from 'next-auth/react';
 
 export default function Login() {
   const router = useRouter();
@@ -24,8 +25,6 @@ export default function Login() {
     console.log('dsfsd');
 
     handleLogin({
-      setError,
-
       email: loginState.email as string,
       password: loginState.password as string,
     })
@@ -76,12 +75,6 @@ export default function Login() {
 
     // console.log(res,"rew");
   };
-  const [errors, setErrors] = useState<{
-    field: string;
-    errors: string[];
-  } | null>({ field: '', errors: [''] });
-  const setError = (field: string, errorMessages: string[]) =>
-    setErrors({ field, errors: errorMessages });
   return (
     <>
       <form onSubmit={handleLoginForm}>
@@ -94,13 +87,20 @@ export default function Login() {
                   Login To hawkinvoice
                 </div>
                 <br />
-                <button className="mt-8 border-2 border-white rounded-lg w-[22.375rem] h-[3rem] flex justify-center items-center">
-                  <div className="text-base inline-flex items-center gap-3">
-                    {/* <FcGoogle size={25} />
-                    continue with Google */}
+                <button className="mt-8 border-2 border-black rounded-lg w-[22.375rem] h-[3rem] flex justify-center items-center">
+                  <div onClick={(event)=>{
+                    event.preventDefault();
+                     signIn("google", {
+
+                    redirect: false,
+                    callbackUrl: `${window.location.origin}/manageorganization`,
+                    helo:"helo"
+                  })}} className="text-base inline-flex items-center gap-3">
+                    <FcGoogle size={25} />
+                    continue with Google
                   </div>
                 </button>
-                <span className="text-white my-5">or</span>
+                <span className="text-black my-5">or</span>
               </div>
               <div></div>
 
